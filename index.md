@@ -1,20 +1,16 @@
 ---
 layout: default
 ---
+# 如何在GitHub Page搭建博客
 
-## Oh...Hello World
+## 首先你要拥有一个GitHub账号
 
-_that's why_
+## Github 上新建个人网站项目
 
+## GitHub设置
 
-## 使用GitHub Page搭建博客
+## domain设置
 
-### 拥有一个GitHub账号
-#### Github 上新建个人网站项目
-### GitHub设置
+## theme设置
 
-### domain设置
-
-### theme设置
-
-### 内容管理
+## 内容管理
