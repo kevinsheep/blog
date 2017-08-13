@@ -6,12 +6,12 @@ layout: default
 
   {{ content }}
 
-  <h1 class="page-heading">Posts</h1>
+  <h1 class="page-heading">Posts Debug</h1>
   
   <ul class="post-list">
     {% for post in site.posts %}
       <li>
-        {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
+        {% assign date_format = site.minima.date_format | default: "%Y %-b %-d" %}
         <span class="post-meta">{{ post.date | date: date_format }}</span>
 
         <h2>
