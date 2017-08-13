@@ -1,5 +1,7 @@
 ---
 layout: default
+title: Readme
+permalink: /readme/
 ---
 
 ## Welcome to GitHub Pages
