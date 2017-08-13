@@ -3,8 +3,9 @@ author: KEVIN SHEEP
 email: kevinsheep@vip.qq.com
 description: Hello World Of KevinSheep's GitHub Page.
 minima:
-  date_format: "%Y %-b %-d"
-theme: jekyll-theme-dinky
+  date_format: "%Y %b %d"
+theme: minima
 header_pages:
 - readme.html
-permalink: /404.md
+
+# permalink: /404.md
