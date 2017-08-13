@@ -1,4 +1,10 @@
 title: Blog Of WolfHole
+author: KEVIN SHEEP
+email: kevinsheep@vip.qq.com
 description: Hello World Of KevinSheep's GitHub Page.
+minima:
+  date_format: "%Y %-b %-d"
 theme: jekyll-theme-dinky
+header_pages:
+- readme.html
 permalink: /404.md
