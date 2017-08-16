@@ -8,4 +8,6 @@ theme: minima
 header_pages:
 - readme.html
 
+paginate: 2
+
 # permalink: /404.md
