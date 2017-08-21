@@ -2,6 +2,9 @@ title: Blog Of WolfHole
 author: KEVIN SHEEP
 email: kevinsheep@vip.qq.com
 description: Hello World Of KevinSheep's GitHub Page.
+
+plugins:
+- jekyll-paginate
 paginate: 3
 
 minima:
