@@ -5,7 +5,8 @@ description: Hello World Of KevinSheep's GitHub Page.
 
 
 paginate: 3
-paginate_file: index.md
+paginate_path: "page:num"
+paginate_file: index.html
 
 minima:
   date_format: "%Y %b %d"
