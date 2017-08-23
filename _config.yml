@@ -5,7 +5,7 @@ description: Hello World Of KevinSheep's GitHub Page.
 
 
 paginate: 3
-paginate_path: "page:num"
+paginate_path: "index:num"
 paginate_file: index.html
 
 minima:
