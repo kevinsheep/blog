@@ -1,6 +1,5 @@
 ---
 layout: default
-paginate: 2
 ---
 
 <div class="home">
@@ -22,6 +21,11 @@ paginate: 2
       </li>
     {% endfor %}
   </ul>
+[{% site.posts %}]<br />
+[{% paginator.page %}]<br />
+[{% paginator.per_page %}]<br />
+[{% paginator.page * paginator.per_page %}]<br />
+
 
   <!-- Pagination links -->
   {% if paginator.total_pages > 1 %}
