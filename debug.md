@@ -1,8 +1,10 @@
 ---
+layout: default
 title: debug
 permalink: /debug/
 ---
 
+layout err ??
 
 {{ site.posts }}<br />
 {{ paginator.page }}<br />
