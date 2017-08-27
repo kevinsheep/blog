@@ -22,14 +22,6 @@ layout: default
     {% endfor %}
   </ul>
 
-####
-{{ site.posts }}<br />
-{{ paginator.page }}<br />
-{{ paginator.per_page }}<br />
-{{ paginator.page * paginator.per_page }}<br />
-####
-
-
   <!-- Pagination links -->
   {% if paginator.total_pages > 1 %}
   <div class="pagination">
@@ -52,9 +44,6 @@ layout: default
     {% endif %}
   </div>
   {% endif %}
-
-
-
 
 
 </div>

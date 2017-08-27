@@ -4,4 +4,8 @@ title: debug
 permalink: /debug/
 ---
 
-why not refresh??
+
+{{ site.posts }}<br />
+{{ paginator.page }}<br />
+{{ paginator.per_page }}<br />
+{{ paginator.page * paginator.per_page }}<br />
