@@ -21,10 +21,13 @@ layout: default
       </li>
     {% endfor %}
   </ul>
-[{% site.posts %}]<br />
-[{% paginator.page %}]<br />
-[{% paginator.per_page %}]<br />
-[{% paginator.page * paginator.per_page %}]<br />
+
+####
+{{ site.posts }}<br />
+{{ paginator.page }}<br />
+{{ paginator.per_page }}<br />
+{{ paginator.page * paginator.per_page }}<br />
+####
 
 
   <!-- Pagination links -->
