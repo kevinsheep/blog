@@ -31,16 +31,18 @@ layout: default
     {% for page in (1..paginator.total_pages) %}
         {% if page == paginator.page %}
           <span class="active">{{ page }}</span>
-        {% elsif page == 1 %}
-          <a href="{{ '/index.html' | prepend: site.baseurl | replace: '//', '/' }}">{{ page }}</a>
+        {% elseif page == 1 %}
+          <a href="{{ site.baseurl }}">{{ page }}</a>
         {% else %}
-          <a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a>
+          <a href="{{ site.paginate_path }}">{{ page }}</a>
         {% endif %}
     {% endfor %}
 
     {% if paginator.next_page %}
         <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">下一页</a>
     {% endif %}
+
+    <span>{% paginator.per_page %}篇文章/每页  共{% paginator.total_posts %}篇</span>
   </div>
   {% endif %}
 
