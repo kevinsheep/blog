@@ -31,7 +31,7 @@ layout: default
     {% for page in (1..paginator.total_pages) %}
         {% if page == paginator.page %}
           <span class="active">{{ page }}</span>
-        {% elseif page == 1 %}
+        {% elsif page == 1 %}
           <a href="{{ site.baseurl }}">{{ page }}</a>
         {% else %}
           <a href="{{ site.paginate_path }}">{{ page }}</a>
