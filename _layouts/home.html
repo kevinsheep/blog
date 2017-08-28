@@ -42,7 +42,7 @@ layout: default
         <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">下一页</a>
     {% endif %}
 
-    <span>{% paginator.per_page %}篇文章/每页  共{% paginator.total_posts %}篇</span>
+    <span>{{ paginator.per_page }}篇文章/每页  共{{ paginator.total_posts }}篇</span>
   </div>
   {% endif %}
 
