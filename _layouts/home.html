@@ -8,7 +8,7 @@ layout: default
   <h1 class="page-heading">Posts</h1>
   
   <ul class="post-list">
-    {% for post in site.posts %}
+    {% for post in paginator.posts %}
       <li>
         {% assign date_format = site.minima.date_format | default: "%YYYY-%MM-%DD HH:MM" %}
         <span class="post-meta">{{ post.date | date: date_format }}</span>
