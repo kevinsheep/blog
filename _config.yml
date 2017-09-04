@@ -7,7 +7,7 @@ description: Hello World Of KevinSheep's GitHub Page.
 paginate: 2
 paginate_path: "index:num"
 paginate_file: index.html
-baseurl: /
+baseurl: "/"
 
 minima:
   date_format: "%Y %b %d"
