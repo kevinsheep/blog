@@ -22,9 +22,9 @@ layout: default
   </ul>
 
   {% if temp == "" %}
-    {% assign temp = "/" %}
+    [1] {% assign temp = "/" %}
   {% else %}
-    {% assign temp = site.baseurl %}
+    [2] {% assign temp = site.baseurl %}
   {% endif %}
 
  -- {{ temp }} --
