@@ -22,9 +22,9 @@ layout: default
   </ul>
 
   {% if site.baseurl == "" %}
-    [1] {% assign temp = "/" %}
+    {% assign temp = "/" %}
   {% else %}
-    [2] {% assign temp = site.baseurl %}
+    {% assign temp = site.baseurl %}
   {% endif %}
 
   <!-- Pagination links -->
@@ -38,7 +38,7 @@ layout: default
         {% if page == paginator.page %}
           <span class="active">{{ page }}</span>
         {% elsif page == 1 %}
-          <a href="{{ temp }}">{{ page }} {{ temp }}</a>
+          <a href="{{ temp }}">{{ page }}</a>
         {% else %}
           <a href="{{ site.paginate_path | prepend: temp | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a>
         {% endif %}
@@ -48,7 +48,7 @@ layout: default
         <a href="{{ paginator.next_page_path | prepend: temp | replace: '//', '/' }}">下一页</a>
     {% endif %}
 
-    <span>{{ paginator.per_page }}篇文章/每页  共{{ paginator.total_posts }}篇</span>
+    <span>共{{ paginator.total_posts }}篇</span>
   </div>
   {% endif %}
 
