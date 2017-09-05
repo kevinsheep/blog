@@ -21,14 +21,11 @@ layout: default
     {% endfor %}
   </ul>
 
-  {% if temp == "" %}
+  {% if site.baseurl == "" %}
     [1] {% assign temp = "/" %}
   {% else %}
     [2] {% assign temp = site.baseurl %}
   {% endif %}
-
-[{{ temp }}]
-[{{ site.baseurl }}]
 
   <!-- Pagination links -->
   {% if paginator.total_pages > 1 %}
