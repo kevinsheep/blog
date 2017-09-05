@@ -27,6 +27,8 @@ layout: default
     {% assign temp = site.baseurl %}
   {% endif %}
 
+ -- {{ temp }} --
+
   <!-- Pagination links -->
   {% if paginator.total_pages > 1 %}
   <div class="pagination">
@@ -38,7 +40,7 @@ layout: default
         {% if page == paginator.page %}
           <span class="active">{{ page }}</span>
         {% elsif page == 1 %}
-          <a href="{{ temp }}">{{ page }}</a>
+          <a href="{{ temp }}">{{ page }} {{ temp }}</a>
         {% else %}
           <a href="{{ site.paginate_path | prepend: temp | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a>
         {% endif %}
