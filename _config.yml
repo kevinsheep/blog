@@ -4,7 +4,7 @@ email: kevinsheep@vip.qq.com
 description: Hello World Of KevinSheep's GitHub Page.
 
 
-paginate: 2
+paginate: 5
 paginate_path: "index:num"
 paginate_file: index.html
 baseurl: /
