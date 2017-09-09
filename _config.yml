@@ -11,7 +11,7 @@ baseurl: /
 
 minima:
   date_format: "%Y %b %d"
-theme: minima
+theme: dinky
 header_pages:
 - readme.html
 
