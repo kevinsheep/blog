@@ -15,5 +15,6 @@ theme: dinky
 header_pages:
 - readme.html
 
+permalink: pretty
 
 # permalink: /404.md
