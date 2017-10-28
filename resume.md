@@ -54,6 +54,7 @@ permalink: /job/
 - Chart.js
 - node.js
 - Razor Template
+- git
 - Markdown/Liquid/Jekyll
 - chrome插件开发
 - C/C++/J2ME
@@ -75,7 +76,7 @@ permalink: /job/
 - 英语
 
 ## 不一定被重视的证书
-- CET-6（score: 425)
+- CET-6（score: 425）
 - 信息产业部软件设计师证书（中级）
 
 ## 服务过的客户
