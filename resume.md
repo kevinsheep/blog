@@ -4,6 +4,7 @@ title: Resume
 permalink: /job/
 ---
 ## 基本资料
+- 杨伟胜
 - 男/33岁/165cm/55kg/已婚
 - 目前居住地/户口所在地：广东-佛山-顺德区-勒流
 - 13316312483
@@ -54,7 +55,6 @@ permalink: /job/
 - Chart.js
 - node.js
 - Razor Template
-- git
 - Markdown/Liquid/Jekyll
 - chrome插件开发
 - C/C++/J2ME
