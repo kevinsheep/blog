@@ -57,7 +57,7 @@ permalink: /job/
 - node.js
 - Razor Template
 - Markdown
-- Liquid/Jekyll
+- GitHub Pages/Liquid/Jekyll
 - chrome插件开发
 - C/C++/J2ME
 - MSSQL
