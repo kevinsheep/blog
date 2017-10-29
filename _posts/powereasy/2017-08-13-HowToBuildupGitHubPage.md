@@ -1,5 +1,6 @@
 ---
 layout: post
+title: 如何在GitHub Page搭建博客
 ---
 
 # 如何在GitHub Page搭建博客
