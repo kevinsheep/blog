@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <style>
+      html, body { }
+      #drawing { width: 100%; height: 700px; border: 1px dotted #ccc; background: #f0f0f0 url("demo.png") center no-repeat; }
+    </style>
+    <link href="./layui/css/layui.css" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script src="./layui/layui.js"></script>
+    <script src="svg.min.js"></script>
+  </head>
+  <body>
+    <div id="drawing"></div>
+    <script>
+    //! function() {
+      if (! SVG.supported) {
+        alert('SVG not supported');
+      }
+
+      var $obj = $("#drawing");
+      var draw = SVG('drawing').size($obj.width(), $obj.height());
+      var box = draw.viewbox();
+      var strokeWidth = 1;
+      var pArray = new Array();
+      var curPoint;
+      var thisPolygon = draw.polygon();
+      var polyStr;
+      var isDrawing = false;//未在绘图
+      var _time = null;
+      var dbltimeout = 400;//双击速度控制
+
+      $obj.on('mousemove', function(e) {
+        if(isDrawing){
+          curPoint = e.offsetX + "," + e.offsetY;
+          if(pArray.length > 1){
+            polyStr = pArray.join(' ');
+            draw.clear();
+            thisPolygon = draw.polygon(polyStr + ' ' + curPoint).fill({color: '#c00', opacity:0.6}).stroke({ width: strokeWidth })
+          }else if(pArray.length == 1){
+            polyStr = pArray.join(' ');
+            draw.clear();
+            thisPolygon = draw.line(polyStr + ' ' + curPoint).fill('#c00').stroke({ width: strokeWidth })
+          }
+        }
+      });//on mousemove
+
+      $obj.on('click', function(e) {
+
+        clearTimeout(_time);
+        _time = setTimeout(function(){
+          if(! isDrawing && pArray.length == 0){
+            isDrawing = true;
+          }
+
+          if(isDrawing){
+            curPoint = e.offsetX + "," + e.offsetY;
+            pArray.push(curPoint);
+            polyStr = pArray.join(' ');
+
+            console.log(polyStr);
+
+            if(pArray.length > 2){
+              draw.clear();
+              thisPolygon = draw.polygon(polyStr).fill({color: '#c00', opacity:0.6}).stroke({ width: strokeWidth })
+            }else if(pArray.length == 2){
+              thisPolygon = draw.line(polyStr).fill('#c00').stroke({ width: strokeWidth })
+            }
+          }
+        }, dbltimeout);
+
+      });//on click
+
+      $obj.on('dblclick', function(e) {
+        if(isDrawing){
+          isDrawing = false;
+          $(this).css('cursor', 'pointer')
+        }
+        thisPolygon.mouseover(function(e) {
+          this.fill({color: '#f06', opacity:0.6});
+        });
+        thisPolygon.mouseout(function(e){
+          this.fill({color: '#c00', opacity:0.6});
+        });
+
+        thisPolygon.click(function(e) {
+          //模块化加载layui.js
+          layui.use(['layer', 'form'], function(){
+            var layer = layui.layer
+            layer.open({
+              title: false,
+              type: 1,
+              offset: 'auto',
+              id: 'layerDemo-auto',
+              content: '<div style="padding: 20px 100px;">' + pArray.join(' ') + '</div>',
+              btn: 'OK',
+              btnAlign: 'c', //按钮居中
+              shade: 0, //不显示遮罩
+              yes: function(){
+                layer.closeAll();
+              }
+            });           
+          });
+        });
+      });//on dblclick
+
+
+      $obj.on('contextmenu', function(){
+          return false;
+      });
+
+      $obj.on('mousedown', function(e) {
+        if (3 == e.which) {
+          draw.clear();
+          pArray = [];
+        }
+      });
+
+
+
+
+    //}();
+    </script>
+  </body>
+</html>
