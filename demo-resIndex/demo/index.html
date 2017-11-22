@@ -3,8 +3,6 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title>产业资源共享平台</title>
-    <link rel="stylesheet" href="../jquery-easyui-1.5.2/themes/default/easyui.css">
-    <link rel="stylesheet" href="../jquery-easyui-1.5.2/themes/icon.css">
     <link rel="stylesheet" href="../css/common.css">
     <link rel="stylesheet" href="../css/index.css">
 </head>
@@ -40,16 +38,8 @@
 
 
 </body>
-<script src="../js/jquery.min.js"></script>
-<script src="../jquery-easyui-1.5.2/jquery.easyui.min.js"></script>
 <script src="../js/jquery.parallax.min.js"></script>
 <script>
-
-    $(".dloadbox-nav ul li a").click(function(){
-        var k=$(this).parent().index();
-        $(this).addClass("selload").parent("li").siblings().children("a").removeClass("selload")
-        $(".dloadbox-box .dloadbox-boxli").eq(k).show().siblings().hide();
-    })
 
     $("#entryPage").parallax();
 
