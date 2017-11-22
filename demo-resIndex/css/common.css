@@ -1,0 +1,16 @@
+*{ margin:0; padding:0; outline:none; font-family:Microsoft YaHei, sans-serif; }
+html, body, ul, li, ol, dl, dd, dt, p, h1, h2, h3, h4, h5, h6, form, fieldset, legend, img {margin: 0;padding: 0;}
+.clearfix:after { visibility: hidden; display: block; font-size: 0; content: " "; clear: both; height: 0; }
+.clearfix { display: inline-table; }
+.clearfix { display: block; }
+a{ text-decoration:none; }
+ul{ list-style:none; }
+em,i{ font-style:normal; }
+fieldset, img, input, button {border: none;padding: 0;margin: 0;outline-style: none;}
+ul, ol {list-style: none;}
+img {border: 0;vertical-align: middle;}
+.w{max-width: 1360px;min-width:1200px;margin: 0 auto;}
+.clearfix::before,
+.clearfix::after{content: "";display: block;height: 0;line-height: 0px;clear: both;visibility: hidden;}
+.fl{float:left;}
+.fr{float:right;}

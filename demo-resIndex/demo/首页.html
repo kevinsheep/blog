@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>产业资源共享平台</title>
+    <link rel="stylesheet" href="../jquery-easyui-1.5.2/themes/default/easyui.css">
+    <link rel="stylesheet" href="../jquery-easyui-1.5.2/themes/icon.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/index.css">
+</head>
+<body>
+<header class="navbox">
+    <div class="w">
+        <div class="navbox-left fl">
+            <span class="navlogo fl"></span><i></i>
+            <span class="navico fl"></span><i></i>
+            <span class="navtit fl">产业资源共享平台</span>
+        </div>
+        <div class="navbox-right fr">
+            <a class="navcle fr">退出</a> <i></i>
+            <a class="navuser fr">用户名</a>
+        </div>
+    </div>
+</header>
+
+<section id="entryPage">
+	<div class="w">
+		<ul class="bmbtn">
+			<li id="groupRes">
+				<i class="layer" data-depth="-0.1"></i>
+				<a href="###">集团资源</a>
+			</li>
+			<li id="branchRes">
+				<i class="layer" data-depth="0.1"></i>
+				<a href="###">子公司资源</a>
+			</li>
+		</ul>
+	</div>
+</section>
+
+
+</body>
+<script src="../js/jquery.min.js"></script>
+<script src="../jquery-easyui-1.5.2/jquery.easyui.min.js"></script>
+<script src="../js/jquery.parallax.min.js"></script>
+<script>
+
+    $(".dloadbox-nav ul li a").click(function(){
+        var k=$(this).parent().index();
+        $(this).addClass("selload").parent("li").siblings().children("a").removeClass("selload")
+        $(".dloadbox-box .dloadbox-boxli").eq(k).show().siblings().hide();
+    })
+
+    $("#entryPage").parallax();
+
+</script>
+</html>
