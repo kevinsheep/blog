@@ -42,7 +42,20 @@
 <script src="../js/jquery.parallax.min.js"></script>
 <script>
 
-    $("#entryPage").parallax();
+    $("#entryPage li").parallax();
+
+    MINWIDTH = 1200;
+    var resizeHandler = function() {
+        var w = $("#entryPage .bmbtn").width();
+        if(w >= MINWIDTH){
+            var MarginLR = (w - 730) / 4;
+            $("#entryPage li").css({'marginLeft': MarginLR, 'marginRight': MarginLR});
+        }
+    };
+    $(window).resize(function() {
+        resizeHandler();
+    });
+    resizeHandler();
 
 </script>
 </html>
