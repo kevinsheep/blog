@@ -10,8 +10,8 @@ var svgPolygon = (function() {
     return false;
   }
 
-  var SWIDTH = 1200;            //画布宽度
-  var SHEIGHT = 700;            //画布高度
+  var SWIDTH = 1000;            //画布宽度
+  var SHEIGHT = 500;            //画布高度
   var STOKEWIDTH = 2;           //描边线粗
   var DOTSIZE = 8;              //顶点尺寸
   var PNUMBGSIZE = 40;          //序号背景尺寸
@@ -65,6 +65,14 @@ var svgPolygon = (function() {
   var DrawNum = function (t, curPoint, color) {
     var thiscolor = (color != undefined) ? color : '#fff';
     return oDraw[activeDrawImg].text(t).move(curPoint.x, curPoint.y).fill(thiscolor).font({size: PNUMSIZE, leading: '1em', anchor: 'middle', family: 'sans-serif'});
+  };
+  var resize = function(pstr, scale){
+    var parr = pstr.split(' ');
+    var calc = function(pos){
+      var a = pos.split(',');
+      return parseInt(a[0]) * scale + ',' + parseInt(a[1]) * scale;
+    };
+    return parr.map(calc).join(' ');
   };
 
   return {
@@ -345,12 +353,17 @@ var svgPolygon = (function() {
       }
     }
 
-    ,loadPolygon: function (imgId, posStr, color, num, polyId) {
+    ,loadPolygon: function (imgId, posStr, color, num, polyId, scale) {
       var obj = document.createElement("div");
       var $obj = $(obj);
       //var oDraw[activeDrawImg] = SVG(obj).size(SWIDTH, SHEIGHT);
       //$obj.addClass(defStageCls);
       //$("#" + imgId).parent().after($obj);
+
+      if(scale != undefined && scale != 1){
+        //console.log(resize(posStr, scale));
+        posStr = resize(posStr, scale);
+      }
 
       polyDotsData.push(posStr);
       //绘制多边形
