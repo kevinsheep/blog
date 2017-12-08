@@ -1,0 +1,189 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <title></title>
+    <link href="../jquery-easyui/themes/default/easyui.css" type="text/css" rel="stylesheet">
+    <link href="demo.css" type="text/css" rel="stylesheet">
+    <script type="text/javascript" src="../jquery.min.js"></script>
+    <script type="text/javascript" src="../jquery-easyui/jquery.easyui.min.js"></script>
+    <script type="text/javascript" src="js/svg.min.js"></script>
+    <script type="text/javascript" src="js/svg.polygon.js"></script>
+  </head>
+  <body>
+
+
+    <div id="infobox">
+      <h3>信息展示区域</h3>
+      <p>左键单击描点，右键确认</p>
+      <dl>
+        <dt>颜色</dt>
+        <dd id="info1">　</dd>
+      </dl>
+      <dl>
+        <dt>多边形数据</dt>
+        <dd id="info2"></dd>
+      </dl>
+      <dl>
+        <dt>多边形PolyId</dt>
+        <dd id="info3"></dd>
+      </dl>
+
+
+      <div class="btn">
+        <span id="enterDrawMode">画一个</span>
+        <span id="delLast">删一个</span>
+        <span id="delDraws">清屏</span>
+        <span id="saveDraws">保存</span>
+        <span id="loadDraws">加载图形</span>
+        <span id="loadEvents">加载事件</span>
+      </div>
+    </div>
+
+
+    <div class="easyui-tabs" id="localImag">
+        <div class="panel-htop" title="Tab1" style="display:none;">
+            <img id="img_12344125" src="img/demo.jpg" alt="">
+        </div>
+        <div class="panel-htop" title="Tab2" style="display:none;">
+            <img id="img_22344515" src="img/demo.png" alt="">
+        </div>
+    </div>
+
+    <div id="polyEMenu" class="">
+        <div class="menu-item" id="toEdit">编辑</div>
+        <div class="menu-sep"></div>
+        <div class="menu-item" id="cancelEdit">取消编辑</div>
+        <div class="menu-sep"></div>
+        <div class="menu-item" id="toDelete">删除</div>
+    </div>
+
+<div id="showbox">
+  弹出信息演示
+</div>
+
+
+    <script>
+
+      $(window).on("load", function() {
+        svgPolygon.init("#localImag img:visible");
+
+        $("#localImag .tabs li").each(function(index, el) {
+          $(el).click(function(event) {
+            if(svgPolygon.getSaveState()){
+              console.log(index);
+              var nImgId = $('#localImag img:eq(' + index + ')').attr("id");
+              console.log(nImgId);
+              svgPolygon.init("#" + nImgId);
+              svgPolygon.activeDraw(nImgId);
+            }else{
+              alert("未保存");
+              return false;
+            }
+          });
+          
+        });
+
+        $(".drawbox").each(function(index, el){
+          var $img = $(el).siblings().find('img');
+          $(el).css({
+            width: $img.width(),
+            height: $img.height()
+          });
+        });
+      });
+
+      //多边形事件
+      var reloadPolyEvent = function () {
+        $(".polyClass").mouseover(function(e) {
+            // var vx = e.offsetX + 100;
+            // var vy = e.offsetY - 200;
+            // if(vx + 300 > $(window).width()){
+            //   vx = e.offsetX - 300;
+            // }
+            // $("#showbox").show();
+            // $('#showbox').css({left: vx, top: vy});        
+            //this.fill({opacity: FILL_OPACITY - .1});
+          })
+          .mouseout(function(e){
+            $("#showbox").hide();
+            //this.fill({opacity: FILL_OPACITY});
+          })
+          .mousedown(function(e) {
+            if(3 == e.which){
+              $('#polyEMenu').show();
+              $('#polyEMenu').css({
+                left: e.offsetX,
+                top: e.offsetY
+              })
+              .data("polyId", $(this).get(0).getAttribute('polyId'));
+              return false;
+            }
+        });
+      };
+
+      $("#enterDrawMode").click(function() {
+        if(svgPolygon.getSaveState()){
+          svgPolygon.switchDrawMode();
+        }else{
+          alert("未保存");
+        }
+      });
+      $("#delLast").click(function() {
+        svgPolygon.delPoly();
+      });
+
+      $("#delDraws").click(function() {
+        svgPolygon.delDraws();
+      });
+      $("#saveDraws").click(function() {
+        $("#info1").css("backgroundColor", svgPolygon.getColor());
+        $("#info2").text(svgPolygon.getLastDots())
+        $("#info3").text(svgPolygon.getPolyId())
+      });
+      $("#loadDraws").click(function() {
+        var posStr = $("#info2").text();
+        if(posStr != "" && posStr != undefined){
+          svgPolygon.loadPolygon("img_12344125", posStr, $("#info1").css("backgroundColor"), 1, $("#info3").text());
+        }else{
+          alert("没数据");
+        }
+      });
+
+      $("#loadEvents").click(reloadPolyEvent);
+
+      $("#polyEMenu").contextmenu(function(){//禁用右键默认事件
+        return false;
+      });
+      $("#polyEMenu .menu-item").hover(function() {
+        $(this).addClass('on');
+      }, function() {
+        $(this).removeClass('on');
+      });
+
+      $("#toEdit").click(function() {
+        svgPolygon.switchEditMode();
+        $('#polyEMenu').hide();
+      });
+      $("#toCancelEdit").click(function() {
+        $('#polyEMenu').hide();
+      });
+      $("#toDelete").click(function() {
+        //console.log($('#polyEMenu').data("polyId"));
+        svgPolygon.delPolyById($('#polyEMenu').data("polyId"));
+        $('#polyEMenu').hide();
+      });
+
+
+// $('#localImag').tabs({
+//     onSelect:function(title){
+//         alert(title+' is selected');
+//         return false;
+//     }
+// });
+    </script>
+  </body>
+</html>
