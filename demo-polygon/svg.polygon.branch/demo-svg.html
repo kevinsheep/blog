@@ -44,7 +44,7 @@
   </dl>
   <dl>
     <dt>多边形数据</dt>
-    <dd id="info2">30,145 61,53 138,74 181,106 169,227 67,229 19,192</dd>
+    <dd id="info2">313,175 766,182 862,204 881,229 891,269 836,319 712,390 630,462 573,498 372,350</dd>
   </dl>
   <dl>
     <dt>多边形PolyId</dt>
@@ -147,8 +147,10 @@
       });
       $("#loadDraws").click(function() {
         var posStr = $("#info2").text();
+        var w = $("#localImag .panel img").width();
+        var s = w / 1000;
         if(posStr != "" && posStr != undefined){
-          svgPolygon.loadPolygon("img_12344125", posStr, $("#info1").css("backgroundColor"), 1, $("#info3").text());
+          svgPolygon.loadPolygon("img_12344125", posStr, $("#info1").css("backgroundColor"), 1, $("#info3").text(), s);
         }else{
           alert("没数据");
         }

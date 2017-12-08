@@ -21,7 +21,8 @@ p { margin: 0; }
 #infobox .btn span { float: left; width: 88px; margin-right: 8px; margin-top: 8px; background-color: #c00; color: #fff; text-align: center; height: 30px; line-height: 30px; cursor: pointer; }
 
 #localImag { position: relative; margin-bottom: 5px; }
-#localImag .panel img { height: 500px; width: auto; }
+#localImag .panel img { height: auto; width: 100%; }
+/*#localImag .panel img { height: 450; width: auto; }*/
 .drawbox { position: absolute; top: 30px; left: 1px; height: 500px; background: url(img/mask-white.png) center no-repeat; -webkit-background-size: 100% 100%; background-size: 100% 100%; }
 #polyEMenu { position: absolute; width: 80px; height: 80px; overflow: hidden; display: none; left: 200px; top: 200px; color: #444; padding: 2px; background-color: #fff; border: 1px solid #ddd; -moz-border-radius: 5px 5px 5px 5px; -webkit-border-radius: 5px 5px 5px 5px; border-radius: 5px 5px 5px 5px; -moz-box-shadow: 2px 2px 4px #666; -webkit-box-shadow: 2px 2px 4px #666; box-shadow: 2px 2px 4px #666; filter: progid:DXImageTransform.Microsoft.Blur(pixelRadius=2, MakeShadow=false, ShadowOpacity=0.2); }
 #polyEMenu .menu-sep { margin-left: 3px; }
