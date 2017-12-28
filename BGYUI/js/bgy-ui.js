@@ -1,5 +1,5 @@
 /**
- * BGY-UI 1.0
+ * BGY-UI 0.9.5
  *
  */
 ;
@@ -9,7 +9,7 @@
 
 })();
 
-
+//按钮字数判断处理
 $(window).on('load', function() {
 	$(".bgy-btn").each(function(index, el) {
 		var $el = $(el), 

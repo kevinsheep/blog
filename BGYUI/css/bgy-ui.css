@@ -1,5 +1,6 @@
+@charset "utf-8";
 /**
- * BGY-UI 1.0
+ * BGY-UI 0.9.5
  * 表单等难以自适应的部件，基于1366*768尺寸的屏幕
  */
 
@@ -10,14 +11,28 @@ a:hover,
 a:visited,
 a:active,
 a:focus { text-decoration: none; }
-
+hr { margin: 20px 0; border: 0; background: #dbdbdb; height: 1px; }
+hr.vr { width: 1px; }
 .shadow { box-shadow: 0 0 8px rgba(0,0,0,.1); }
+.border { border: 1px solid #DAE1E8; }
+.state-going,
+.state-publish,
+.state-feedback,
+.state-nofeedback { color: #4C5E70; font-size: 12px; }
+.state-going:before,
+.state-publish:before,
+.state-feedback:before,
+.state-nofeedback:before { display: inline-block; vertical-align: middle; margin: 0 6px; border-radius: 50%; background-color: #2DC0E8; width: 15px; height: 15px; line-height: 15px; content: ''; }
+.state-publish:before { background-color: #7B8DA0; }
+.state-feedback:before { background-color: #029602; }
+.state-nofeedback:before { background-color: #FF0000; }
 
 /* 字体图标绑定 */
 @font-face { font-family: 'ico-bgy'; src: url('../fonts/ico-bgy.eot?5s12nb'); src: url('../fonts/ico-bgy.eot?5s12nb#iefix') format('embedded-opentype'), url('../fonts/ico-bgy.ttf?5s12nb') format('truetype'), url('../fonts/ico-bgy.woff?5s12nb') format('woff'), url('../fonts/ico-bgy.svg?5s12nb#ico-bgy') format('svg'); font-weight: normal; font-style: normal; }
 [class*="icon"],
 .bgy-path,
-.bgy-select { font-family: 'ico-bgy' !important; speak: none; font-style: normal; font-weight: normal; font-variant: normal; text-transform: none; line-height: 1; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+.bgy-select,
+.bgy-tree { font-family: 'ico-bgy' !important; speak: none; font-style: normal; font-weight: normal; font-variant: normal; text-transform: none; line-height: 1; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
 
 /* 面包屑 */
 .bgy-path { color: #4C5E70; font-size: 14px; line-height: 22px; padding: 0; list-style: none; }
@@ -27,15 +42,75 @@ a:focus { text-decoration: none; }
 .bgy-path li+li:before { color: #9C9C9C; padding: 0 8px; content: "\e909"; font-size: 12px; }
 
 /* 选项卡 */
-.tabs-header { border: 0 solid; }
-.tabs { padding-left: 0px; height: 35px !important; border: 0 solid; }
-.tabs li { margin: 0px; }
-.tabs li a { width: 200px !important; height: 35px !important; line-height: 35px !important; }
-.tabs li a.tabs-inner { font-size: 14px; color: #1A9CC4; background-color: #ffffff; }
-.tabs .tabs-last .tabs-inner { border-width: 1px 1px 1px 0; border-color: #DAE1E8; border-style: solid; }
-.tabs li.tabs-selected a.tabs-inner { border-bottom: 1px solid #dae1e8; background-color: #f1f1f1; font-weight: normal; }
-.tabs li a:hover { background-color: #FFFFFF; color: #1A9CC4; font-weight: normal; }
-.tabs-panels { border-width: 0; }
+.easyui-tabs.bgy-tabs { width: 600px; }
+.easyui-tabs.bgy-tabs .tabs-header { border: 0; }
+.easyui-tabs.bgy-tabs .tabs { padding-left: 0px; height: 35px !important; }
+.easyui-tabs.bgy-tabs .tabs li { margin: 0px; }
+.easyui-tabs.bgy-tabs .tabs-inner { width: 200px !important; height: 35px !important; line-height: 35px !important; color: #4C5E70; background-color: #F1F1F1; font-weight: normal; }
+.easyui-tabs.bgy-tabs .tabs-inner { border-right-width: 0; }
+.easyui-tabs.bgy-tabs .tabs-inner:hover { background-color: #1A9CC4; }
+.easyui-tabs.bgy-tabs .tabs-inner:active { background-color: #1686A7; }
+
+.easyui-tabs.bgy-tabs .tabs-selected .tabs-inner { color: #1A9CC4;  border-color: #DAE1E8; background-color: #fff; font-weight: normal; }
+.easyui-tabs.bgy-tabs .tabs-last .tabs-inner { border-right-width: 1px; }
+.easyui-tabs.bgy-tabs .tabs-title { font-size: 14px; }
+
+/* 树形控件 */
+.bgy-tree .tree-node { height: auto; padding: 10px 0; }
+.bgy-tree .tree-node-hover,
+.bgy-tree .tree-node-selected { background-color: transparent; }
+.bgy-tree .tree-expanded,
+.bgy-tree .tree-collapsed,
+.bgy-tree .tree-checkbox0,
+.bgy-tree .tree-checkbox1,
+.bgy-tree .tree-checkbox2 { background: none; width: 22px; height: 20px; }
+.bgy-tree .tree-icon { display: none; }
+.bgy-tree .tree-title { color: #4C5E70; }
+.bgy-tree .tree-expanded:before { content: '\e907'; color: #7B8DA0; font-size: 12px; line-height: 16px; }
+.bgy-tree .tree-collapsed:before { content: '\e911'; color: #7B8DA0; font-size: 16px; line-height: 18px; }
+.bgy-tree .tree-checkbox:before { text-align: center; display: inline-block; content: ''; border-radius: 4px; border: 1px solid #DBDBDB; width: 20px; height: 20px; margin-right: 5px; }
+.bgy-tree .tree-checkbox1:before { content: '\e90b'; color: #797979; line-height: 18px; }
+.bgy-tree .tree-checkbox2:before { content: '\e906'; color: #7B8DA0; font-size: 13px; line-height: 18px; }
+
+/* 分页 */
+.l-btn-plain { width: 36px; height: 30px; border: 0px solid #FFFFFF; margin: 0 2px; padding: 0; text-align: center; vertical-align: middle; }
+.pagination-links .l-btn-plain { width: 34px; height: 28px; border: 1px solid #dbdbdb; }
+.l-btn-left { width: 36px; height: 30px; }
+.l-btn-disabled .pagination-prev,
+.l-btn-disabled .pagination-next { width: 34px; height: 28px; border: 1px solid #1a9cc4; background-color: #1a9cc4; }
+.l-btn-disabled .pagination-first,
+.l-btn-disabled .pagination-last { width: 34px; height: 28px; border: 1px solid #1a9cc4; background-color: #1a9cc4; }
+.l-btn-disabled .pagination-prev:before,
+.l-btn-disabled .pagination-next:before { color: #FFFFFF; }
+.l-btn-disabled .pagination-first:before,
+.l-btn-disabled .pagination-last:before { color: #FFFFFF; }
+.l-btn-icon-left .l-btn-icon { left: 0; }
+.pagination-next,
+.pagination-prev { background: none; width: 32px; left: 0px; height: 28px; background-color: #FFFFFF; color: #1a9cc4; top: 8px; border: 2px solid #1a9cc4; }
+.pagination-first,
+.pagination-last { background: none; width: 34px; left: 0px; background-color: #FFFFFF; height: 28px; top: 8px; border: 1px solid #dbdbdb; color: #4C5E70; }
+.pagination-first:before { width: 34px; line-height: 28px; text-align: center; display: block; content: '首页'; }
+.pagination-prev:after,
+.pagination-next:after { background-color: #1a9cc4; color: #FFFFFF; }
+.pagination-last:before { width: 34px; line-height: 28px; text-align: center; display: block; content: '末页'; }
+.pagination-next:before { width: 34px; content: '\e909'; color: #1a9cc4; line-height: 24px; margin: auto; margin-left: 6px; font-weight: bold; }
+.pagination-prev:before { content: '\e908'; color: #1a9cc4; line-height: 24px; margin: auto; margin-left: 6px; font-weight: bold; }
+.l-btn-left .l-btn-empty { display: none; width: 0; }
+.l-btn-plain-selected:link,
+.l-btn-plain-selected:hover { background: #1a9cc4; color: #FFFFFF; border: 1px solid #1a9cc4; }
+.pagination-links .l-btn-left { width: 34px; height: 28px; }
+.pagination-links .l-btn-text { width: 34px; line-height: 28px; }
+.l-btn:hover { border: 0 solid; }
+.pagination-links .l-btn:hover { border: 1px solid #dbdbdb; }
+.l-btn-disabled .l-btn-plain-disabled { background: #1a9cc4; color: #FFFFFF; }
+.pagination-prev:hover,
+.pagination-next:hover,
+.pagination-first:hover,
+.pagination-last:hover { background-color: #1a9cc4; }
+.pagination-prev:hover:before,
+.pagination-next:hover:before { background-color: #1a9cc4; color: #FFFFFF; }
+.pagination-first:hover:before,
+.pagination-last:hover:before { background-color: #1a9cc4; color: #FFFFFF; }
 
 /* 图标 */
 .bgy-icon-check:before { content: "\e900"; }
@@ -46,7 +121,8 @@ a:focus { text-decoration: none; }
 .bgy-icon-authorize:before { content: "\e905"; }
 
 .bgy-icon-arrowR:before { content: "\e909"; color: #9C9C9C; font-size: 12px; }
-
+.bgy-icon-arrowDGray:before { content: "\e90e"; color: #999; font-size: 12px; }
+.bgy-icon-arrowDBlue:before { content: "\e90e"; color: #1A9CC4; font-size: 12px; }
 
 [class^="bgy-icon-"] { color: #778a9b }
 [class^="bgy-icon-"]:before { margin-right: 6px; }
@@ -69,20 +145,23 @@ a:focus { text-decoration: none; }
 /* 文字规范及输入框 */
 .bgy-tit { font-size: 18px; font-weight: normal; line-height: 150%; color: #4C5E70; }
 .bgy-txt { font-size: 12px; line-height: 150%; color: #4C5E70; }
+.bgy-txt-inverse { background: #1A9CC4; color: #fff; }
+.bgy-txt-gray { background: #ededed; color: #333; }
 .bgy-info { font-size: 12px; line-height: 150%; color: #7B8DA0; }
 
 /* 表单 */
 /* v2.0 考虑统一父容器样式 */
 .bgy-form { padding: 20px; width: 1000px; }
-.bgy-form ul { margin: 0 0 0 -100px; overflow: hidden; zoom: 1; }
+.bgy-form ul { margin: 0 -5px 0 -95px; overflow: hidden; zoom: 1; }
 .bgy-form li { float: left; width: 490px; margin-left: 20px; list-style: none; padding: 0 0 20px 0; }
 .bgy-form .bgy-input label { text-overflow: ellipsis; overflow: hidden; white-space:nowrap; }
 .bgy-form .btns { text-align: center; }
 .bgy-input { line-height: 30px; }
 .bgy-input label,
 .bgy-textarea label,
-.bgy-select label { text-align: right; width: 120px; display: inline-block; font-size: 12px; margin-right: 22px; height: 30px; line-height: 30px; color: #4C5E70; font-weight: normal; vertical-align: middle; }
+.bgy-select label { text-align: right; width: 120px; display: inline-block; font-size: 12px; margin: 0 20px 0 0; height: 30px; line-height: 30px; color: #4C5E70; font-weight: normal; vertical-align: middle; }
 .bgy-input input { display: inline-block; height: 30px; width: 340px; line-height: 30px; padding: 0 5px; font-size: 12px; color: #a7a7a8; border: 1px solid #DAE1E8; vertical-align: middle; }
+.bgy-input input[disabled='disabled'] { background-color: #f4f4f4; }
 .bgy-input .info { margin-left: 10px; vertical-align: middle; }
 .bgy-textarea label,
 .bgy-select label { vertical-align: top; }
@@ -97,8 +176,8 @@ a:focus { text-decoration: none; }
   
 }
 .bgy-select select::-ms-expand { display: none; }
-.bgy-select select:after { content: "^"; }
 
 .required label:after { content: "*"; color: #f00; font-size: 14px; }
-.error input { border-color: #DAE1E8; background-color: #FEE; }
+.error input { background-color: #FEE; }
 .error .info { color: #f00; }
+input.prompt { content: "dd"; background: url('../images/icon-prompt.png') no-repeat right center; cursor: pointer; }

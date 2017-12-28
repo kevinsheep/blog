@@ -17,6 +17,9 @@
     <link rel="stylesheet" href="./css/docs.css">
     <link rel="stylesheet" href="./css/bgy-ui.css">
     <link rel="stylesheet" href="./css/demo.css">
+    <script src="./js/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="./jquery-easyui/jquery.easyui.min.js"></script>
   </head>
   <body>
     <div class="container">
@@ -68,13 +71,42 @@
         <h3>选项卡</h3>
         <div class="bs-callout bs-callout-info">
             <span class="label label-primary">开发维护：何青杏</span>
-            <span class="label label-danger">优先开发</span>
+            <span class="label label-info">基于EasyUI</span>
+            <span class="label label-success">开发完成</span>
         </div>
+        <div class="bs-example">
+            <div class="easyui-tabs bgy-tabs">
+              <div title="区域各项目巡检评分情况">
+              区域各项目巡检评分情况
+              </div>
+              <div title="区域各项目巡检排名情况">
+              区域各项目巡检排名情况
+              </div>      
+              <div title="多一个选项卡作对比">
+              多一个选项卡作对比
+              </div>      
+            </div>
+        </div>
+        <figure class="highlight">
+          <pre class="language-html" data-lang="html">
+<code>&lt;div class="easyui-tabs bgy-tabs"&gt;
+  &lt;div title="区域各项目巡检评分情况"&gt;
+  区域各项目巡检评分情况
+  &lt;/div&gt;
+  &lt;div title="区域各项目巡检排名情况"&gt;
+  区域各项目巡检排名情况
+  &lt;/div&gt;      
+  &lt;div title="多一个选项卡作对比"&gt;
+  多一个选项卡作对比
+  &lt;/div&gt;      
+&lt;/div&gt;</code>
+          </pre>
+        </figure>
 
         <h3>下拉框</h3>
         <div class="bs-callout bs-callout-info">
             <span class="label label-primary">开发维护：何青杏</span>
-            <span class="label label-info">依赖EasyUI</span>
+            <span class="label label-info">基于EasyUI</span>
             <span class="label label-danger">优先开发</span>
         </div>
 
@@ -82,12 +114,23 @@
         <div class="bs-callout bs-callout-info">
             <span class="label label-primary">开发维护：杨伟胜</span>
         </div>
+        <div class="bs-example">
+          <ul id="treeDemo" class="bgy-tree"></ul>
+        </div>
+        <figure class="highlight">
+          <pre class="language-html" data-lang="html">
+            &lt;ul id="treeDemo" class="bgy-tree"&gt;&lt;/ul&gt;
+          </pre>
+        </figure>
 
         <h3>分页码</h3>
         <div class="bs-callout bs-callout-info">
             <span class="label label-primary">开发维护：何青杏</span>
-            <span class="label label-info">依赖EasyUI</span>
+            <span class="label label-info">基于EasyUI</span>
             <span class="label label-danger">优先开发</span>
+        </div>
+        <div class="bs-example">
+          <div id="pageDemo" class="bgy-page"></div>
         </div>
 
         <h3>查询</h3>
@@ -274,7 +317,7 @@
         <h3>选择框</h3>
         <div class="bs-callout bs-callout-info">
             <span class="label label-primary">开发维护：何青杏</span>
-            <span class="label label-info">依赖EasyUI</span>
+            <span class="label label-info">基于EasyUI</span>
             <span class="label label-danger">优先开发</span>
         </div>
 
@@ -324,15 +367,15 @@
         <h4>输入框</h4>
         <div class="bs-example">
           <div class="bgy-input">
-            <label for="exampleInputEmail1">标题字段</label>
-            <input type="text" id="exampleInputEmail1" placeholder="请输入文字">
+            <label for="inputDemo">标题字段</label>
+            <input type="text" id="inputDemo" placeholder="请输入文字">
           </div>
         </div>
         <figure class="highlight">
           <pre class="language-html" data-lang="html">
 <code>&lt;div class="bgy-input"&gt;
-  &lt;label for="exampleInputEmail1"&gt;标题字段&lt;/label&gt;
-  &lt;input type="text" id="exampleInputEmail1" placeholder="请输入文字"&gt;
+  &lt;label for="inputDemo"&gt;标题字段&lt;/label&gt;
+  &lt;input type="text" id="inputDemo" placeholder="请输入文字"&gt;
 &lt;/div&gt;</code>
           </pre>
         </figure>
@@ -357,7 +400,7 @@
         <figure class="highlight">
           <pre class="language-html" data-lang="html">
 <code>&lt;div class="bgy-textarea"&gt;
-  &lt;label for="exampleInputEmail1"&gt;文本框&lt;/label&gt;
+  &lt;label for="textareaDemo"&gt;文本框&lt;/label&gt;
   &lt;textarea rows="3"&gt;&lt;/textarea&gt;
 &lt;/div&gt;</code>
           </pre>
@@ -390,31 +433,59 @@
         </figure>
 
         <h4>弹出输入框</h4>
+        <div class="bs-example">
+          <div class="bgy-input">
+            <label for="inputPrompt">标题字段</label>
+            <input type="text" id="inputPrompt" class="prompt" placeholder="请输入">
+          </div>
+        </div>
+        <figure class="highlight">
+          <pre class="language-html" data-lang="html">
+<code>&lt;div class="bgy-input"&gt;
+  &lt;label for="inputPrompt"&gt;标题字段&lt;/label&gt;
+  &lt;input type="text" id="inputPrompt" placeholder="请输入"&gt;
+&lt;/div&gt;</code>
+          </pre>
+        </figure>
 
         <h4>红色必填输入框</h4>
         <div class="bs-example">
           <div class="bgy-input error">
-            <label for="exampleInputEmail1">标题字段</label>
-            <input type="text" id="exampleInputEmail1" placeholder="请输入文字">
+            <label for="inputErrorDemo">标题字段</label>
+            <input type="text" id="inputErrorDemo" placeholder="请输入文字">
             <span class="info">请输入有效值</span>
           </div>
         </div>
         <figure class="highlight">
           <pre class="language-html" data-lang="html">
 <code>&lt;div class="bgy-input error"&gt;
-  &lt;label for="exampleInputEmail1"&gt;标题字段&lt;/label&gt;
-  &lt;input type="text" id="exampleInputEmail1" placeholder="请输入文字"&gt;
+  &lt;label for="inputErrorDemo"&gt;标题字段&lt;/label&gt;
+  &lt;input type="text" id="inputErrorDemo" placeholder="请输入文字"&gt;
   &lt;span class="info"&gt;请输入有效值&lt;/span&gt;
 &lt;/div&gt;</code>
           </pre>
         </figure>
 
         <h4>不可操作输入框</h4>
+        <div class="bs-example">
+          <div class="bgy-input">
+            <label for="inputDisabled">标题字段</label>
+            <input type="text" id="inputDisabled" placeholder="不能输入文字了" disabled="disabled">
+          </div>
+        </div>
+        <figure class="highlight">
+          <pre class="language-html" data-lang="html">
+<code>&lt;div class="bgy-input"&gt;
+  &lt;label for="inputDisabled"&gt;标题字段&lt;/label&gt;
+  &lt;input type="text" id="inputDisabled" placeholder="不能输入文字了" disabled="disabled"&gt;
+&lt;/div&gt;</code>
+          </pre>
+        </figure>
 
         <h3>弹窗</h3>
         <div class="bs-callout bs-callout-info">
             <span class="label label-primary">开发维护：待定</span>
-            <span class="label label-info">依赖EasyUI</span>
+            <span class="label label-info">基于EasyUI</span>
         </div>
 
         <h4>大编辑弹窗</h4>
@@ -433,27 +504,110 @@
         <h4>日期选择</h4>
 
         <h4>水平线</h4>
+        <div class="bs-example">
+          <hr>
+        </div>
+        <figure class="highlight">
+          <pre class="language-html" data-lang="html">
+            <code>&lt;hr&gt;</code>
+          </pre>
+        </figure>
 
         <h4>垂直线</h4>
+        <div class="bs-example">
+          <hr class="vr" style="height: 200px;">
+        </div>
+        <figure class="highlight">
+          <pre class="language-html" data-lang="html">
+            <code>&lt;hr class="vr" style="height: 200px;"&gt;</code>
+          </pre>
+        </figure>
 
         <h4>下拉灰色小三角</h4>
+        <div class="bs-example">
+          <span class="bgy-icon-arrowDGray"></span>
+        </div>
+        <figure class="highlight">
+          <pre class="language-html" data-lang="html">
+            &lt;span class="bgy-icon-arrowDGray"&gt;&lt;/span&gt;
+          </pre>
+        </figure>
+
         <h4>下拉蓝色小三角</h4>
+        <div class="bs-example">
+          <span class="bgy-icon-arrowDBlue"></span>
+        </div>
+        <figure class="highlight">
+          <pre class="language-html" data-lang="html">
+            &lt;span class="bgy-icon-arrowDBlue"&gt;&lt;/span&gt;
+          </pre>
+        </figure>
+
         <h4>字体反白效果</h4>
+        <div class="bs-example">
+          <p class="bgy-txt">廊坊燕郊碧桂园项目<span class="bgy-txt-inverse">字体反白效果</span>廊坊燕郊碧桂园项目廊坊燕郊碧桂园项目廊坊燕郊碧桂园项目廊坊燕郊碧桂园项目廊坊燕郊碧桂园项目廊坊燕郊碧桂园项目廊坊燕郊碧桂园项目廊坊燕郊碧桂园项目廊坊燕郊碧桂园项目</p>
+        </div>
+        <figure class="highlight">
+          <pre class="language-html" data-lang="html">
+            <code>&lt;p class=&quot;bgy-txt&quot;&gt;廊坊燕郊碧桂园项目&lt;span class=&quot;bgy-txt-inverse&quot;&gt;字体反白效果&lt;/span&gt;项目廊坊燕郊碧桂园项目廊坊燕郊碧桂园项目廊坊燕郊碧桂园项目廊坊燕郊碧桂园项目廊坊燕郊碧桂园项目廊坊燕郊碧桂园项目廊坊燕郊碧桂园项目廊坊燕郊碧桂园项目廊坊燕郊碧桂园项目&lt;/p&gt;</code>
+          </pre>
+        </figure>
+
         <h4>灰底字</h4>
+        <div class="bs-example">
+          <p class="bgy-txt">廊坊燕郊碧桂园项目<span class="bgy-txt-gray">灰底字灰底字灰底字</span>廊坊燕郊碧桂园项目廊</p>
+        </div>
+        <figure class="highlight">
+          <pre class="language-html" data-lang="html">
+            <code>&lt;p class=&quot;bgy-txt&quot;&gt;廊坊燕郊碧桂园项目&lt;span class=&quot;bgy-txt-gray&quot;&gt;灰底字灰底字灰底字&lt;/span&gt;项目廊廊坊燕郊碧桂园项目&lt;/p&gt;</code>
+          </pre>
+        </figure>
+
         <h4>反馈状态</h4>
+        <div class="bs-example">
+          <span class="state-going">进行中</span>
+          <span class="state-publish">已发布</span>
+          <span class="state-feedback">已反馈</span>
+          <span class="state-nofeedback">未反馈</span>
+        </div>
+        <figure class="highlight">
+          <pre class="language-html" data-lang="html">
+<code>&lt;span class="state-going"&gt;进行中&lt;/span&gt;
+&lt;span class="state-publish"&gt;已发布&lt;/span&gt;
+&lt;span class="state-feedback"&gt;已反馈&lt;/span&gt;
+&lt;span class="state-nofeedback"&gt;未反馈&lt;/span&gt;</code>
+          </pre>
+        </figure>
+
         <h4>表格样式</h4>
+
         <h4>线框矩形</h4>
+        <div class="bs-example">
+          <div class="border" style="width: 1000px; height: 300px; margin: auto;"></div>
+        </div>
+        <figure class="highlight">
+          <pre class="language-html" data-lang="html">
+            &lt;div class="border" style="width: 1000px; height: 300px; margin: auto;"&gt;&lt;/div&gt;
+          </pre>
+        </figure>
+
         <h4>阴影矩形</h4>
+        <div class="bs-example">
+          <div class="shadow" style="width: 1000px; height: 300px; margin: auto;"></div>
+        </div>
+        <figure class="highlight">
+          <pre class="language-html" data-lang="html">
+            &lt;div class="shadow" style="width: 1000px; height: 300px; margin: auto;"&gt;&lt;/div&gt;
+          </pre>
+        </figure>
+
         <h4>横向滚动条</h4>
         <h4>纵向滚动条</h4>
         <h4>柱状图</h4>
         <h4>饼形图</h4>
       </div>
     </div>
-  <script src="./js/jquery.min.js"></script>
-  <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   <script src="./js/bgy-ui.js"></script>
-  <script src="./jquery-easyui/jquery.easyui.min.js"></script>
   <script src="./js/demo.js"></script>
 </body>
 </html>
