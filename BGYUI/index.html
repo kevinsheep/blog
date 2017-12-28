@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>BGY UI DEMO</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="./jquery-easyui/themes/metro/easyui.css">
+    <link rel="stylesheet" href="./css/docs.css">
+    <link rel="stylesheet" href="./css/bgy-ui.css">
+    <link rel="stylesheet" href="./css/demo.css">
+  </head>
+  <body>
+    <div class="container">
+      <nav class="navbar navbar-default">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/">BGY UI</a>
+        </div>
+
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="./">组件列表</a></li>
+          <li><a href="./intro.html">使用说明</a></li>
+          <li><a href="http://www.jeasyui.com/documentation/index.php">参考资料</a></li>
+          <li><a href="./download.html">版本更新与下载</a></li>
+        </ul>
+      </nav>
+
+      <div class="jumbotron">
+        <h1>BGY UI</h1>
+        <p>基于EasyUI Metro，jQuery</p>
+      </div>
+
+      <nav id="toc-menu" class="navbar navbar-static">
+          <ul class="nav nav-pills nav-stacked"></ul>
+      </nav>
+
+      <div id="toc-doc" data-spy="scroll" data-target="#toc-menu">
+        <h3>面包屑</h3>
+        <div class="bs-callout bs-callout-info">
+            <span class="label label-primary">开发维护：杨伟胜</span>
+            <span class="label label-success">开发完成</span>
+        </div>
+        <div class="bs-example">
+          <ol class="bgy-path">
+            <li><a href="#">首页</a></li>
+            <li><a href="#">系统管理</a></li>
+            <li>角色管理</li>
+          </ol>
+        </div>
+        <figure class="highlight">
+          <pre class="language-html" data-lang="html">
+<code>&lt;ol class="bgy-path"&gt;
+  &lt;li&gt;&lt;a href="#"&gt;首页&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="#"&gt;系统管理&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;角色管理&lt;/li&gt;
+&lt;/ol&gt;</code>
+          </pre>
+        </figure>
+
+        <h3>选项卡</h3>
+        <div class="bs-callout bs-callout-info">
+            <span class="label label-primary">开发维护：何青杏</span>
+            <span class="label label-danger">优先开发</span>
+        </div>
+
+        <h3>下拉框</h3>
+        <div class="bs-callout bs-callout-info">
+            <span class="label label-primary">开发维护：何青杏</span>
+            <span class="label label-info">依赖EasyUI</span>
+            <span class="label label-danger">优先开发</span>
+        </div>
+
+        <h3>树形控件</h3>
+        <div class="bs-callout bs-callout-info">
+            <span class="label label-primary">开发维护：杨伟胜</span>
+        </div>
+
+        <h3>分页码</h3>
+        <div class="bs-callout bs-callout-info">
+            <span class="label label-primary">开发维护：何青杏</span>
+            <span class="label label-info">依赖EasyUI</span>
+            <span class="label label-danger">优先开发</span>
+        </div>
+
+        <h3>查询</h3>
+        <div class="bs-callout bs-callout-info">
+            <span class="label label-primary">开发维护：杨伟胜</span>
+            <span class="label label-success">开发完成</span>
+        </div>
+        <div class="bs-example">
+          <form action="" class="bgy-form shadow">
+            <ul>
+              <li class="bgy-input">
+                <label for="input1">项目名称</label>
+                <input type="text" id="input1" placeholder="请输入文字">
+              </li>
+              <li class="bgy-input">
+                <label for="input1">最新计划评审状态</label>
+                <input type="text" id="input1" placeholder="请输入文字">
+              </li>
+              <li class="bgy-input">
+                <label for="input1">最新计划名称</label>
+                <input type="text" id="input1" placeholder="请输入文字">
+              </li>
+              <li class="bgy-input">
+                <label for="input1">创建人</label>
+                <input type="text" id="input1" placeholder="请输入文字">
+              </li>
+              <li class="bgy-input">
+                <label for="input1">修订人</label>
+                <input type="text" id="input1" placeholder="请输入文字">
+              </li>
+            </ul>
+            <div class="btns">
+              <a class="bgy-btn" href="#">查询</a>
+            </div>
+          </form>
+        </div>
+        <figure class="highlight">
+          <pre class="language-html" data-lang="html">
+<code>&lt;form action="" class="bgy-form shadow"&gt;
+  &lt;ul&gt;
+    &lt;li class="bgy-input"&gt;
+      &lt;label for="input1"&gt;项目名称&lt;/label&gt;
+      &lt;input type="text" id="input1" placeholder="请输入文字"&gt;
+    &lt;/li&gt;
+    &lt;li class="bgy-input"&gt;
+      &lt;label for="input1"&gt;最新计划评审状态&lt;/label&gt;
+      &lt;input type="text" id="input1" placeholder="请输入文字"&gt;
+    &lt;/li&gt;
+    &lt;li class="bgy-input"&gt;
+      &lt;label for="input1"&gt;最新计划名称&lt;/label&gt;
+      &lt;input type="text" id="input1" placeholder="请输入文字"&gt;
+    &lt;/li&gt;
+    &lt;li class="bgy-input"&gt;
+      &lt;label for="input1"&gt;创建人&lt;/label&gt;
+      &lt;input type="text" id="input1" placeholder="请输入文字"&gt;
+    &lt;/li&gt;
+    &lt;li class="bgy-input"&gt;
+      &lt;label for="input1"&gt;修订人&lt;/label&gt;
+      &lt;input type="text" id="input1" placeholder="请输入文字"&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;div class="btns"&gt;
+    &lt;a class="bgy-btn" href="#"&gt;查询&lt;/a&gt;
+  &lt;/div&gt;
+</form></code>
+          </pre>
+        </figure>
+
+        <h3>图标</h3>
+        <div class="bs-callout bs-callout-info">
+            <span class="label label-primary">开发维护：杨伟胜</span>
+            <span class="label label-success">开发完成</span>
+        </div>
+
+        <h4>查看图标</h4>
+        <div class="bs-example">
+          <span class="bgy-icon-check">查看图标</span>
+        </div>
+        <figure class="highlight">
+          <pre class="language-html" data-lang="html">
+            &lt;span class="bgy-icon-check"&gt;查看图标&lt;/span&gt;
+          </pre>
+        </figure>
+
+        <h4>编辑图标</h4>
+        <div class="bs-example">
+          <span class="bgy-icon-edit">编辑图标</span>
+        </div>
+        <figure class="highlight">
+          <pre class="language-html" data-lang="html">
+            &lt;span class="bgy-icon-edit"&gt;编辑图标&lt;/span&gt;
+          </pre>
+        </figure>
+
+        <h4>刷新图标</h4>
+        <div class="bs-example">
+          <span class="bgy-icon-reload">刷新图标</span>
+        </div>
+        <figure class="highlight">
+          <pre class="language-html" data-lang="html">
+            &lt;span class="bgy-icon-reload"&gt;刷新图标&lt;/span&gt;
+          </pre>
+        </figure>
+
+        <h4>垃圾桶图标</h4>
+        <div class="bs-example">
+          <span class="bgy-icon-delete">垃圾桶图标</span>
+        </div>
+        <figure class="highlight">
+          <pre class="language-html" data-lang="html">
+            &lt;span class="bgy-icon-delete"&gt;垃圾桶图标&lt;/span&gt;
+          </pre>
+        </figure>
+
+        <h4>关闭图标</h4>
+        <div class="bs-example">
+          <span class="bgy-icon-close">关闭</span>
+        </div>
+        <figure class="highlight">
+          <pre class="language-html" data-lang="html">
+            &lt;span class="bgy-icon-close"&gt;关闭&lt;/span&gt;
+          </pre>
+        </figure>
+
+        <h4>授权图标</h4>
+        <div class="bs-example">
+          <span class="bgy-icon-authorize">授权</span>
+        </div>
+        <figure class="highlight">
+          <pre class="language-html" data-lang="html">
+            &lt;span class="bgy-icon-authorize"&gt;授权&lt;/span&gt;
+          </pre>
+        </figure>
+
+        <h3>按钮</h3>
+        <div class="bs-callout bs-callout-info">
+            <span class="label label-primary">开发维护：杨伟胜</span>
+            <span class="label label-info">必须引用bgy-ui.js</span>
+            <span class="label label-success">开发完成</span>
+        </div>
+
+        <h4>两字按钮</h4>
+        <div class="bs-example">
+          <a class="bgy-btn" href="#">按钮</a>
+        </div>
+        <figure class="highlight">
+          <pre class="language-html" data-lang="html">
+            <code>&lt;a class="bgy-btn" href="#"&gt;按钮&lt;/a&gt;</code>
+          </pre>
+        </figure>
+
+        <h4>三字按钮</h4>
+        <div class="bs-example">
+          <a class="bgy-btn" href="#">三个字</a>
+        </div>
+        <figure class="highlight">
+          <pre class="language-html" data-lang="html">
+            <code>&lt;a class="bgy-btn" href="#"&gt;三个字&lt;/a&gt;</code>
+          </pre>
+        </figure>
+
+        <h4>四字按钮</h4>
+        <div class="bs-example">
+          <a class="bgy-btn" href="#">四字按钮</a>
+        </div>
+        <figure class="highlight">
+          <pre class="language-html" data-lang="html">
+            <code>&lt;a class="bgy-btn" href="#"&gt;四字按钮&lt;/a&gt;</code>
+          </pre>
+        </figure>
+
+        <h4>六字按钮</h4>
+        <div class="bs-example">
+          <a class="bgy-btn" href="#">六字按钮示例</a>
+        </div>
+        <figure class="highlight">
+          <pre class="language-html" data-lang="html">
+            <code>&lt;a class="bgy-btn" href="#"&gt;六字按钮示例&lt;/a&gt;</code>
+          </pre>
+        </figure>
+
+        <h4>下拉按钮</h4>
+
+        <h3>选择框</h3>
+        <div class="bs-callout bs-callout-info">
+            <span class="label label-primary">开发维护：何青杏</span>
+            <span class="label label-info">依赖EasyUI</span>
+            <span class="label label-danger">优先开发</span>
+        </div>
+
+        <h4>可选单选框</h4>
+
+        <h4>不可选单选框</h4>
+
+        <h4>复选框</h4>
+
+        <h3>文字规范及输入框</h3>
+        <div class="bs-callout bs-callout-info">
+            <span class="label label-primary">开发维护：杨伟胜</span>
+            <span class="label label-danger">优先开发</span>
+        </div>
+
+        <h4>标题文字</h4>
+        <div class="bs-example">
+          <h5 class="bgy-tit">项目巡检统计图表</h5>
+        </div>
+        <figure class="highlight">
+          <pre class="language-html" data-lang="html">
+            <code>&lt;h5 class="bgy-tit"&gt;项目巡检统计图表&lt;/h5&gt;</code>
+          </pre>
+        </figure>
+
+        <h4>正文文字</h4>
+        <div class="bs-example">
+          <p class="bgy-txt">廊坊燕郊碧桂园项目廊坊燕郊碧桂园项目廊坊燕郊碧桂园项目廊坊燕郊碧桂园项目廊坊燕郊碧桂园项目廊坊燕郊碧桂园项目廊坊燕郊碧桂园项目廊坊燕郊碧桂园项目廊坊燕郊碧桂园项目廊坊燕郊碧桂园项目廊坊燕郊碧桂园项目</p>
+        </div>
+        <figure class="highlight">
+          <pre class="language-html" data-lang="html">
+            <code>&lt;p class="bgy-txt"&gt;廊坊燕郊碧桂园项目廊坊燕郊碧桂园项目廊坊燕郊碧桂园项目廊坊燕郊碧桂园项目廊坊燕郊碧桂园项目廊坊燕郊碧桂园项目廊坊燕郊碧桂园项目廊坊燕郊碧桂园项目廊坊燕郊碧桂园项目廊坊燕郊碧桂园项目廊坊燕郊碧桂园项目&lt;/p&gt;</code>
+          </pre>
+        </figure>
+
+        <h4>备注文字</h4>
+        <div class="bs-example">
+          <p class="bgy-info">说明：1. 默认显示本季度巡检情况；          
+           2. 无反馈为还未巡检或巡检还未完成的项目；</p>
+        </div>
+        <figure class="highlight">
+          <pre class="language-html" data-lang="html">
+            <code>&lt;p class="bgy-info"&gt;说明：1. 默认显示本季度巡检情况；2. 无反馈为还未巡检或巡检还未完成的项目；&lt;/p&gt;</code>
+          </pre>
+        </figure>
+
+        <h4>输入框</h4>
+        <div class="bs-example">
+          <div class="bgy-input">
+            <label for="exampleInputEmail1">标题字段</label>
+            <input type="text" id="exampleInputEmail1" placeholder="请输入文字">
+          </div>
+        </div>
+        <figure class="highlight">
+          <pre class="language-html" data-lang="html">
+<code>&lt;div class="bgy-input"&gt;
+  &lt;label for="exampleInputEmail1"&gt;标题字段&lt;/label&gt;
+  &lt;input type="text" id="exampleInputEmail1" placeholder="请输入文字"&gt;
+&lt;/div&gt;</code>
+          </pre>
+        </figure>
+
+        <h4>灰色右箭头</h4>
+        <div class="bs-example">
+          <span class="bgy-icon-arrowR"></span>
+        </div>
+        <figure class="highlight">
+          <pre class="language-html" data-lang="html">
+            &lt;span class="bgy-icon-arrowR"&gt;&lt;/span&gt;
+          </pre>
+        </figure>
+
+        <h4>多行文本输入框</h4>
+        <div class="bs-example">
+          <div class="bgy-textarea">
+            <label for="textareaDemo">文本框</label>
+            <textarea rows="3" id="textareaDemo"></textarea>
+          </div>
+        </div>
+        <figure class="highlight">
+          <pre class="language-html" data-lang="html">
+<code>&lt;div class="bgy-textarea"&gt;
+  &lt;label for="exampleInputEmail1"&gt;文本框&lt;/label&gt;
+  &lt;textarea rows="3"&gt;&lt;/textarea&gt;
+&lt;/div&gt;</code>
+          </pre>
+        </figure>
+
+        <h4>必填项下拉输入框</h4>
+        <div class="bs-example">
+          <div class="bgy-select required">
+            <label for="selectDemo">必填下拉选择框</label>
+              <select id="selectDemo" name="">
+                <option value="" selected="">默认选中项</option>
+                <option value="1">菜单一</option>
+                <option value="2">菜单二</option>
+                <option value="3">菜单三</option>
+              </select>
+          </div>
+        </div>
+        <figure class="highlight">
+          <pre class="language-html" data-lang="html">
+<code>&lt;div class="bgy-select required"&gt;
+  &lt;label for="selectDemo"&gt;必填下拉选择框&lt;/label&gt;
+    &lt;select id="selectDemo" name=""&gt;
+      &lt;option value="" selected=""&gt;默认选中项&lt;/option&gt;
+      &lt;option value="1"&gt;菜单一&lt;/option&gt;
+      &lt;option value="2"&gt;菜单二&lt;/option&gt;
+      &lt;option value="3"&gt;菜单三&lt;/option&gt;
+    &lt;/select&gt;
+&lt;/div&gt;</code>
+          </pre>
+        </figure>
+
+        <h4>弹出输入框</h4>
+
+        <h4>红色必填输入框</h4>
+        <div class="bs-example">
+          <div class="bgy-input error">
+            <label for="exampleInputEmail1">标题字段</label>
+            <input type="text" id="exampleInputEmail1" placeholder="请输入文字">
+            <span class="info">请输入有效值</span>
+          </div>
+        </div>
+        <figure class="highlight">
+          <pre class="language-html" data-lang="html">
+<code>&lt;div class="bgy-input error"&gt;
+  &lt;label for="exampleInputEmail1"&gt;标题字段&lt;/label&gt;
+  &lt;input type="text" id="exampleInputEmail1" placeholder="请输入文字"&gt;
+  &lt;span class="info"&gt;请输入有效值&lt;/span&gt;
+&lt;/div&gt;</code>
+          </pre>
+        </figure>
+
+        <h4>不可操作输入框</h4>
+
+        <h3>弹窗</h3>
+        <div class="bs-callout bs-callout-info">
+            <span class="label label-primary">开发维护：待定</span>
+            <span class="label label-info">依赖EasyUI</span>
+        </div>
+
+        <h4>大编辑弹窗</h4>
+
+        <h4>小编辑弹窗</h4>
+
+        <h4>提示弹窗</h4>
+
+        <h4>提示框</h4>
+
+        <h3>其它</h3>
+        <div class="bs-callout bs-callout-info">
+            <span class="label label-primary">开发维护：待定</span>
+        </div>
+
+        <h4>日期选择</h4>
+
+        <h4>水平线</h4>
+
+        <h4>垂直线</h4>
+
+        <h4>下拉灰色小三角</h4>
+        <h4>下拉蓝色小三角</h4>
+        <h4>字体反白效果</h4>
+        <h4>灰底字</h4>
+        <h4>反馈状态</h4>
+        <h4>表格样式</h4>
+        <h4>线框矩形</h4>
+        <h4>阴影矩形</h4>
+        <h4>横向滚动条</h4>
+        <h4>纵向滚动条</h4>
+        <h4>柱状图</h4>
+        <h4>饼形图</h4>
+      </div>
+    </div>
+  <script src="./js/jquery.min.js"></script>
+  <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script src="./js/bgy-ui.js"></script>
+  <script src="./jquery-easyui/jquery.easyui.min.js"></script>
+  <script src="./js/demo.js"></script>
+</body>
+</html>

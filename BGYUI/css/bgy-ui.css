@@ -1,0 +1,104 @@
+/**
+ * BGY-UI 1.0
+ * 表单等难以自适应的部件，基于1366*768尺寸的屏幕
+ */
+
+/* 公共样式 */
+body { font-size: 14px; font-family: "Microsoft YaHei"; }
+a,
+a:hover,
+a:visited,
+a:active,
+a:focus { text-decoration: none; }
+
+.shadow { box-shadow: 0 0 8px rgba(0,0,0,.1); }
+
+/* 字体图标绑定 */
+@font-face { font-family: 'ico-bgy'; src: url('../fonts/ico-bgy.eot?5s12nb'); src: url('../fonts/ico-bgy.eot?5s12nb#iefix') format('embedded-opentype'), url('../fonts/ico-bgy.ttf?5s12nb') format('truetype'), url('../fonts/ico-bgy.woff?5s12nb') format('woff'), url('../fonts/ico-bgy.svg?5s12nb#ico-bgy') format('svg'); font-weight: normal; font-style: normal; }
+[class*="icon"],
+.bgy-path,
+.bgy-select { font-family: 'ico-bgy' !important; speak: none; font-style: normal; font-weight: normal; font-variant: normal; text-transform: none; line-height: 1; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+
+/* 面包屑 */
+.bgy-path { color: #4C5E70; font-size: 14px; line-height: 22px; padding: 0; list-style: none; }
+.bgy-path li { display: inline-block; }
+.bgy-path li a { color: #1A9CC4; }
+.bgy-path li a:hover { color: #1686A7; }
+.bgy-path li+li:before { color: #9C9C9C; padding: 0 8px; content: "\e909"; font-size: 12px; }
+
+/* 选项卡 */
+.tabs-header { border: 0 solid; }
+.tabs { padding-left: 0px; height: 35px !important; border: 0 solid; }
+.tabs li { margin: 0px; }
+.tabs li a { width: 200px !important; height: 35px !important; line-height: 35px !important; }
+.tabs li a.tabs-inner { font-size: 14px; color: #1A9CC4; background-color: #ffffff; }
+.tabs .tabs-last .tabs-inner { border-width: 1px 1px 1px 0; border-color: #DAE1E8; border-style: solid; }
+.tabs li.tabs-selected a.tabs-inner { border-bottom: 1px solid #dae1e8; background-color: #f1f1f1; font-weight: normal; }
+.tabs li a:hover { background-color: #FFFFFF; color: #1A9CC4; font-weight: normal; }
+.tabs-panels { border-width: 0; }
+
+/* 图标 */
+.bgy-icon-check:before { content: "\e900"; }
+.bgy-icon-edit:before { content: "\e901"; }
+.bgy-icon-reload:before { content: "\e902"; }
+.bgy-icon-delete:before { content: "\e903"; }
+.bgy-icon-close:before { content: "\e904"; }
+.bgy-icon-authorize:before { content: "\e905"; }
+
+.bgy-icon-arrowR:before { content: "\e909"; color: #9C9C9C; font-size: 12px; }
+
+
+[class^="bgy-icon-"] { color: #778a9b }
+[class^="bgy-icon-"]:before { margin-right: 6px; }
+
+[class^="bgy-icon-"]:hover { color: #1a9cc4 }
+.bgy-icon-reload:hover { color: #029602; }
+.bgy-icon-close:hover { color: #fe0000; }
+
+[class^="bgy-icon-"]:active { color: #04789c; }
+.bgy-icon-reload:active { color: #026402; }
+.bgy-icon-close:active { color: #bc0404; }
+
+/* 按钮 */
+.bgy-btn { display: inline-block; font-size: 14px; text-align: center; border: 1px solid #1A9CC4; border-radius: 3px; height: 26px; line-height: 26px; color: #1A9CC4; text-decoration: none; padding: 0 17px; min-width: 100px; white-space: nowrap; }
+.bgy-btn:hover { background-color: #1A9CC4; color: #fff; }
+.bgy-btn:active { background-color: #1686A7; color: #fff; }
+.bgy-btn.btn-n2 { letter-spacing: 10px; padding: 0 10px 0 20px; width: 80px; min-width: 80px; }
+.bgy-btn.btn-n3 { letter-spacing: 5px; padding: 0 10px 0 15px; }
+
+/* 文字规范及输入框 */
+.bgy-tit { font-size: 18px; font-weight: normal; line-height: 150%; color: #4C5E70; }
+.bgy-txt { font-size: 12px; line-height: 150%; color: #4C5E70; }
+.bgy-info { font-size: 12px; line-height: 150%; color: #7B8DA0; }
+
+/* 表单 */
+/* v2.0 考虑统一父容器样式 */
+.bgy-form { padding: 20px; width: 1000px; }
+.bgy-form ul { margin: 0 0 0 -100px; overflow: hidden; zoom: 1; }
+.bgy-form li { float: left; width: 490px; margin-left: 20px; list-style: none; padding: 0 0 20px 0; }
+.bgy-form .bgy-input label { text-overflow: ellipsis; overflow: hidden; white-space:nowrap; }
+.bgy-form .btns { text-align: center; }
+.bgy-input { line-height: 30px; }
+.bgy-input label,
+.bgy-textarea label,
+.bgy-select label { text-align: right; width: 120px; display: inline-block; font-size: 12px; margin-right: 22px; height: 30px; line-height: 30px; color: #4C5E70; font-weight: normal; vertical-align: middle; }
+.bgy-input input { display: inline-block; height: 30px; width: 340px; line-height: 30px; padding: 0 5px; font-size: 12px; color: #a7a7a8; border: 1px solid #DAE1E8; vertical-align: middle; }
+.bgy-input .info { margin-left: 10px; vertical-align: middle; }
+.bgy-textarea label,
+.bgy-select label { vertical-align: top; }
+.bgy-textarea textarea { vertical-align: top; width: 850px; line-height: 30px; padding: 0 4px; font-size: 12px; color: #a7a7a8; border: 1px solid #DAE1E8; }
+.bgy-select select { padding: 0 14px 0 5px; width: 850px; height: 30px; line-height: 30px; vertical-align: top; border: 1px solid #DAE1E8; color: #a7a7a8; font-size: 12px;
+  /*将默认的select选择框样式清除*/  
+  appearance: none;  
+  -moz-appearance: none;  
+  -webkit-appearance: none;  
+  /*在选择框的最右侧中间显示小箭头图片*/   
+  background: url('../images/icon-arrowD.png') no-repeat right center; 
+  
+}
+.bgy-select select::-ms-expand { display: none; }
+.bgy-select select:after { content: "^"; }
+
+.required label:after { content: "*"; color: #f00; font-size: 14px; }
+.error input { border-color: #DAE1E8; background-color: #FEE; }
+.error .info { color: #f00; }

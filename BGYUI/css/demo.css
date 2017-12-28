@@ -1,0 +1,27 @@
+/**
+ * BGY-UI 1.0
+ *
+ */
+
+#toc-doc { position: relative; margin-left: 200px; overflow: auto; }
+#toc-menu { width: 180px; position: absolute; top: 330px; left: 50%; margin-left: -570px; }
+#toc-menu.fixed { position: fixed; top: 10px !important;}
+
+.bs-callout ul,
+.bs-callout ol { margin-bottom: 0; }
+
+@media (min-width: 768px){
+	#toc-menu { margin-left: -360px; }
+}
+@media (min-width: 992px){
+	#toc-menu { margin-left: -470px; }
+}
+@media (min-width: 1340px){
+	.container { width: 1300px; }
+	#toc-menu { margin-left: -635px; }
+}
+@media (min-width: 1680px){
+	.container { width: 1600px; }
+	#toc-menu { margin-left: -785px; }
+}
+
