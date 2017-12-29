@@ -77,16 +77,16 @@ hr.vr { width: 1px; }
 .bgy-tree .tree-collapsed,
 .bgy-tree .tree-checkbox0,
 .bgy-tree .tree-checkbox1,
-.bgy-tree .tree-checkbox2 { background: none; width: 28px; height: 20px; text-align: center; }
+.bgy-tree .tree-checkbox2 { background: none; width: 24px; height: 20px; text-align: center; }
 .bgy-tree .tree-icon { display: none; }
 .bgy-tree .tree-title { color: #4C5E70; }
 .bgy-tree .tree-expanded:before { content: '\e907'; color: #7B8DA0; font-size: 13px; line-height: 18px; }
 .bgy-tree .tree-collapsed:before { content: '\e911'; color: #7B8DA0; font-size: 14px; line-height: 18px; }
-.bgy-tree .tree-checkbox:before { text-align: center; display: inline-block; content: ''; border-radius: 4px; border: 1px solid #DBDBDB; width: 20px; height: 20px; }
+.bgy-tree .tree-checkbox:before { text-align: center; display: inline-block; content: ''; border-radius: 4px; border: 1px solid #DBDBDB; width: 18px; height: 18px; }
 .bgy-tree .tree-checkbox1:before { content: '\e90b'; color: #797979; line-height: 18px; }
-.bgy-tree .tree-checkbox2:before { content: '\e906'; color: #7B8DA0; font-size: 13px; line-height: 20px; }
+.bgy-tree .tree-checkbox2:before { content: '\e90b'; color: #7B8DA0; font-size: 13px; line-height: 20px; background-color: #f4f4f4; }
 .bgy-tree .tree-file { /*display: inline-block;*/  }
-.bgy-tree .tree-indent { width: 28px; }
+.bgy-tree .tree-indent { width: 24px; }
 
 /* 分页 */
 .l-btn-plain { width: 36px; height: 30px; border: 0px solid #FFFFFF; margin: 0 2px; padding: 0; text-align: center; vertical-align: middle; }
@@ -137,8 +137,6 @@ hr.vr { width: 1px; }
 .bgy-icon-authorize:before { content: "\e905"; }
 
 .bgy-icon-arrowR:before { content: "\e909"; color: #9C9C9C; font-size: 12px; }
-.bgy-icon-arrowDGray:before { content: "\e90e"; color: #999; font-size: 12px; }
-.bgy-icon-arrowDBlue:before { content: "\e90e"; color: #1A9CC4; font-size: 12px; }
 
 [class^="bgy-icon-"] { color: #778a9b }
 [class^="bgy-icon-"]:before { margin-right: 6px; }
@@ -214,8 +212,8 @@ hr.vr { width: 1px; }
 .bgy-window .panel-body { padding: 20px; }
 .bgy-window .btns { padding-bottom: 20px; }
 .bgy-window .bd { border: 1px solid #DAE1E8; width: auto; }
-.bgy-window .bgy-form ul { margin: 0 0 0 -35px; }
+.bgy-window .bgy-form ul { margin: 0 0 0 -20px; }
 .bgy-window .bgy-form li { width: 405px; }
 .bgy-window .bgy-form input[type='text'],
-.bgy-window .bgy-form input[type='password'] { width: 298px; }
+.bgy-window .bgy-form input[type='password'] { width: 285px; }
 .bgy-window .bgy-form label { width: 80px; }
