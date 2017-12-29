@@ -22,20 +22,29 @@
     <script src="./jquery-easyui/jquery.easyui.min.js"></script>
   </head>
   <body>
-    <div class="container">
-      <nav class="navbar navbar-default">
+    <nav class="navbar navbar-default">
+      <div class="container">
         <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bgy-ui-nav" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
           <a class="navbar-brand" href="/">BGY UI</a>
         </div>
+        <div class="collapse navbar-collapse" id="bgy-ui-nav">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="./">组件列表</a></li>
+            <li><a href="./intro.html">使用说明</a></li>
+            <li><a href="http://www.jeasyui.com/documentation/index.php">参考资料</a></li>
+            <li><a href="./download.html">版本更新与下载</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
 
-        <ul class="nav navbar-nav">
-          <li class="active"><a href="./">组件列表</a></li>
-          <li><a href="./intro.html">使用说明</a></li>
-          <li><a href="http://www.jeasyui.com/documentation/index.php">参考资料</a></li>
-          <li><a href="./download.html">版本更新与下载</a></li>
-        </ul>
-      </nav>
-
+    <div class="container">
       <div class="jumbotron">
         <h1>BGY UI</h1>
         <p>基于EasyUI Metro，jQuery</p>
@@ -107,7 +116,7 @@
         <div class="bs-callout bs-callout-info">
             <span class="label label-primary">开发维护：何青杏</span>
             <span class="label label-info">基于EasyUI</span>
-            <span class="label label-danger">优先开发</span>
+            <span class="label label-danger">优先开发，代码整合中</span>
         </div>
 
         <h3>树形控件</h3>
@@ -117,10 +126,12 @@
         </div>
         <div class="bs-example">
           <ul id="treeDemo" class="bgy-tree"></ul>
+          <ul id="treeDemo2" class="bgy-tree"></ul>
         </div>
         <figure class="highlight">
           <pre class="language-html" data-lang="html">
-            &lt;ul id="treeDemo" class="bgy-tree"&gt;&lt;/ul&gt;
+<code>&lt;ul id="treeDemo" class="bgy-tree"&gt;&lt;/ul&gt;
+&lt;ul id="treeDemo2" class="bgy-tree"&gt;&lt;/ul&gt;</code>
           </pre>
         </figure>
 
@@ -128,7 +139,7 @@
         <div class="bs-callout bs-callout-info">
             <span class="label label-primary">开发维护：何青杏</span>
             <span class="label label-info">基于EasyUI</span>
-            <span class="label label-danger">优先开发，修改中</span>
+            <span class="label label-danger">优先开发，优化修改中</span>
         </div>
         <div class="bs-example">
           <div id="pageDemo" class="bgy-page"></div>
@@ -142,25 +153,25 @@
         <div class="bs-example">
           <form action="" class="bgy-form shadow">
             <ul>
-              <li class="bgy-input">
-                <label for="input1">项目名称</label>
-                <input type="text" id="input1" placeholder="请输入文字">
+              <li>
+                <label for="input11">项目名称</label>
+                <input type="text" id="input11" placeholder="请输入文字">
               </li>
-              <li class="bgy-input">
-                <label for="input1">最新计划评审状态</label>
-                <input type="text" id="input1" placeholder="请输入文字">
+              <li>
+                <label for="input12">最新计划评审状态</label>
+                <input type="text" id="input12" placeholder="请输入文字">
               </li>
-              <li class="bgy-input">
-                <label for="input1">最新计划名称</label>
-                <input type="text" id="input1" placeholder="请输入文字">
+              <li>
+                <label for="input13">最新计划名称</label>
+                <input type="text" id="input13" placeholder="请输入文字">
               </li>
-              <li class="bgy-input">
-                <label for="input1">创建人</label>
-                <input type="text" id="input1" placeholder="请输入文字">
+              <li>
+                <label for="input14">创建人</label>
+                <input type="text" id="input14" placeholder="请输入文字">
               </li>
-              <li class="bgy-input">
-                <label for="input1">修订人</label>
-                <input type="text" id="input1" placeholder="请输入文字">
+              <li>
+                <label for="input15">修订人</label>
+                <input type="text" id="input15" placeholder="请输入文字">
               </li>
             </ul>
             <div class="btns">
@@ -172,31 +183,31 @@
           <pre class="language-html" data-lang="html">
 <code>&lt;form action="" class="bgy-form shadow"&gt;
   &lt;ul&gt;
-    &lt;li class="bgy-input"&gt;
-      &lt;label for="input1"&gt;项目名称&lt;/label&gt;
-      &lt;input type="text" id="input1" placeholder="请输入文字"&gt;
+    &lt;li&gt;
+      &lt;label for="input11"&gt;项目名称&lt;/label&gt;
+      &lt;input type="text" id="input11" placeholder="请输入文字"&gt;
     &lt;/li&gt;
-    &lt;li class="bgy-input"&gt;
-      &lt;label for="input1"&gt;最新计划评审状态&lt;/label&gt;
-      &lt;input type="text" id="input1" placeholder="请输入文字"&gt;
+    &lt;li&gt;
+      &lt;label for="input12"&gt;最新计划评审状态&lt;/label&gt;
+      &lt;input type="text" id="input12" placeholder="请输入文字"&gt;
     &lt;/li&gt;
-    &lt;li class="bgy-input"&gt;
-      &lt;label for="input1"&gt;最新计划名称&lt;/label&gt;
-      &lt;input type="text" id="input1" placeholder="请输入文字"&gt;
+    &lt;li&gt;
+      &lt;label for="input13"&gt;最新计划名称&lt;/label&gt;
+      &lt;input type="text" id="input13" placeholder="请输入文字"&gt;
     &lt;/li&gt;
-    &lt;li class="bgy-input"&gt;
-      &lt;label for="input1"&gt;创建人&lt;/label&gt;
-      &lt;input type="text" id="input1" placeholder="请输入文字"&gt;
+    &lt;li&gt;
+      &lt;label for="input14"&gt;创建人&lt;/label&gt;
+      &lt;input type="text" id="input14" placeholder="请输入文字"&gt;
     &lt;/li&gt;
-    &lt;li class="bgy-input"&gt;
-      &lt;label for="input1"&gt;修订人&lt;/label&gt;
-      &lt;input type="text" id="input1" placeholder="请输入文字"&gt;
+    &lt;li&gt;
+      &lt;label for="input15"&gt;修订人&lt;/label&gt;
+      &lt;input type="text" id="input15" placeholder="请输入文字"&gt;
     &lt;/li&gt;
   &lt;/ul&gt;
   &lt;div class="btns"&gt;
     &lt;a class="bgy-btn" href="#"&gt;查询&lt;/a&gt;
   &lt;/div&gt;
-</form></code>
+&lt;/form&gt;</code>
           </pre>
         </figure>
 
@@ -318,15 +329,62 @@
         <h3>选择框</h3>
         <div class="bs-callout bs-callout-info">
             <span class="label label-primary">开发维护：何青杏</span>
-            <span class="label label-info">基于EasyUI</span>
-            <span class="label label-danger">优先开发</span>
+            <span class="label label-success">开发完成</span>
         </div>
 
         <h4>可选单选框</h4>
+        <div class="bs-example">
+          <div class="bgy-form">
+            <input type="radio" id="radio11" name="choose" checked>
+            <label for="radio11">是</label>
+            <input type="radio" id="radio12" name="choose">
+            <label for="radio12">否</label>
+          </div>
+        </div>
+        <figure class="highlight">
+          <pre class="language-html" data-lang="html">
+<code>&lt;div class="bgy-form"&gt;
+  &lt;input type="radio" id="radio11" name="choose" checked&gt;
+  &lt;label for="radio11"&gt;是&lt;/label&gt;
+  &lt;input type="radio" id="radio12" name="choose"&gt;
+  &lt;label for="radio12"&gt;否&lt;/label&gt;
+&lt;/div&gt;</code>
+          </pre>
+        </figure>
 
         <h4>不可选单选框</h4>
+        <div class="bs-example">
+          <div class="bgy-form">
+            <input type="radio" id="radio11" name="choose" disabled="disabled">
+            <label for="radio11">是</label>
+            <input type="radio" id="radio12" name="choose" disabled="disabled">
+            <label for="radio12">否</label>
+          </div>
+        </div>
+        <figure class="highlight">
+          <pre class="language-html" data-lang="html">
+<code>&lt;div class="bgy-form"&gt;
+  &lt;input type="radio" id="radio11" name="choose" disabled="disabled"&gt;
+  &lt;label for="radio11"&gt;是&lt;/label&gt;
+  &lt;input type="radio" id="radio12" name="choose" disabled="disabled"&gt;
+  &lt;label for="radio12"&gt;否&lt;/label&gt;
+&lt;/div&gt;</code>
+          </pre>
+        </figure>
 
         <h4>复选框</h4>
+        <div class="bs-example">
+          <div class="bgy-form">
+            <input type="checkbox" id="check11" name="check-item">
+            <label for="check11">选项一</label>
+            <input type="checkbox" id="check11" name="check-item">
+            <label for="check11">选项二</label>
+            <input type="checkbox" id="check11" name="check-item" checked>
+            <label for="check11">选中了的</label>
+            <input type="checkbox" id="check11" name="check-item" disabled="disabled">
+            <label for="check11">不可选</label>
+          </div>
+        </div>
 
         <h3>文字规范及输入框</h3>
         <div class="bs-callout bs-callout-info">
@@ -367,14 +425,14 @@
 
         <h4>输入框</h4>
         <div class="bs-example">
-          <div class="bgy-input">
+          <div class="bgy-form">
             <label for="inputDemo">标题字段</label>
             <input type="text" id="inputDemo" placeholder="请输入文字">
           </div>
         </div>
         <figure class="highlight">
           <pre class="language-html" data-lang="html">
-<code>&lt;div class="bgy-input"&gt;
+<code>&lt;div class="bgy-form"&gt;
   &lt;label for="inputDemo"&gt;标题字段&lt;/label&gt;
   &lt;input type="text" id="inputDemo" placeholder="请输入文字"&gt;
 &lt;/div&gt;</code>
@@ -393,14 +451,14 @@
 
         <h4>多行文本输入框</h4>
         <div class="bs-example">
-          <div class="bgy-textarea">
+          <div class="bgy-form">
             <label for="textareaDemo">文本框</label>
             <textarea rows="3" id="textareaDemo"></textarea>
           </div>
         </div>
         <figure class="highlight">
           <pre class="language-html" data-lang="html">
-<code>&lt;div class="bgy-textarea"&gt;
+<code>&lt;div class="bgy-form"&gt;
   &lt;label for="textareaDemo"&gt;文本框&lt;/label&gt;
   &lt;textarea rows="3"&gt;&lt;/textarea&gt;
 &lt;/div&gt;</code>
@@ -409,7 +467,7 @@
 
         <h4>必填项下拉输入框</h4>
         <div class="bs-example">
-          <div class="bgy-select required">
+          <div class="bgy-form required">
             <label for="selectDemo">必填下拉选择框</label>
               <select id="selectDemo" name="">
                 <option value="" selected="">默认选中项</option>
@@ -421,7 +479,7 @@
         </div>
         <figure class="highlight">
           <pre class="language-html" data-lang="html">
-<code>&lt;div class="bgy-select required"&gt;
+<code>&lt;div class="bgy-form required"&gt;
   &lt;label for="selectDemo"&gt;必填下拉选择框&lt;/label&gt;
     &lt;select id="selectDemo" name=""&gt;
       &lt;option value="" selected=""&gt;默认选中项&lt;/option&gt;
@@ -435,14 +493,14 @@
 
         <h4>弹出输入框</h4>
         <div class="bs-example">
-          <div class="bgy-input">
+          <div class="bgy-form">
             <label for="inputPrompt">标题字段</label>
             <input type="text" id="inputPrompt" class="prompt" placeholder="请输入">
           </div>
         </div>
         <figure class="highlight">
           <pre class="language-html" data-lang="html">
-<code>&lt;div class="bgy-input"&gt;
+<code>&lt;div class="bgy-form"&gt;
   &lt;label for="inputPrompt"&gt;标题字段&lt;/label&gt;
   &lt;input type="text" id="inputPrompt" placeholder="请输入"&gt;
 &lt;/div&gt;</code>
@@ -451,7 +509,7 @@
 
         <h4>红色必填输入框</h4>
         <div class="bs-example">
-          <div class="bgy-input error">
+          <div class="bgy-form error">
             <label for="inputErrorDemo">标题字段</label>
             <input type="text" id="inputErrorDemo" placeholder="请输入文字">
             <span class="info">请输入有效值</span>
@@ -459,7 +517,7 @@
         </div>
         <figure class="highlight">
           <pre class="language-html" data-lang="html">
-<code>&lt;div class="bgy-input error"&gt;
+<code>&lt;div class="bgy-form error"&gt;
   &lt;label for="inputErrorDemo"&gt;标题字段&lt;/label&gt;
   &lt;input type="text" id="inputErrorDemo" placeholder="请输入文字"&gt;
   &lt;span class="info"&gt;请输入有效值&lt;/span&gt;
@@ -469,14 +527,14 @@
 
         <h4>不可操作输入框</h4>
         <div class="bs-example">
-          <div class="bgy-input">
+          <div class="bgy-form">
             <label for="inputDisabled">标题字段</label>
             <input type="text" id="inputDisabled" placeholder="不能输入文字了" disabled="disabled">
           </div>
         </div>
         <figure class="highlight">
           <pre class="language-html" data-lang="html">
-<code>&lt;div class="bgy-input"&gt;
+<code>&lt;div class="bgy-form"&gt;
   &lt;label for="inputDisabled"&gt;标题字段&lt;/label&gt;
   &lt;input type="text" id="inputDisabled" placeholder="不能输入文字了" disabled="disabled"&gt;
 &lt;/div&gt;</code>
@@ -485,11 +543,43 @@
 
         <h3>弹窗</h3>
         <div class="bs-callout bs-callout-info">
-            <span class="label label-primary">开发维护：待定</span>
+            <span class="label label-primary">开发维护：杨伟胜</span>
             <span class="label label-info">基于EasyUI</span>
         </div>
 
         <h4>大编辑弹窗</h4>
+        <div class="bs-example">
+          <div id="windowDemo">
+            <div class="btns">
+              <span class="bgy-btn">确定</span>
+              <span class="bgy-btn">取消</span>
+            </div>
+            <div class="bd bgy-form">
+              <ul>
+                <li class="required">
+                  <label for="input21">标题名称</label>
+                  <input type="text" id="input21" placeholder="请输入文字">
+                </li>
+                <li>
+                  <label for="input22">用户BIP部门</label>
+                  <input type="text" id="input22" value="信息管理中心" disabled="disabled">
+                </li>
+                <li>
+                  <label for="input23">授权公司</label>
+                  <input type="text" id="input23" placeholder="请输入文字">
+                </li>
+                <li>
+                  <label for="input1">用户所在公司</label>
+                  <input type="text" id="input1" placeholder="请输入文字">
+                </li>
+                <li>
+                </li>
+              </ul>
+            </div>
+
+          </div>
+          <span id="trigWindow" class="bgy-btn">点我弹大窗</span>
+        </div>
 
         <h4>小编辑弹窗</h4>
 
@@ -499,7 +589,7 @@
 
         <h3>其它</h3>
         <div class="bs-callout bs-callout-info">
-            <span class="label label-primary">开发维护：待定</span>
+            <span class="label label-primary">开发维护：杨伟胜、何青杏</span>
         </div>
 
         <h4>日期选择</h4>

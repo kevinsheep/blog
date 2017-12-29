@@ -10,6 +10,10 @@
 .bs-callout ul,
 .bs-callout ol { margin-bottom: 0; }
 
+@media (max-width: 768px){
+	#toc-doc { margin-left: auto; }
+	#toc-menu { display: none; }
+}
 @media (min-width: 768px){
 	#toc-menu { margin-left: -360px; }
 }

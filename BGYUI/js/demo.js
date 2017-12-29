@@ -37,7 +37,7 @@
     displayMsg:'本页显示{pageSize}条记录，共{total}条记录'
   });
 
-  //树形控件演示    
+  //树形控件演示
 	$('#treeDemo').tree({
 		animate: true,
 		data: [{
@@ -73,6 +73,60 @@
 		    }]
 		}],
 		checkbox: true
+	});
+
+  //树形控件演示2  
+	$('#treeDemo2').tree({
+		animate: true,
+		data: [{
+		    "text":"没有复选框的树",
+		    "children":[{
+		      "text":"应用系统设置",
+		      "state":"closed",
+		      "children":[{
+			          "text":"选项一"
+				      },{
+			          "text":"选项二"
+			      }]
+			    },{
+		      "text":"权限管理模块",
+		      "state":"open",
+		      "children":[{
+		          "text":"选项一"
+			      },{
+		          "text":"选项二"
+			      },{
+		          "text":"选项三"
+		      }]
+		    }]
+		},{
+		    "text":"系统权限树二",
+		    "state":"closed",
+		    "children":[{
+		      "text":"权限设置A"
+		    },{
+		      "text":"权限设置B"
+		    }]
+		}]
+	});
+	//弹窗演示
+	$('#windowDemo').window({
+		title: '项目巡检统计图表',
+    width: 900,
+    height: 700,
+    modal: true,
+    collapsible: false,
+    minimizable: false,
+    maximizable: false,
+    resizable: false,
+    border: false,
+    closed: true,
+    constrain: true,
+    cls: 'bgy-window',
+    headerCls: 'bgy-tit'
+	});
+	$('#trigWindow').on('click', function(e) {
+		$('#windowDemo').window('open');
 	});
 
 })();

@@ -1,6 +1,6 @@
 @charset "utf-8";
 /**
- * BGY-UI 0.9.5
+ * BGY-UI 0.9.6
  * 表单等难以自适应的部件，基于1366*768尺寸的屏幕
  */
 
@@ -11,10 +11,20 @@ a:hover,
 a:visited,
 a:active,
 a:focus { text-decoration: none; }
+
+/* 占位符 */
+::-webkit-input-placeholder { color: #A7A7A8; } /* WebKit browsers */
+:-moz-placeholder { color: #A7A7A8; }/* Mozilla Firefox 4 to 18 */
+::-moz-placeholder { color: #A7A7A8; } /* Mozilla Firefox 19+ */
+:-ms-input-placeholder { color: #A7A7A8; }/* Internet Explorer 10+ */
+
+/* 线框、投影 */
 hr { margin: 20px 0; border: 0; background: #dbdbdb; height: 1px; }
 hr.vr { width: 1px; }
 .shadow { box-shadow: 0 0 8px rgba(0,0,0,.1); }
 .border { border: 1px solid #DAE1E8; }
+
+/* 状态图标 */
 .state-going,
 .state-publish,
 .state-feedback,
@@ -27,12 +37,16 @@ hr.vr { width: 1px; }
 .state-feedback:before { background-color: #029602; }
 .state-nofeedback:before { background-color: #FF0000; }
 
+/* 滚动条 */
+
+
 /* 字体图标绑定 */
 @font-face { font-family: 'ico-bgy'; src: url('../fonts/ico-bgy.eot?5s12nb'); src: url('../fonts/ico-bgy.eot?5s12nb#iefix') format('embedded-opentype'), url('../fonts/ico-bgy.ttf?5s12nb') format('truetype'), url('../fonts/ico-bgy.woff?5s12nb') format('woff'), url('../fonts/ico-bgy.svg?5s12nb#ico-bgy') format('svg'); font-weight: normal; font-style: normal; }
 [class*="icon"],
 .bgy-path,
 .bgy-select,
-.bgy-tree { font-family: 'ico-bgy' !important; speak: none; font-style: normal; font-weight: normal; font-variant: normal; text-transform: none; line-height: 1; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+.bgy-tree,
+.bgy-form { font-family: 'ico-bgy' !important; speak: none; font-style: normal; font-weight: normal; font-variant: normal; text-transform: none; line-height: 1; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
 
 /* 面包屑 */
 .bgy-path { color: #4C5E70; font-size: 14px; line-height: 22px; padding: 0; list-style: none; }
@@ -56,21 +70,23 @@ hr.vr { width: 1px; }
 .easyui-tabs.bgy-tabs .tabs-title { font-size: 14px; }
 
 /* 树形控件 */
-.bgy-tree .tree-node { height: auto; padding: 10px 0; }
+.bgy-tree .tree-node { height: auto; padding: 4px 0; }
 .bgy-tree .tree-node-hover,
 .bgy-tree .tree-node-selected { background-color: transparent; }
 .bgy-tree .tree-expanded,
 .bgy-tree .tree-collapsed,
 .bgy-tree .tree-checkbox0,
 .bgy-tree .tree-checkbox1,
-.bgy-tree .tree-checkbox2 { background: none; width: 22px; height: 20px; }
+.bgy-tree .tree-checkbox2 { background: none; width: 28px; height: 20px; text-align: center; }
 .bgy-tree .tree-icon { display: none; }
 .bgy-tree .tree-title { color: #4C5E70; }
-.bgy-tree .tree-expanded:before { content: '\e907'; color: #7B8DA0; font-size: 12px; line-height: 16px; }
-.bgy-tree .tree-collapsed:before { content: '\e911'; color: #7B8DA0; font-size: 16px; line-height: 18px; }
-.bgy-tree .tree-checkbox:before { text-align: center; display: inline-block; content: ''; border-radius: 4px; border: 1px solid #DBDBDB; width: 20px; height: 20px; margin-right: 5px; }
+.bgy-tree .tree-expanded:before { content: '\e907'; color: #7B8DA0; font-size: 13px; line-height: 18px; }
+.bgy-tree .tree-collapsed:before { content: '\e911'; color: #7B8DA0; font-size: 14px; line-height: 18px; }
+.bgy-tree .tree-checkbox:before { text-align: center; display: inline-block; content: ''; border-radius: 4px; border: 1px solid #DBDBDB; width: 20px; height: 20px; }
 .bgy-tree .tree-checkbox1:before { content: '\e90b'; color: #797979; line-height: 18px; }
-.bgy-tree .tree-checkbox2:before { content: '\e906'; color: #7B8DA0; font-size: 13px; line-height: 18px; }
+.bgy-tree .tree-checkbox2:before { content: '\e906'; color: #7B8DA0; font-size: 13px; line-height: 20px; }
+.bgy-tree .tree-file { /*display: inline-block;*/  }
+.bgy-tree .tree-indent { width: 28px; }
 
 /* 分页 */
 .l-btn-plain { width: 36px; height: 30px; border: 0px solid #FFFFFF; margin: 0 2px; padding: 0; text-align: center; vertical-align: middle; }
@@ -136,48 +152,69 @@ hr.vr { width: 1px; }
 .bgy-icon-close:active { color: #bc0404; }
 
 /* 按钮 */
-.bgy-btn { display: inline-block; font-size: 14px; text-align: center; border: 1px solid #1A9CC4; border-radius: 3px; height: 26px; line-height: 26px; color: #1A9CC4; text-decoration: none; padding: 0 17px; min-width: 100px; white-space: nowrap; }
+.bgy-btn { display: inline-block; font-size: 14px; text-align: center; border: 1px solid #1A9CC4; border-radius: 3px; height: 26px; line-height: 26px; color: #1A9CC4; text-decoration: none; padding: 0 17px; min-width: 100px; white-space: nowrap; cursor: pointer; }
 .bgy-btn:hover { background-color: #1A9CC4; color: #fff; }
 .bgy-btn:active { background-color: #1686A7; color: #fff; }
 .bgy-btn.btn-n2 { letter-spacing: 10px; padding: 0 10px 0 20px; width: 80px; min-width: 80px; }
 .bgy-btn.btn-n3 { letter-spacing: 5px; padding: 0 10px 0 15px; }
 
 /* 文字规范及输入框 */
-.bgy-tit { font-size: 18px; font-weight: normal; line-height: 150%; color: #4C5E70; }
+.bgy-tit,
+.bgy-tit > div { font-size: 18px; font-weight: normal; line-height: 150%; color: #4C5E70; }
 .bgy-txt { font-size: 12px; line-height: 150%; color: #4C5E70; }
 .bgy-txt-inverse { background: #1A9CC4; color: #fff; }
 .bgy-txt-gray { background: #ededed; color: #333; }
 .bgy-info { font-size: 12px; line-height: 150%; color: #7B8DA0; }
 
 /* 表单 */
-/* v2.0 考虑统一父容器样式 */
 .bgy-form { padding: 20px; width: 1000px; }
-.bgy-form ul { margin: 0 -5px 0 -95px; overflow: hidden; zoom: 1; }
-.bgy-form li { float: left; width: 490px; margin-left: 20px; list-style: none; padding: 0 0 20px 0; }
-.bgy-form .bgy-input label { text-overflow: ellipsis; overflow: hidden; white-space:nowrap; }
-.bgy-form .btns { text-align: center; }
-.bgy-input { line-height: 30px; }
-.bgy-input label,
-.bgy-textarea label,
-.bgy-select label { text-align: right; width: 120px; display: inline-block; font-size: 12px; margin: 0 20px 0 0; height: 30px; line-height: 30px; color: #4C5E70; font-weight: normal; vertical-align: middle; }
-.bgy-input input { display: inline-block; height: 30px; width: 340px; line-height: 30px; padding: 0 5px; font-size: 12px; color: #a7a7a8; border: 1px solid #DAE1E8; vertical-align: middle; }
-.bgy-input input[disabled='disabled'] { background-color: #f4f4f4; }
-.bgy-input .info { margin-left: 10px; vertical-align: middle; }
-.bgy-textarea label,
-.bgy-select label { vertical-align: top; }
-.bgy-textarea textarea { vertical-align: top; width: 850px; line-height: 30px; padding: 0 4px; font-size: 12px; color: #a7a7a8; border: 1px solid #DAE1E8; }
-.bgy-select select { padding: 0 14px 0 5px; width: 850px; height: 30px; line-height: 30px; vertical-align: top; border: 1px solid #DAE1E8; color: #a7a7a8; font-size: 12px;
-  /*将默认的select选择框样式清除*/  
-  appearance: none;  
-  -moz-appearance: none;  
-  -webkit-appearance: none;  
-  /*在选择框的最右侧中间显示小箭头图片*/   
-  background: url('../images/icon-arrowD.png') no-repeat right center; 
-  
+.bgy-form select,
+.bgy-form input[type="radio"],
+.bgy-form input[type="checkbox"] {/*清除默认的select样式*/
+  appearance: none; -moz-appearance: none; -webkit-appearance: none; outline: none;
 }
-.bgy-select select::-ms-expand { display: none; }
+.bgy-form select::-ms-expand { display: none; }
 
-.required label:after { content: "*"; color: #f00; font-size: 14px; }
+.bgy-form ul { margin: 0 -5px 0 -55px; overflow: hidden; zoom: 1; padding: 0; }
+.bgy-form li { float: left; width: 490px; margin-left: 20px; list-style: none; padding: 0 0 20px 0; line-height: 30px; }
+.bgy-form label { text-overflow: ellipsis; overflow: hidden; white-space:nowrap; text-align: right; display: inline-block; font-size: 12px; margin: 0 20px 0 0; height: 30px; line-height: 30px; color: #4C5E70; font-weight: normal; vertical-align: middle; width: 120px; }
+.bgy-form input[type='text'],
+.bgy-form input[type='password'] { display: inline-block; height: 30px; width: 340px; line-height: 30px; padding: 0 5px; font-size: 12px; color: #a7a7a8; border: 1px solid #DAE1E8; vertical-align: middle; }
+.bgy-form input[type='text'][disabled='disabled'],
+.bgy-form input[type='password'][disabled='disabled'] { background-color: #f4f4f4; }
+.bgy-form input[type='radio'] ~ label,
+.bgy-form input[type='checkbox'] ~ label { width: auto; }
+.bgy-form textarea ~label,
+.bgy-form select ~label { vertical-align: top; }
+.bgy-form textarea { vertical-align: top; width: 800px; line-height: 30px; padding: 0 4px; font-size: 12px; color: #a7a7a8; border: 1px solid #DAE1E8; }
+.bgy-form select { padding: 0 14px 0 5px; width: 800px; height: 30px; line-height: 30px; vertical-align: top; border: 1px solid #DAE1E8; color: #a7a7a8; font-size: 12px;
+   background: url('../images/icon-arrowD.png') no-repeat right center;
+}
+
+.bgy-form .btns { text-align: center; }
+.bgy-form .info { margin-left: 10px; vertical-align: middle; }
+.bgy-form input.prompt { content: "dd"; background: url('../images/icon-prompt.png') no-repeat right center; cursor: pointer; }
+.required label:after { position: absolute; content: "*"; color: #f00; font-size: 14px; }
 .error input { background-color: #FEE; }
 .error .info { color: #f00; }
-input.prompt { content: "dd"; background: url('../images/icon-prompt.png') no-repeat right center; cursor: pointer; }
+
+/* 单选框、复选框 */
+.bgy-form input[type="radio"]:before { display: inline-block; content: "\e90c"; vertical-align: middle; color: #fff; border: 1px solid #cacaca; border-radius: 50%; font-size: 14px; background-color: #fff; width: 16px; height: 16px; }
+.bgy-form input[type="radio"]:checked:before { color: #1a9cc4; border-color: #1a9cc4; }
+.bgy-form input[type="radio"][disabled='disabled']:before { color:#f4f4f4; border-color: #d5d5d5; background-color: #f4f4f4; }
+
+.bgy-form input[type="checkbox"]:before { display: inline-block; content: '\e90b'; vertical-align: middle; font-size: 14px; background-color: #fff; color: #fff; width: 20px; height: 20px; line-height: 18px; text-align: center; border: 1px solid #dddddd; border-radius: 4px; }
+.bgy-form input[type="checkbox"]:checked:before { content: "\e90b"; color: #adafb3; }
+.bgy-form input[type="checkbox"][disabled='disabled']:before { color:#f4f4f4; background-color: #f4f4f4; }
+
+/* 弹窗 */
+.bgy-window {}
+.bgy-window .panel-header { background-color: #F0F5F5; }
+.bgy-window .panel-title { height: 40px; line-height: 40px; padding-left: 15px; }
+.bgy-window .panel-body { padding: 20px; }
+.bgy-window .btns { padding-bottom: 20px; }
+.bgy-window .bd { border: 1px solid #DAE1E8; width: auto; }
+.bgy-window .bgy-form ul { margin: 0; }
+.bgy-window .bgy-form li { width: 385px; }
+.bgy-window .bgy-form input[type='text'],
+.bgy-window .bgy-form input[type='password'] { width: 240px; }
