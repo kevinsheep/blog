@@ -186,8 +186,8 @@ hr.vr { width: 1px; }
 .bgy-form input[type='checkbox'] ~ label { width: auto; }
 .bgy-form textarea ~label,
 .bgy-form select ~label { vertical-align: top; }
-.bgy-form textarea { vertical-align: top; width: 800px; line-height: 30px; padding: 0 4px; font-size: 12px; color: #a7a7a8; border: 1px solid #DAE1E8; }
-.bgy-form select { padding: 0 14px 0 5px; width: 800px; height: 30px; line-height: 30px; vertical-align: top; border: 1px solid #DAE1E8; color: #a7a7a8; font-size: 12px;
+.bgy-form textarea { vertical-align: top; width: 600px; min-height: 6em; line-height: 22px; padding: 0 4px; font-size: 12px; color: #a7a7a8; border: 1px solid #DAE1E8; }
+.bgy-form select { padding: 0 14px 0 5px; width: 340px; height: 30px; line-height: 30px; vertical-align: top; border: 1px solid #DAE1E8; color: #a7a7a8; font-size: 12px;
    background: url('../images/icon-arrowD.png') no-repeat right center;
 }
 
@@ -214,7 +214,8 @@ hr.vr { width: 1px; }
 .bgy-window .panel-body { padding: 20px; }
 .bgy-window .btns { padding-bottom: 20px; }
 .bgy-window .bd { border: 1px solid #DAE1E8; width: auto; }
-.bgy-window .bgy-form ul { margin: 0; }
-.bgy-window .bgy-form li { width: 385px; }
+.bgy-window .bgy-form ul { margin: 0 0 0 -35px; }
+.bgy-window .bgy-form li { width: 405px; }
 .bgy-window .bgy-form input[type='text'],
-.bgy-window .bgy-form input[type='password'] { width: 240px; }
+.bgy-window .bgy-form input[type='password'] { width: 298px; }
+.bgy-window .bgy-form label { width: 80px; }
