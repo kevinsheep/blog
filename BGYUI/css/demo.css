@@ -2,9 +2,9 @@
  * BGY-UI 1.0
  *
  */
-
-#toc-doc { position: relative; margin-left: 200px; overflow: auto; }
-#toc-menu { width: 180px; position: absolute; top: 330px; left: 50%; margin-left: -570px; }
+.container { overflow: hidden; }
+#toc-doc { position: relative; }
+#toc-menu { width: 180px; position: absolute; top: 330px; left: 50%; margin-left: -570px; z-index: 99; background-color: #fff; }
 #toc-menu.fixed { position: fixed; top: 10px !important;}
 
 .bs-callout ul,
@@ -18,10 +18,14 @@
 	#toc-menu { margin-left: -360px; }
 }
 @media (min-width: 992px){
-	#toc-menu { margin-left: -470px; }
+	#toc-menu { margin-left: 290px; box-shadow: 0 0 8px rgba(0,0,0,.1); }
+	#toc-doc { margin-left: auto; }
+	.bgy-form li { width: 430px; }
+	.bgy-form input[type='text'], .bgy-form input[type='password'] { width: 280px; }
 }
 @media (min-width: 1200px){
 	#toc-menu { margin-left: -570px; }
+	#toc-doc { margin-left: 200px; }
 	.bgy-form li { width: 440px; }
 	.bgy-form input[type='text'], .bgy-form input[type='password'] { width: 290px; }
 }

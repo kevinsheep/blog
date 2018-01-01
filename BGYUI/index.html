@@ -15,7 +15,7 @@
     <![endif]-->
     <link rel="stylesheet" href="./jquery-easyui/themes/metro/easyui.css">
     <link rel="stylesheet" href="./css/docs.css">
-    <link rel="stylesheet" href="./css/bgy-ui.css">
+    <link rel="stylesheet" href="./css/bgy-ui.css?3553">
     <link rel="stylesheet" href="./css/demo.css">
     <script src="./js/jquery.min.js"></script>
     <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
@@ -31,7 +31,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="/">BGY UI</a>
+          <a class="navbar-brand" href="./">BGY UI</a>
         </div>
         <div class="collapse navbar-collapse" id="bgy-ui-nav">
           <ul class="nav navbar-nav">
@@ -55,6 +55,7 @@
       </nav>
 
       <div id="toc-doc" data-spy="scroll" data-target="#toc-menu">
+
         <h3>面包屑</h3>
         <div class="bs-callout bs-callout-info">
             <span class="label label-primary">开发维护：杨伟胜</span>
@@ -112,12 +113,32 @@
           </pre>
         </figure>
 
-        <h3>下拉框</h3>
+        <h3>下拉组合框（combobox）</h3>
         <div class="bs-callout bs-callout-info">
             <span class="label label-primary">开发维护：何青杏</span>
             <span class="label label-info">基于EasyUI</span>
-            <span class="label label-danger">优先开发，代码整合中</span>
+            <span class="label label-danger">代码整合中</span>
         </div>
+        <div class="bs-example">
+          <select class="easyui-combobox bgy-combo" name="state">
+            <option value="" selected id="">选择区域</option>
+            <option value="AL">北京区域</option>
+            <option value="AK">佛肇区域</option>
+            <option value="AZ">广深区域</option>
+            <option value="AR">泸苏区域</option>    
+          </select>
+        </div>
+        <figure class="highlight">
+          <pre class="language-html" data-lang="html">
+<code>&lt;select class="easyui-combobox bgy-combo" name="state"&gt;
+  &lt;option value="" selected id=""&gt;选择区域&lt;/option&gt;
+  &lt;option value="AL"&gt;北京区域&lt;/option&gt;
+  &lt;option value="AK"&gt;佛肇区域&lt;/option&gt;
+  &lt;option value="AZ"&gt;广深区域&lt;/option&gt;
+  &lt;option value="AR"&gt;泸苏区域&lt;/option&gt;    
+&lt;/select&gt;</code>
+          </pre>
+        </figure>
 
         <h3>树形控件</h3>
         <div class="bs-callout bs-callout-info">
@@ -476,24 +497,24 @@
         <div class="bs-example">
           <div class="bgy-form required">
             <label for="selectDemo">必填下拉选择框</label>
-              <select id="selectDemo" name="">
-                <option value="" selected="">默认选中项</option>
-                <option value="1">菜单一</option>
-                <option value="2">菜单二</option>
-                <option value="3">菜单三</option>
-              </select>
+            <select id="selectDemo" name="">
+              <option value="" selected="">默认选中项</option>
+              <option value="1">菜单一</option>
+              <option value="2">菜单二</option>
+              <option value="3">菜单三</option>
+            </select>
           </div>
         </div>
         <figure class="highlight">
           <pre class="language-html" data-lang="html">
 <code>&lt;div class="bgy-form required"&gt;
   &lt;label for="selectDemo"&gt;必填下拉选择框&lt;/label&gt;
-    &lt;select id="selectDemo" name=""&gt;
-      &lt;option value="" selected=""&gt;默认选中项&lt;/option&gt;
-      &lt;option value="1"&gt;菜单一&lt;/option&gt;
-      &lt;option value="2"&gt;菜单二&lt;/option&gt;
-      &lt;option value="3"&gt;菜单三&lt;/option&gt;
-    &lt;/select&gt;
+  &lt;select id="selectDemo" name=""&gt;
+    &lt;option value="" selected=""&gt;默认选中项&lt;/option&gt;
+    &lt;option value="1"&gt;菜单一&lt;/option&gt;
+    &lt;option value="2"&gt;菜单二&lt;/option&gt;
+    &lt;option value="3"&gt;菜单三&lt;/option&gt;
+  &lt;/select&gt;
 &lt;/div&gt;</code>
           </pre>
         </figure>
@@ -552,6 +573,8 @@
         <div class="bs-callout bs-callout-info">
             <span class="label label-primary">开发维护：杨伟胜</span>
             <span class="label label-info">基于EasyUI</span>
+            <span class="label label-info">必须引用bgy-ui.js</span>
+            <span class="label label-success">开发完成</span>
         </div>
 
         <h4>大编辑弹窗</h4>
@@ -580,27 +603,168 @@
                     <label for="input1">用户所在公司</label>
                     <input type="text" id="input1" placeholder="请输入文字">
                   </li>
-                  <li>
-                  </li>
                 </ul>
                 
-
-              <h5>角色详细信息</h5>
-            <label for="textareaDemo">文本框</label>
-            <textarea rows="3" id="textareaDemo"></textarea>
-          </div>
-
+                <h5>角色详细信息</h5>
+                <label for="textareaDemo">文本框</label>
+                <textarea id="textareaDemo" placeholder="请输入文字"></textarea>
+              </div>
             </div>
-
           </div>
           <span id="trigWindow" class="bgy-btn">点我弹大窗</span>
         </div>
+        <figure class="highlight">
+          <pre class="language-html" data-lang="html">
+<code>&lt;div id="windowDemo"&gt;
+  &lt;div class="btns"&gt;
+    &lt;span class="bgy-btn"&gt;确定&lt;/span&gt;
+    &lt;span class="bgy-btn"&gt;取消&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;div class="bd"&gt;
+    &lt;div class="bgy-form"&gt;
+      &lt;ul&gt;
+        &lt;li class="required"&gt;
+          &lt;label for="input21"&gt;标题名称&lt;/label&gt;
+          &lt;input type="text" id="input21" placeholder="请输入文字"&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+          &lt;label for="input22"&gt;用户BIP部门&lt;/label&gt;
+          &lt;input type="text" id="input22" value="信息管理中心" disabled="disabled"&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+          &lt;label for="input23"&gt;授权公司&lt;/label&gt;
+          &lt;input type="text" id="input23" placeholder="请输入文字"&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+          &lt;label for="input1"&gt;用户所在公司&lt;/label&gt;
+          &lt;input type="text" id="input1" placeholder="请输入文字"&gt;
+        &lt;/li&gt;
+      &lt;/ul&gt;
+      
+      &lt;h5&gt;角色详细信息&lt;/h5&gt;
+      &lt;label for="textareaDemo"&gt;文本框&lt;/label&gt;
+      &lt;textarea id="textareaDemo" placeholder="请输入文字"&gt;&lt;/textarea&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;span id="trigWindow" class="bgy-btn"&gt;点我弹大窗&lt;/span&gt;</code>
+          </pre>
+        </figure>
 
         <h4>小编辑弹窗</h4>
+        <div class="bs-example">
+          <div id="windowDemoSmall">
+            <div class="bd">
+              <div class="bgy-form">
+                <ul>
+                  <li>
+                    <label for="input31">标题名称</label>
+                    <input type="text" id="input31" placeholder="请输入文字">
+                  </li>
+                  <li class="required">
+                    <label for="input33">授权公司</label>
+                    <input type="text" id="input33" placeholder="请输入文字">
+                  </li>
+                  <li class="required">
+                    <label for="input1">用户所在公司</label>
+                    <select id="selectDemo" name="" disabled="disabled">
+                      <option value="" selected="selected">默认选中项</option>
+                    </select>
+                  </li>
+                  <li>
+                    <label for="textareaDemo">备注</label>
+                    <textarea id="textareaDemo" placeholder="请输入文字"></textarea>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="btns">
+              <span class="bgy-btn">确定</span>
+              <span class="bgy-btn">取消</span>
+            </div>
+          </div>
+          <span id="trigWindow2" class="bgy-btn">点我开小窗</span>
+        </div>
+        <figure class="highlight">
+          <pre class="language-html" data-lang="html">
+<code>&lt;div id="windowDemoSmall"&gt;
+  &lt;div class="bd"&gt;
+    &lt;div class="bgy-form"&gt;
+      &lt;ul&gt;
+        &lt;li&gt;
+          &lt;label for="input31"&gt;标题名称&lt;/label&gt;
+          &lt;input type="text" id="input31" placeholder="请输入文字"&gt;
+        &lt;/li&gt;
+        &lt;li class="required"&gt;
+          &lt;label for="input33"&gt;授权公司&lt;/label&gt;
+          &lt;input type="text" id="input33" placeholder="请输入文字"&gt;
+        &lt;/li&gt;
+        &lt;li class="required"&gt;
+          &lt;label for="input1"&gt;用户所在公司&lt;/label&gt;
+          &lt;select id="selectDemo" name="" disabled="disabled"&gt;
+            &lt;option value="" selected="selected"&gt;默认选中项&lt;/option&gt;
+          &lt;/select&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+          &lt;label for="textareaDemo"&gt;备注&lt;/label&gt;
+          &lt;textarea id="textareaDemo" placeholder="请输入文字"&gt;&lt;/textarea&gt;
+        &lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="btns"&gt;
+    &lt;span class="bgy-btn"&gt;确定&lt;/span&gt;
+    &lt;span class="bgy-btn"&gt;取消&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;span id="trigWindow2" class="bgy-btn"&gt;点我开小窗&lt;/span&gt;</code>
+          </pre>
+        </figure>
 
         <h4>提示弹窗</h4>
+        <div class="bs-example">
+          <div id="alertDemo">
+            <div class="bd">
+              <p class="bgy-tit">您没有权限访问此数据，请联系信息管理中心项目开发小组开通权限</p>
+            </div>
+            <div class="btns">
+              <span class="bgy-btn">确定</span>
+            </div>
+          </div>
+          <span id="trigWindow3" class="bgy-btn">点我弹提示</span>
+        </div>
+        <figure class="highlight">
+          <pre class="language-html" data-lang="html">
+<code>&lt;div id="alertDemo"&gt;
+  &lt;div class="bd"&gt;
+    &lt;p class="bgy-tit"&gt;您没有权限访问此数据，请联系信息管理中心项目开发小组开通权限&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div class="btns"&gt;
+    &lt;span class="bgy-btn"&gt;确定&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;span id="trigWindow3" class="bgy-btn"&gt;点我弹提示&lt;/span&gt;</code>
+          </pre>
+        </figure>
 
         <h4>提示框</h4>
+        <div class="bs-example">
+          <div id="tipsDemo" class="bgy-tips shadow">
+            <p class="bgy-tit">您没有权限访问此数据，请联系信息管理中心项目开发小组开通权限</p>
+          </div>
+          <span id="trigWindow4" class="bgy-btn">点我弹提示</span>
+        </div>
+        <figure class="highlight">
+          <pre class="language-html" data-lang="html">
+<code>&lt;div id="tipsDemo" class="bgy-tips shadow"&gt;
+  &lt;p class="bgy-tit"&gt;您没有权限访问此数据，请联系信息管理中心项目开发小组开通权限&lt;/p&gt;
+&lt;/div&gt;
+&lt;span id="trigWindow4" class="bgy-btn"&gt;点我弹提示&lt;/span&gt;</code>
+          </pre>
+          <pre class="language-html" data-lang="html">
+<code></code>
+          </pre>
+        </figure>
 
         <h3>其它</h3>
         <div class="bs-callout bs-callout-info">
@@ -666,34 +830,106 @@
         </figure>
 
         <h4>表格样式</h4>
-
+        <div class="bs-example">
+          <div class="bgy-table">
+            <table class="easyui-datagrid">
+                <thead>
+                <tr>
+                  <th data-options="field:'code',width:63,align:'center'">序号</th>
+                  <th data-options="field:'name',width:295,align:'left'">项目名称</th>
+                  <th data-options="field:'price',width:85,align:'center'">巡检得分</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>廊坊燕郊碧桂园时代城</td>
+                  <td>98</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>承德兴隆碧桂园项目</td>
+                  <td>96</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>廊坊燕郊碧桂园时代城</td>
+                  <td>94</td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>承德兴隆碧桂园项目</td>
+                  <td>91</td>
+                </tr>
+                <tr>
+                  <td>5</td>
+                  <td>廊坊燕郊碧桂园时代城</td>
+                  <td>89</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
         <h4>线框矩形</h4>
         <div class="bs-example">
-          <div class="border" style="width: 1000px; height: 300px; margin: auto;"></div>
+          <div class="border" style="width: 300px; height: 180px; margin: auto;"></div>
         </div>
         <figure class="highlight">
           <pre class="language-html" data-lang="html">
-            &lt;div class="border" style="width: 1000px; height: 300px; margin: auto;"&gt;&lt;/div&gt;
+            &lt;div class="border" style="width: 300px; height: 180px; margin: auto;"&gt;&lt;/div&gt;
           </pre>
         </figure>
 
         <h4>阴影矩形</h4>
         <div class="bs-example">
-          <div class="shadow" style="width: 1000px; height: 300px; margin: auto;"></div>
+          <div class="shadow" style="width: 300px; height: 180px; margin: auto;"></div>
         </div>
         <figure class="highlight">
           <pre class="language-html" data-lang="html">
-            &lt;div class="shadow" style="width: 1000px; height: 300px; margin: auto;"&gt;&lt;/div&gt;
+            &lt;div class="shadow" style="width: 300px; height: 180px; margin: auto;"&gt;&lt;/div&gt;
           </pre>
         </figure>
 
         <h4>横向滚动条</h4>
+        <div class="bs-example">
+          <div class="bgy-scroll" style="width: 300px; height: 50px; margin: auto; overflow-x: scroll; white-space: nowrap;">横向滚动条演示横向滚动条演示横向滚动条演示横向滚动条演示横向滚动条演示横向滚动条演示横向滚动条演示横向滚动条演示横向滚动条演示横向滚动条演示横向滚动条演示横向滚动条演示横向滚动条演示横向滚动条演示</div>
+        </div>
+        <figure class="highlight">
+          <pre class="language-html" data-lang="html">
+<code>&lt;div class="bgy-scroll" style="width: 300px; height: 50px; margin: auto; overflow-x: scroll; white-space: nowrap;"&gt;横向滚动条演示横向滚动条演示横向滚动条演示横向滚动条演示横向滚动条演示横向滚动条演示横向滚动条演示横向滚动条演示横向滚动条演示横向滚动条演示横向滚动条演示横向滚动条演示横向滚动条演示横向滚动条演示&lt;/div&gt;</code>
+          </pre>
+        </figure>
+
         <h4>纵向滚动条</h4>
-        <h4>柱状图</h4>
-        <h4>饼形图</h4>
+        <div class="bs-example">
+          <div class="bgy-scroll" style="width: 50px; height: 150px; margin: auto; overflow-y: scroll;">纵向滚动条演示纵向滚动条演示纵向滚动条演示纵向滚动条演示纵向滚动条演示纵向滚动条演示纵向滚动条演示纵向滚动条演示纵向滚动条演示纵向滚动条演示纵向滚动条演示纵向滚动条演示纵向滚动条演示纵向滚动条演示</div>
+        </div>
+        <figure class="highlight">
+          <pre class="language-html" data-lang="html">
+<code>&lt;div class="bgy-scroll" style="width: 50px; height: 150px; margin: auto; overflow-y: scroll;"&gt;纵向滚动条演示纵向滚动条演示纵向滚动条演示纵向滚动条演示纵向滚动条演示纵向滚动条演示纵向滚动条演示纵向滚动条演示纵向滚动条演示纵向滚动条演示纵向滚动条演示纵向滚动条演示纵向滚动条演示纵向滚动条演示&lt;/div&gt;</code>
+          </pre>
+        </figure>
+
+
+        <h3>图片上传</h3>
+        <div class="bs-callout bs-callout-info">
+            <span class="label label-primary">开发维护：杨伟胜</span>
+            <span class="label label-danger">实验组件</span>
+        </div>
+        <div class="bs-example">
+          <div class="bgy-upload">
+            <span class="bgy-btn" id="uploadPic">上传图片</span>
+            <span class="bgy-btn" id="takeAPhoto">拍摄照片（只支持手机端）</span>
+            <input type="file" name="files" capture="camera" value="" accept="image/*" multiple>
+            
+          </div>
+        </div>
+
       </div>
     </div>
   <script src="./js/bgy-ui.js"></script>
-  <script src="./js/demo.js"></script>
+  <script src="./js/jquery.imgUpload.js"></script>
+  <script src="./js/demo.js?3"></script>
+
 </body>
 </html>
