@@ -47,6 +47,7 @@ hr.vr { width: 1px; }
 .bgy-select,
 .bgy-tree,
 .bgy-form,
+.bgy-form input,
 .panel-tool { font-family: 'ico-bgy' !important; speak: none; font-style: normal; font-weight: normal; font-variant: normal; text-transform: none; line-height: 1; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
 
 /* 面包屑 */
