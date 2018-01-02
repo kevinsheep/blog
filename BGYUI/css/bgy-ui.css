@@ -169,7 +169,9 @@ hr.vr { width: 1px; }
 .bgy-form { padding: 20px; width: 1000px; }
 .bgy-form select,
 .bgy-form input[type="radio"],
-.bgy-form input[type="checkbox"] {/*清除默认的select样式*/
+.bgy-form input[type="radio" i],
+.bgy-form input[type="checkbox"],
+.bgy-form input[type="checkbox" i] {/*清除默认的select样式*/
   appearance: none; -moz-appearance: none; -webkit-appearance: none; outline: none;
 }
 .bgy-form select::-ms-expand { display: none; }
@@ -178,11 +180,17 @@ hr.vr { width: 1px; }
 .bgy-form li { float: left; width: 490px; margin-left: 20px; list-style: none; padding: 0 0 20px 0; line-height: 30px; }
 .bgy-form label { text-overflow: ellipsis; overflow: hidden; white-space:nowrap; text-align: right; display: inline-block; font-size: 12px; margin: 0 20px 0 0; height: 30px; line-height: 30px; color: #4C5E70; font-weight: normal; vertical-align: middle; width: 120px; }
 .bgy-form input[type='text'],
-.bgy-form input[type='password'] { display: inline-block; height: 30px; width: 340px; line-height: 30px; padding: 0 5px; font-size: 12px; color: #a7a7a8; border: 1px solid #DAE1E8; vertical-align: middle; }
+.bgy-form input[type='text' i],
+.bgy-form input[type='password'],
+.bgy-form input[type='password' i] { display: inline-block; height: 30px; width: 340px; line-height: 30px; padding: 0 5px; font-size: 12px; color: #a7a7a8; border: 1px solid #DAE1E8; vertical-align: middle; }
 .bgy-form input[type='text'][disabled='disabled'],
-.bgy-form input[type='password'][disabled='disabled'] { background-color: #f4f4f4; }
+.bgy-form input[type='text' i][disabled='disabled'],
+.bgy-form input[type='password'][disabled='disabled'],
+.bgy-form input[type='password' i][disabled='disabled'] { background-color: #f4f4f4; }
 .bgy-form input[type='radio'] ~ label,
-.bgy-form input[type='checkbox'] ~ label { width: auto; }
+.bgy-form input[type='radio' i] ~ label,
+.bgy-form input[type='checkbox'] ~ label,
+.bgy-form input[type='checkbox' i] ~ label { width: auto; }
 .bgy-form textarea ~label,
 .bgy-form select ~label { vertical-align: top; }
 .bgy-form textarea { vertical-align: top; width: 600px; min-height: 6em; line-height: 22px; padding: 0 4px; font-size: 12px; color: #a7a7a8; border: 1px solid #DAE1E8; }
@@ -210,13 +218,19 @@ hr.vr { width: 1px; }
 #_easyui_combobox_i1_0 { color: #FFFFFF; background: #FFFFFF; height: 0; border-width: 0; }
 
 /* 单选框、复选框 */
-.bgy-form input[type="radio"]:before { display: inline-block; content: "\e90c"; vertical-align: middle; color: #fff; border: 1px solid #cacaca; border-radius: 50%; font-size: 14px; background-color: #fff; width: 16px; height: 16px; }
-.bgy-form input[type="radio"]:checked:before { color: #1a9cc4; border-color: #1a9cc4; }
-.bgy-form input[type="radio"][disabled='disabled']:before { color:#f4f4f4; border-color: #d5d5d5; background-color: #f4f4f4; }
+.bgy-form input[type="radio"]:before,
+.bgy-form input[type="radio" i]:before { display: inline-block; content: "\e90c"; vertical-align: middle; color: #fff; border: 1px solid #cacaca; border-radius: 50%; font-size: 14px; background-color: #fff; width: 16px; height: 16px; }
+.bgy-form input[type="radio"]:checked:before,
+.bgy-form input[type="radio" i]:checked:before { color: #1a9cc4; border-color: #1a9cc4; }
+.bgy-form input[type="radio"][disabled='disabled']:before,
+.bgy-form input[type="radio" i][disabled='disabled']:before { color:#f4f4f4; border-color: #d5d5d5; background-color: #f4f4f4; }
 
-.bgy-form input[type="checkbox"]:before { display: inline-block; content: '\e90b'; vertical-align: middle; font-size: 14px; background-color: #fff; color: #fff; width: 20px; height: 20px; line-height: 18px; text-align: center; border: 1px solid #dddddd; border-radius: 4px; }
-.bgy-form input[type="checkbox"]:checked:before { content: "\e90b"; color: #adafb3; }
-.bgy-form input[type="checkbox"][disabled='disabled']:before { color:#f4f4f4; background-color: #f4f4f4; }
+.bgy-form input[type="checkbox"]:before,
+.bgy-form input[type="checkbox" i]:before { display: inline-block; content: '\e90b'; vertical-align: middle; font-size: 14px; background-color: #fff; color: #fff; width: 20px; height: 20px; line-height: 18px; text-align: center; border: 1px solid #dddddd; border-radius: 4px; }
+.bgy-form input[type="checkbox"]:checked:before,
+.bgy-form input[type="checkbox" i]:checked:before { content: "\e90b"; color: #adafb3; }
+.bgy-form input[type="checkbox"][disabled='disabled']:before,
+.bgy-form input[type="checkbox" i][disabled='disabled']:before { color:#f4f4f4; background-color: #f4f4f4; }
 
 /* 弹窗 */
 .bgy-window {}
@@ -228,10 +242,12 @@ hr.vr { width: 1px; }
 .bgy-window .bgy-form ul { margin: 0 0 0 -20px; }
 .bgy-window .bgy-form li { width: 405px; }
 .bgy-window .bgy-form input[type='text'],
-.bgy-window .bgy-form input[type='password'] { width: 285px; }
+.bgy-window .bgy-form input[type='text' i],
+.bgy-window .bgy-form input[type='password'],
+.bgy-window .bgy-form input[type='password' i] { width: 285px; }
 .bgy-window .bgy-form label { width: 80px; }
 .bgy-window .bgy-form textarea { width: 710px; }
-.bgy-window .bgy-btn {  margin: 0 20px 0 0; }
+.bgy-window .bgy-btn { margin: 0 20px 0 0; }
 .bgy-window h5 { font-size: 16px; color: #1A9CC4; }
 
 .bgy-win-small {}
@@ -243,7 +259,9 @@ hr.vr { width: 1px; }
 .bgy-win-small .bgy-form ul { margin: 0; }
 .bgy-win-small .bgy-form li { float: none; width: auto; }
 .bgy-win-small .bgy-form input[type='text'],
+.bgy-win-small .bgy-form input[type='text' i],
 .bgy-win-small .bgy-form input[type='password'],
+.bgy-win-small .bgy-form input[type='password' i],
 .bgy-win-small .bgy-form textarea { width: 340px; }
 .bgy-win-small .bgy-form label { width: 150px; }
 
