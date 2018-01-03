@@ -203,30 +203,33 @@
 	$("#takeAPhoto").on('click', function(event) {
 		$(".bgy-upload input[type='file']").removeAttr("multiple").attr("capture", "camera").click();
 	});
-		$(".bgy-upload input").initInput();
+	$(".bgy-upload input").initInput();
 
-	//$(".bgy-upload").on("change", "input[type='file']", function(event) {
+	// $(".bgy-upload").on("change", "input[type='file']", function(event) {
 
-		//var files = $(this).get(0).files;
-		//$(".bgy-upload").append("<span>" + (files[0].name) + "</span>");
+	// 	var files = $(this).get(0).files;
+	// 	$(".bgy-upload").append("<span>" + (files[0].name) + "</span>");
 
-		// var imgData = new FormData();
-		// imgData.append('images', files);
+	// 	//var imgData = new FormData();
+	// 	//imgData.append('images', files);
+	// 	var imgData = new FormData($("#uploadForm").get(0));
 
-		// $.ajax({
-		// 	url: 'https://easy-mock.com/mock/5a314952cc5f0f50cf1208f0/example/upload',
-	 //    method : 'POST',
-	 //    dataType : 'JSON',
-	 //    data: imgData,
-	 //    //data: {name:"mockDataDebugByKEVINSHEEP"},
-  //     processData: false,
-  //     contentType: false,
-	 //    success : function(d) {
-		// 		console.log(d);
-	 //    }
-		// });
+	// 	$.ajax({
+	// 		url: 'https://easy-mock.com/mock/5a314952cc5f0f50cf1208f0/example/upload',
+	//     method : 'POST',
+	//     dataType : 'JSON',
+	//     data: imgData,
+	//     //data: {"name":"postmockDataDebugByKEVINSHEEP"},
+ //      //processData: true,
+ //      //contentType: "application/x-www-form-urlencoded",
+ //      processData: false,
+ //      contentType: false,
+	//     success : function(d) {
+	// 			console.log(d);
+	//     }
+	// 	});
 
-	//});
+	// });
 
 })();
 

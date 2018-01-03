@@ -15,7 +15,7 @@
 	#toc-menu { display: none; }
 }
 @media (min-width: 768px){
-	#toc-menu { margin-left: -360px; }
+	#toc-menu { margin-left: 180px; }
 }
 @media (min-width: 992px){
 	#toc-menu { margin-left: 290px; box-shadow: 0 0 8px rgba(0,0,0,.1); }
@@ -39,4 +39,3 @@
 	.container { width: 1600px; }
 	#toc-menu { margin-left: -785px; }
 }
-

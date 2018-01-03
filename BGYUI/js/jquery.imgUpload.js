@@ -11,11 +11,11 @@
      debug      : ""
     ,fileType   : ["jpg", "png", "bmp", "jpeg"]  //允许上传的文件类型
     ,fileSize   : 1024 * 1024 * 10               //上传文件的大小10M
-    ,fileAmount : 5
+    ,MAXCOUNT   : 5
   };//默认设置
 
   var validate = function (files) {
-    var validFiles = [];
+    var valid = [];
     for (var i = 0, file; file = files[i]; i++) {
       var fa = file.name.split("."),
           suffix = fa[fa.length - 1];
@@ -27,9 +27,9 @@
         alert(file.name + '文件过大');
         break;
       }
-      validFiles.push(file);
+      valid.push(file);
     }
-    return validFiles;
+    return valid;
   };
 
   $.fn.extend({
@@ -39,15 +39,15 @@
           $fn = $(fn);
       $(fn).each(function(index, ele){
         $(ele).on("change", function(event) {
-          var imgContainer = $(this).parent(), //存放图片的父元素
+          var $c = $(this).parent(), //存放图片的父元素
               fileArr = [],
-              numUp = imgContainer.find(".up-section").length,
+              icount = $c.find(".up-section").length,
               fileList = $(ele).get(0).files,
-              totalNum = numUp + fileList.length; //总的数量
-          if (fileList.length > $.fn.idata.fileAmount || totalNum > $.fn.idata.fileAmount) {
+              totalNum = icount + fileList.length; //总的数量
+          if (fileList.length > $.fn.idata.MAXCOUNT || totalNum > $.fn.idata.MAXCOUNT) {
             //本次上传或累计上传数量超过限制
             alert("上传图片数目不可以超过5个");
-          } else if (numUp < $.fn.idata.fileAmount) {
+          } else if (icount < $.fn.idata.MAXCOUNT) {
             fileArr = validate(fileList);
             for (var i = 0; i < fileArr.length; i++) {
               var $img = $(document.createElement("img"))
@@ -58,15 +58,15 @@
                 .addClass('loading')
                 .append("<span class='bgy-icon-close'></span>")
                 .append($img)
-                .prependTo(imgContainer);
+                .prependTo($c);
             }
           }
           setTimeout(function() {
             $(".up-section").removeClass("loading")
                             .find("img").show();
           }, 450);
-          numUp = imgContainer.find(".up-section").length;
-          if (numUp < $.fn.idata.fileAmount) {
+          icount = $c.find(".up-section").length;
+          if (icount < $.fn.idata.MAXCOUNT) {
             //显示上传按钮
           }else{
             //隐藏上传按钮
@@ -88,7 +88,7 @@
     var $parent = $(this).parent();
     $parent.remove();
 
-    if ($parent.siblings(".up-section").length < $.fn.idata.fileAmount) {
+    if ($parent.siblings(".up-section").length < $.fn.idata.MAXCOUNT) {
       //显示上传按钮;
     }
   });

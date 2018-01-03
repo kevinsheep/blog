@@ -21,7 +21,7 @@ a:focus { text-decoration: none; outline: none; }
 /* 线框、投影 */
 hr { margin: 20px 0; border: 0; background: #dbdbdb; height: 1px; }
 hr.vr { width: 1px; }
-.shadow { }
+.shadow { box-shadow: 0 0 8px rgba(0,0,0,.1); }
 .border { border: 1px solid #DAE1E8; }
 
 /* 状态图标 */
@@ -73,8 +73,8 @@ hr.vr { width: 1px; }
 
 /* 树形控件 */
 .bgy-tree .tree-node { height: auto; padding: 4px 0; }
-.bgy-tree .tree-node-hover,
-.bgy-tree .tree-node-selected { background-color: transparent; }
+/*.bgy-tree .tree-node-hover,
+.bgy-tree .tree-node-selected { background-color: transparent; }*/
 .bgy-tree .tree-expanded,
 .bgy-tree .tree-collapsed,
 .bgy-tree .tree-checkbox0,
@@ -210,9 +210,9 @@ hr.vr { width: 1px; }
 .bgy-combo {  }
 .bgy-combo ~ .textbox { min-width: 120px; }
 .bgy-combo ~ .textbox .textbox-text { padding-left: 10px; color: #4C5E70; height: 30px; }
-.textbox-addon-right { right: 5px !important; }
-.textbox-addon-right a:hover { background-color: #fff; color: #6db9c4; }
-.panel-body-noheader { border-top-width: 0px; border-bottom-width: 0px; height: auto !important; }
+.bgy-combo ~ .textbox .textbox-addon-right { right: 5px !important; }
+.bgy-combo ~ .textbox .textbox-addon-right a:hover { background-color: #fff; color: #6db9c4; }
+.combo-panel { border-top-width: 0px; border-bottom-width: 0px; height: auto !important; }
 .combobox-item { border-bottom: 1px solid #dbdbdb; height: 29px; line-height: 29px; font-size: 12px; padding: 0 0 0 10px; cursor: pointer; }
 .combobox-item-hover { background-color: #f4f4f4; color: #68bbd5; }
 .combobox-item-selected { background-color: #f4f4f4; color: #68bbd5; }
