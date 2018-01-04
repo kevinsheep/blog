@@ -48,6 +48,7 @@ hr.vr { width: 1px; }
 .bgy-tree,
 .bgy-form,
 .bgy-form input,
+.bgy-date,
 .panel-tool { font-family: 'ico-bgy' !important; speak: none; font-style: normal; font-weight: normal; font-variant: normal; text-transform: none; line-height: 1; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
 
 /* 面包屑 */
@@ -183,7 +184,8 @@ hr.vr { width: 1px; }
 .bgy-form input[type='text'],
 .bgy-form input[type='text' i],
 .bgy-form input[type='password'],
-.bgy-form input[type='password' i] { display: inline-block; height: 30px; width: 340px; line-height: 30px; padding: 0 5px; font-size: 12px; color: #a7a7a8; border: 1px solid #DAE1E8; vertical-align: middle; }
+.bgy-form input[type='password' i],
+.bgy-date input { display: inline-block; height: 30px; width: 340px; line-height: 30px; padding: 0 5px; font-size: 12px; color: #a7a7a8; border: 1px solid #DAE1E8; vertical-align: middle; }
 .bgy-form input[type='text'][disabled='disabled'],
 .bgy-form input[type='text' i][disabled='disabled'],
 .bgy-form input[type='password'][disabled='disabled'],
@@ -205,6 +207,9 @@ hr.vr { width: 1px; }
 .required label:after { position: absolute; content: "*"; color: #f00; font-size: 14px; }
 .error input { background-color: #FEE; }
 .error .info { color: #f00; }
+
+.bgy-date input { width: 274px; padding-right: 20px; }
+.bgy-date:after { content: "\e910"; margin-left: -28px; color: #50b3d2; vertical-align: middle;}
 
 /* combobox */
 .bgy-combo {  }
