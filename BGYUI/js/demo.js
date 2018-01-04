@@ -231,6 +231,21 @@
 
 	// });
 
+	//layui引用
+	layui.use('laydate', function(){
+	  var laydate = layui.laydate;
+	  
+	  laydate.render({
+	    elem: '#dateDemo'
+	  });
+
+	  laydate.render({
+	    elem: '#dateDemo2'
+	    ,type: 'time'
+	  });	  
+	});
+
+
 })();
 
 
