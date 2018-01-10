@@ -40,6 +40,7 @@
   //树形控件演示
 	$('#treeDemo').tree({
 		animate: true,
+		checkbox: true,
 		data: [{
 		    "text":"系统权限树一",
 		    "children":[{
@@ -72,7 +73,68 @@
 		      "text":"权限设置B"
 		    }]
 		}],
-		checkbox: true
+		onContextMenu: function(e, node){
+			e.preventDefault();
+			// select the node
+			$('#treeDemo').tree('select', node.target);
+			// display context menu
+			$('#treeCMenu').menu('show', {
+				left: e.pageX,
+				top: e.pageY
+			});			
+		}
+	});
+
+	$('#treeCMenu').on('click', '> div', function(e) {
+		e.preventDefault();
+		var $this = $(this),
+				$tree = $('#treeDemo'),
+				node = $tree.tree('getSelected');
+		if (node){
+			if ($this.hasClass('removeItem')) {
+				$tree.tree('remove', node.target);
+			} else if($this.hasClass('appendSibling')) {
+				$tree.tree('insert', {
+					after: node.target,
+					data: [{
+						id: Math.ceil(Math.random() * 1000),
+						text: '新同级节点'
+					}]
+				});
+			} else if($this.hasClass('appendChild')) {
+				$tree.tree('append', {
+					parent: node.target,
+					data: [{
+						id: Math.ceil(Math.random() * 1000),
+						text: '新子节点'
+					}]
+				});
+			}
+		}		
+	});
+
+	//预警状态下拉选择
+	$(".bgy-combo[name='alarm']").combobox({
+		panelHeight: "58px"
+		,editable: false
+		,valueField: 'value'
+		,textField: 'text'
+		,data: [{
+			value: "",
+			text: "选择预警"
+		},{
+			value: "red",
+			text: "红灯"
+		},{
+			value: "yellow",
+			text: "黄灯"
+		}]
+		,formatter: function(row){
+			return '<span class="state-' + row.value + '">' + row.text + '</span>';
+		}
+		,onLoadSuccess: function(){
+			$(".combo-panel .combobox-item:first").remove();
+		}
 	});
 
   //树形控件演示2  
@@ -126,6 +188,7 @@
     headerCls: 'bgy-tit',
     modal: true
 	});
+
 	$('#windowDemoSmall').window({
 		title: '小编辑弹窗',
     width: 700,
@@ -141,6 +204,7 @@
     headerCls: 'bgy-tit',
     modal: true
 	});
+
 	$('#alertDemo').window({
 		title: '系统提示',
     width: 700,
@@ -181,6 +245,23 @@
 				$this.hide('fast');
       }, 3000)
 		});
+	});
+
+	//按钮悬停提示
+	$('#tooltipDemo').tooltip({
+	    onShow: function(){
+	        $(this).tooltip('tip').addClass('bgy-tooltip');
+	    }
+	});
+	$('#tooltipDemo2').tooltip({
+	    onShow: function(){
+	        $(this).tooltip('tip').addClass('bgy-tooltip-red');
+	    }
+	});
+	$('#tooltipDemo3').tooltip({
+	    onShow: function(){
+	        $(this).tooltip('tip').addClass('bgy-tooltip-gray');
+	    }
 	});
 
 	//表格演示
@@ -250,6 +331,11 @@
 
 
 $(window).on('load', function() {
+
+	//代码着色
+  $('pre code').each(function(i, block) {
+    hljs.highlightBlock(block);
+  });
 
 	//滚动监测
 	$('body').scrollspy({ target: '#toc-menu', offset: 150 });

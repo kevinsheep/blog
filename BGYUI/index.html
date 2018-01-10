@@ -16,7 +16,8 @@
     <link rel="stylesheet" href="./jquery-easyui/themes/metro/easyui.css">
     <link rel="stylesheet" href="./css/docs.css">
     <link rel="stylesheet" href="./layui/css/layui.css">
-    <link rel="stylesheet" href="./css/bgy-ui.css?3553">
+    <link rel="stylesheet" href="./css/hlstyles/github.css">
+    <link rel="stylesheet" href="./css/bgy-ui.css">
     <link rel="stylesheet" href="./css/demo.css">
     <script src="./js/jquery.min.js"></script>
     <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
@@ -48,7 +49,7 @@
     <div class="container">
       <div class="jumbotron">
         <h1>BGY UI</h1>
-        <p>基于jQuery，EasyUI Metro，LayUI</p>
+        <p>基于jQuery，EasyUI Metro</p>
       </div>
 
       <nav id="toc-menu" class="navbar navbar-static">
@@ -63,25 +64,25 @@
             <span class="label label-success">开发完成</span>
         </div>
         <div class="bs-example">
-          <ol class="bgy-path">
+          <ul class="bgy-path">
             <li><a href="#">首页</a></li>
             <li><a href="#">系统管理</a></li>
             <li>角色管理</li>
-          </ol>
+          </ul>
         </div>
         <figure class="highlight">
-          <pre class="language-html" data-lang="html">
-<code>&lt;ol class="bgy-path"&gt;
+          <pre>
+<code class="xml">&lt;ul class="bgy-path"&gt;
   &lt;li&gt;&lt;a href="#"&gt;首页&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href="#"&gt;系统管理&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;角色管理&lt;/li&gt;
-&lt;/ol&gt;</code>
+&lt;/ul&gt;</code>
           </pre>
         </figure>
 
         <h3>选项卡</h3>
         <div class="bs-callout bs-callout-info">
-            <span class="label label-primary">开发维护：何青杏</span>
+            <span class="label label-primary">开发维护：何青杏、杨伟胜</span>
             <span class="label label-info">基于EasyUI</span>
             <span class="label label-success">开发完成</span>
         </div>
@@ -90,26 +91,26 @@
               <div title="区域各项目巡检评分情况">
               区域各项目巡检评分情况
               </div>
-              <div title="区域各项目巡检排名情况">
-              区域各项目巡检排名情况
+              <div title="可关闭的标签" data-options="closable: true">
+              可关闭的标签
               </div>      
-              <div title="多一个选项卡作对比">
-              多一个选项卡作对比
+              <div title="另一个可关闭的标签" data-options="closable: true">
+              另一个可关闭的标签
               </div>      
             </div>
         </div>
         <figure class="highlight">
-          <pre class="language-html" data-lang="html">
-<code>&lt;div class="easyui-tabs bgy-tabs"&gt;
+          <pre>
+<code class="xml">&lt;div class="easyui-tabs bgy-tabs"&gt;
   &lt;div title="区域各项目巡检评分情况"&gt;
   区域各项目巡检评分情况
   &lt;/div&gt;
-  &lt;div title="区域各项目巡检排名情况"&gt;
-  区域各项目巡检排名情况
-  &lt;/div&gt;      
-  &lt;div title="多一个选项卡作对比"&gt;
-  多一个选项卡作对比
-  &lt;/div&gt;      
+  &lt;div title="可关闭的标签" data-options="closable: true"&gt;
+  可关闭的标签
+  &lt;/div&gt;   
+  &lt;div title="另一个可关闭的标签" data-options="closable: true"&gt;
+  另一个可关闭的标签
+  &lt;/div&gt;  
 &lt;/div&gt;</code>
           </pre>
         </figure>
@@ -118,11 +119,23 @@
         <div class="bs-callout bs-callout-info">
             <span class="label label-primary">开发维护：何青杏</span>
             <span class="label label-info">基于EasyUI</span>
-            <span class="label label-danger">代码整合中</span>
+            <span class="label label-success">开发完成</span>
         </div>
         <div class="bs-example">
           <select class="easyui-combobox bgy-combo" name="state">
-            <option value="" selected id="">选择区域</option>
+            <option value="" selected>选择区域</option>
+            <option value="AL">北京区域</option>
+            <option value="AK">佛肇区域</option>
+            <option value="AZ">广深区域</option>
+            <option value="AL">北京区域</option>
+            <option value="AK">佛肇区域</option>
+            <option value="AZ">广深区域</option>
+            <option value="AL">北京区域</option>
+            <option value="AK">佛肇区域</option>
+            <option value="AZ">广深区域</option>
+            <option value="AL">北京区域</option>
+            <option value="AK">佛肇区域</option>
+            <option value="AZ">广深区域</option>
             <option value="AL">北京区域</option>
             <option value="AK">佛肇区域</option>
             <option value="AZ">广深区域</option>
@@ -130,28 +143,118 @@
           </select>
         </div>
         <figure class="highlight">
-          <pre class="language-html" data-lang="html">
+          <pre>
 <code>&lt;select class="easyui-combobox bgy-combo" name="state"&gt;
-  &lt;option value="" selected id=""&gt;选择区域&lt;/option&gt;
+  &lt;option value="" selected&gt;选择区域&lt;/option&gt;
   &lt;option value="AL"&gt;北京区域&lt;/option&gt;
   &lt;option value="AK"&gt;佛肇区域&lt;/option&gt;
   &lt;option value="AZ"&gt;广深区域&lt;/option&gt;
-  &lt;option value="AR"&gt;泸苏区域&lt;/option&gt;    
+  &lt;option value="AR"&gt;泸苏区域&lt;/option&gt;
+  //...
 &lt;/select&gt;</code>
+          </pre>
+        </figure>
+
+        <h3>预警下拉</h3>
+        <div class="bs-callout bs-callout-info">
+            <span class="label label-primary">开发维护：杨伟胜</span>
+            <span class="label label-info">基于EasyUI</span>
+            <span class="label label-success">开发完成</span>
+        </div>
+        <div class="bs-example">
+          <select class="bgy-combo" name="alarm"></select>
+        </div>
+        <figure class="highlight">
+          <pre>
+<code class="xml">&lt;select class="bgy-combo" name="alarm"&gt;&lt;/select&gt;</code>
+          </pre>
+        </figure>
+        <figure class="highlight">
+          <pre>
+<code class="javascript">$(".bgy-combo[name='alarm']").combobox({
+  panelHeight: "58px"
+  ,editable: false
+  ,valueField: 'value'
+  ,textField: 'text'
+  ,data: [{
+    value: "",
+    text: "选择预警"
+  },{
+    value: "red",
+    text: "红灯"
+  },{
+    value: "yellow",
+    text: "黄灯"
+  }]
+  ,formatter: function(row){
+    return '<span class="state-' + row.value + '">' + row.text + '</span>';
+  }
+  ,onLoadSuccess: function(){
+    $(".combo-panel .combobox-item:first").remove();
+  }
+});</code>
           </pre>
         </figure>
 
         <h3>树形控件</h3>
         <div class="bs-callout bs-callout-info">
             <span class="label label-primary">开发维护：杨伟胜</span>
+            <span class="label label-info">基于EasyUI</span>
             <span class="label label-success">开发完成</span>
         </div>
         <div class="bs-example">
           <ul id="treeDemo" class="bgy-tree"></ul>
+          <div id="treeCMenu" class="easyui-menu bgy-CMenu">
+            <div class="appendSibling">增加同级</div>
+            <div class="menu-sep"></div>
+            <div class="appendChild">增加下级</div>
+            <div class="menu-sep"></div>
+            <div class="removeItem">删除节点</div>
+          </div>
         </div>
         <figure class="highlight">
-          <pre class="language-html" data-lang="html">
+          <pre>
 <code>&lt;ul id="treeDemo" class="bgy-tree"&gt;&lt;/ul&gt;</code>
+          </pre>
+        </figure>
+        <figure class="highlight">
+          <pre class="language-js" data-lang="js">
+<code>$('#treeDemo').tree({
+  animate: true,
+  data: [{
+      "text":"系统权限树一",
+      "children":[{
+        "text":"应用系统设置",
+        "state":"closed",
+        "children":[{
+              "checked":true,
+              "text":"选项一"
+            },{
+              "text":"选项二"
+          }]
+        },{
+        "text":"权限管理模块",
+        "state":"open",
+        "children":[{
+            "text":"选项一"
+          },{
+            "checked":true,
+            "text":"选项二"
+          },{
+            "text":"选项三"
+        }]
+      }]
+  },{
+      "text":"系统权限树二",
+      "state":"closed",
+      "children":[{
+        "text":"权限设置A"
+      },{
+        "text":"权限设置B"
+      }]
+  }],
+  checkbox: true
+});</code>
           </pre>
         </figure>
 
@@ -159,7 +262,7 @@
           <ul id="treeDemo2" class="bgy-tree"></ul>
         </div>
         <figure class="highlight">
-          <pre class="language-html" data-lang="html">
+          <pre>
 <code>&lt;ul id="treeDemo2" class="bgy-tree"&gt;&lt;/ul&gt;</code>
           </pre>
         </figure>
@@ -209,7 +312,7 @@
           </form>
         </div>
         <figure class="highlight">
-          <pre class="language-html" data-lang="html">
+          <pre>
 <code>&lt;form action="" class="bgy-form shadow"&gt;
   &lt;ul&gt;
     &lt;li&gt;
@@ -240,6 +343,78 @@
           </pre>
         </figure>
 
+        <h3>按钮悬停提示</h3>
+        <div class="bs-callout bs-callout-info">
+            <span class="label label-primary">开发维护：杨伟胜</span>
+            <span class="label label-primary">开发维护：何青杏</span>
+            <span class="label label-success">开发完成</span>
+        </div>
+        <div class="bs-example">
+          <a href="#" title="悬停提示" class="bgy-btn" id="tooltipDemo">按钮</a>
+        </div>
+        <figure class="highlight">
+          <pre>
+            <code class="xml">&lt;a href="#" title="悬停提示" class="bgy-btn" id="tooltipDemo"&gt;按钮&lt;/a&gt;</code>
+          </pre>
+        </figure>
+        <figure class="highlight">
+          <pre>
+            <code class="javascript">$('#tooltipDemo').tooltip({
+    onShow: function(){
+        $(this).tooltip('tip').addClass('bgy-tooltip');
+    }
+});</code>
+          </pre>
+        </figure>
+
+        <h3>红色悬浮框</h3>
+        <div class="bs-callout bs-callout-info">
+            <span class="label label-primary">开发维护：杨伟胜</span>
+            <span class="label label-primary">开发维护：何青杏</span>
+            <span class="label label-success">开发完成</span>
+        </div>
+        <div class="bs-example">
+          <a href="#" title="红色悬浮框红色悬浮框红色悬浮框红色悬浮框红色悬浮框红色悬浮框红色悬浮框红色悬浮框红色悬浮框红色悬浮框红色悬浮框红色悬浮框红色悬浮框红色悬浮框" class="bgy-btn" id="tooltipDemo2">按钮</a>
+        </div>
+        <figure class="highlight">
+          <pre>
+            <code class="xml">&lt;a href="#" title="红色悬浮框红色悬浮框红色悬浮框红色悬浮框红色悬浮框红色悬浮框红色悬浮框红色悬浮框红色悬浮框红色悬浮框红色悬浮框红色悬浮框红色悬浮框红色悬浮框" class="bgy-btn" id="tooltipDemo2"&gt;按钮&lt;/a&gt;</code>
+          </pre>
+        </figure>
+        <figure class="highlight">
+          <pre>
+            <code class="javascript">$('#tooltipDemo2').tooltip({
+    onShow: function(){
+        $(this).tooltip('tip').addClass('bgy-tooltip-red');
+    }
+});</code>
+          </pre>
+        </figure>
+
+        <h3>灰色悬浮框</h3>
+        <div class="bs-callout bs-callout-info">
+            <span class="label label-primary">开发维护：杨伟胜</span>
+            <span class="label label-primary">开发维护：何青杏</span>
+            <span class="label label-success">开发完成</span>
+        </div>
+        <div class="bs-example">
+          <a href="#" title="灰色悬浮框灰色悬浮框灰色悬浮框灰色悬浮框灰色悬浮框灰色悬浮框灰色悬浮框灰色悬浮框灰色悬浮框灰色悬浮框" class="bgy-btn" id="tooltipDemo3">按钮</a>
+        </div>
+        <figure class="highlight">
+          <pre>
+            <code class="xml">&lt;a href="#" title="灰色悬浮框灰色悬浮框灰色悬浮框灰色悬浮框灰色悬浮框灰色悬浮框灰色悬浮框灰色悬浮框灰色悬浮框灰色悬浮框" class="bgy-btn" id="tooltipDemo3"&gt;按钮&lt;/a&gt;</code>
+          </pre>
+        </figure>
+        <figure class="highlight">
+          <pre>
+            <code class="javascript">$('#tooltipDemo3').tooltip({
+    onShow: function(){
+        $(this).tooltip('tip').addClass('bgy-tooltip-gray');
+    }
+});</code>
+          </pre>
+        </figure>
+
         <h3>图标</h3>
         <div class="bs-callout bs-callout-info">
             <span class="label label-primary">开发维护：杨伟胜</span>
@@ -251,8 +426,8 @@
           <span class="bgy-icon-check">查看图标</span>
         </div>
         <figure class="highlight">
-          <pre class="language-html" data-lang="html">
-            &lt;span class="bgy-icon-check"&gt;查看图标&lt;/span&gt;
+          <pre>
+            <code>&lt;span class="bgy-icon-check"&gt;查看图标&lt;/span&gt;</code>
           </pre>
         </figure>
 
@@ -261,8 +436,8 @@
           <span class="bgy-icon-edit">编辑图标</span>
         </div>
         <figure class="highlight">
-          <pre class="language-html" data-lang="html">
-            &lt;span class="bgy-icon-edit"&gt;编辑图标&lt;/span&gt;
+          <pre>
+            <code>&lt;span class="bgy-icon-edit"&gt;编辑图标&lt;/span&gt;</code>
           </pre>
         </figure>
 
@@ -271,8 +446,8 @@
           <span class="bgy-icon-reload">刷新图标</span>
         </div>
         <figure class="highlight">
-          <pre class="language-html" data-lang="html">
-            &lt;span class="bgy-icon-reload"&gt;刷新图标&lt;/span&gt;
+          <pre>
+            <code>&lt;span class="bgy-icon-reload"&gt;刷新图标&lt;/span&gt;</code>
           </pre>
         </figure>
 
@@ -281,8 +456,8 @@
           <span class="bgy-icon-delete">垃圾桶图标</span>
         </div>
         <figure class="highlight">
-          <pre class="language-html" data-lang="html">
-            &lt;span class="bgy-icon-delete"&gt;垃圾桶图标&lt;/span&gt;
+          <pre>
+              <code>&lt;span class="bgy-icon-delete"&gt;垃圾桶图标&lt;/span&gt;</code>
           </pre>
         </figure>
 
@@ -291,8 +466,8 @@
           <span class="bgy-icon-close">关闭</span>
         </div>
         <figure class="highlight">
-          <pre class="language-html" data-lang="html">
-            &lt;span class="bgy-icon-close"&gt;关闭&lt;/span&gt;
+          <pre>
+              <code>&lt;span class="bgy-icon-close"&gt;关闭&lt;/span&gt;</code>
           </pre>
         </figure>
 
@@ -301,8 +476,8 @@
           <span class="bgy-icon-authorize">授权</span>
         </div>
         <figure class="highlight">
-          <pre class="language-html" data-lang="html">
-            &lt;span class="bgy-icon-authorize"&gt;授权&lt;/span&gt;
+          <pre>
+            <code>&lt;span class="bgy-icon-authorize"&gt;授权&lt;/span&gt;</code>
           </pre>
         </figure>
 
@@ -318,7 +493,7 @@
           <a class="bgy-btn" href="#">按钮</a>
         </div>
         <figure class="highlight">
-          <pre class="language-html" data-lang="html">
+          <pre>
             <code>&lt;a class="bgy-btn" href="#"&gt;按钮&lt;/a&gt;</code>
           </pre>
         </figure>
@@ -328,7 +503,7 @@
           <a class="bgy-btn" href="#">三个字</a>
         </div>
         <figure class="highlight">
-          <pre class="language-html" data-lang="html">
+          <pre>
             <code>&lt;a class="bgy-btn" href="#"&gt;三个字&lt;/a&gt;</code>
           </pre>
         </figure>
@@ -338,7 +513,7 @@
           <a class="bgy-btn" href="#">四字按钮</a>
         </div>
         <figure class="highlight">
-          <pre class="language-html" data-lang="html">
+          <pre>
             <code>&lt;a class="bgy-btn" href="#"&gt;四字按钮&lt;/a&gt;</code>
           </pre>
         </figure>
@@ -348,7 +523,7 @@
           <a class="bgy-btn" href="#">六字按钮示例</a>
         </div>
         <figure class="highlight">
-          <pre class="language-html" data-lang="html">
+          <pre>
             <code>&lt;a class="bgy-btn" href="#"&gt;六字按钮示例&lt;/a&gt;</code>
           </pre>
         </figure>
@@ -371,7 +546,7 @@
           </div>
         </div>
         <figure class="highlight">
-          <pre class="language-html" data-lang="html">
+          <pre>
 <code>&lt;div class="bgy-form"&gt;
   &lt;input type="radio" id="radio11" name="choose" checked&gt;
   &lt;label for="radio11"&gt;是&lt;/label&gt;
@@ -391,7 +566,7 @@
           </div>
         </div>
         <figure class="highlight">
-          <pre class="language-html" data-lang="html">
+          <pre>
 <code>&lt;div class="bgy-form"&gt;
   &lt;input type="radio" id="radio11" name="choose" disabled="disabled"&gt;
   &lt;label for="radio11"&gt;是&lt;/label&gt;
@@ -426,7 +601,7 @@
           <h5 class="bgy-tit">项目巡检统计图表</h5>
         </div>
         <figure class="highlight">
-          <pre class="language-html" data-lang="html">
+          <pre>
             <code>&lt;h5 class="bgy-tit"&gt;项目巡检统计图表&lt;/h5&gt;</code>
           </pre>
         </figure>
@@ -436,7 +611,7 @@
           <p class="bgy-txt">廊坊燕郊碧桂园项目廊坊燕郊碧桂园项目廊坊燕郊碧桂园项目廊坊燕郊碧桂园项目廊坊燕郊碧桂园项目廊坊燕郊碧桂园项目廊坊燕郊碧桂园项目廊坊燕郊碧桂园项目廊坊燕郊碧桂园项目廊坊燕郊碧桂园项目廊坊燕郊碧桂园项目</p>
         </div>
         <figure class="highlight">
-          <pre class="language-html" data-lang="html">
+          <pre>
             <code>&lt;p class="bgy-txt"&gt;廊坊燕郊碧桂园项目廊坊燕郊碧桂园项目廊坊燕郊碧桂园项目廊坊燕郊碧桂园项目廊坊燕郊碧桂园项目廊坊燕郊碧桂园项目廊坊燕郊碧桂园项目廊坊燕郊碧桂园项目廊坊燕郊碧桂园项目廊坊燕郊碧桂园项目廊坊燕郊碧桂园项目&lt;/p&gt;</code>
           </pre>
         </figure>
@@ -447,7 +622,7 @@
            2. 无反馈为还未巡检或巡检还未完成的项目；</p>
         </div>
         <figure class="highlight">
-          <pre class="language-html" data-lang="html">
+          <pre>
             <code>&lt;p class="bgy-info"&gt;说明：1. 默认显示本季度巡检情况；2. 无反馈为还未巡检或巡检还未完成的项目；&lt;/p&gt;</code>
           </pre>
         </figure>
@@ -460,7 +635,7 @@
           </div>
         </div>
         <figure class="highlight">
-          <pre class="language-html" data-lang="html">
+          <pre>
 <code>&lt;div class="bgy-form"&gt;
   &lt;label for="inputDemo"&gt;标题字段&lt;/label&gt;
   &lt;input type="text" id="inputDemo" placeholder="请输入文字"&gt;
@@ -473,7 +648,7 @@
           <span class="bgy-icon-arrowR"></span>
         </div>
         <figure class="highlight">
-          <pre class="language-html" data-lang="html">
+          <pre>
             &lt;span class="bgy-icon-arrowR"&gt;&lt;/span&gt;
           </pre>
         </figure>
@@ -486,7 +661,7 @@
           </div>
         </div>
         <figure class="highlight">
-          <pre class="language-html" data-lang="html">
+          <pre>
 <code>&lt;div class="bgy-form"&gt;
   &lt;label for="textareaDemo"&gt;文本框&lt;/label&gt;
   &lt;textarea rows="3"&gt;&lt;/textarea&gt;
@@ -507,7 +682,7 @@
           </div>
         </div>
         <figure class="highlight">
-          <pre class="language-html" data-lang="html">
+          <pre>
 <code>&lt;div class="bgy-form required"&gt;
   &lt;label for="selectDemo"&gt;必填下拉选择框&lt;/label&gt;
   &lt;select id="selectDemo" name=""&gt;
@@ -528,7 +703,7 @@
           </div>
         </div>
         <figure class="highlight">
-          <pre class="language-html" data-lang="html">
+          <pre>
 <code>&lt;div class="bgy-form"&gt;
   &lt;label for="inputPrompt"&gt;标题字段&lt;/label&gt;
   &lt;input type="text" id="inputPrompt" placeholder="请输入"&gt;
@@ -545,7 +720,7 @@
           </div>
         </div>
         <figure class="highlight">
-          <pre class="language-html" data-lang="html">
+          <pre>
 <code>&lt;div class="bgy-form error"&gt;
   &lt;label for="inputErrorDemo"&gt;标题字段&lt;/label&gt;
   &lt;input type="text" id="inputErrorDemo" placeholder="请输入文字"&gt;
@@ -562,7 +737,7 @@
           </div>
         </div>
         <figure class="highlight">
-          <pre class="language-html" data-lang="html">
+          <pre>
 <code>&lt;div class="bgy-form"&gt;
   &lt;label for="inputDisabled"&gt;标题字段&lt;/label&gt;
   &lt;input type="text" id="inputDisabled" placeholder="不能输入文字了" disabled="disabled"&gt;
@@ -615,7 +790,7 @@
           <span id="trigWindow" class="bgy-btn">点我弹大窗</span>
         </div>
         <figure class="highlight">
-          <pre class="language-html" data-lang="html">
+          <pre>
 <code>&lt;div id="windowDemo"&gt;
   &lt;div class="btns"&gt;
     &lt;span class="bgy-btn"&gt;确定&lt;/span&gt;
@@ -687,7 +862,7 @@
           <span id="trigWindow2" class="bgy-btn">点我开小窗</span>
         </div>
         <figure class="highlight">
-          <pre class="language-html" data-lang="html">
+          <pre>
 <code>&lt;div id="windowDemoSmall"&gt;
   &lt;div class="bd"&gt;
     &lt;div class="bgy-form"&gt;
@@ -735,7 +910,7 @@
           <span id="trigWindow3" class="bgy-btn">点我弹提示</span>
         </div>
         <figure class="highlight">
-          <pre class="language-html" data-lang="html">
+          <pre>
 <code>&lt;div id="alertDemo"&gt;
   &lt;div class="bd"&gt;
     &lt;p class="bgy-tit"&gt;您没有权限访问此数据，请联系信息管理中心项目开发小组开通权限&lt;/p&gt;
@@ -756,13 +931,13 @@
           <span id="trigWindow4" class="bgy-btn">点我弹提示</span>
         </div>
         <figure class="highlight">
-          <pre class="language-html" data-lang="html">
+          <pre>
 <code>&lt;div id="tipsDemo" class="bgy-tips shadow"&gt;
   &lt;p class="bgy-tit"&gt;您没有权限访问此数据，请联系信息管理中心项目开发小组开通权限&lt;/p&gt;
 &lt;/div&gt;
 &lt;span id="trigWindow4" class="bgy-btn"&gt;点我弹提示&lt;/span&gt;</code>
           </pre>
-          <pre class="language-html" data-lang="html">
+          <pre>
 <code></code>
           </pre>
         </figure>
@@ -772,7 +947,7 @@
             <span class="label label-primary">开发维护：杨伟胜、何青杏</span>
         </div>
 
-        <h4>日期选择</h4>
+<!--         <h4>日期选择</h4>
         <div class="bs-callout bs-callout-info">
             <span class="label label-info">基于LayUI</span>
         </div>
@@ -782,7 +957,7 @@
           </div>
         </div>
         <figure class="highlight">
-          <pre class="language-html" data-lang="html">
+          <pre>
 <code>&lt;div class="bgy-date"&gt;
   &lt;input type="text" id="dateDemo" placeholder="请选择日期"&gt;
 &lt;/div&gt;</code>
@@ -799,19 +974,19 @@
           </div>
         </div>
         <figure class="highlight">
-          <pre class="language-html" data-lang="html">
+          <pre>
 <code>&lt;div class="bgy-date"&gt;
   &lt;input type="text" id="dateDemo2" placeholder="请选择时间"&gt;
 &lt;/div&gt;</code&gt;
           </pre>
-        </figure>
+        </figure> -->
 
         <h4>水平线</h4>
         <div class="bs-example">
           <hr>
         </div>
         <figure class="highlight">
-          <pre class="language-html" data-lang="html">
+          <pre>
             <code>&lt;hr&gt;</code>
           </pre>
         </figure>
@@ -821,7 +996,7 @@
           <hr class="vr" style="height: 200px;">
         </div>
         <figure class="highlight">
-          <pre class="language-html" data-lang="html">
+          <pre>
             <code>&lt;hr class="vr" style="height: 200px;"&gt;</code>
           </pre>
         </figure>
@@ -831,7 +1006,7 @@
           <p class="bgy-txt">廊坊燕郊碧桂园项目<span class="bgy-txt-inverse">字体反白效果</span>廊坊燕郊碧桂园项目廊坊燕郊碧桂园项目廊坊燕郊碧桂园项目廊坊燕郊碧桂园项目廊坊燕郊碧桂园项目廊坊燕郊碧桂园项目廊坊燕郊碧桂园项目廊坊燕郊碧桂园项目廊坊燕郊碧桂园项目</p>
         </div>
         <figure class="highlight">
-          <pre class="language-html" data-lang="html">
+          <pre>
             <code>&lt;p class=&quot;bgy-txt&quot;&gt;廊坊燕郊碧桂园项目&lt;span class=&quot;bgy-txt-inverse&quot;&gt;字体反白效果&lt;/span&gt;项目廊坊燕郊碧桂园项目廊坊燕郊碧桂园项目廊坊燕郊碧桂园项目廊坊燕郊碧桂园项目廊坊燕郊碧桂园项目廊坊燕郊碧桂园项目廊坊燕郊碧桂园项目廊坊燕郊碧桂园项目廊坊燕郊碧桂园项目&lt;/p&gt;</code>
           </pre>
         </figure>
@@ -841,7 +1016,7 @@
           <p class="bgy-txt">廊坊燕郊碧桂园项目<span class="bgy-txt-gray">灰底字灰底字灰底字</span>廊坊燕郊碧桂园项目廊</p>
         </div>
         <figure class="highlight">
-          <pre class="language-html" data-lang="html">
+          <pre>
             <code>&lt;p class=&quot;bgy-txt&quot;&gt;廊坊燕郊碧桂园项目&lt;span class=&quot;bgy-txt-gray&quot;&gt;灰底字灰底字灰底字&lt;/span&gt;项目廊廊坊燕郊碧桂园项目&lt;/p&gt;</code>
           </pre>
         </figure>
@@ -854,7 +1029,7 @@
           <span class="state-nofeedback">未反馈</span>
         </div>
         <figure class="highlight">
-          <pre class="language-html" data-lang="html">
+          <pre>
 <code>&lt;span class="state-going"&gt;进行中&lt;/span&gt;
 &lt;span class="state-publish"&gt;已发布&lt;/span&gt;
 &lt;span class="state-feedback"&gt;已反馈&lt;/span&gt;
@@ -908,7 +1083,7 @@
           <div class="border" style="width: 300px; height: 180px; margin: auto;"></div>
         </div>
         <figure class="highlight">
-          <pre class="language-html" data-lang="html">
+          <pre>
             &lt;div class="border" style="width: 300px; height: 180px; margin: auto;"&gt;&lt;/div&gt;
           </pre>
         </figure>
@@ -918,7 +1093,7 @@
           <div class="shadow" style="width: 300px; height: 180px; margin: auto;"></div>
         </div>
         <figure class="highlight">
-          <pre class="language-html" data-lang="html">
+          <pre>
             &lt;div class="shadow" style="width: 300px; height: 180px; margin: auto;"&gt;&lt;/div&gt;
           </pre>
         </figure>
@@ -928,7 +1103,7 @@
           <div class="bgy-scroll" style="width: 300px; height: 50px; margin: auto; overflow-x: scroll; white-space: nowrap;">横向滚动条演示横向滚动条演示横向滚动条演示横向滚动条演示横向滚动条演示横向滚动条演示横向滚动条演示横向滚动条演示横向滚动条演示横向滚动条演示横向滚动条演示横向滚动条演示横向滚动条演示横向滚动条演示</div>
         </div>
         <figure class="highlight">
-          <pre class="language-html" data-lang="html">
+          <pre>
 <code>&lt;div class="bgy-scroll" style="width: 300px; height: 50px; margin: auto; overflow-x: scroll; white-space: nowrap;"&gt;横向滚动条演示横向滚动条演示横向滚动条演示横向滚动条演示横向滚动条演示横向滚动条演示横向滚动条演示横向滚动条演示横向滚动条演示横向滚动条演示横向滚动条演示横向滚动条演示横向滚动条演示横向滚动条演示&lt;/div&gt;</code>
           </pre>
         </figure>
@@ -938,7 +1113,7 @@
           <div class="bgy-scroll" style="width: 50px; height: 150px; margin: auto; overflow-y: scroll;">纵向滚动条演示纵向滚动条演示纵向滚动条演示纵向滚动条演示纵向滚动条演示纵向滚动条演示纵向滚动条演示纵向滚动条演示纵向滚动条演示纵向滚动条演示纵向滚动条演示纵向滚动条演示纵向滚动条演示纵向滚动条演示</div>
         </div>
         <figure class="highlight">
-          <pre class="language-html" data-lang="html">
+          <pre>
 <code>&lt;div class="bgy-scroll" style="width: 50px; height: 150px; margin: auto; overflow-y: scroll;"&gt;纵向滚动条演示纵向滚动条演示纵向滚动条演示纵向滚动条演示纵向滚动条演示纵向滚动条演示纵向滚动条演示纵向滚动条演示纵向滚动条演示纵向滚动条演示纵向滚动条演示纵向滚动条演示纵向滚动条演示纵向滚动条演示&lt;/div&gt;</code>
           </pre>
         </figure>
@@ -964,7 +1139,8 @@
   <script src="./layui/layui.js"></script>
   <script src="./js/bgy-ui.js"></script>
   <script src="./js/jquery.imgUpload.js"></script>
-  <script src="./js/demo.js?3"></script>
+  <script src="./js/highlight.pack.js"></script>
+  <script src="./js/demo.js"></script>
 
 </body>
 </html>

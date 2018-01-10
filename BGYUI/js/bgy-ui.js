@@ -4,10 +4,6 @@
  */
 ;
 "use strict";
-(function(){
-
-
-})();
 
 //按钮字数判断处理
 $(window).on('load', function() {
