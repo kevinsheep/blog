@@ -1143,7 +1143,10 @@
   <script src="./js/demo.js"></script>
 <script>
   document.getElementById("bgyUILogo").onclick = function(event) {
-    if (self != top) { alert('在iframe中'); }
+    if (self != top) {
+      alert('在iframe中');
+      parent.location.href = location.href;
+    }
     else { alert('不在iframe中');}
   };
 </script>
