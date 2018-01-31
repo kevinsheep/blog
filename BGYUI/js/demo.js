@@ -233,10 +233,13 @@
 		$('#windowDemoSmall').window('open');
 	});
 
+    $('#trigWindow3').on('click', function(e) {
+        $('#alertDemo').window('open');
+    });
 
-	$('#trigWindow3').on('click', function(e) {
-		$('#alertDemo').window('open');
-	});
+    $('#trigWindow3b').on('click', function(e) {
+        $.messager.alert('系统提示', '您没有权限访问此数据，请联系信息管理中心项目开发小组开通权限');
+    });
 
 	$('#trigWindow4').on('click', function(e) {
 		$('#tipsDemo').show('fast', function() {
@@ -311,14 +314,65 @@
 	// 	});
 
 	// });
+//zhihu
+var fileInput = 1;
 
-	//layui引用
-	layui.use('laydate', function(){
-	  var laydate = layui.laydate;
-	  
-	  laydate.render({
-	    elem: '#dateDemo'
-	  });
+function addImgInput() {
+    fileInput = fileInput + 1;
+    var $preview = $('<input class="weui_uploader_input js_file" name="file"' + 'type="file" accept="image/jpg,image/jpeg,image/png,image/gif"multiple="multiple"' + 'id="wxUploadImg' + fileInput + '"/>');
+    $("#upload-form").append($preview);
+    $("#wxUploadImg" + fileInput).on('change', jsFileChange);
+}
+$('.js_file').on('change', jsFileChange);
+
+function jsFileChange(event) {
+    var files = event.target.files; // 如果没有选中文件，直接返回
+    if (files.length === 0) {
+        return;
+    }
+    if ((files.length + selectedCount) > maxCount) {
+        alert('总数最多上传4张');
+        $("#wxUploadImg" + fileInput).remove();
+        //有问题时先删除，再添加一个新的input                 
+        addImgInput();
+        return;
+    }
+    for (var i = 0, len = files.length; i < len; i++) {
+        var file = files[i]; // 如果类型不在允许的类型范围内                 
+        if (allowTypes.indexOf(file.type) === -1) {
+            $.weui.alert({
+                text: '本次有不允许类型，请重新选择'
+            });
+            $("#wxUploadImg" + fileInput).remove();
+            addImgInput();
+            return;
+        }
+        if (file.size > maxSize) {
+            $.weui.alert({
+                text: '本次有图片太大，请重新选择'
+            });
+            $("#wxUploadImg" + fileInput).remove();
+            addImgInput();
+            return;
+        }
+    }
+    selectedCount = selectedCount + files.length;
+    //.....预览等逻辑 //-------------             
+    $("#wxUploadImg" + fileInput).css("display", 'none');;
+    //正常添加后隐藏再添加             
+    if ($('.weui_uploader_file').length < maxCount) {
+        addImgInput();
+    }
+}
+
+
+    //layui引用
+    layui.use('laydate', function(){
+      var laydate = layui.laydate;
+      
+      laydate.render({
+        elem: '#dateDemo'
+      });
 
 	  laydate.render({
 	    elem: '#dateDemo2'

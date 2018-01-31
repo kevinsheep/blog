@@ -269,13 +269,31 @@
 
         <h3>分页码</h3>
         <div class="bs-callout bs-callout-info">
-            <span class="label label-primary">开发维护：何青杏</span>
+            <span class="label label-primary">开发维护：何青杏、杨伟胜</span>
             <span class="label label-info">基于EasyUI</span>
-            <span class="label label-danger">优先开发，优化修改中</span>
+            <span class="label label-success">开发完成</span>
         </div>
         <div class="bs-example">
           <div id="pageDemo" class="bgy-page"></div>
         </div>
+        <figure class="highlight">
+          <pre>
+<code class="xml">&lt;div id="pageDemo" class="bgy-page"&gt;&lt;/div&gt;</code>
+          </pre>
+        </figure>
+        <figure class="highlight">
+          <pre>
+<code>//引用easyui的pagination组件的形式，可自由修改layout
+$('#pageDemo').pagination({
+  total:169,
+  pageSize:10,
+  layout:['prev','first','links','last','next'],
+  links:5,
+  pageList:10,
+  pageNumber:2
+});</code>
+          </pre>
+        </figure>
 
         <h3>查询</h3>
         <div class="bs-callout bs-callout-info">
@@ -547,7 +565,7 @@
         </div>
         <figure class="highlight">
           <pre>
-<code>&lt;div class="bgy-form"&gt;
+<code class="xml">&lt;div class="bgy-form"&gt;
   &lt;input type="radio" id="radio11" name="choose" checked&gt;
   &lt;label for="radio11"&gt;是&lt;/label&gt;
   &lt;input type="radio" id="radio12" name="choose"&gt;
@@ -567,7 +585,7 @@
         </div>
         <figure class="highlight">
           <pre>
-<code>&lt;div class="bgy-form"&gt;
+<code class="xml">&lt;div class="bgy-form"&gt;
   &lt;input type="radio" id="radio11" name="choose" disabled="disabled"&gt;
   &lt;label for="radio11"&gt;是&lt;/label&gt;
   &lt;input type="radio" id="radio12" name="choose" disabled="disabled"&gt;
@@ -636,7 +654,7 @@
         </div>
         <figure class="highlight">
           <pre>
-<code>&lt;div class="bgy-form"&gt;
+<code class="xml">&lt;div class="bgy-form"&gt;
   &lt;label for="inputDemo"&gt;标题字段&lt;/label&gt;
   &lt;input type="text" id="inputDemo" placeholder="请输入文字"&gt;
 &lt;/div&gt;</code>
@@ -649,7 +667,7 @@
         </div>
         <figure class="highlight">
           <pre>
-            &lt;span class="bgy-icon-arrowR"&gt;&lt;/span&gt;
+            <code class="xml">&lt;span class="bgy-icon-arrowR"&gt;&lt;/span&gt;</code>
           </pre>
         </figure>
 
@@ -662,7 +680,7 @@
         </div>
         <figure class="highlight">
           <pre>
-<code>&lt;div class="bgy-form"&gt;
+<code class="xml">&lt;div class="bgy-form"&gt;
   &lt;label for="textareaDemo"&gt;文本框&lt;/label&gt;
   &lt;textarea rows="3"&gt;&lt;/textarea&gt;
 &lt;/div&gt;</code>
@@ -704,10 +722,17 @@
         </div>
         <figure class="highlight">
           <pre>
-<code>&lt;div class="bgy-form"&gt;
+<code class="xml">&lt;div class="bgy-form"&gt;
   &lt;label for="inputPrompt"&gt;标题字段&lt;/label&gt;
   &lt;input type="text" id="inputPrompt" placeholder="请输入"&gt;
 &lt;/div&gt;</code>
+          </pre>
+        </figure>
+        <figure class="highlight">
+          <pre>
+<code>$('#inputPrompt').on('click', function(e) {
+  $('#windowDemoSmall').window('open');
+});</code>
           </pre>
         </figure>
 
@@ -826,6 +851,28 @@
 &lt;span id="trigWindow" class="bgy-btn"&gt;点我弹大窗&lt;/span&gt;</code>
           </pre>
         </figure>
+        <figure class="highlight">
+          <pre>
+<code>$('#windowDemo').window({
+  title: '项目巡检统计图表',
+  width: 900,
+  height: 500,
+  collapsible: false,
+  minimizable: false,
+  maximizable: false,
+  resizable: false,
+  border: false,
+  closed: true,
+  constrain: true,
+  cls: 'bgy-window',
+  headerCls: 'bgy-tit',
+  modal: true
+});
+$('#trigWindow').on('click', function(e) {
+  $('#windowDemo').window('open');
+});</code>
+          </pre>
+        </figure>
 
         <h4>小编辑弹窗</h4>
         <div class="bs-example">
@@ -896,6 +943,28 @@
 &lt;span id="trigWindow2" class="bgy-btn"&gt;点我开小窗&lt;/span&gt;</code>
           </pre>
         </figure>
+        <figure class="highlight">
+          <pre>
+<code>$('#windowDemoSmall').window({
+  title: '小编辑弹窗',
+  width: 700,
+  height: 400,
+  collapsible: false,
+  minimizable: false,
+  maximizable: false,
+  resizable: false,
+  border: false,
+  closed: true,
+  constrain: true,
+  cls: 'bgy-win-small',
+  headerCls: 'bgy-tit',
+  modal: true
+});
+$('#trigWindow2').on('click', function(e) {
+  $('#windowDemoSmall').window('open');
+});</code>
+          </pre>
+        </figure>
 
         <h4>提示弹窗</h4>
         <div class="bs-example">
@@ -922,6 +991,33 @@
 &lt;span id="trigWindow3" class="bgy-btn"&gt;点我弹提示&lt;/span&gt;</code>
           </pre>
         </figure>
+        <figure class="highlight">
+          <pre>
+<code>$('#alertDemo').window({
+  title: '系统提示',
+  width: 700,
+  height: 220,
+  collapsible: false,
+  minimizable: false,
+  maximizable: false,
+  resizable: false,
+  border: false,
+  closed: true,
+  constrain: true,
+  cls: 'bgy-alert',
+  headerCls: 'bgy-tit',
+  modal: true
+});
+$('#trigWindow3').on('click', function(e) {
+  $('#alertDemo').window('open');
+});</code>
+          </pre>
+        </figure>
+
+        <h4>提示弹窗2</h4>
+        <div class="bs-example">
+          <span id="trigWindow3b" class="bgy-btn">点我弹提示</span>
+        </div>
 
         <h4>提示框</h4>
         <div class="bs-example">
@@ -937,8 +1033,17 @@
 &lt;/div&gt;
 &lt;span id="trigWindow4" class="bgy-btn"&gt;点我弹提示&lt;/span&gt;</code>
           </pre>
+        </figure>
+        <figure class="highlight">
           <pre>
-<code></code>
+<code>$('#trigWindow4').on('click', function(e) {
+  $('#tipsDemo').show('fast', function() {
+      var $this = $(this);
+      setTimeout(function(){
+          $this.hide('fast');
+  }, 3000)
+  });
+});</code>
           </pre>
         </figure>
 
@@ -997,7 +1102,7 @@
         </div>
         <figure class="highlight">
           <pre>
-            <code>&lt;hr class="vr" style="height: 200px;"&gt;</code>
+            <code class="xml">&lt;hr class="vr" style="height: 200px;"&gt;</code>
           </pre>
         </figure>
 
@@ -1007,7 +1112,7 @@
         </div>
         <figure class="highlight">
           <pre>
-            <code>&lt;p class=&quot;bgy-txt&quot;&gt;廊坊燕郊碧桂园项目&lt;span class=&quot;bgy-txt-inverse&quot;&gt;字体反白效果&lt;/span&gt;项目廊坊燕郊碧桂园项目廊坊燕郊碧桂园项目廊坊燕郊碧桂园项目廊坊燕郊碧桂园项目廊坊燕郊碧桂园项目廊坊燕郊碧桂园项目廊坊燕郊碧桂园项目廊坊燕郊碧桂园项目廊坊燕郊碧桂园项目&lt;/p&gt;</code>
+            <code class="xml">&lt;p class=&quot;bgy-txt&quot;&gt;廊坊燕郊碧桂园项目&lt;span class=&quot;bgy-txt-inverse&quot;&gt;字体反白效果&lt;/span&gt;项目廊坊燕郊碧桂园项目廊坊燕郊碧桂园项目廊坊燕郊碧桂园项目廊坊燕郊碧桂园项目廊坊燕郊碧桂园项目廊坊燕郊碧桂园项目廊坊燕郊碧桂园项目廊坊燕郊碧桂园项目廊坊燕郊碧桂园项目&lt;/p&gt;</code>
           </pre>
         </figure>
 
@@ -1017,7 +1122,7 @@
         </div>
         <figure class="highlight">
           <pre>
-            <code>&lt;p class=&quot;bgy-txt&quot;&gt;廊坊燕郊碧桂园项目&lt;span class=&quot;bgy-txt-gray&quot;&gt;灰底字灰底字灰底字&lt;/span&gt;项目廊廊坊燕郊碧桂园项目&lt;/p&gt;</code>
+            <code class="xml">&lt;p class=&quot;bgy-txt&quot;&gt;廊坊燕郊碧桂园项目&lt;span class=&quot;bgy-txt-gray&quot;&gt;灰底字灰底字灰底字&lt;/span&gt;项目廊廊坊燕郊碧桂园项目&lt;/p&gt;</code>
           </pre>
         </figure>
 
@@ -1078,13 +1183,72 @@
             </table>
           </div>
         </div>
+        <figure class="highlight">
+          <pre>
+<code class="xml">&lt;div class="bgy-table"&gt;
+  &lt;table class="easyui-datagrid"&gt;
+      &lt;thead&gt;
+      &lt;tr&gt;
+        &lt;th data-options="field:'code',width:63,align:'center'"&gt;序号&lt;/th&gt;
+        &lt;th data-options="field:'name',width:295,align:'left'"&gt;项目名称&lt;/th&gt;
+        &lt;th data-options="field:'price',width:85,align:'center'"&gt;巡检得分&lt;/th&gt;
+      &lt;/tr&gt;
+      &lt;/thead&gt;
+      &lt;tbody&gt;
+      &lt;tr&gt;
+        &lt;td&gt;1&lt;/td&gt;
+        &lt;td&gt;廊坊燕郊碧桂园时代城&lt;/td&gt;
+        &lt;td&gt;98&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td&gt;2&lt;/td&gt;
+        &lt;td&gt;承德兴隆碧桂园项目&lt;/td&gt;
+        &lt;td&gt;96&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td&gt;3&lt;/td&gt;
+        &lt;td&gt;廊坊燕郊碧桂园时代城&lt;/td&gt;
+        &lt;td&gt;94&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td&gt;4&lt;/td&gt;
+        &lt;td&gt;承德兴隆碧桂园项目&lt;/td&gt;
+        &lt;td&gt;91&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td&gt;5&lt;/td&gt;
+        &lt;td&gt;廊坊燕郊碧桂园时代城&lt;/td&gt;
+        &lt;td&gt;89&lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/tbody&gt;
+  &lt;/table&gt;
+&lt;/div&gt;</code>
+          </pre>
+        </figure>
+        <figure class="highlight">
+          <pre>
+<code>//表格演示
+  $('.bgy-table table').datagrid({
+      //scrollbarSize:0,fitColumns:true两属性同时设置时可以彻底消除表格右侧留白
+      scrollbarSize:0, //滚动条宽度，设置为0时，
+      fitColumns:true, //设置为 true，则会自动扩大或缩小列的尺寸以适应网格的宽度并且防止水平滚动。
+      rowStyler: function(index,row){
+              if (index%2==1){
+                  return 'background-color:#f4f4f4;';//隔行变色
+              }        		
+      },
+      singleSelect: true
+  });</code>
+          </pre>
+        </figure>
+
         <h4>线框矩形</h4>
         <div class="bs-example">
           <div class="border" style="width: 300px; height: 180px; margin: auto;"></div>
         </div>
         <figure class="highlight">
           <pre>
-            &lt;div class="border" style="width: 300px; height: 180px; margin: auto;"&gt;&lt;/div&gt;
+            <code class="xml">&lt;div class="border" style="width: 300px; height: 180px; margin: auto;"&gt;&lt;/div&gt;</code>
           </pre>
         </figure>
 
@@ -1094,11 +1258,11 @@
         </div>
         <figure class="highlight">
           <pre>
-            &lt;div class="shadow" style="width: 300px; height: 180px; margin: auto;"&gt;&lt;/div&gt;
+            <code class="xml">&lt;div class="shadow" style="width: 300px; height: 180px; margin: auto;"&gt;&lt;/div&gt;</code>
           </pre>
         </figure>
 
-        <h4>横向滚动条</h4>
+        <!-- <h4>横向滚动条</h4>
         <div class="bs-example">
           <div class="bgy-scroll" style="width: 300px; height: 50px; margin: auto; overflow-x: scroll; white-space: nowrap;">横向滚动条演示横向滚动条演示横向滚动条演示横向滚动条演示横向滚动条演示横向滚动条演示横向滚动条演示横向滚动条演示横向滚动条演示横向滚动条演示横向滚动条演示横向滚动条演示横向滚动条演示横向滚动条演示</div>
         </div>
@@ -1116,7 +1280,7 @@
           <pre>
 <code>&lt;div class="bgy-scroll" style="width: 50px; height: 150px; margin: auto; overflow-y: scroll;"&gt;纵向滚动条演示纵向滚动条演示纵向滚动条演示纵向滚动条演示纵向滚动条演示纵向滚动条演示纵向滚动条演示纵向滚动条演示纵向滚动条演示纵向滚动条演示纵向滚动条演示纵向滚动条演示纵向滚动条演示纵向滚动条演示&lt;/div&gt;</code>
           </pre>
-        </figure>
+        </figure> -->
 
 
         <h3>图片上传</h3>
@@ -1133,7 +1297,18 @@
             </form>
           </div>
         </div>
-
+        <div class="bs-example">
+<div class="weui-uploader__bd">
+  <ul id="upload-form2" class="weui_uploader_files">
+    <!-- 预览图插入到这 -->
+  </ul>
+  <div class="weui_uploader_input_wrp" id="wxUploadImgDiv">
+    <form id="upload-form" method="post" enctype="multipart/form-data">
+      <input id="wxUploadImg1" class="weui_uploader_input js_file" name="file" type="file" accept="image/jpg,image/jpeg,image/png,image/gif"
+        multiple="multiple" /> </form>
+  </div>
+</div>
+        </div>
       </div>
     </div>
   <script src="./layui/layui.js"></script>

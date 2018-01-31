@@ -1,5 +1,5 @@
 /**
- * BGY-UI 0.9.6
+ * BGY-UI 1.0.0
  *
  */
 ;
@@ -16,7 +16,7 @@ $(window).on('load', function() {
 	});
 });
 
-//重载easyui的onResize方法，增加自动居中功能
+//重载easyui默认window的onOpen方法，增加自动居中功能，修改mask的样式
 $.fn.window.defaults.onOpen = function (left, top) {
   var $c = $(this).parent(),
       $w = $(window),
@@ -28,7 +28,25 @@ $.fn.window.defaults.onOpen = function (left, top) {
 
   $(".window-mask").appendTo('body').css({
   	width: $(window).width(),
-  	height: $("body").height(),
+  	height: $(window).height(),
   	backgroundColor: "#000"
   }); 
+};
+
+//重载easyui默认messager的属性及onOpen方法，修改mask的样式
+$.messager.defaults.cls = "bgy-alert";
+$.messager.defaults.headerCls = "bgy-tit";
+$.messager.defaults.bodyCls = "bgy-tit";
+$.messager.defaults.border = false;
+$.messager.defaults.width = 700;
+$.messager.defaults.height = 220;
+$.messager.defaults.buttons = [{
+    text:'Save'
+}];
+$.messager.defaults.onOpen = function (left, top) {
+    $(".window-mask").appendTo('body').css({
+        width: $(window).width(),
+        height: $("body").height(),
+        backgroundColor: "#000"
+    }); 
 };
