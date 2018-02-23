@@ -5,15 +5,36 @@
 ;
 "use strict";
 
-//按钮字数判断处理
 $(window).on('load', function() {
-	$(".bgy-btn").each(function(index, el) {
-		var $el = $(el), 
-				n = $el.text().length;
-		if(n == 2 || n == 3){
-			$el.addClass('btn-n' + n);
-		}
-	});
+    //按钮字数判断处理
+    $(".bgy-btn").each(function(index, el) {
+        var $el = $(el), 
+                n = $el.text().length;
+        if(n == 2 || n == 3){
+            $el.addClass('btn-n' + n);
+        }
+    });
+
+    //下拉按钮处理
+    var $dbt = $(".bgy-dropBtn"),
+        $dt = $("<dt></dt>"),
+        $dd = $dbt.find("dd");
+        //console.log($dd.find("a").eq(0))
+    $dt.html($dd.find("a").eq(0).clone());
+    $dbt.prepend($dt);
+    $dt.on('mouseover', function(e) {
+        $dd.toggle();
+    });
+    $dbt.on('mouseleave', function(e) {
+        $dd.hide();
+    });
+    // $dda.on('click', function(e) {
+    // 	var $dta = $dt.find(">a"),
+    // 		$dda = $dd.find(">a");
+    // 	$dd.prepend($dta);
+    // 	$dt.html($(this));
+    // 	return false;
+    // });
 });
 
 //重载easyui默认window的onOpen方法，增加自动居中功能，修改mask的样式

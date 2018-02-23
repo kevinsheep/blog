@@ -122,7 +122,7 @@
             <span class="label label-success">开发完成</span>
         </div>
         <div class="bs-example">
-          <select class="easyui-combobox bgy-combo" name="state">
+          <select class="easyui-combobox bgy-combo" name="state" id="demo-combobox">
             <option value="" selected>选择区域</option>
             <option value="AL">北京区域</option>
             <option value="AK">佛肇区域</option>
@@ -1316,15 +1316,6 @@ $('#trigWindow3').on('click', function(e) {
   <script src="./js/jquery.imgUpload.js"></script>
   <script src="./js/highlight.pack.js"></script>
   <script src="./js/demo.js"></script>
-<script>
-  document.getElementById("bgyUILogo").onclick = function(event) {
-    if (self != top) {
-      alert('在iframe中');
-      parent.location.href = location.href;
-    }
-    else { alert('不在iframe中');}
-    return false;
-  };
-</script>
+
 </body>
 </html>

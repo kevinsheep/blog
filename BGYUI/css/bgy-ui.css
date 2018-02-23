@@ -1,16 +1,28 @@
 @charset "utf-8";
 /**
- * BGY-UI 0.9.6
+ * BGY-UI 1.0.0
  * 表单等难以自适应的部件，基于1366*768尺寸的屏幕
  */
 
-/* 公共样式 */
+/* 公共样式、css reset */
+html,body,dl,dt,dd,ul,ol,li,p,h1,h2,h3,h4,h5,h6 {padding: 0; margin: 0;}
+dt { font-weight: normal; }
+ul,ol,li { list-style: none; }
 body { font-size: 14px; font-family: "Microsoft YaHei"; }
 a,
 a:hover,
 a:visited,
 a:active,
 a:focus { text-decoration: none; outline: none; cursor: pointer; }
+
+* { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+*:before,
+*:after { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+/* 清除浮动 */
+.clearbox { border: none; border-top: 1px solid transparent !important; clear: both; font-size: 0; height: 0; line-height: 0; margin-top: -1px !important; visibility: hidden; }
+.clearfix:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; }
+* html .clearfix { height: 1%; }
+* + html .clearfix { min-height: 1%; }
 
 /* 标准间隔 */
 .mt { margin-top: 25px; }
@@ -25,7 +37,7 @@ a:focus { text-decoration: none; outline: none; cursor: pointer; }
 /* 线框、投影 */
 hr { margin: 20px 0; border: 0; background: #dbdbdb; height: 1px; }
 hr.vr { width: 1px; }
-.shadow { box-shadow: 0 0 8px rgba(0,0,0,.1); background-color: #fff; }
+.shadow { box-shadow: 0 0 8px rgba(0,0,0,.05); background-color: #fff; }
 .border { border: 1px solid #DAE1E8; }
 
 /* 状态图标 */
@@ -67,7 +79,9 @@ url('../fonts/ico-bgy.svg#ico-bgy') format('svg'); /* iOS 4.1- */ }
 .tabs-close,
 .menu-text,
 .tree-node,
-.btn-collaspe { font-family: "ico-bgy" !important; font-size: 16px; font-style: normal; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+.btn-collaspe,
+.combo-arrow,
+.bgy-dropBtn a:after { font-family: "ico-bgy" !important; font-size: 16px; font-style: normal; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
 
 /* 面包屑 */
 .bgy-path { color: #4C5E70; font-size: 14px; line-height: 18px; padding: 0; margin: 0 0 20px; list-style: none; }
@@ -83,8 +97,8 @@ url('../fonts/ico-bgy.svg#ico-bgy') format('svg'); /* iOS 4.1- */ }
 .easyui-tabs.bgy-tabs .tabs li { margin: 0px; }
 .easyui-tabs.bgy-tabs .tabs-inner { width: 200px !important; height: 35px !important; line-height: 35px !important; color: #4C5E70; background-color: #F1F1F1; font-weight: normal; }
 .easyui-tabs.bgy-tabs .tabs-inner { border-right-width: 0; }
-.easyui-tabs.bgy-tabs .tabs-inner:hover { background-color: #1A9CC4; }
-.easyui-tabs.bgy-tabs .tabs-inner:active { background-color: #1686A7; }
+.easyui-tabs.bgy-tabs .tabs-inner:hover { background-color: #fff; color: #1A9CC4; }
+.easyui-tabs.bgy-tabs .tabs-inner:active { color: #1686A7; }
 
 .easyui-tabs.bgy-tabs .tabs-selected .tabs-inner { color: #1A9CC4;  border-color: #DAE1E8; background-color: #fff; font-weight: normal; }
 .easyui-tabs.bgy-tabs .tabs-last .tabs-inner { border-right-width: 1px; }
@@ -203,7 +217,7 @@ url('../fonts/ico-bgy.svg#ico-bgy') format('svg'); /* iOS 4.1- */ }
 .bgy-info { font-size: 12px; line-height: 150%; color: #7B8DA0; }
 
 /* 表单 */
-.bgy-form { padding: 25px; min-width: 1000px; }
+.bgy-form { padding: 25px; min-width: 1000px; overflow: hidden; }
 .bgy-form select,
 .bgy-form input[type="radio"],
 .bgy-form input[type="radio" i],
@@ -214,7 +228,7 @@ url('../fonts/ico-bgy.svg#ico-bgy') format('svg'); /* iOS 4.1- */ }
 .bgy-form select::-ms-expand { display: none; }
 
 .bgy-form ul { margin: 0 -5px 0 -55px; overflow: hidden; zoom: 1; padding: 0; }
-.bgy-form li { float: left; width: 520px; margin-left: 25px; list-style: none; padding: 0 0 25px 0; line-height: 30px; }
+.bgy-form li { float: left; width: 510px; margin-left: 25px; list-style: none; padding: 0 0 25px 0; line-height: 30px; }
 .bgy-form label { text-overflow: ellipsis; overflow: hidden; white-space:nowrap; text-align: right; display: inline-block; font-size: 12px; margin: 0 25px 0 0; height: 30px; line-height: 30px; color: #4C5E70; font-weight: normal; vertical-align: middle; width: 120px; }
 .bgy-form input[type='text'],
 .bgy-form input[type='text' i],
@@ -241,7 +255,7 @@ url('../fonts/ico-bgy.svg#ico-bgy') format('svg'); /* iOS 4.1- */ }
 .bgy-form input.prompt { content: "dd"; background: url('../images/icon-prompt.png') no-repeat right center; cursor: pointer; }
 .required label:after { position: absolute; content: "*"; color: #f00; font-size: 14px; }
 .error input { background-color: #FEE; }
-.error .info { color: #f00; }
+.error .info { color: #f00; font-size: 12px; }
 
 .bgy-date input { width: 274px; padding-right: 25px; }
 .bgy-date:after { content: "\e910"; margin-left: -28px; color: #50b3d2; vertical-align: middle;}
@@ -249,18 +263,24 @@ url('../fonts/ico-bgy.svg#ico-bgy') format('svg'); /* iOS 4.1- */ }
 /* combobox */
 .bgy-combo {}
 .bgy-combo ~ .textbox { min-width: 120px; border-radius: 3px; }
+.bgy-combo ~ .textbox-disabled,
+.easyui-datebox ~ .textbox-disabled { background-color: #f4f4f4; } 
 .bgy-combo ~ .textbox-focused { border-color: #DBDBDB; }
-.bgy-combo ~ .textbox .textbox-text { padding-left: 10px; color: #4C5E70; height: 30px; }
+.bgy-combo ~ .textbox .textbox-text { padding-left: 10px; color: #4C5E70; height: 30px; border: 0; }
 .bgy-combo ~ .textbox .textbox-addon-right { right: 5px !important; }
 .bgy-combo ~ .textbox .textbox-addon-right a:hover { background-color: #fff; color: #6db9c4; }
+.bgy-combo ~ .textbox-disabled .textbox-addon-right a:hover {background-color: unset; }
+.datebox .textbox-icon-disabled { background-color: transparent; }
+.bgy-combo ~ .textbox .combo-arrow { background: none!important; color: #1A9CC4; font-size: 12px; }
+.bgy-combo ~ .textbox .combo-arrow:before { content: "\e90a"; line-height: 30px; }
 .combo-panel { border-top-width: 0px; border-bottom-width: 0px; }
-.combobox-item { border-bottom: 1px solid #dbdbdb; height: 29px; line-height: 29px; font-size: 12px; padding: 0 0 0 10px; cursor: pointer; }
+.combobox-item { border-bottom: 1px solid #dbdbdb; line-height: 21px; font-size: 12px; padding: 4px 0 4px 10px; cursor: pointer; }
 .combobox-item-hover { background-color: #f4f4f4; color: #68bbd5; }
 .combobox-item-selected { background-color: #f4f4f4; color: #68bbd5; }
 
 /* 单选框、复选框 */
 .bgy-form input[type="radio"]:before,
-.bgy-form input[type="radio" i]:before { display: inline-block; content: "\e90c"; vertical-align: middle; color: #fff; border: 1px solid #cacaca; border-radius: 50%; font-size: 14px; background-color: #fff; width: 16px; height: 16px; }
+.bgy-form input[type="radio" i]:before { display: inline-block; content: "\e90c"; vertical-align: middle; color: #fff; border: 1px solid #cacaca; border-radius: 50%; font-size: 14px; background-color: #fff; width: 16px; height: 16px; line-height: 14px; }
 .bgy-form input[type="radio"]:checked:before,
 .bgy-form input[type="radio" i]:checked:before { color: #1a9cc4; border-color: #1a9cc4; }
 .bgy-form input[type="radio"][disabled='disabled']:before,
@@ -274,7 +294,6 @@ url('../fonts/ico-bgy.svg#ico-bgy') format('svg'); /* iOS 4.1- */ }
 .bgy-form input[type="checkbox" i][disabled='disabled']:before { color:#f4f4f4; background-color: #f4f4f4; }
 
 /* 弹窗 */
-.bgy-window {}
 .bgy-window .panel-header { background-color: #F0F5F5; }
 .bgy-window .panel-title { height: 40px; line-height: 40px; padding-left: 15px; }
 .bgy-window > .panel-body { padding: 20px; }
@@ -291,7 +310,6 @@ url('../fonts/ico-bgy.svg#ico-bgy') format('svg'); /* iOS 4.1- */ }
 .bgy-window .bgy-btn { margin: 0 20px 0 0; }
 .bgy-window h5 { font-size: 16px; color: #1A9CC4; }
 
-.bgy-win-small {}
 .bgy-win-small .panel-header { background-color: #F0F5F5; }
 .bgy-win-small .panel-title { height: 40px; line-height: 40px; padding-left: 15px; }
 .bgy-win-small .btns { text-align: center; }
@@ -306,26 +324,27 @@ url('../fonts/ico-bgy.svg#ico-bgy') format('svg'); /* iOS 4.1- */ }
 .bgy-win-small .bgy-form textarea { width: 340px; }
 .bgy-win-small .bgy-form label { width: 150px; }
 
-.bgy-alert {}
 .bgy-alert .panel-header { background-color: #F0F5F5; }
 .bgy-alert .panel-title { height: 40px; line-height: 40px; padding-left: 15px; }
 .bgy-alert .btns { text-align: center; }
 .bgy-alert .bd { width: auto; overflow: hidden; }
 .bgy-alert p { padding: 30px 0 20px; text-align: center; }
+.bgy-alert .messager-body { text-align: center; padding: 20px; }
 
-.window-shadow { box-shadow: 0 0 8px rgba(0,0,0,.7); }
+.window-shadow { box-shadow: 0 0 8px rgba(0,0,0,.6); }
 
 .window-thinborder .window-header .panel-tool { margin: 0; top: 13px; right: 17px; height: 22px; }
 .panel-tool a.panel-tool-close { background: none; color: #778a9b; width: 18px; height: 18px; margin: 0; opacity: 1; }
 .panel-tool a.panel-tool-close:before { content: '\e904'; }
-.panel-tool a.panel-tool-close:hover { color: #fe0000; }
-.panel-tool a.panel-tool-close:active { color: #bc0404; }
+.panel-tool a.panel-tool-close:hover { color: #1A9CC4; }
+.panel-tool a.panel-tool-close:active { color: #04789C; }
 
 /* 提示 */
 .bgy-tips { display: none; position: absolute; background-color: #fff; padding: 30px 50px; }
 .bgy-tips p { margin: 0; }
 
 /* 按钮悬停提示 */
+.tooltip { padding: 6px 10px; color: #4C5E70!important; box-shadow: 0 0 15px rgba(0,0,0,.2); border-color: #DAE1E8!important; background-color: #FFEEEE!important; }
 .bgy-tooltip { padding: 6px 10px; color: #4C5E70; box-shadow: 0 0 15px rgba(0,0,0,.2); border-color: #DAE1E8; }
 .bgy-tooltip-red { width: 300px; padding: 6px 10px; color: #4C5E70; box-shadow: 0 0 15px rgba(0,0,0,.2); border-color: #DAE1E8; background-color: #FFEEEE; }
 .bgy-tooltip-gray { width: 300px; padding: 6px 10px; color: #4C5E70; box-shadow: 0 0 15px rgba(0,0,0,.2); border-color: #DAE1E8; background-color: #F1F1F1; }
@@ -337,10 +356,10 @@ url('../fonts/ico-bgy.svg#ico-bgy') format('svg'); /* iOS 4.1- */ }
 /* 滚动条两端的按钮 */
 .bgy-scroll::-webkit-scrollbar-button { height: 20px; width: 20px; }
 /* 滚动条上下左右顶端的按钮 */
-.bgy-scroll::-webkit-scrollbar-button:horizontal:start { background-image: url('../images/scroll_btn_left.png'); border: 1px solid #dbdbdb; }
-.bgy-scroll::-webkit-scrollbar-button:horizontal:end { background-image: url('../images/scroll_btn_right.png'); border: 1px solid #dbdbdb; }
-.bgy-scroll::-webkit-scrollbar-button:vertical:start { background-image: url('../images/scroll_btn_top.png');  border: 1px solid #dbdbdb; }
-.bgy-scroll::-webkit-scrollbar-button:vertical:end { background-image: url('../images/scroll_btn_bottom.png'); border: 1px solid #dbdbdb; }
+.bgy-scroll::-webkit-scrollbar-button:horizontal:start { background: url('../images/scroll_btn_left.png') center; border: 1px solid #dbdbdb; }
+.bgy-scroll::-webkit-scrollbar-button:horizontal:end { background: url('../images/scroll_btn_right.png') center; border: 1px solid #dbdbdb; }
+.bgy-scroll::-webkit-scrollbar-button:vertical:start { background: url('../images/scroll_btn_top.png') center;  border: 1px solid #dbdbdb; }
+.bgy-scroll::-webkit-scrollbar-button:vertical:end { background: url('../images/scroll_btn_bottom.png') center; border: 1px solid #dbdbdb; }
 /* 外层轨道 */
 .bgy-scroll::-webkit-scrollbar-track { background-color: #f5f5f5; }
 /* 内层轨道，滚动条中间部分（除去） */
