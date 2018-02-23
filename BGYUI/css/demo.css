@@ -14,7 +14,6 @@
 *:after { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
 
 .container { overflow: hidden; }
-#bgy-ui-nav .navbar-nav { margin-top: 7px; }
 #toc-doc { position: relative; }
 #toc-doc h4 { font-size: 18px; line-height: 110%; padding: 10px 0; }
 #toc-menu { width: 180px; position: absolute; /*top: 330px;*/ left: 50%; margin-left: -570px; z-index: 99; background-color: #fff; }
@@ -35,8 +34,7 @@
 .updatelog ul { padding-left: 2em; }
 .updatelog li { list-style: none; }
 
-.nav-pills>li>a { font-size: 12px; }
-.nav>li>a { padding: 8px 15px; }
+.nav-pills>li>a { font-size: 12px; padding: 8px 15px; }
 
 /* 不同设备尺寸兼容 */
 @media (max-width: 768px){

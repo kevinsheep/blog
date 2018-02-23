@@ -81,6 +81,9 @@
                 left: e.pageX,
                 top: e.pageY
             });			
+        },
+        onClick: function (node) {
+            $('#treeDemo').tree(node.state === 'closed' ? 'expand' : 'collapse', node.target);
         }
     });
 
@@ -120,30 +123,6 @@
         }
     });
 
-    //预警状态下拉选择
-    $(".bgy-combo[name='alarm']").combobox({
-        panelHeight: "58px"
-        ,editable: false
-        ,valueField: 'value'
-        ,textField: 'text'
-        ,data: [{
-            value: "",
-            text: "选择预警"
-        },{
-            value: "red",
-            text: "红灯"
-        },{
-            value: "yellow",
-            text: "黄灯"
-        }]
-        ,formatter: function(row){
-            return '<span class="state-' + row.value + '">' + row.text + '</span>';
-        }
-        ,onLoadSuccess: function(){
-            $(".combo-panel .combobox-item:first").remove();
-        }
-    });
-
     //树形控件演示2  
     $('#treeDemo2').tree({
         animate: true,
@@ -176,7 +155,34 @@
             },{
               "text":"权限设置B"
             }]
+        }],
+        onClick: function (node) {
+            $('#treeDemo2').tree(node.state === 'closed' ? 'expand' : 'collapse', node.target);
+        }
+    });
+
+    //预警状态下拉选择
+    $(".bgy-combo[name='alarm']").combobox({
+        panelHeight: "58px"
+        ,editable: false
+        ,valueField: 'value'
+        ,textField: 'text'
+        ,data: [{
+            value: "",
+            text: "选择预警"
+        },{
+            value: "red",
+            text: "红灯"
+        },{
+            value: "yellow",
+            text: "黄灯"
         }]
+        ,formatter: function(row){
+            return '<span class="state-' + row.value + '">' + row.text + '</span>';
+        }
+        ,onLoadSuccess: function(){
+            $(".combo-panel .combobox-item:first").remove();
+        }
     });
 
     //弹窗演示
