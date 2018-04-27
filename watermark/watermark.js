@@ -55,7 +55,7 @@ var watermark = function (settings) {
             var mask_div = document.createElement('div');
             mask_div.id = 'mask_div' + i + j;
             mask_div.className = 'mask_div';
-            mask_div.appendChild(document.createTextNode(s._txt));
+            mask_div.appendChild(document.createTextNode(s.watermark_txt));
             //设置水印div倾斜显示
             mask_div.style.webkitTransform = "rotate(-" + s._angle + "deg)";
             mask_div.style.MozTransform = "rotate(-" + s._angle + "deg)";
