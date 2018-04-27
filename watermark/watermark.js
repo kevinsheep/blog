@@ -3,7 +3,7 @@
 var watermark = function (settings) {
     //默认设置
     var s = {
-        _txt:"text",
+        watermark_txt:"text",
         _x:20,//水印起始位置x轴坐标
         _y:50,//水印起始位置Y轴坐标
         _rows:10,//水印行数
