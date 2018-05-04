@@ -12,7 +12,7 @@ permalink: /wechat/
     $.ajax({
     type : "GET",
     dataType : "jsonp",
-    url : "https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=wx407bd1c616d74e89&secret=46d5fde8120476f4b4bc94f814fe58e0",
+    url : "https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=wxcea822749e1de7bb&secret=865e00ef65bd0de3930016a7cd1def6f",
     success : function(data) {
             console.log(data);
         }//success
