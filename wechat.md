@@ -6,7 +6,7 @@ permalink: /wechat/
 
 微信接口测试
 
-<script src="./BGYUI/js/jquery.min.js"></script>
+<script src="/BGYUI/js/jquery.min.js"></script>
 <script>
     
     $.ajax({
