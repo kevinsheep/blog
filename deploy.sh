@@ -21,3 +21,4 @@ git commit -m 'auto deploy'
 git push
 
 #git push -f git@github.com:kevinsheep/kevinsheep.github.io.git master
+cd -
