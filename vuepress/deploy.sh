@@ -11,4 +11,5 @@ cd -
 git init
 git add -A
 git commit -m 'bash auto deploy'
-git push git@github.com:kevinsheep/blog.git master
+#git push git@github.com:kevinsheep/blog.git master
+git push
