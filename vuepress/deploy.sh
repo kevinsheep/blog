@@ -6,7 +6,7 @@ npm run docs:build
 cd ..
 cd docs
 echo 'ceil.top' > CNAME
-cd ..
+cd -
 
 git init
 git add -A

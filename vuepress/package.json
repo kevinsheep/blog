@@ -6,6 +6,7 @@
   "scripts": {
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
-    "deploy": "deploy.sh"
+    "deploy": "deploy.sh",
+    "start": "npm run docs:dev"
   }
 }
