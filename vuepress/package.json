@@ -7,6 +7,6 @@
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
     "deploy": "deploy.sh",
-    "start": "npm run docs:dev"
+    "start": "yarn run docs:dev"
   }
 }
