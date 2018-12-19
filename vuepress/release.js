@@ -7,8 +7,8 @@ const release = async () => {
   await execa('cd', ['..'], { stdio: 'inherit' })
   // await execa('git', ['init'], { stdio: 'inherit' })
   await execa('git', ['add', '-A'])
-  await execa('git', ['commit', '-m', 'release by js'])
-  await execa('git', ['push'])
+  await execa('git', ['commit', '-m', 'release by js'], { stdio: 'inherit' })
+  await execa('git', ['push'], { stdio: 'inherit' })
   console.log("auto release end ?")
 }
 
