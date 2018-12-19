@@ -12,5 +12,3 @@ git init
 git add -A
 git commit -m 'bash auto deploy'
 git push
-
-exit 0
