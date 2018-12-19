@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 set -e
 
-yarn run docs:build
+npm run docs:build
 
 cd ..
 cd docs
