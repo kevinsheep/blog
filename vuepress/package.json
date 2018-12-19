@@ -8,7 +8,7 @@
     "docs:build": "vuepress build docs",
     "deploy": "deploy.sh",
     "release": "node release.js",
-    "start": "npm run docs:dev"
+    "start": "yarn run docs:dev"
   },
   "dependencies": {
     "execa": "^1.0.0"

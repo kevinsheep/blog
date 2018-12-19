@@ -1,2 +1,1 @@
-# exit 0
-## npm instead
+# released via release.js again
