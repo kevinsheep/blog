@@ -1,5 +1,5 @@
 module.exports = {
-    title: 'KEVINSHEEP\'s blog',
-    description: 'Just playing around',
+    title: 'Ceil.Top',
+    description: 'Blog Of KEVINSHEEP',
     dest: '../docs/'
 }
