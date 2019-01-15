@@ -4,13 +4,16 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
     "deploy": "deploy.sh",
     "release": "node release.js",
-    "start": "yarn run docs:dev"
+    "start": "vuepress dev docs",
+    "open": "vuepress dev docs --open"
   },
   "dependencies": {
     "execa": "^1.0.0"
+  },
+  "devDependencies": {
+    "vuepress": "^1.0.0-alpha.31"
   }
 }
