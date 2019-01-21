@@ -175,6 +175,46 @@ th, td
     .sidebar
       top 0
 
+.no-sidebar
+  .site-name
+    display none
+  .navbar
+    border-bottom 0
+    .nav-links>a:hover
+      background-color $accentColor
+      color #fff
+  .search-box
+    input
+      width 0
+      border-color transparent
+      padding-right 0
+      cursor pointer
+      &:focus
+        width 10rem
+        border-color #3eaf7c
+        cursor text
+
+.home
+  .hero
+    .description
+      margin-bottom 0
+      font-size 1.4rem
+      color #ccc
+    h1
+      margin-top 0
+      line-height 1
+      font-weight normal
+      em
+        font-style normal
+        color $accentColor
+
+.content.custom
+  li
+    list-style decimal-leading-zero
+    margin-left 1rem
+    color #aaa
+    sup
+      color #ccc
 
 @media (min-width: ($MQMobile + 1px))
   .theme-container.no-sidebar

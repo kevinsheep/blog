@@ -7,11 +7,12 @@
         alt="hero"
       >
 
-      <h1 id="main-title">{{ data.heroText || $title || 'Hello' }}</h1>
-
       <p class="description">
         {{ data.tagline || $description || 'Welcome to your VuePress site' }}
       </p>
+
+      <h1 id="main-title" v-html="data.heroText || $title" v-if="data.heroText || $title"></h1>
+      <h1 v-else>Hello</h1>
 
       <p
         class="action"
