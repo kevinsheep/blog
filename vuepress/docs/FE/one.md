@@ -6,6 +6,10 @@ pic: abc.gif
 updateTime: 2019/01/18
 ---
 
+博文简介部分
+
+<!-- more -->
+
 ::: tip
 This is a tip
 :::

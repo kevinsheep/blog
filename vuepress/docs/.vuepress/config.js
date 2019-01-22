@@ -3,7 +3,7 @@ const fslist = require('./fslist.js')
 function getSubNav(folder) {
     let res = [];
     for (let item of fslist(folder)) {
-        res.push(['/' + folder + '/' + item.filename, item.title || item.filename])
+        res.push('/' + folder + '/' + item.filename)
     }
     return res;
 }
@@ -24,14 +24,19 @@ module.exports = {
             { text: '杂谈', link: '/ELSE/' },
             { text: '关于', link: '/ABOUT/' }
         ],
-        sidebar: [
-            //['/about/', '关于'],
-            {
+        sidebar: {
+            '/FE/': [{
                 title: '前端',
                 collapsable: false,
                 children: getSubNav('FE')
-            },
-        ]
+            }],
+            '/ELSE/': [{
+                title: '杂谈',
+                collapsable: false,
+                children: getSubNav('ELSE')
+            }]
+        }
+
     },
     dest: '../docs/'
 }

@@ -1,8 +1,8 @@
 ---
 home: true
 heroText: <em>C</em>EIL.TOP
-tagline: GO BEYOND YOUR
-heroImage: /avatar.png
+tagline: JUST GO BEYOND YOUR
+heroImage: /assets/img/avatar.png
 
 footer: MIT Licensed | Copyright © 2008-present, KEVINSHEEP.
 ---
@@ -11,6 +11,7 @@ footer: MIT Licensed | Copyright © 2008-present, KEVINSHEEP.
     <ol>
         <li v-for="(item, index) in list" :key="index">
             <a :href="item.path">{{ item.title }}</a> <sup>{{ item.frontmatter.updateTime }}</sup>
+            <div class="intro" v-if="item.excerpt" v-html="item.excerpt"></div>
         </li>
     </ol>
 </template>
@@ -19,7 +20,7 @@ footer: MIT Licensed | Copyright © 2008-present, KEVINSHEEP.
 export default {
     computed: {
         list () {
-            console.log("this.$site.pages==", this.$site.pages)
+            //console.log("this.$site.pages==", this.$site.pages)
             let res = this.$site.pages.filter(item => {
                 return item.regularPath.indexOf(".html") !== -1
             }).sort((a, b) => {
