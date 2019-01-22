@@ -1,11 +1,10 @@
 const fslist = require('./fslist.js')
 
 function getSubNav(folder) {
-    let res = [];
-    for (let item of fslist(folder)) {
-        res.push('/' + folder + '/' + item.filename)
-    }
-    return res;
+    const fs = fslist(folder)
+    return fs.map(item => {
+        return '/' + folder + '/' + item.filename
+    })
 }
 
 module.exports = {

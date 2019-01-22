@@ -4,31 +4,39 @@ const fs = require('fs')
 /**
  * @description 取得文件夹中的文章列表元数据
  */
-module.exports = (folder) => {
+module.exports = function fslist(folder) {
     const path = './docs/' + folder + '/';
     const files = fs.readdirSync(path);
     let list = [];
-    for (let file of files) {
-        let item = {}
-        item.filename = file.split('.').slice(0, -1).join('.')
-        if (item.filename.toLowerCase() === "readme") {
+    for (let item of files) {
+        let file = {}
+        file.filename = item.split('.').slice(0, -1).join('.')
+        if (file.filename.toLowerCase() === "readme") {
             continue
         }
-        let fstr = fs.readFileSync(path + file).toString().replace('\r\n', '')
-        let stat = fs.statSync(path + file)
-        fs.closeSync(2)
-        item.createTime = stat.birthtime
-        item.mTime = stat.mtime
-        if (fstr.indexOf('---') !== -1) {
-            let cstr = fstr.split('---')
-            let fobj = YAML.parse(cstr.length ? cstr[1] : cstr[0])
-            item.title = fobj.title
-            item.description = fobj.description
-            item.pic = fobj.pic
-        }
 
-        list.push(item)
+        let fstr
+        let stat = fs.statSync(path + item)
+        // 暂不考虑文件夹与文件混合的情况
+        // if (stat.isDirectory()) {
+        //    file.children = fslist(folder + '/' + item)
+        // }
+        // else {
+            fstr = fs.readFileSync(path + item).toString().replace('\r\n', '')
+            file.createTime = stat.birthtime
+            file.mTime = stat.mtime
+            if (fstr.indexOf('---') !== -1) {
+                let cstr = fstr.split('---')
+                let fobj = YAML.parse(cstr.length ? cstr[1] : cstr[0])
+                file.title = fobj.title
+                file.description = fobj.description
+                file.pic = fobj.pic
+            }
+        // }
+        fs.closeSync(2)
+
+        list.push(file)
     }
-    console.log("list==", list)
+    //console.log("list==", list)
     return list;
 }

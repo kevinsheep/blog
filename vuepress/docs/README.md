@@ -4,7 +4,7 @@ heroText: <em>C</em>EIL.TOP
 tagline: JUST GO BEYOND YOUR
 heroImage: /assets/img/avatar.png
 
-footer: MIT Licensed | Copyright © 2008-present, KEVINSHEEP.
+footer: MIT Licensed | Copyright © 2010-present, KEVINSHEEP.
 ---
 
 <template>
