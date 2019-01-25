@@ -10,7 +10,7 @@ footer: MIT Licensed | Copyright © 2010-present, KEVINSHEEP.
 <template>
     <ol>
         <li v-for="(item, index) in list" :key="index">
-            <a :href="item.path">{{ item.title }}</a> <sup>{{ item.frontmatter.updateTime }}</sup>
+            <span>[{{ nav[item.dir] }}]</span> <a :href="item.path">{{ item.title }}</a> <sup>{{ item.frontmatter.updateTime }}</sup>
             <div class="intro" v-if="item.excerpt" v-html="item.excerpt"></div>
         </li>
     </ol>
@@ -20,14 +20,30 @@ footer: MIT Licensed | Copyright © 2010-present, KEVINSHEEP.
 export default {
     computed: {
         list () {
-            //console.log("this.$site.pages==", this.$site.pages)
-            let res = this.$site.pages.filter(item => {
-                return item.regularPath.indexOf(".html") !== -1
-            }).sort((a, b) => {
-                const av = a.frontmatter.updateTime ? new Date(a.frontmatter.updateTime).valueOf() : 0
-                const bv = b.frontmatter.updateTime ? new Date(b.frontmatter.updateTime).valueOf() : 0
-                return bv - av //模糊比较，倒序排列，假定都是预期的格式
-            })
+            //console.log("this.$site==", this.$site)
+            let res = this.$site.pages
+                .filter(item => {
+                    return item.regularPath.indexOf(".html") !== -1
+                })
+                .sort((a, b) => {
+                    const av = a.frontmatter.updateTime ? new Date(a.frontmatter.updateTime).valueOf() : 0
+                    const bv = b.frontmatter.updateTime ? new Date(b.frontmatter.updateTime).valueOf() : 0
+                    return bv - av //模糊比较，倒序排列，假定都是预期的格式
+                })
+                .map(item => {
+                        item.dir = '/' + item.path.split('/')[1] + '/'
+                        return item
+                    })
+            //console.log("res==", res)
+            return res
+        },
+
+        nav () {
+            const n = this.$site.themeConfig.sidebar
+            let res = {}
+            for(let key in n) {
+                res[key] = n[key][0].title
+            }
             //console.log("res==", res)
             return res
         }

@@ -1,7 +1,6 @@
 ---
 updateTime: 2017/02/03
 title: 二零一七年
-pageClass: essay-page
 ---
 
 ::: tip 二零一七年

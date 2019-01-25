@@ -27,7 +27,7 @@ module.exports = {
     title: 'Ceil.Top',
     description: 'Blog Of KEVINSHEEP',
     themeConfig: {
-        lastUpdated: 'Last Updated',
+        lastUpdated: '最后更新',
         repo: 'https://github.com/kevinsheep',
         docsRepo: 'https://github.com/kevinsheep/blog',
         docsDir: 'vuepress/docs',

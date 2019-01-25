@@ -11,7 +11,8 @@ updateTime: 2017/12/10
 
 ## demo-layui-table.html
 基于 `jQuery` 及 `Layui`  
-`Layui` 组件的应用及扩展
+`Layui` 组件的应用及扩展  
+
 - 自动渲染数据
 - 字段搜索
 - 列显示/隐藏

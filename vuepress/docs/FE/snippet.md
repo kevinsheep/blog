@@ -23,6 +23,53 @@ getFixNum(231) //250
 getFixNum(3991) //4000
 ```
 
+## Ajax防重复提交
+```javascript
+/**
+* @author kevinsheep
+* @since 2018.10
+*/
+$.ajaxSetup({
+    beforeSend(xhr) {
+        const _url = this.url
+        if (! window.requestCount) {
+            window.requestCount = {}
+        }
+        if (! window.requestCount[_url]) {
+            window.requestCount[_url] = 1
+        }
+        else {
+            console.log("重复提交:", _url) //这里自定义是否提示，或提示的方法
+            return false
+        }
+    },
+    complete(xhr, status) {
+        const _url = this.url
+        if (window.requestCount[_url]) {
+            window.requestCount[_url] = 0;
+        }
+    }
+});
+```
+
+## 修改后退按钮行为
+```javascript
+function pushHistory() {
+  window.history.pushState({
+    title: "index",
+    url: "https://ceil.top" //定义需要强行跳转的链接地址
+  }, "index", location.href)
+  window.history.pushState({ title: "index", url: "" }, "index", "")
+}
+pushHistory() //页面onload时执行
+
+window.addEventListener("popstate", () => {
+  if (window.history.state && window.history.state.url) {
+    location.href = window.history.state.url
+  }
+})
+```
+
 ## H5判断手机横竖屏状态
 ```javascript
 //判断手机横竖屏状态：
