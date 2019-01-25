@@ -3,15 +3,31 @@ const fslist = require('./fslist.js')
 function getSubNav(folder) {
     const fs = fslist(folder)
     return fs.map(item => {
-        return '/' + folder + '/' + item.filename
+        return folder + item.filename
     })
 }
+function getSidebar(cols) {
+    let obj = {}
+    cols.forEach(item => obj[item.link] = [{
+        title: item.text,
+        collapsable: false,
+        children: getSubNav(item.link)
+    }])
+    return obj
+}
+
+const columns = [
+    { text: '前端', link: '/FE/' },
+    { text: '杂谈', link: '/ESSAY/' },
+    { text: '其他', link: '/ELSE/' },
+    { text: '关于', link: '/ABOUT/' }
+]
 
 module.exports = {
     title: 'Ceil.Top',
     description: 'Blog Of KEVINSHEEP',
-    footer: 'MIT Licensed | Copyright © 2013-present KEVIN SHEEP',
     themeConfig: {
+        lastUpdated: 'Last Updated',
         repo: 'https://github.com/kevinsheep',
         docsRepo: 'https://github.com/kevinsheep/blog',
         docsDir: 'vuepress/docs',
@@ -19,23 +35,9 @@ module.exports = {
         editLinkText: '帮助完善此页面',
         nav: [
             { text: '首页', link: '/' },
-            { text: '前端', link: '/FE/' },
-            { text: '杂谈', link: '/ELSE/' },
-            { text: '关于', link: '/ABOUT/' }
+            ...columns
         ],
-        sidebar: {
-            '/FE/': [{
-                title: '前端',
-                collapsable: false,
-                children: getSubNav('FE')
-            }],
-            '/ELSE/': [{
-                title: '杂谈',
-                collapsable: false,
-                children: getSubNav('ELSE')
-            }]
-        }
-
+        sidebar: getSidebar(columns)
     },
     dest: '../docs/'
 }

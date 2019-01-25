@@ -1,12 +1,12 @@
 ---
-title: 关于
-permalink: about
+title: 关于站长
+permalink: aboutMe
 ---
 
 You are visiting my **WOLFHOLE** for so and so reason.
 <!-- Please leave a message.
 However, you have the right to remain silent.
-If you give up that right,  -->Everything you say can and will be recorded and quoted by me against you.
+If you give up that right,  -->Everything you say CAN and WILL BE recorded and quoted by me against you.
 
 <!-- 你因为某种原因光临寒舍
 请留言

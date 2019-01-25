@@ -28,12 +28,9 @@ export default {
                 const bv = b.frontmatter.updateTime ? new Date(b.frontmatter.updateTime).valueOf() : 0
                 return bv - av //模糊比较，倒序排列，假定都是预期的格式
             })
-            console.log("res==", res)
+            //console.log("res==", res)
             return res
         }
-    },
-    methods: {
-
-    },
+    }
 }
 </script>

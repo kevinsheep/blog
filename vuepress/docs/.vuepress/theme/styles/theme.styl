@@ -174,6 +174,8 @@ th, td
         padding-top 0
     .sidebar
       top 0
+  .badge
+    font-size 12px!important
 
 .no-sidebar
   .site-name
@@ -219,17 +221,21 @@ th, td
     li
       list-style none
       color #aaa
-      padding-left .5rem
-      padding-bottom .3rem
+      padding 0 .3rem .3rem .5rem
       &:hover
         background-color #f7f7f7
       sup
         color #ccc
       .intro
         font-size .8rem
+        h1
+          display none
         p
           margin-top 0
           margin-bottom 0
+.content
+  code
+    padding .1rem .3rem
 
 .iconfont
 .search-box
@@ -244,6 +250,12 @@ th, td
     font-weight bolder
   input
     background none
+
+.essay-page
+  .content
+    p
+      text-indent 2rem
+      white-space pre-wrap
 
 @media (min-width: ($MQMobile + 1px))
   .theme-container.no-sidebar

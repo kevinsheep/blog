@@ -69,6 +69,7 @@ export default {
 
   computed: {
     lastUpdated () {
+      console.log (this.$page.lastUpdated)
       return this.$page.lastUpdated
     },
 
@@ -163,7 +164,11 @@ export default {
         path
       )
     }
-  }
+  },
+
+  mounted() {
+    console.log("INNER Page.vue，$page==", this.$page)
+  },
 }
 
 function resolvePrev (page, items) {

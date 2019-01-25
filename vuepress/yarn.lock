@@ -863,6 +863,13 @@
   dependencies:
     lodash.throttle "^4.1.1"
 
+"@vuepress/plugin-last-updated@^1.0.0-alpha.0":
+  version "1.0.0-alpha.0"
+  resolved "https://registry.yarnpkg.com/@vuepress/plugin-last-updated/-/plugin-last-updated-1.0.0-alpha.0.tgz#e4d4d8665dea30f8213f4525d88921abee1cdafc"
+  integrity sha512-7g4/cJHTNlV2319YjZUgu4U10aiGwJcPBYbVyLtaL5AMox7YWDD/L89pscUgVdkK6hMx5HYADa81GgCSivj1eg==
+  dependencies:
+    cross-spawn "^6.0.5"
+
 "@vuepress/plugin-last-updated@^1.0.0-alpha.31":
   version "1.0.0-alpha.31"
   resolved "https://registry.yarnpkg.com/@vuepress/plugin-last-updated/-/plugin-last-updated-1.0.0-alpha.31.tgz#f9d3c80cb66657aa96176426de5c115edf566464"
