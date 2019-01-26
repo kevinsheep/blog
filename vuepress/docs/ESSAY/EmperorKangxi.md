@@ -1,6 +1,7 @@
 ---
 updateTime: 2011/12/03
 pageClass: essay-page
+title: 康熙大帝之于成龙
 ---
 # 「康熙大帝」之于成龙
 　　小说《[康熙大帝](https://baike.baidu.com/item/康熙大帝/7986400)》中，治河总督靳辅和清江道台于成龙的故事。
