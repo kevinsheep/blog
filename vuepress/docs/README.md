@@ -64,7 +64,7 @@ export default {
         const gitalk = new Gitalk({
             clientID: '630cf4b55e25f1909cdc',
             clientSecret: 'ce07650ceea662fbca1842abc938a37df0babdbb',
-            repo: 'https://github.com/kevinsheep/blog',
+            repo: 'blog',
             owner: 'kevinsheep',
             admin: ['kevinsheep'],
             id: 'kevinsheep',      // Ensure uniqueness and length less than 50
