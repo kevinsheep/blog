@@ -169,18 +169,17 @@ export default {
     }
   },
   mounted() {
-    const pna = location.pathname.split('/')
-    const pn = pna[pna.length - 1].slice(0, -5)
+    // const pna = location.pathname.split('/')
+    // const pn = pna[pna.length - 1].slice(0, -5)
     const gitalk = new Gitalk({
         clientID: '630cf4b55e25f1909cdc',
         clientSecret: 'ce07650ceea662fbca1842abc938a37df0babdbb',
         repo: 'blog',
         owner: 'kevinsheep',
         admin: ['kevinsheep'],
-        id: pn,
+        id: location.pathname,
         distractionFreeMode: false  // Facebook-like distraction free mode
     })
-    console.log(pn)
     gitalk.render('gitalk-container')
   }
 }
