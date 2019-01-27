@@ -221,11 +221,19 @@ th, td
     li
       list-style none
       color #aaa
-      padding 0 .3rem .3rem .5rem
+      padding 0 .3rem .3rem .4rem
+      cursor pointer
       &:hover
         background-color #f7f7f7
       sup
         color #ccc
+      .dir
+      .tit
+        color $accentColor
+      .date
+        font-size .8rem
+        line-height 1.4
+        vertical-align text-top
       .intro
         font-size .8rem
         h1
@@ -233,6 +241,12 @@ th, td
         p
           margin-top 0
           margin-bottom 0
+        blockquote
+          border 0
+          margin 0
+          padding 0
+        strong
+          font-weight normal
 .content
   code
     padding .1rem .3rem

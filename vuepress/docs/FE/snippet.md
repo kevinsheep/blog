@@ -53,7 +53,7 @@ $.ajaxSetup({
 ```
 
 ## 修改后退按钮行为
-```javascript
+**```javascript**
 function pushHistory() {
   window.history.pushState({
     title: "index",
