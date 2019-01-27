@@ -8,22 +8,17 @@ footer: MIT Licensed | Copyright © 2010-present, KEVINSHEEP.
 ---
 
 <template>
-    <div>
-        <ol>
-            <li v-for="(item, index) in list" :key="index" @click="go(item)">
-                <span class="dir">{{ nav[item.dir] }} /</span>
-                <span class="tit">{{ item.title }}</span>
-                <span class="date">{{ item.frontmatter.updateTime }}</span>
-                <div class="intro" v-if="item.excerpt" v-html="item.excerpt"></div>
-            </li>
-        </ol>
-        <div id="gitalk-container"></div>
-    </div>
+    <ol>
+        <li v-for="(item, index) in list" :key="index" @click="go(item)">
+            <span class="dir">{{ nav[item.dir] }} /</span>
+            <span class="tit">{{ item.title }}</span>
+            <span class="date">{{ item.frontmatter.updateTime }}</span>
+            <div class="intro" v-if="item.excerpt" v-html="item.excerpt"></div>
+        </li>
+    </ol>
 </template>
 
 <script>
-import 'gitalk/dist/gitalk.css'
-import Gitalk from 'gitalk'
 export default {
     computed: {
         list () {
@@ -59,18 +54,6 @@ export default {
         go (item) {
             location.href = item.path
         }
-    },
-    mounted() {
-        const gitalk = new Gitalk({
-            clientID: '630cf4b55e25f1909cdc',
-            clientSecret: 'ce07650ceea662fbca1842abc938a37df0babdbb',
-            repo: 'blog',
-            owner: 'kevinsheep',
-            admin: ['kevinsheep'],
-            id: 'kevinsheep',      // Ensure uniqueness and length less than 50
-            distractionFreeMode: false  // Facebook-like distraction free mode
-        })
-        gitalk.render('gitalk-container')
     }
 }
 </script>
