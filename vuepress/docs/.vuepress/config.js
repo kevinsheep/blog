@@ -18,6 +18,7 @@ function getSidebar(cols) {
 
 const columns = [
     { text: '前端', link: '/FE/' },
+    { text: '观点', link: '/VIEWPOINT/' },
     { text: '杂谈', link: '/ESSAY/' },
     { text: '其他', link: '/ELSE/' },
     { text: '关于', link: '/ABOUT/' }
