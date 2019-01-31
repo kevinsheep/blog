@@ -24,14 +24,13 @@ export default {
         list () {
             //console.log("this.$site==", this.$site)
             let res = this.$site.pages
-                .filter(item => {
-                    return item.regularPath.indexOf(".html") !== -1
-                })
+                .filter(item => item.regularPath.indexOf(".html") !== -1)
                 .sort((a, b) => {
                     const av = a.frontmatter.updateTime ? new Date(a.frontmatter.updateTime).valueOf() : 0
                     const bv = b.frontmatter.updateTime ? new Date(b.frontmatter.updateTime).valueOf() : 0
                     return bv - av //模糊比较，倒序排列，假定都是预期的格式
                 })
+                .filter((item, index) => index < 15)
                 .map(item => {
                         item.dir = '/' + item.path.split('/')[1] + '/'
                         return item
@@ -51,7 +50,7 @@ export default {
         }
     },
     methods: {
-        go (item) {
+        go(item) {
             location.href = item.path
         }
     }

@@ -1,16 +1,24 @@
 const execa = require('execa')
+const inquirer = require('inquirer')
 
 const release = async () => {
   console.log("========== release begin")
 
   await execa('vuepress', ['build', 'docs'], { stdio: 'inherit' })
-
   await execa.shell('echo ceil.top > ../docs/CNAME');
 
-  await execa('git', ['add', '-A'])
-  await execa('git', ['commit', '-m', 'via release.js'], { stdio: 'inherit' })
-  await execa('git', ['push'], { stdio: 'inherit' })
+  const { msg } = await inquirer.prompt([{
+    name: 'msg',
+    message: `Enter Commit Message:`,
+    type: 'input'
+  }])
+
+  const cmsg = msg || 'via release.js'
   
+  await execa('git', ['add', '-A'])
+  await execa('git', ['commit', '-m', cmsg], { stdio: 'inherit' })
+  await execa('git', ['push'], { stdio: 'inherit' })
+
   await console.log("========== release end")
 }
 
