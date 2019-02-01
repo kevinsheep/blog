@@ -1,11 +1,12 @@
 ---
-updateTime: 2019/01/28
+updateTime: 2019/01/31
 ---
 
 # vue 代码优化
 
-## iView “多列指标筛选的表格”示例代码
-
+## iView “多列指标筛选的表格”
+[展示效果及示例代码](https://www.iviewui.com/components/table#GJSL)  
+此处原样引用，作为对比
 ```vue
 <template>
   <Checkbox-group v-model="tableColumnsChecked" @on-change="changeTableColumns">
@@ -178,14 +179,14 @@ updateTime: 2019/01/28
 </script>
 ```
 
-以上虽然能起到基本的演示作用，但代码略显冗繁，定义重复。  
-其实可利用 `computed`，即减少重复的数据结构定义，又能自动实现数据的响应而不必监听 `change` 事件。  
+以上虽然能起到预期的演示作用，但代码略显冗繁，定义重复。  
+其实可好好利用 `vue` 的 `computed`，既减少重复的数据结构定义，又能自动实现数据的响应，且不必监听 `change` 事件。  
 稍作优化如下：
 
 ```vue
 <template>
   <Checkbox-group v-model="tableColumnsChecked">
-    <Checkbox v-for="c in tableColumns2" :label="c.key" :key="c.key">{{ c.title }}</Checkbox>
+    <Checkbox v-for="c in tableColumns2" :label="c.key" :key="c.key">{{ c.title }}</Checkbox> <!--此处由数据自动遍历即可，不必一个个写出来-->
   </Checkbox-group>
   <Table :data="tableData2" :columns="selTableColumns2" border></Table>
 </template>
@@ -194,7 +195,7 @@ updateTime: 2019/01/28
     data() {
       return {
         tableData2: this.mockTableData2(),
-        //固定列
+        //分拆tableColumns2，提出“固定列”部分，方便控制
         fixColumn: {
           title: 'Name',
           key: 'name',
@@ -225,7 +226,7 @@ updateTime: 2019/01/28
             ]);
           }
         },
-        //除固定列外，所有列的数据
+        //除固定列外，其他列的数据，默认全部选中
         tableColumns2: [
           {
             title: 'Show',
@@ -299,7 +300,7 @@ updateTime: 2019/01/28
       }
     },
     methods: {
-      //模拟表格数据
+      //模拟表体数据
       mockTableData2() {
         let data = [];
 
@@ -309,7 +310,7 @@ updateTime: 2019/01/28
         for (let i = 0; i < 10; i++) {
           data.push({
             name: 'Name ' + (i + 1),
-            fav: false,//改数值为布尔值
+            fav: false,//改数值为布尔值，控制更方便
             show: getNum(),
             weak: getNum(),
             signin: getNum(),
@@ -330,11 +331,11 @@ updateTime: 2019/01/28
       }
     },
     mounted() {
-      //默认值选中所有列
+      //默认选中所有列
       this.tableColumnsChecked = this.tableColumns2.map(item => item.title)
     },
     computed: {
-      //选中的列
+      //根据tableColumnsChecked筛选‘已选中’的列
       selTableColumns2() {
         return this.tableColumns2
                     .filter(col => this.tableColumnsChecked.includes(col.key))
