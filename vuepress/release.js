@@ -17,7 +17,7 @@ const release = async () => {
   
   await execa('git', ['add', '-A'])
   await execa('git', ['commit', '-m', cmsg], { stdio: 'inherit' })
-  await execa('git', ['push'], { stdio: 'inherit' })
+  await execa('git', ['push', 'git@github.com:kevinsheep/blog.git', 'master:gh-pages'], { stdio: 'inherit' })
 
   await console.log("========== release end")
 }
