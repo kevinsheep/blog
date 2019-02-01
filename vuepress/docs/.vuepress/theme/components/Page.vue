@@ -168,8 +168,8 @@ export default {
       )
     }
   },
-  activated() {
-    console.log("gitalk id(location.pathname)==", location.pathname)
+  updated() {
+    console.log("updated, gitalk id(location.pathname)==", location.pathname)
     const gitalk = new Gitalk({
         clientID: '630cf4b55e25f1909cdc',
         clientSecret: 'ce07650ceea662fbca1842abc938a37df0babdbb',
