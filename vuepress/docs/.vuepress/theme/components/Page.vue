@@ -169,17 +169,7 @@ export default {
     }
   },
   updated() {
-    console.log("updated, gitalk id(location.pathname)==", location.pathname)
-    const gitalk = new Gitalk({
-        clientID: '630cf4b55e25f1909cdc',
-        clientSecret: 'ce07650ceea662fbca1842abc938a37df0babdbb',
-        repo: 'blog',
-        owner: 'kevinsheep',
-        admin: ['kevinsheep'],
-        id: location.pathname,
-        distractionFreeMode: false  // Facebook-like distraction free mode
-    })
-    gitalk.render('gitalk-container')
+    //delete sth. in privacy. 
   }
 }
 
