@@ -274,24 +274,16 @@ th, td
     .tip
       p
         text-indent 0
-.gitalk-container
+#gitment-container
   padding 0 2.5rem
-  .gt-container
-    .gt-header-controls-tip
-    a
-      color $accentColor
-    .gt-btn
-      border-color $accentColor
-      background-color $accentColor
-    .gt-btn-preview
-      background-color #fff
-      color $accentColor
-    .gt-btn-preview:hover
-      border-color $accentColor
-    .gt-svg
-      svg
-        fill $accentColor
-
+  a
+    color $accentColor
+  .gitment-editor-submit
+  &:disabled
+    background-color $accentColor
+    opacity .5
+  .gitment-editor-submit
+    background-color $accentColor
 
 @media (min-width: ($MQMobile + 1px))
   .theme-container.no-sidebar
