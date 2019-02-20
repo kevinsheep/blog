@@ -57,7 +57,7 @@
       </p>
     </div>
 
-    <div id="gitment-container"></div>
+    <div id="gitalk-container"></div>
 
     <slot name="bottom"/>
   </main>
@@ -65,7 +65,7 @@
 
 <script>
 import { resolvePage, normalize, outboundRE, endingSlashRE } from '../util'
-import 'gitment/style/default.css'
+import 'gitalk/dist/gitalk.css'
 
 export default {
   props: ['sidebarItems'],

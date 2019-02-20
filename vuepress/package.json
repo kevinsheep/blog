@@ -11,11 +11,11 @@
     "open": "vuepress dev docs --open"
   },
   "dependencies": {
-    "execa": "^1.0.0"
+    "execa": "^1.0.0",
+    "gitalk": "^1.5.0"
   },
   "devDependencies": {
     "@vuepress/plugin-last-updated": "^1.0.0-alpha.0",
-    "gitment": "^0.0.3",
     "inquirer": "^6.2.2",
     "vuepress": "^1.0.0-alpha.31",
     "yamljs": "^0.3.0"
