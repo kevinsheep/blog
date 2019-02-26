@@ -2,7 +2,7 @@
 updateTime: 2019/01/31
 ---
 
-# vue 代码优化
+# Vue 代码优化
 
 ## iView “多列指标筛选的表格”
 [展示效果及示例代码](https://www.iviewui.com/components/table#GJSL)  

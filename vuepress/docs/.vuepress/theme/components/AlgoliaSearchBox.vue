@@ -16,7 +16,6 @@ export default {
   props: ['options'],
 
   mounted () {
-    console.log("root search vue")
     this.initialize(this.options, this.$lang)
   },
 
