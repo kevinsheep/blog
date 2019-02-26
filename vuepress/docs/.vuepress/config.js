@@ -1,11 +1,14 @@
 const fslist = require('./fslist.js')
 
+// 取得顶部导航所需的配置数据
 function getSubNav(folder) {
     const fs = fslist(folder)
     return fs.map(item => {
         return folder + item.filename
     })
 }
+
+// 取得侧边导航所需的配置数据
 function getSidebar(cols) {
     let obj = {}
     cols.forEach(item => obj[item.link] = [{

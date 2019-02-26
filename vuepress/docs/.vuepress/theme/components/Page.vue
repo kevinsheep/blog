@@ -1,5 +1,5 @@
 <template>
-  <main class="page">
+  <main class="page" v-scroll="showTop">
     <slot name="top"/>
 
     <Content/>
@@ -60,6 +60,8 @@
     <div id="gitalk-container"></div>
 
     <slot name="bottom"/>
+
+    <div @click="goTop" :class="['goTopBtn', {'active': goTopBtn}]"></div>
   </main>
 </template>
 
@@ -69,6 +71,12 @@ import 'gitalk/dist/gitalk.css'
 
 export default {
   props: ['sidebarItems'],
+
+  data () {
+    return {
+      goTopBtn: false
+    }
+  },
 
   computed: {
     lastUpdated () {
@@ -166,6 +174,25 @@ export default {
         + (docsDir ? '/' + docsDir.replace(endingSlashRE, '') : '')
         + path
       )
+    },
+    goTop () {
+      let speed = 10;
+      let timer = setInterval(() => {
+        if (document.documentElement.scrollTop > 0) {
+          document.documentElement.scrollTop = (
+            document.documentElement.scrollTop - speed > 0
+            ? document.documentElement.scrollTop - speed
+            : 0
+          )
+          speed += 20
+        }
+        else {
+          clearInterval(timer);
+        }
+      }, 16)
+    },
+    showTop () {
+      this.goTopBtn = (document.documentElement.scrollTop > 200)
     }
   }
 }
