@@ -232,12 +232,134 @@ module.exports = {
 }
 ```
 
-[TODO]首页推荐列表
+#### 首页推荐列表
+目前还不想像 Vue/Vuepress 一样放大大的标语、介绍在首页，而是想直入主题，放上推荐/最新博文的列表即可。  
+同样没有找到这方面的内置组件，就利用“[全局计算属性](https://v1.vuepress.vuejs.org/guide/global-computed.html)” `this.$site.pages` 构造了一个想要的列表出来。  
+在首页文件 `README.md` 直接使用 Vue。
+
+```vue
+// ~/docs/README.md
+<template>
+    <ol>
+        <li v-for="(item, index) in list" :key="index" @click="go(item)">
+            <span class="dir">{{ nav[item.dir] }} /</span> <!--匹配当前文章所属栏目-->
+            <span class="tit">{{ item.title }}</span>
+            <span class="date">{{ item.frontmatter.updateTime }}</span>
+            <div class="intro" v-if="item.excerpt" v-html="item.excerpt"></div>
+        </li>
+    </ol>
+</template>
+
+<script>
+export default {
+    computed: {
+        list () {
+            let res = this.$site.pages
+                .filter(item => item.regularPath.indexOf(".html") !== -1) //只显示内容页，不显示栏目首页
+                .sort((a, b) => {
+                    const av = a.frontmatter.updateTime ? new Date(a.frontmatter.updateTime).valueOf() : 0
+                    const bv = b.frontmatter.updateTime ? new Date(b.frontmatter.updateTime).valueOf() : 0
+                    return bv - av //模糊比较，倒序排列，此处未对非预期日期格式作兼容处理
+                })
+                .filter((item, index) => index < 15) //显示最新15条
+                .map(item => {
+                        item.dir = '/' + item.path.split('/')[1] + '/'
+                        return item
+                    })
+            return res
+        },
+
+        //栏目数组
+        nav () {
+            const n = this.$site.themeConfig.sidebar
+            let res = {}
+            for(let key in n) {
+                res[key] = n[key][0].title
+            }
+            return res
+        }
+    },
+
+    methods: {
+        go(item) {
+            location.href = item.path
+        }
+    }
+}
+</script>
+```
 
 ## 评论系统
-曹操兵败，在马上大笑，还需要个人陪笑呢！博客怎么能没有个与访客交互的地方？  
-静态网站的评论最好是依附一些已有的资源。
+曹操兵败，在马上大笑三声，还需要个人陪笑呢！博客怎么能没有个与访客交互的地方？  
+静态网站的评论最好是依附一些已有的资源。几番比较后选定了 [Gitalk](https://gitalk.github.io/)，基于 Github issue。  
+下面简单说说一些使用的要点。
 
-[TODO] Gitalk 引入步骤
+首先还是要仔细看看[官方文档](https://github.com/gitalk/gitalk)；
+然后需要获取一个 [GitHub Application 授权](https://github.com/settings/applications/new)；
+在内容页组件中引入 Gitalk，并在合适的地方（一般在底部）放置一个包裹容器。
 
-相关插件：[Gitalk](https://gitalk.github.io/)，基于 Github issue。
+```vue
+// ~/.vuepress/theme/components/Page.vue
+<template>
+  <main class="page">
+    <!-- 省略其他内容 -->
+    <div id="gitalk-container"></div>
+    <slot name="bottom"/>
+  </main>
+</template>
+
+<script>
+import 'gitalk/dist/gitalk.css'
+import Gitalk from 'gitalk'
+</script>
+```
+
+在 [enhanceApp.js](https://v1.vuepress.vuejs.org/guide/global-computed.html) 中增加应用级别的功能：
+
+```javascript
+// ~/.vuepress/enhanceApp.js
+function createGitalk (commentID) {
+  if (typeof window === 'undefined') { //只在浏览器中运行，以免发布时出错
+    return
+  }
+
+  const gitalk = new Gitalk({
+    clientID: '这里填写申请到的clientID',
+    clientSecret: '这里填写申请到的clientSecret',
+    repo: 'blog',
+    owner: 'kevinsheep',
+    admin: ['kevinsheep'],
+    id: commentID,
+    distractionFreeMode: true
+  })
+
+  const gtBox = document.querySelector('#gitalk-container')
+
+  if (gtBox) {
+    gtBox.innerHTML = "" //清空之
+    gitalk.render('gitalk-container')
+  }
+  else {
+    window.onload = () => {
+      gitalk.render('gitalk-container')
+    }
+  }
+}
+
+export default ({
+  Vue,
+  options,
+  router, // 当前应用的路由实例
+  siteData
+}) => {
+  router.afterEach((to, from) => {
+    if (to.fullPath.split('#')[0] === from.fullPath.split('#')[0]) { //页面内的路由变化不作处理
+      return
+    }
+    
+    const pn = to.fullPath.split('/')
+    const cid = pn[pn.length - 1].split('.')[0]
+    createGitalk(cid)
+  })
+}
+```
