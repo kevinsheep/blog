@@ -11,19 +11,17 @@ VuePress 是一款静态网站生成器，自带一套蛮耐看的网站主题�
 
 我入坑时已是 1.x 版。大概了解了下，就把新版博客迁移到 VuePress 上。
 
-<!-- 以下内容，假定你已经：
-1. 注册好自己的域名
-2. 有自己的 Github Pages 并作好相关配置
-3. 已阅读了官方文档或能自己查阅对应的内容
-4. 了解 webpack 的基本配置或能自己查阅对应的内容
-5. 熟悉 Javascript 和 css 知识，包括 ES6、ES7、CSS3
-6. 对 node.js 有所了解，并对一些偶然的使用可自己查阅对应的内容
-7. 了解 CSS 预处理框架 stylus 或能自己查阅对应的内容 -->
+下文内容，假定你已经：
+1. 注册好自己的域名，有自己的 Github Pages 并作好相关配置
+2. 已阅读了官方文档或能自己查阅对应的内容
+3. 了解 webpack 的基本配置或能自己查阅对应的内容
+4. 熟悉 Javascript 和 CSS 知识，包括 ES6、ES7、CSS3，了解 CSS 预处理框架 stylus 或能自己查阅对应的内容
+5. 对 node.js 有所了解，并对一些偶然的使用可自己查阅对应的内容
 
 ## 官方帮助文档
 使用时应该认真查阅相关的帮助文档及 API。
 更新最快的[英文原版文档](https://vuepress.vuejs.org/)。
-而毕竟 Vue/VuePress 作者及目前 VuePress 的主要贡献者都是中国人嘛，所以中文化支持还是比较好的，入门或英文不好的，也可以看[中文文档](https://vuepress.vuejs.org/zh/)。
+也可以看[中文文档](https://vuepress.vuejs.org/zh/)，毕竟 Vue/VuePress 作者及目前 VuePress 的主要贡献者都是中国人嘛，所以中文化支持还是比较好的。
 
 ## 添加博客文档
 原创内容是一个技术博客最重要的组成部分。
@@ -44,6 +42,15 @@ yarn global add vuepress # 或者：npm install -g vuepress，全局安装，安
 yarn add -D vuepress@next # 或者：npm install -D vuepress@next，局部安装，安装的是 1.x 版本
 ```
 
+#### 公共样式“调色板”
+```stylus
+// ~/.vuepress/styles/palette.styl
+$accentColor = #080 //主色调
+$textColor = #444 //默认文字颜色
+$contentWidth = 1000 //内容区最大宽度
+// $borderColor、$codeBgColor，就如命名一样了，本博客暂未改变
+```
+
 #### “弹出”（Eject）默认样式进行个性化修改
 使用覆盖式的定义，限制还是蛮多的。样式的优先级也往往并非预期。这个样式权重机制并没有深究，直接复制一份默认主题样式来修改即可。
 我自己是手动复制、配置的。也可以使用官方介绍的方法：[Ejecting](https://v1.vuepress.vuejs.org/theme/default-theme-config.html#ejecting)
@@ -58,7 +65,7 @@ yarn add -D vuepress@next # 或者：npm install -D vuepress@next，局部安装
 为了实现这一功能，我直接修改了主题样式：
 
 ```stylus
-// ~\theme\styles\theme.styl
+// ~/.vuepress/theme/styles/theme.styl
 .indexPage
   .search-box
     input
