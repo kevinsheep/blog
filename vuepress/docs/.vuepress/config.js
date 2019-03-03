@@ -43,5 +43,22 @@ module.exports = {
         ],
         sidebar: getSidebar(columns)
     },
-    dest: '../docs/'
+    dest: '../docs/',
+    markdown: {
+        extendMarkdown: md => {
+            md.set({ breaks: true })
+            md.use(require('markdown-it-center-text'))
+            md.use(require('mdfigcaption'))
+        }
+    },
+    // chainMarkdown (config) {
+    //     config
+    //         .plugin('implicitFigures')
+    //             .use(require('markdown-it-implicit-figures'), [{
+    //                 dataType: false,  // <figure data-type="image">, default: false
+    //                 figcaption: true,  // <figcaption>alternative text</figcaption>, default: false
+    //                 tabindex: false, // <figure tabindex="1+n">..., default: false
+    //                 link: false // <a href="img.png"><img src="img.png"></a>, default: false
+    //             }])
+    // }
 }

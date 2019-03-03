@@ -59,7 +59,7 @@ yarn add -D vuepress@next # 或者：npm install -D vuepress@next，局部安装
 
 ```stylus
 // ~\theme\styles\theme.styl
-.no-sidebar
+.indexPage
   .search-box
     input
       width 0
@@ -70,6 +70,14 @@ yarn add -D vuepress@next # 或者：npm install -D vuepress@next，局部安装
         width 10rem
         border-color #3eaf7c
         cursor text
+```
+
+其中 `.indexPage` 是首页的自定义 CSS 类名。
+```yaml
+---
+home: true
+pageClass: indexPage
+---
 ```
 
 原本的“放大镜”图标样式略粗犷，顺便换了它。
