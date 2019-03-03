@@ -1,15 +1,15 @@
 ---
-updateTime: 2019/02/23
+updateTime: 2019/03/03
 title: VuePress 折腾记
 ---
 
 ## 前言及介绍
-VuePress 是一款静态网站生成器，自带一套蛮耐看的网站主题，响应式适应不同尺寸的浏览设备。  
-支持 Markdown；由于是基于 Vue 开发，天生支持各种好用的 Vue 特性；一行命令即可自动生成静态网站，并且能结合脚本自动发布到 Github Pages。  
-作者开发这个工具的初衷，是为了“[爽爽地写文档](https://weibo.com/1761511274/Gc2gCAjHW)”。也就是说这个天生适合写技术文档。  
-我关注到时，本来是想找一个博客管理平台/工具的。vuepress对博客的支持并不完善，很多东西需要自己处理。但对于静态化管理的个人博客，这个是不错的解决方案了。  
+VuePress 是一款静态网站生成器，自带一套蛮耐看的网站主题，响应式适应不同尺寸的浏览设备。
+支持 Markdown；由于是基于 Vue 开发，天生支持各种好用的 Vue 特性；一行命令即可自动生成静态网站，并且能结合脚本自动发布到 Github Pages。
+作者开发这个工具的初衷，是为了“[爽爽地写文档](https://weibo.com/1761511274/Gc2gCAjHW)”。也就是说这个天生适合写技术文档。
+我关注到时，本来是想找一个博客管理平台/工具的。vuepress对博客的支持并不完善，很多东西需要自己处理。但对于静态化管理的个人博客，这个是不错的解决方案了。
 
-我入坑时已是 1.x 版。大概了解了下，就把新版博客迁移到 VuePress 上。  
+我入坑时已是 1.x 版。大概了解了下，就把新版博客迁移到 VuePress 上。
 
 <!-- 以下内容，假定你已经：
 1. 注册好自己的域名
@@ -21,18 +21,18 @@ VuePress 是一款静态网站生成器，自带一套蛮耐看的网站主题�
 7. 了解 CSS 预处理框架 stylus 或能自己查阅对应的内容 -->
 
 ## 官方帮助文档
-使用时应该认真查阅相关的帮助文档及 API。  
-更新最快的[英文原版文档](https://vuepress.vuejs.org/)。  
+使用时应该认真查阅相关的帮助文档及 API。
+更新最快的[英文原版文档](https://vuepress.vuejs.org/)。
 而毕竟 Vue/VuePress 作者及目前 VuePress 的主要贡献者都是中国人嘛，所以中文化支持还是比较好的，入门或英文不好的，也可以看[中文文档](https://vuepress.vuejs.org/zh/)。
 
 ## 添加博客文档
-原创内容是一个技术博客最重要的组成部分。  
-VuePress 作者是为了爽爽地写文档，并顺便造福了广大同行。我使用它也是为了能集中精力写一些有意思的东西的。  
+原创内容是一个技术博客最重要的组成部分。
+VuePress 作者是为了爽爽地写文档，并顺便造福了广大同行。我使用它也是为了能集中精力写一些有意思的东西的。
 一个 `*.md` 文件即相当于一篇文章，这于以前用的 Jeykll 的方式是一样的，支持 Markdown 语法。在 Vuepress 里， `*.md` 还支持里面直接使用 Vue。
 
 ## 样式修改
-按官方文档部署好站点，试了下添加文档后，下一件事就是测试样式修改，各种想改的地方都先不考虑美观折腾下。如果很难操作，不便于个性化修改的话，那还搞什么个人博客？应该及早弃坑了。  
-我来到这一步时，走了些弯路：一开始测试时，安装完又卸载，版本后来都没留意了。在正式的 blog 目录用的是 0.x 版，但我一直以为自己是用 1.x 版，于是查阅的是 1.x 的官方文档。  
+按官方文档部署好站点，试了下添加文档后，下一件事就是测试样式修改，各种想改的地方都先不考虑美观折腾下。如果很难操作，不便于个性化修改的话，那还搞什么个人博客？应该及早弃坑了。
+我来到这一步时，走了些弯路：一开始测试时，安装完又卸载，版本后来都没留意了。在正式的 blog 目录用的是 0.x 版，但我一直以为自己是用 1.x 版，于是查阅的是 1.x 的官方文档。
 结果这两个版本的推荐目录结构并不一致，于是加了 `*.styl` 文件后反复试都没效果。当察觉这一问题时，已经是两天后了，浪费了不少时间。
 
 ::: warning 提醒
@@ -45,7 +45,7 @@ yarn add -D vuepress@next # 或者：npm install -D vuepress@next，局部安装
 ```
 
 #### “弹出”（Eject）默认样式进行个性化修改
-使用覆盖式的定义，限制还是蛮多的。样式的优先级也往往并非预期。这个样式权重机制并没有深究，直接复制一份默认主题样式来修改即可。  
+使用覆盖式的定义，限制还是蛮多的。样式的优先级也往往并非预期。这个样式权重机制并没有深究，直接复制一份默认主题样式来修改即可。
 我自己是手动复制、配置的。也可以使用官方介绍的方法：[Ejecting](https://v1.vuepress.vuejs.org/theme/default-theme-config.html#ejecting)
 
 ::: tip 官方样式升级
@@ -54,7 +54,7 @@ yarn add -D vuepress@next # 或者：npm install -D vuepress@next，局部安装
 :::
 
 #### 首页“内容搜索框”修改
-在博客的首页，我并不想要一个时刻完整的搜索框。最好就是只有一个图标，想使用搜索功能时，才会展开完整的输入框。  
+在博客的首页，我并不想要一个时刻完整的搜索框。最好就是只有一个图标，想使用搜索功能时，才会展开完整的输入框。
 为了实现这一功能，我直接修改了主题样式：
 
 ```stylus
@@ -129,8 +129,8 @@ const release = async () => {
 
   //如果不想填时就弄个默认值
   const cmsg = msg || 'via release.js'
-  
-  //一系列 git 推送操作，这个一时没想到怎样优化好，先这样了
+
+//一系列 git 推送操作，这个一时没想到怎样优化好，先这样了
   await execa('git', ['add', '-A'])
   await execa('git', ['commit', '-m', cmsg], { stdio: 'inherit' })
   await execa('git', ['push'], { stdio: 'inherit' })
@@ -154,11 +154,11 @@ release().catch(err => {
 然后，每次写完文档或更新完内容，执行 `yarn release` 或 `npm release` 即可。
 
 ## 内容导航
-在 `~/docs/` 简单分一下文件夹后，往里面放 Markdown 文档，就会自动发布出来了。  
+在 `~/docs/` 简单分一下文件夹后，往里面放 Markdown 文档，就会自动发布出来了。
 不过默认的导航系统并不能满足全部需求。稍作加工：
 
 #### 自动生成 `config.js` 中的配置数据
-VuePress 配置文件中，需要手动指定顶部及侧边的父级导航。虽然这个也不是经常会变动，但还要手动改，总觉得麻烦啊！  
+VuePress 配置文件中，需要手动指定顶部及侧边的父级导航。虽然这个也不是经常会变动，但还要手动改，总觉得麻烦啊！
 用 `node.js` 撸了下，实现自动生成：
 
 ```javascript
@@ -241,8 +241,8 @@ module.exports = {
 ```
 
 #### 首页推荐列表
-目前还不想像 Vue/Vuepress 一样放大大的标语、介绍在首页，而是想直入主题，放上推荐/最新博文的列表即可。  
-同样没有找到这方面的内置组件，就利用“[全局计算属性](https://v1.vuepress.vuejs.org/guide/global-computed.html)” `this.$site.pages` 构造了一个想要的列表出来。  
+目前还不想像 Vue/Vuepress 一样放大大的标语、介绍在首页，而是想直入主题，放上推荐/最新博文的列表即可。
+同样没有找到这方面的内置组件，就利用“[全局计算属性](https://v1.vuepress.vuejs.org/guide/global-computed.html)” `this.$site.pages` 构造了一个想要的列表出来。
 在首页文件 `README.md` 直接使用 Vue。
 
 ```vue
@@ -297,9 +297,61 @@ export default {
 </script>
 ```
 
+## Markdown 扩展配置
+VuePress 使用 markdown-it 将代码渲染为 markdown 格式，并暴露了扩展的接口，在 `.vuepress/config.js` 中可以自定义 markdown-it 实例的配置，增加 markdown-it 插件。
+比如本站目前使用了简单但好用的两个插件：
+1. markdown-it-center-text，用于内容居中显示的……虽然 markdown 的并不是为了富文件样式开发的，但“对齐方式”这么重要的功能缺失，会很麻烦。
+2. mdfigcaption，用于显示图片标题……这也是常用功能，markdown/markdown-it 预留了填写的格式，但并没有实现，说是实验中的功能。
+
+```javascript
+// ~/.vuepress/config.js
+module.exports = {
+    markdown: {
+        extendMarkdown: md => {
+            md.use(require('markdown-it-center-text'))
+            md.use(require('mdfigcaption'))
+        }
+    }
+}
+```
+
+以上插件只实现了 html 结构的生成，还需要自己去定义一下对应的 css 样式。
+
+```stylus
+// ~/theme/styles/theme.styl
+.content:not(.custom)
+  img
+    display block
+    max-width 100%
+  .text-align-center
+    text-align center
+  figure
+    display inline-block
+    text-align center
+    margin 0 0 1rem
+    figcaption
+      background-color #f7f7f7
+      color $accentColor
+      font-size .8rem
+      padding .4rem
+```
+
+另外，希望页面上的“段落换行”能体现到渲染出来的实际文本中，而不用在每行后面敲两个空格。敲了蛮久的空格，才在 [markdown-it API 文档](https://markdown-it.github.io/markdown-it) 中发现是可以配置的。
+
+```javascript
+// ~/.vuepress/config.js
+module.exports = {
+    markdown: {
+        extendMarkdown: md => {
+            md.set({ breaks: true }) //将段落中的 '\n' 转换为 <br>
+        }
+    }
+}
+```
+
 ## 评论系统
-曹操兵败，在马上大笑三声，还需要个人陪笑呢！博客怎么能没有个与访客交互的地方？  
-静态网站的评论最好是依附一些已有的资源。几番比较后选定了 [Gitalk](https://gitalk.github.io/)，基于 Github issue。  
+曹操兵败，在马上大笑三声，尚且需要个人陪笑呢！博客怎么能没有个与访客交互的地方？
+静态网站的评论最好是依附一些已有的资源。几番比较后选定了 [Gitalk](https://gitalk.github.io/)，基于 Github issue。
 下面简单说说一些使用的要点。
 
 首先还是要仔细看看[官方文档](https://github.com/gitalk/gitalk)；
@@ -364,8 +416,8 @@ export default ({
     if (to.fullPath.split('#')[0] === from.fullPath.split('#')[0]) { //页面内的路由变化不作处理
       return
     }
-    
-    const pn = to.fullPath.split('/')
+  
+  const pn = to.fullPath.split('/')
     const cid = pn[pn.length - 1].split('.')[0]
     createGitalk(cid)
   })
