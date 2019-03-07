@@ -27,8 +27,7 @@
       target="_blank"
       rel="noopener noreferrer"
     >
-      {{ repoLabel }}
-      <OutboundLink/>
+
     </a>
   </nav>
 </template>
@@ -131,7 +130,15 @@ export default {
     &:first-child
       margin-left 0
   .repo-link
-    margin-left 1.5rem
+    margin-left 1rem
+    &:hover
+      color $accentColor
+    .icon.outbound
+      color #fff
+    &:after
+      content '\f1b4'
+      font-family "iconfont"
+      font-size 1.1rem
 
 @media (max-width: $MQMobile)
   .nav-links

@@ -30,7 +30,7 @@ export default {
                     const bv = b.frontmatter.updateTime ? new Date(b.frontmatter.updateTime).valueOf() : 0
                     return bv - av //模糊比较，倒序排列，假定都是预期的格式
                 })
-                .filter((item, index) => index < 15)
+                .filter((item, index) => index < 12)
                 .map(item => {
                         item.dir = '/' + item.path.split('/')[1] + '/'
                         return item

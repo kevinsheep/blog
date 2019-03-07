@@ -73,7 +73,7 @@ export default {
 
 <style lang="stylus">
 .home
-  padding $navbarHeight 2rem 0
+  padding $navbarHeight - 0.8rem 2rem 0
   max-width 960px
   margin 0px auto
   display block
@@ -83,13 +83,14 @@ export default {
       max-width: 100%
       max-height 280px
       display block
-      margin 3rem auto 1.5rem
+      margin 3rem auto 0
     h1
       font-size 3rem
     h1, .description, .action
       margin 1.8rem auto
     .description
       max-width 35rem
+      margin .2rem auto
       font-size 1.6rem
       line-height 1.3
       color lighten($textColor, 40%)
