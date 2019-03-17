@@ -1,0 +1,28 @@
+.goTopBtn.active
+  position fixed
+  bottom 20px
+  right 10px
+  width 40px
+  height 40px
+  background $accentColor - rgba(0, 0, 0, .3)
+  border-radius 6px
+  cursor pointer
+  z-index 100
+  &:after
+    display block
+    line-height 40px
+    text-align center
+    content 'TOP'
+    color #fff
+    font-size .8rem
+  &:hover
+    background $accentColor - rgba(0, 0, 0, .2)
+
+@font-face
+  font-family "iconfont"
+  src url('//at.alicdn.com/t/font_1026058_34ua0l8v51n.eot')
+  src url('//at.alicdn.com/t/font_1026058_34ua0l8v51n.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_1026058_34ua0l8v51n.woff2') format('woff2'),
+  url('//at.alicdn.com/t/font_1026058_34ua0l8v51n.woff') format('woff'),
+  url('//at.alicdn.com/t/font_1026058_34ua0l8v51n.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_1026058_34ua0l8v51n.svg#iconfont') format('svg')
