@@ -1,0 +1,25 @@
+{
+  "name": "ceil.top-blog",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "vuepress build docs --no-cache",
+    "deploy": "deploy.sh",
+    "release": "node release.js",
+    "start": "vuepress dev docs",
+    "open": "vuepress dev docs --no-clear-screen --open"
+  },
+  "dependencies": {
+    "execa": "^1.0.0",
+    "gitalk": "^1.5.0",
+    "markdown-it-center-text": "^1.0.4",
+    "mdfigcaption": "^0.1.1"
+  },
+  "devDependencies": {
+    "@vuepress/plugin-last-updated": "^1.0.0-alpha.0",
+    "inquirer": "^6.2.2",
+    "vuepress": "^1.0.0-alpha.44",
+    "yamljs": "^0.3.0"
+  }
+}
