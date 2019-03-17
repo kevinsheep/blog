@@ -4,7 +4,7 @@
       <img
         v-if="data.heroImage"
         :src="$withBase(data.heroImage)"
-        alt="hero"
+        :alt="data.heroAlt || 'hero'"
       >
 
       <p class="description">
@@ -51,7 +51,7 @@
 </template>
 
 <script>
-import NavLink from './NavLink.vue'
+import NavLink from '@theme/components/NavLink.vue'
 
 export default {
   components: { NavLink },

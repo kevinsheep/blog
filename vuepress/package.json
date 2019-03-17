@@ -8,7 +8,7 @@
     "deploy": "deploy.sh",
     "release": "node release.js",
     "start": "vuepress dev docs",
-    "open": "vuepress dev docs --open"
+    "open": "vuepress dev docs --no-clear-screen --open"
   },
   "dependencies": {
     "execa": "^1.0.0",
@@ -19,7 +19,7 @@
   "devDependencies": {
     "@vuepress/plugin-last-updated": "^1.0.0-alpha.0",
     "inquirer": "^6.2.2",
-    "vuepress": "^1.0.0-alpha.39",
+    "vuepress": "^1.0.0-alpha.44",
     "yamljs": "^0.3.0"
   }
 }

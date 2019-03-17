@@ -13,7 +13,7 @@ footer: MIT Licensed | Copyright © 2010-present, KEVINSHEEP.
             <span class="dir">{{ nav[item.dir] }} /</span>
             <span class="tit">{{ item.title }}</span>
             <span class="date">{{ item.frontmatter.updateTime }}</span>
-            <div class="intro" v-if="item.excerpt" v-html="item.excerpt"></div>
+            <!-- <div class="intro" v-if="item.excerpt" v-html="item.excerpt"></div> -->
         </li>
     </ol>
 </template>
