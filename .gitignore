@@ -6,3 +6,4 @@ vuepress/node_modules/*
 *.gem
 /vuepress/docs/.vuepress/theme/components/Page.vue
 /vuepress/docs/.vuepress/enhanceApp.js
+/vuepress
