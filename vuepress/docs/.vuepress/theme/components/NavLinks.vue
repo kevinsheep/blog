@@ -27,7 +27,6 @@
       target="_blank"
       rel="noopener noreferrer"
     >
-      {{ repoLabel }}
       <OutboundLink/>
     </a>
   </nav>

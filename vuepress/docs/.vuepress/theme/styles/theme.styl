@@ -64,25 +64,14 @@ body
     border 1px solid #ddd
     border-radius 4px
   img
-    display block
     max-width 100%
-  .text-align-center
-    text-align center
-  figure
-    display inline-block
-    text-align center
-    margin 0 0 1rem
-    figcaption
-      background-color #f7f7f7
-      color $accentColor
-      font-size .8rem
-      padding .4rem
 
-.content.custom
-  padding 0
-  margin 0
-  img
-    max-width 100%
+.indexPage
+  .content
+    padding 0
+    margin 0
+    img
+      max-width 100%
 
 a
   font-weight 500
@@ -186,81 +175,10 @@ th, td
         padding-top 0
     .sidebar
       top 0
-  .badge
-    font-size 12px!important
 
-.indexPage
-  .site-name
-    display none
-  .navbar
-    border-bottom 0
-  .search-box
-    input
-      width 0
-      border-color transparent
-      padding-right 0
-      cursor pointer
-      &:focus
-        width 10rem
-        border-color #3eaf7c
-        cursor text
-
-.home
-  .hero
-    .description
-      margin-bottom 0
-      font-size 1rem
-      color #bbb
-    h1
-      margin-top 0
-      margin-bottom 3rem
-      line-height 1
-      font-weight normal
-      font-size 2rem
-      em
-        font-style normal
-        color $accentColor
-
-.content.custom
-  ol
-    padding-left 0
-    li
-      list-style none
-      color #aaa
-      padding 0 .3rem .3rem .4rem
-      cursor pointer
-      &:hover
-        background-color #f7f7f7
-      sup
-        color #ccc
-      .dir
-      .tit
-        color $accentColor
-      .date
-        font-size .8rem
-        line-height 1.4
-        vertical-align text-top
-      .intro
-        font-size .8rem
-        h1
-          display none
-        p
-          margin-top 0
-          margin-bottom 0
-        blockquote
-          border 0
-          margin 0
-          padding 0
-        strong
-          font-weight normal
-.content
-  code
-    padding .1rem .3rem
-
-.iconfont
 .search-box
   &:before
-    font-family "iconfont"
+    font-family iconfont
     font-size 1rem
     -webkit-font-smoothing antialiased
     -moz-osx-font-smoothing grayscale
@@ -270,24 +188,6 @@ th, td
     font-weight bolder
   input
     background none
-
-.essay-page
-  .content
-    p
-      text-indent 2rem
-      white-space pre-wrap
-    blockquote
-    .tip
-      p
-        text-indent 0
-#gitalk-container
-  padding 0 2.5rem
-  a
-    color $accentColor
-  .gt-btn
-    border-color $accentColor
-    background-color $accentColor
-    color #fff
 
 @media (min-width: ($MQMobile + 1px))
   .theme-container.no-sidebar

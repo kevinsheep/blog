@@ -58,9 +58,7 @@
     </div>
 
     <div id="gitalk-container"></div>
-
     <slot name="bottom"/>
-
     <div @click="goTop" :class="['goTopBtn', {'active': goTopBtn}]"></div>
   </main>
 </template>
@@ -77,7 +75,6 @@ export default {
       goTopBtn: false
     }
   },
-
   computed: {
     lastUpdated () {
       return this.$page.frontmatter.updateTime || this.$page.lastUpdated
@@ -215,6 +212,7 @@ function find (page, items, offset) {
     }
   }
 }
+
 function flatten (items, res) {
   for (let i = 0, l = items.length; i < l; i++) {
     if (items[i].type === 'group') {
@@ -224,6 +222,7 @@ function flatten (items, res) {
     }
   }
 }
+
 </script>
 
 <style lang="stylus">

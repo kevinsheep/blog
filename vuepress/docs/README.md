@@ -13,7 +13,7 @@ footer: MIT Licensed | Copyright © 2010-present, KEVINSHEEP.
             <span class="dir">{{ nav[item.dir] }} /</span>
             <span class="tit">{{ item.title }}</span>
             <span class="date">{{ item.frontmatter.updateTime }}</span>
-            <!-- <div class="intro" v-if="item.excerpt" v-html="item.excerpt"></div> -->
+            <!-- <div class="intro" v-if="item.excerpt">{{ item.excerpt }}</div> -->
         </li>
     </ol>
 </template>
@@ -33,6 +33,12 @@ export default {
                 .filter((item, index) => index < 12)
                 .map(item => {
                         item.dir = '/' + item.path.split('/')[1] + '/'
+                        if (item.excerpt) {
+                            item.excerpt = item.excerpt.replace(/<[^<>]+>/g, "").replace(/\s/g, "") //还是得过滤一下
+                        }
+                        else {
+                            item.excerpt = false
+                        }
                         return item
                     })
             //console.log("res==", res)

@@ -10,7 +10,6 @@
       <p class="description">
         {{ data.tagline || $description || 'Welcome to your VuePress site' }}
       </p>
-
       <h1 id="main-title" v-html="data.heroText || $title" v-if="data.heroText || $title"></h1>
       <h1 v-else>Hello</h1>
 
@@ -132,7 +131,7 @@ export default {
     border-top 1px solid $borderColor
     text-align center
     color lighten($textColor, 25%)
-
+    
 @media (max-width: $MQMobile)
   .home
     .features
