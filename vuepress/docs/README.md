@@ -22,7 +22,7 @@ footer: MIT Licensed | Copyright © 2010-present, KEVINSHEEP.
 export default {
     computed: {
         list () {
-            //console.log("this.$site==", this.$site)
+            // console.log("this.$site.pages==", this.$site.pages)
             let res = this.$site.pages
                 .filter(item => item.regularPath.indexOf(".html") !== -1)
                 .sort((a, b) => {
@@ -30,7 +30,7 @@ export default {
                     const bv = b.frontmatter.updateTime ? new Date(b.frontmatter.updateTime).valueOf() : 0
                     return bv - av //模糊比较，倒序排列，假定都是预期的格式
                 })
-                .filter((item, index) => index < 12)
+                .filter((item, index) => index < 12 && item.title.indexOf('[TODO]') === -1)
                 .map(item => {
                         item.dir = '/' + item.path.split('/')[1] + '/'
                         if (item.excerpt) {
