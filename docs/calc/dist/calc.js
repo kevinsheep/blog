@@ -8,7 +8,6 @@ function getPlus() {
     const r1 = getNumber(MAX - MIN * 2) + MIN; // 避免出现太简单的
     const r2 = getNumber(MAX - r1 - MIN * 2) + MIN;
     const res = r1 + r2;
-    console.log({ r1, r2, res });
     return { r1, r2, res, operator: '+' };
 }
 function getMinus() {
