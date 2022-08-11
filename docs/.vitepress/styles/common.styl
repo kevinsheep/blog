@@ -1,0 +1,27 @@
+:root {
+  --vp-c-brand: #00a0e8;
+}
+
+.no-sidebar {
+  .VPNavBarTitle {
+    display: none;
+  }
+}
+
+.VPNavBarTitle {
+  .title {
+    align-items: flex-end;
+    filter: hue-rotate(0deg);
+    transition: filter 1.5s;
+
+    &:hover {
+      filter: hue-rotate(270deg);
+    }
+  }
+}
+
+.is-home {
+  .VPHome {
+    padding-bottom: 50px;
+  }
+}

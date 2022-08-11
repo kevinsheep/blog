@@ -2,7 +2,7 @@ _site
 .sass-cache
 Gemfile.lock
 node_modules
-vuepress/node_modules/*
+*/node_modules/*
 *.gem
-/vuepress/docs/.vuepress/theme/components/Page.vue
-/vuepress/docs/.vuepress/enhanceApp.js
+/vitepress/docs/.vitepress/theme/components/Page.vue
+/vitepress/docs/.vitepress/enhanceApp.js
