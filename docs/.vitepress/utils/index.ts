@@ -6,7 +6,6 @@ import * as matter from 'gray-matter';
  */
 export const COLS = [
   { text: '前端', link: '/FE/' },
-  { text: '观点', link: '/VIEWPOINT/' },
   { text: '杂谈', link: '/ESSAY/' },
   { text: '关于', link: '/ABOUT/' },
   { text: '归档', link: '/ARCHIVE/' },
