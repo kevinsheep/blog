@@ -1,6 +1,5 @@
 ---
 updateTime: 2014/08/03
-pageClass: essay-page
 title: 远离蠢货
 ---
 # 远离蠢货———高云传

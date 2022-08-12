@@ -19,6 +19,8 @@ export const COLS = [
  */
 export const getSidebar = (): Object => {
   const list = {};
+  const IGNORE_TEXT = '[TODO]';
+  const INDEX_FILE = 'index';
 
   COLS.forEach(async ({ link, text }) => {
     const dir = `./docs${link}`;
@@ -27,17 +29,19 @@ export const getSidebar = (): Object => {
     list[link] = [
       {
         text,
-        items: files.map((file) => {
-          const path = `${dir}${file}`;
-          const filename = file.replace(/\.md$/, '');
-          const filepath = `${link}${filename}`;
-          const { data = {} } = matter.read(path) || {};
-          return {
-            ...data,
-            text: data.title || filename,
-            link: filepath,
-          };
-        }),
+        items: files
+          .map((file) => {
+            const path = `${dir}${file}`;
+            const filename = file.replace(/\.md$/, '');
+            const filepath = `${link}${filename}`;
+            const { data = {} } = matter.read(path) || {};
+            return {
+              ...data,
+              text: data.title || filename,
+              link: filepath,
+            };
+          })
+          .filter(({ text, link }) => link.indexOf(INDEX_FILE) === -1 && text.indexOf(IGNORE_TEXT) === -1),
       },
     ];
   });

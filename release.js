@@ -1,28 +1,30 @@
-const execa = require('execa')
-const inquirer = require('inquirer')
+const execa = require('execa');
+const inquirer = require('inquirer');
 
 const release = async () => {
-  console.log("========== release begin")
+  console.log('========== release begin');
 
-  await execa('vuepress', ['build', 'docs'], { stdio: 'inherit' })
-  await execa.shell('echo ceil.top > ../docs/CNAME');
+  await execa('vitepress', ['build', 'docs'], { stdio: 'inherit' });
+  await execa.shell('echo ceil.top > ./gh-pages/CNAME');
 
-  const { msg } = await inquirer.prompt([{
-    name: 'msg',
-    message: `Enter Commit Message:`,
-    type: 'input'
-  }])
+  const { msg } = await inquirer.prompt([
+    {
+      name: 'msg',
+      message: `Enter Commit Message:`,
+      type: 'input',
+    },
+  ]);
 
-  const cmsg = msg || 'via release.js'
-  
-  await execa('git', ['add', '-A'])
-  await execa('git', ['commit', '-m', cmsg], { stdio: 'inherit' })
-  await execa('git', ['push'], { stdio: 'inherit' })
+  const cmsg = msg || 'via release.js';
 
-  await console.log("========== release end")
-}
+  await execa('git', ['add', '-A']);
+  await execa('git', ['commit', '-m', cmsg], { stdio: 'inherit' });
+  await execa('git', ['push'], { stdio: 'inherit' });
 
-release().catch(err => {
-  console.error(err)
-  process.exit(1)
-})
+  await console.log('========== release end');
+};
+
+release().catch((err) => {
+  console.error(err);
+  process.exit(1);
+});

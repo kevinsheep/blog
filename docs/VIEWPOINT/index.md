@@ -1,4 +1,4 @@
 ---
-editLink: false
+title: 技术讨论
 ---
 技术相关的讨论

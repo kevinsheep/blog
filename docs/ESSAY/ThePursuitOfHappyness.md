@@ -1,6 +1,5 @@
 ---
 updateTime: 2012/03/03
-pageClass: essay-page
 title: 当幸福来敲门
 ---
 > They all looked so damn happy to me. Why couldn't I look like that?

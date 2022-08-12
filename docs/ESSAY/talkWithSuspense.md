@@ -1,6 +1,5 @@
 ---
 updateTime: 2014/04/03
-pageClass: essay-page
 title: 说话之道
 ---
 ## 说话之道

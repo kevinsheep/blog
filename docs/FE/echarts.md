@@ -1,7 +1,8 @@
 ---
+title: ECHARTS 代码片段
 updateTime: 2019/01/25
 ---
-# ECHARTS 应用代码片段
+
 [官方网站](https://echarts.baidu.com/)上各种示例、配置接口文档、社区生态链接及为详尽。  
 地图数据很常用，**因故**在官网下架，但还是能找到，比如[GitHub](https://github.com/apache/incubator-echarts/tree/master/map)
 

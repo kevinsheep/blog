@@ -1,6 +1,5 @@
 ---
 updateTime: 2014/11/03
-pageClass: essay-page
 title: 月薪3k与月薪3w的文案区别
 ---
 # 「月薪3000与月薪30000的文案区别」读后

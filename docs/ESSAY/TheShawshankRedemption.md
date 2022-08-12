@@ -1,6 +1,5 @@
 ---
 updateTime: 2016/06/03
-pageClass: essay-page
 title: 肖辛克的救赎
 ---
 > 怯懦囚禁人的灵魂，希望才可感受自由。强者自救，圣者渡人。

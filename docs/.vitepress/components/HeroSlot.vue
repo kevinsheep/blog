@@ -42,7 +42,7 @@ const recList = list
           <img src="/assets/img/logo-text.png" />
         </header>
         <ol>
-          <li v-for="(item, index) in recList" :key="index" @click="router.go(item.url)">
+          <li v-for="(item, index) in recList" :key="index" @click="router.go(item.link)">
             <span class="dir">{{ item.parentText }} / </span>
             <span class="tit">{{ item.text || "" }}</span>
             <span class="date">{{ item.updateTime }}</span>
@@ -69,6 +69,7 @@ const recList = list
     p {
       color: var(--vp-c-gray);
       font-size: 12px;
+      line-height: 32px;
     }
     h1 {
       color: var(--vp-c-brand);

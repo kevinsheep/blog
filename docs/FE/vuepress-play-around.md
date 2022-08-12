@@ -1,6 +1,6 @@
 ---
-updateTime: 2019/03/03
 title: VuePress 折腾记
+updateTime: 2019/03/03
 ---
 
 ## 前言及介绍

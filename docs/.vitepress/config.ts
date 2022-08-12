@@ -2,8 +2,10 @@ import { getSidebar, COLS } from './utils';
 
 export default {
   title: ' ',
+  titleTemplate: 'Ceil.Top',
   description: 'Blog Of KEVINSHEEP',
   outDir: '../gh-pages',
+  lastUpdated: true,
   markdown: {
     lineNumbers: true,
   },
@@ -15,6 +17,5 @@ export default {
       message: 'Released under the MIT License.',
       copyright: 'Copyright © 2010-present, KEVINSHEEP.',
     },
-    lastUpdated: true,
   },
 };
