@@ -1,8 +1,1 @@
-_site
-.sass-cache
-Gemfile.lock
 node_modules
-*/node_modules/*
-*.gem
-/vitepress/docs/.vitepress/theme/components/Page.vue
-/vitepress/docs/.vitepress/enhanceApp.js
