@@ -2,10 +2,10 @@
 updateTime: 2012/03/03
 title: 当幸福来敲门
 ---
-> They all looked so damn happy to me. Why couldn't I look like that?
-<!-- more -->
-
 # 「当幸福来敲门」观后
+
+> They all looked so damn happy to me. Why couldn't I look like that?
+
 　　The Pursuit Of Happyness，这是一部励志电影，取材于真实故事，主角就是当今美国黑人投资专家 [Chris Gardner](http://baike.baidu.com/view/1672720.htm)。故事讲述了一个濒临破产、老婆离家的落魄业务员，如何刻苦耐劳地尽着父亲的责任去养育、教导孩子，奋发向上成为股市交易员，最后成为知名的金融投资家。
 　　Chris Gardner 的聪明睿智、乐观健谈，让人羡慕。但更难得的是，他无论处在多恶劣的环境中，甚至有那么些瞬间也是歇斯底里捶胸顿足了，但仍保持着他的信念，在关键的时候能作出了正确的选择。妻子离开他并嘲笑他为什么不是去应聘宇航员；房东也要赶他走；“朋友”连14美元也不肯还给他……
 　　此时他是要选择六个月的无薪实习机会，还是选择退缩，先找份能糊口的工作？
@@ -20,7 +20,7 @@ title: 当幸福来敲门
 > 他们全都看起来超幸福的样子。为什么我不能？  
 > 
 
-::: tip 羡慕
+::: tip 个人的小羡慕
 　　像刚才的电影里说的故事，穷成那样了，想打个篮球，还是很容易的，他们打篮球的地方，场地一流，但空空的。
 :::
 

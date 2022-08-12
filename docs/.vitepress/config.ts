@@ -8,6 +8,7 @@ export default {
   lastUpdated: false,
   markdown: {
     lineNumbers: true,
+    breaks: true,
   },
   themeConfig: {
     logo: '/assets/img/logo.png',
