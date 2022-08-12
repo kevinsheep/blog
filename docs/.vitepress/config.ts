@@ -5,7 +5,7 @@ export default {
   titleTemplate: 'Ceil.Top',
   description: 'Blog Of KEVINSHEEP',
   outDir: './dist',
-  lastUpdated: true,
+  lastUpdated: false,
   markdown: {
     lineNumbers: true,
   },
