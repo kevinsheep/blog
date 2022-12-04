@@ -1,4 +1,4 @@
-import { getSidebar, COLS } from './utils';
+import { getSidebar, COLS } from './dev';
 
 export default {
   title: ' ',

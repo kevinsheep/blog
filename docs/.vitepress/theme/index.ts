@@ -1,8 +1,9 @@
 import DefaultTheme from 'vitepress/theme';
-import HeroSlot from '../components/HeroSlot.vue';
+import CustomSlot from '../components/CustomSlot.vue';
 import '../styles/common.styl';
+import '../styles/markdown.styl';
 
 export default {
-  ...DefaultTheme,
-  Layout: HeroSlot,
+    ...DefaultTheme,
+    Layout: CustomSlot,
 };

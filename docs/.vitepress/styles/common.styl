@@ -33,3 +33,138 @@
     padding-bottom: 50px;
   }
 }
+
+.vp-doc {
+  p {
+    text-indent: 2em;
+  }
+
+  .custom-block p, blockquote p {
+    text-indent: 0;
+  }
+}
+
+.wrapper-comments {
+  margin-top: 30px;
+
+  .title {
+    font-size: 28px;
+    font-weight: bolder;
+    margin-bottom: 8px;
+
+    span {
+      color: var(--vp-c-text-3);
+      font-size: 14px;
+      font-weight: normal;
+    }
+  }
+
+  a {
+    color: var(--vp-c-brand);
+
+    &:hover {
+      color: var(--vp-c-sponsor);
+    }
+  }
+
+  .no-login {
+    padding: 5px 0 15px;
+  }
+
+  .cell {
+    border: 1px solid var(--vp-c-divider-light);
+    margin-bottom: 10px;
+    border-radius: 8px;
+
+    &:hover {
+      border-color: var(--vp-c-brand);
+    }
+  }
+
+  .meta {
+    font-size: 14px;
+    border-bottom: 1px solid var(--vp-c-divider-light);
+    padding: 15px;
+    border-radius: 8px 8px 0 0;
+    background-color: var(--vp-c-bg-soft);
+    position: relative;
+
+    > * {
+      vertical-align: middle;
+      line-height: 20px;
+    }
+
+    a.name {
+      margin-right: 3px;
+    }
+
+    em {
+      font-style: normal;
+      background-color: var(--vp-c-brand);
+      color: var(--vp-c-text-inverse-1);
+      padding: 0 10px;
+      border-radius: 10px;
+      height: 20px;
+      margin-left: 8px;
+      margin-top: 3px;
+      float: right;
+      font-size: 12px;
+      user-select: none;
+    }
+
+    .avatar {
+      display: inline-block;
+      left: -54px;
+      top: 5px;
+      position: absolute;
+
+      img {
+        border-radius: 21px;
+        width: 42px;
+        height: 42px;
+      }
+    }
+  }
+
+  .content {
+    padding: 20px 15px;
+    font-size: 16px;
+
+    // white-space: pre;
+    &:has(>p) {
+      padding: 5px 15px;
+    }
+  }
+}
+
+.vditor {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.wrapper-compose {
+  position: relative;
+  border-radius: 8px;
+  border: 1px solid var(--vp-c-divider-light);
+}
+
+.btn-add {
+  float: left;
+  line-height: 36px;
+  font-size: 16px;
+  padding: 0 0.8em;
+  background-color: var(--vp-c-brand);
+  color: var(--vp-c-text-inverse-1);
+  border-radius: 8px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.to-gitee {
+  float: left;
+  margin-top: 10px;
+  margin-left: 10px;
+  line-height: 36px;
+  color: var(--vp-c-text-3);
+  font-size: 14px;
+}

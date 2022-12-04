@@ -1,9 +1,11 @@
 {
-  "compilerOptions": {
-    "resolveJsonModule": true
-  },
-  "vueCompilerOptions": {
-    "experimentalDisableTemplateSupport": true
-  },
-  "include": ["*/**/*.ts", "*/**/*.vue"]
+    "compilerOptions": {
+        "resolveJsonModule": true,
+        "esModuleInterop": true,
+        "allowJs": true
+    },
+    "vueCompilerOptions": {
+        "experimentalDisableTemplateSupport": true
+    },
+    "include": ["*/**/*.ts", "*/**/*.vue"]
 }
