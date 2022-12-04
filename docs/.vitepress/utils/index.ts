@@ -7,8 +7,8 @@ export const getUrlParam = (key: string) => {
     return param ? decodeURIComponent(param) : null;
 };
 
-export const getPathname = () => {
-    return window.location.pathname;
+export const getAuthState = () => {
+    return `${window.location.pathname.replace('/', '--')}|${Math.random()}`;
 };
 
 export const getSearch = () => {

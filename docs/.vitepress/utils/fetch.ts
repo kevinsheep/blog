@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { getPathname } from '../utils';
+import { getAuthState } from '../utils';
 
 const OWNER = 'kevinsheep';
 const REPO = 'blog';
@@ -10,9 +10,9 @@ const remoteHost = 'https://github.com/';
 const baseURL = 'https://api.github.com/';
 
 const redirect_uri = 'https://ceil.top/login.html';
-const eggHost = 'http://notes.ceil.top:8000';
+// const redirect_uri = 'http://localhost:3001/login.html';
 
-const authState = `${getPathname().replace('/', '--')}|${Math.random()}`;
+const eggHost = 'http://notes.ceil.top:8000';
 
 const axiosService = axios.create({ baseURL });
 
@@ -33,11 +33,11 @@ export const removeLS = () => {
 
 // 三方认证页面
 export const link_get_code = () =>
-    `${remoteHost}login/oauth/authorize?client_id=${client_id}&redirect_uri=${redirect_uri}&state=${authState}`;
+    `${remoteHost}login/oauth/authorize?client_id=${client_id}&redirect_uri=${redirect_uri}&state=${getAuthState()}`;
 
 // 使用用户授权码，通过后端服务中转，向认证服务器获取 `access_token`
-export const getAccessToken = async (code: string) => {
-    const data = { code, state: authState };
+export const getAccessToken = async (code: string, state: string) => {
+    const data = { code, state };
     const res = await axiosService({ method: 'post', url: eggHost, data });
 
     if (res.data && res.data.access_token) {
