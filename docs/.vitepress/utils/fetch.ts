@@ -12,7 +12,7 @@ const baseURL = 'https://api.github.com/';
 const redirect_uri = 'https://ceil.top/login.html';
 // const redirect_uri = 'http://localhost:3001/login.html';
 
-const eggHost = 'http://notes.ceil.top:8000';
+const eggHost = 'https://api.ceil.top:8000';
 
 const axiosService = axios.create({ baseURL });
 
