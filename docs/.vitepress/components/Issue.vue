@@ -1,6 +1,6 @@
 <script setup>
 import { useData } from 'vitepress';
-import { ref, watch, onMounted, computed, nextTick } from 'vue';
+import { ref, watch, onMounted, computed, nextTick, toRaw } from 'vue';
 import { getUrlParam, getAuthState, notify } from '../utils';
 import { getIssue, getComments, addComment, addIssue, getLS, getAccessToken, link_get_code } from '../utils/fetch.ts';
 import dayjs from 'dayjs';
@@ -86,7 +86,7 @@ onMounted(async () => {
 });
 
 const isLogin = computed(() => {
-    return access_token.value && access_token.value.access_token;
+    return access_token.value && JSON.stringify(toRaw(access_token.value)) !== '{}';
 });
 
 // 监听页面变动，加载评论列表
