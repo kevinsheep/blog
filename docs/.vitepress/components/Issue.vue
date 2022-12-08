@@ -144,7 +144,7 @@ watch(isLogin, (isLogin) => {
     <div class="wrapper-comments">
         <div class="title">
             评论一番
-            <span>基于 Gitee Issues</span>
+            <span>基于 Github Issues</span>
         </div>
 
         <div class="no-login" v-if="!isLogin">
@@ -186,7 +186,7 @@ watch(isLogin, (isLogin) => {
         <span class="btn-add" @click="toComment" v-if="isLogin">发表</span>
 
         <div class="to-gitee" v-if="isLogin && ci && ci.html_url">
-            或者到 <a :href="ci.html_url">Gitee Issues</a> 表扬作者
+            或者到 <a :href="ci.html_url">Github</a> 表扬作者
         </div>
     </div>
 </template>
