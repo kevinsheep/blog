@@ -17,7 +17,7 @@ If you give up that right, EVERYTHING you say CAN and WILL BE recorded and quote
 如果你放弃这种权利，那么你说的每一句话都可以并将会被记录和被我引用。
 :::
 
-> 好多年前的旧版博客，还保留了些截图在 [这里](/ABOUT/history)
+> 多年来的博客更新，还保留了些记录和截图在 [这里](/ABOUT/history)
 
 <style lang="stylus">
 .vp-doc img[alt="LOGO"] {
