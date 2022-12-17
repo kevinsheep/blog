@@ -32,8 +32,10 @@ export const removeLS = () => {
 };
 
 // 三方认证页面
-export const link_get_code = () =>
-    `${remoteHost}login/oauth/authorize?client_id=${client_id}&redirect_uri=${redirect_uri}&state=${getAuthState()}`;
+export const link_get_code = () => {
+    removeLS();
+    return `${remoteHost}login/oauth/authorize?client_id=${client_id}&redirect_uri=${redirect_uri}&state=${getAuthState()}`;
+};
 
 // 使用用户授权码，通过后端服务中转，向认证服务器获取 `access_token`
 export const getAccessToken = async (code: string, state: string) => {
@@ -104,11 +106,13 @@ axiosService.interceptors.response.use(
             }
             // 尝试刷新一次 token
             else {
-                const { refresh_token } = error.config;
+                const { refresh_token } = getLS();
                 const res = await refreshAccessToken(refresh_token);
                 // 刷新 `access_token` 后再次请求
                 if (res.access_token) {
                     return await axiosService(error.config);
+                } else {
+                    console.log('The code passed is incorrect or expired.');
                 }
             }
         } else {

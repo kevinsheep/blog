@@ -20,28 +20,33 @@ const { page } = useData();
 
 const access_token = ref(null);
 const ci = ref(null);
+const apiError = ref(false);
 
 // 获取issues及评论列表
 const getCi = async () => {
-    const issues = await getIssue();
-    if (!issues || !issues.data) {
-        return;
-    }
+    try {
+        const issues = await getIssue();
+        if (!issues || !issues.data) {
+            return;
+        }
 
-    const { relativePath, title } = page.value;
-    ci.value = issues.data.find(({ title: issueTitle }) => {
-        // issue 标题是页面路径的一部分 || 页面标题是 issue 标题的一部分
-        return relativePath.indexOf(issueTitle) > -1 || issueTitle.indexOf(title) > -1;
-    });
+        const { relativePath, title } = page.value;
+        ci.value = issues.data.find(({ title: issueTitle }) => {
+            // issue 标题是页面路径的一部分 || 页面标题是 issue 标题的一部分
+            return relativePath.indexOf(issueTitle) > -1 || issueTitle.indexOf(title) > -1;
+        });
 
-    if (!ci.value || !ci.value.number) {
-        return;
+        if (!ci.value || !ci.value.number) {
+            return;
+        }
+        const { data } = (await getComments(ci.value.number)) || {};
+        ci.value.c_list = data.map((item) => ({
+            ...item,
+            body: md.render(item.body),
+        }));
+    } catch (error) {
+        apiError.value = true;
     }
-    const { data } = (await getComments(ci.value.number)) || {};
-    ci.value.c_list = data.map((item) => ({
-        ...item,
-        body: md.render(item.body),
-    }));
 };
 
 // 发布评论
@@ -86,7 +91,8 @@ onMounted(async () => {
 });
 
 const isLogin = computed(() => {
-    return access_token.value && JSON.stringify(toRaw(access_token.value)) !== '{}';
+    const hasToken = access_token.value && JSON.stringify(toRaw(access_token.value)) !== '{}';
+    return hasToken && !apiError.value;
 });
 
 // 监听页面变动，加载评论列表
