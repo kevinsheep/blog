@@ -6,7 +6,7 @@ title: 登录页
 <script setup>
 import { useRouter } from 'vitepress';
 import { getUrlParam } from '.vitepress/utils';
-import { getAccessToken } from '.vitepress/utils/fetch.ts';
+import { getAccessToken, REDIRECT_KEY, getLS } from '.vitepress/utils/fetch.ts';
 
 const code = getUrlParam('code');
 
@@ -16,8 +16,7 @@ if (code) {
 }
 
 // 根据state值，跳转到对应的页面
-const state = getUrlParam('state');
-const pathname = state.split('|')[0].replace('--', '/');
+const pathname = getLS(REDIRECT_KEY, '/');
 const router = useRouter();
 
 router.go(pathname);

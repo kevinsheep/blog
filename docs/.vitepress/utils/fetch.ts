@@ -1,5 +1,4 @@
 import axios from 'axios';
-import { generateAuthState } from '../utils';
 
 const OWNER = 'kevinsheep';
 const REPO = 'blog';
@@ -9,41 +8,42 @@ const client_id = 'Iv1.c81fcafbda51d6d6';
 const remoteHost = 'https://github.com/';
 const baseURL = 'https://api.github.com/';
 
-const redirect_uri = `${__REDIRECT_URI__}/login.html`;
+const redirect_uri = `${__REDIRECT_URI__}/login.html`; // 登录中转页
 
 const eggHost = 'https://api.ceil.top:8000';
 
 const axiosService = axios.create({ baseURL });
 
-const LS_KEY = 'ACCESS_DATA';
+export const REDIRECT_KEY = 'REDIRECT_PAGE';
+export const TOKEN_KEY = 'TOKEN_DATA';
 
-export const getLS = () => {
-    const LS = JSON.parse(window.localStorage.getItem(LS_KEY) || '{}');
+export const getLS = (key: string, defaultData: string = '{}') => {
+    const LS = JSON.parse(window.localStorage.getItem(key) || defaultData);
     return LS;
 };
 
-export const setLS = (data: object) => {
-    window.localStorage.setItem(LS_KEY, JSON.stringify(data));
+export const setLS = (key: string, data: object | string) => {
+    window.localStorage.setItem(key, JSON.stringify(data));
 };
 
-export const removeLS = () => {
-    window.localStorage.removeItem(LS_KEY);
+export const removeLS = (key: string) => {
+    window.localStorage.removeItem(key);
 };
 
 // 三方认证页面
 export const link_get_code = () => {
-    removeLS();
-    return `${remoteHost}login/oauth/authorize?client_id=${client_id}&redirect_uri=${redirect_uri}&state=${generateAuthState()}`;
+    removeLS(TOKEN_KEY);
+    setLS(REDIRECT_KEY, window.location.pathname);
+    return `${remoteHost}login/oauth/authorize?client_id=${client_id}&redirect_uri=${redirect_uri}`;
 };
 
 // 使用用户授权码，通过后端服务中转，向认证服务器获取 `access_token`
 export const getAccessToken = async (code: string) => {
-    const state = generateAuthState();
-    const data = { code, state };
+    const data = { code };
     const res = await axiosService({ method: 'post', url: eggHost, data });
 
     if (res.data && res.data.access_token) {
-        setLS(res.data);
+        setLS(TOKEN_KEY, res.data);
     }
 
     return res.data;
@@ -59,7 +59,7 @@ export const refreshAccessToken = async (refresh_token: string) => {
     });
 
     if (res.data.access_token) {
-        setLS(res.data);
+        setLS(TOKEN_KEY, res.data);
     }
     return res.data;
 };
@@ -72,7 +72,7 @@ export const getIssue = async (number?: number) => {
 
 axiosService.interceptors.request.use(
     (config) => {
-        const { access_token } = getLS();
+        const { access_token } = getLS(TOKEN_KEY);
 
         if (access_token) {
             config.headers = {
@@ -101,12 +101,12 @@ axiosService.interceptors.response.use(
             console.log(error.config);
             // 如果已刷新过，仍出错，则重新获取授权码
             if (error.config?.params.grant_type === 'refresh_token') {
-                removeLS();
+                removeLS(TOKEN_KEY);
                 location.href = link_get_code();
             }
             // 尝试刷新一次 token
             else {
-                const { refresh_token } = getLS();
+                const { refresh_token } = getLS(TOKEN_KEY);
                 const res = await refreshAccessToken(refresh_token);
                 // 刷新 `access_token` 后再次请求
                 if (res.access_token) {

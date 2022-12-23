@@ -2,7 +2,7 @@
 import { useData } from 'vitepress';
 import { ref, watch, onMounted, computed, nextTick, toRaw } from 'vue';
 import { notify } from '../utils';
-import { link_get_code, getIssue, getComments, addComment, addIssue, getLS } from '../utils/fetch.ts';
+import { link_get_code, getIssue, getComments, addComment, addIssue, getLS, TOKEN_KEY } from '../utils/fetch.ts';
 import dayjs from 'dayjs';
 import 'dayjs/locale/zh-cn';
 import MarkdownIt from 'markdown-it';
@@ -79,7 +79,7 @@ const toComment = () => {
 };
 
 onMounted(async () => {
-    access_token.value = getLS();
+    access_token.value = getLS(TOKEN_KEY);
 });
 
 const isLogin = computed(() => {

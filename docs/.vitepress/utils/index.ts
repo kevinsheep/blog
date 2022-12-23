@@ -7,10 +7,6 @@ export const getUrlParam = (key: string) => {
     return param ? decodeURIComponent(param) : null;
 };
 
-export const generateAuthState = () => {
-    return `${window.location.pathname.replace('/', '--')}|${Math.random()}`;
-};
-
 export const notify = (body: string) => {
     const title = '提个醒：';
     const icon = '/assets/img/avatar-head.png';
