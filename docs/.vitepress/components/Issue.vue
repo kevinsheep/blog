@@ -17,6 +17,7 @@ dayjs.locale('zh-cn');
 let vditor;
 const md = new MarkdownIt();
 const { page } = useData();
+const { relativePath, title } = page.value;
 
 const access_token = ref(null);
 const ci = ref(null);
@@ -30,7 +31,6 @@ const getCi = async () => {
             return;
         }
 
-        const { relativePath, title } = page.value;
         ci.value = issues.data.find(({ title: issueTitle }) => {
             // issue 标题是页面路径的一部分 || 页面标题是 issue 标题的一部分
             return relativePath.indexOf(issueTitle) > -1 || issueTitle.indexOf(title) > -1;
@@ -146,7 +146,7 @@ watch(isLogin, (isLogin) => {
         </div>
 
         <div class="no-login" v-if="!isLogin">
-            <ClientOnly> 请 <a :href="link_get_code()">登录你的 Github 账号</a> 后发表评论 </ClientOnly>
+            <ClientOnly> 请 <a :href="link_get_code(relativePath)">登录你的 Github 账号</a> 后发表评论 </ClientOnly>
         </div>
 
         <template v-else-if="ci">
