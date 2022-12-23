@@ -1,8 +1,8 @@
 <script setup>
 import { useData } from 'vitepress';
 import { ref, watch, onMounted, computed, nextTick, toRaw } from 'vue';
-import { getUrlParam, getAuthState, notify } from '../utils';
-import { getIssue, getComments, addComment, addIssue, getLS, getAccessToken, link_get_code } from '../utils/fetch.ts';
+import { notify } from '../utils';
+import { link_get_code, getIssue, getComments, addComment, addIssue, getLS } from '../utils/fetch.ts';
 import dayjs from 'dayjs';
 import 'dayjs/locale/zh-cn';
 import MarkdownIt from 'markdown-it';
@@ -67,6 +67,7 @@ const onComment = async (words) => {
     }
 };
 
+// 提交评论
 const toComment = () => {
     const val = vditor?.getValue();
     if (!val || val === '\n') {
@@ -78,16 +79,7 @@ const toComment = () => {
 };
 
 onMounted(async () => {
-    const code = getUrlParam('code');
-    const state = getAuthState();
-
     access_token.value = getLS();
-
-    // 若地址携带了用户授权码 code
-    if (code) {
-        const res = await getAccessToken(code, state);
-        access_token.value = res.access_token;
-    }
 });
 
 const isLogin = computed(() => {
@@ -98,7 +90,7 @@ const isLogin = computed(() => {
 // 监听页面变动，加载评论列表
 watch(page, () => getCi(), { immediate: true });
 
-// 监听页面变动，加载评论列表
+// 监听登录状态，加载编辑器
 watch(isLogin, (isLogin) => {
     if (!isLogin) {
         return;
