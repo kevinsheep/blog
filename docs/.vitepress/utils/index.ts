@@ -11,10 +11,6 @@ export const generateAuthState = () => {
     return `${window.location.pathname.replace('/', '--')}|${Math.random()}`;
 };
 
-export const getSearch = () => {
-    return window.location.search;
-};
-
 export const notify = (body: string) => {
     const title = '提个醒：';
     const icon = '/assets/img/avatar-head.png';

@@ -9,8 +9,7 @@ const client_id = 'Iv1.c81fcafbda51d6d6';
 const remoteHost = 'https://github.com/';
 const baseURL = 'https://api.github.com/';
 
-// const redirect_uri = 'https://ceil.top/login.html';
-const redirect_uri = 'http://localhost:3001/login.html';
+const redirect_uri = `${__REDIRECT_URI__}/login.html`;
 
 const eggHost = 'https://api.ceil.top:8000';
 
