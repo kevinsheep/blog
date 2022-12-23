@@ -1,0 +1,1 @@
+import{_ as e,o as t,c as a,b as n}from"./app.a0925284.js";const u=JSON.parse('{"title":"杂谈","description":"","frontmatter":{"title":"杂谈"},"headers":[],"relativePath":"ESSAY/index.md"}'),o={name:"ESSAY/index.md"},s=n("p",null,"随手写的东西收集，与技术无关",-1),r=[s];function c(d,i,_,p,l,m){return t(),a("div",null,r)}const x=e(o,[["render",c]]);export{u as __pageData,x as default};

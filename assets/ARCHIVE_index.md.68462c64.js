@@ -1,1 +1,0 @@
-import{_ as e,o as t,c as a,b as n}from"./app.b65cbc45.js";const u=JSON.parse('{"title":"归档","description":"","frontmatter":{"title":"归档"},"headers":[],"relativePath":"ARCHIVE/index.md"}'),o={name:"ARCHIVE/index.md"},s=n("p",null,"暂存过时的文档。",-1),r=[s];function c(d,i,_,p,l,m){return t(),a("div",null,r)}const x=e(o,[["render",c]]);export{u as __pageData,x as default};
