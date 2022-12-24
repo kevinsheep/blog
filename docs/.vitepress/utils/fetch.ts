@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { notify } from './index';
 
 const OWNER = 'kevinsheep';
 const REPO = 'blog';
@@ -115,6 +116,8 @@ axiosService.interceptors.response.use(
                 }
             }
         } else {
+            notify('github 失联了，请稍后再试');
+            location.href = `/${REPO}/index`;
             Promise.reject(error);
         }
     }
