@@ -5,7 +5,7 @@ import matter from 'gray-matter';
  * 顶部导航（一级）
  */
 export const COLS = [
-    { text: '前端', link: '/FE/' },
+    { text: '代码', link: '/CODES/' },
     { text: '杂谈', link: '/ESSAY/' },
     { text: '关于', link: '/ABOUT/' },
     { text: '归档', link: '/ARCHIVE/' },
