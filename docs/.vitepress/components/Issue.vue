@@ -15,8 +15,8 @@ import {
 } from '../utils/fetch.ts';
 import dayjs from 'dayjs';
 import 'dayjs/locale/zh-cn';
-import MarkdownIt from 'markdown-it';
 import relativeTime from 'dayjs/plugin/relativeTime';
+import MarkdownIt from 'markdown-it';
 
 import Vditor from 'vditor';
 import 'vditor/dist/index.css';
