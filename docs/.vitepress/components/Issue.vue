@@ -2,7 +2,17 @@
 import { useData } from 'vitepress';
 import { ref, watch, onMounted, computed, nextTick, toRaw } from 'vue';
 import { notify } from '../utils';
-import { link_get_code, getIssue, getComments, addComment, addIssue, getLS, TOKEN_KEY } from '../utils/fetch.ts';
+import {
+    link_get_code,
+    getIssue,
+    getComments,
+    addComment,
+    addIssue,
+    setLS,
+    getLS,
+    TOKEN_KEY,
+    REDIRECT_KEY,
+} from '../utils/fetch.ts';
 import dayjs from 'dayjs';
 import 'dayjs/locale/zh-cn';
 import MarkdownIt from 'markdown-it';
@@ -17,7 +27,6 @@ dayjs.locale('zh-cn');
 let vditor;
 const md = new MarkdownIt();
 const { page } = useData();
-const { relativePath, title } = page.value;
 
 const access_token = ref(null);
 const ci = ref(null);
@@ -33,7 +42,7 @@ const getCi = async () => {
 
         ci.value = issues.data.find(({ title: issueTitle }) => {
             // issue 标题是页面路径的一部分 || 页面标题是 issue 标题的一部分
-            return relativePath.indexOf(issueTitle) > -1 || issueTitle.indexOf(title) > -1;
+            return page.value.relativePath.indexOf(issueTitle) > -1 || issueTitle.indexOf(page.value.title) > -1;
         });
 
         if (!ci.value || !ci.value.number) {
@@ -88,7 +97,14 @@ const isLogin = computed(() => {
 });
 
 // 监听页面变动，加载评论列表
-watch(page, () => getCi(), { immediate: true });
+watch(
+    page,
+    () => {
+        setLS(REDIRECT_KEY, page.value.relativePath || '/');
+        getCi();
+    },
+    { immediate: true }
+);
 
 // 监听登录状态，加载编辑器
 watch(isLogin, (isLogin) => {
@@ -146,7 +162,7 @@ watch(isLogin, (isLogin) => {
         </div>
 
         <div class="no-login" v-if="!isLogin">
-            <ClientOnly> 请 <a :href="link_get_code(relativePath)">登录你的 Github 账号</a> 后发表评论 </ClientOnly>
+            <ClientOnly> 请 <a :href="link_get_code()">登录你的 Github 账号</a> 后发表评论 </ClientOnly>
         </div>
 
         <template v-else-if="ci">

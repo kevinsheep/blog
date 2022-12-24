@@ -22,6 +22,6 @@ onBeforeMount(async () => {
     // 根据state值，跳转到对应的页面
     const pathname = getLS(REDIRECT_KEY, '/');
 
-    router.go(pathname);
+    router.go(pathname.substring(0, pathname.lastIndexOf('.')));
 });
 </script>

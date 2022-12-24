@@ -31,9 +31,8 @@ export const removeLS = (key: string) => {
 };
 
 // 三方认证页面
-export const link_get_code = (pathname: string = '/') => {
+export const link_get_code = () => {
     removeLS(TOKEN_KEY);
-    setLS(REDIRECT_KEY, pathname);
     return `${remoteHost}login/oauth/authorize?client_id=${client_id}&redirect_uri=${redirect_uri}`;
 };
 
