@@ -43,7 +43,7 @@ title: 博客纪年
 
 `VuePress` 本身还是比较方便、好用的，但要自己扩展一些小功能，如首页推荐列表、评论模块等。过程实在是太折腾了。
 
-详见：[VuePress 折腾记](/FE/vuepress-play-around)
+详见：[VuePress 折腾记](/ARCHIVE/vuepress-play-around)
 
 ![引导页](/assets/history/ver-2019-index.png)
 
