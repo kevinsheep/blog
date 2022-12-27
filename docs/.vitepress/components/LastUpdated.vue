@@ -6,7 +6,10 @@ const { frontmatter, page } = useData();
 
 // 生成可用的更新日期
 const lastUpdated = () => {
-    const temp = frontmatter.value.updateTime ? frontmatter.value.updateTime : page.value.lastUpdated;
+    if (frontmatter.value.lastUpdated === false) {
+        return '';
+    }
+    const temp = frontmatter.value.updateTime || page.value.lastUpdated;
     return temp ? dayjs(temp).format('YYYY-MM-DD HH:mm:ss') : '';
 };
 </script>
