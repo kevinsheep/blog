@@ -1,6 +1,7 @@
 ---
 title: 关于
 sidebar: false
+lastUpdated: false
 ---
 
 ![LOGO](/assets/img/logo.png)
