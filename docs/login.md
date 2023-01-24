@@ -10,9 +10,9 @@ import { getUrlParam } from '.vitepress/utils';
 import { getAccessToken, REDIRECT_KEY, getLS } from '.vitepress/utils/fetch.ts';
 
 const router = useRouter();
-let code;
+
 onBeforeMount(async () => {
-    code = getUrlParam('code');
+    let code = getUrlParam('code');
 
     // 若地址携带了用户授权码 code
     if (code) {

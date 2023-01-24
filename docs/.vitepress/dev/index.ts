@@ -5,10 +5,10 @@ import matter from 'gray-matter';
  * 顶部导航（一级）
  */
 export const COLS = [
-    { text: '代码', link: '/CODES/' },
-    { text: '杂谈', link: '/ESSAY/' },
-    { text: '关于', link: '/ABOUT/' },
-    { text: '归档', link: '/ARCHIVE/' },
+    { text: 'CODES', link: '/CODES/' },
+    { text: 'ESSAY', link: '/ESSAY/' },
+    { text: 'ABOUT', link: '/ABOUT/' },
+    { text: 'ARCHIVE', link: '/ARCHIVE/' },
 ];
 
 /**

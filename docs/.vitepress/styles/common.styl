@@ -37,10 +37,28 @@
 .vp-doc {
   p {
     text-indent: 2em;
+
+    &:has(> img) {
+      text-indent: 0;
+    }
+
+    >img {
+      border: 2px solid #f6f6f6;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+  }
+
+  ul, ol {
+    padding-left: 3.25em;
   }
 
   .custom-block p, blockquote p {
     text-indent: 0;
+  }
+
+  .custom-block code {
+    background-color: var(--vp-custom-block-tip-bg);
   }
 }
 
@@ -72,7 +90,7 @@
   }
 
   .cell {
-    border: 1px solid var(--vp-c-divider-light);
+    border: 1px solid var(--vp-c-divider);
     margin-bottom: 10px;
     border-radius: 8px;
 
