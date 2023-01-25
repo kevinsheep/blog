@@ -4,7 +4,7 @@ title: 首页
 ---
 
 <style>
-.no-sidebar .VPNavBarTitle {
+.VPNavBarTitle {
     display: none;
 }
 </style>

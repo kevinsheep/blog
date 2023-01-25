@@ -6,7 +6,7 @@ lastUpdated: false
 
 ![LOGO](/assets/img/logo.png)
 
-::: tip
+::: tip NOTICE
 You are visiting my BLOG for so and so reason.
 Please leave a message.
 However, you have the right to remain silent.
@@ -21,7 +21,16 @@ If you give up that right, EVERYTHING you say CAN and WILL BE recorded and quote
 > 多年来的博客更新，还保留了些记录和截图在 [这里](/ABOUT/history)
 
 <style lang="stylus">
+.VPNavBarTitle {
+    display: none;
+}
 .vp-doc img[alt="LOGO"] {
     transform: translate(15px, 16px);
+    border-width: 0;
+}
+.custom-block.tip {
+    color: var(--vp-c-text-2);
+    border-color: var(--vp-c-brand-lighter);
+    background-color: var(--vp-c-bg-soft);
 }
 </style>

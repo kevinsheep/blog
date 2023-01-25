@@ -1,12 +1,12 @@
 ---
 title: VitePress 深度折腾
-updateTime: '2022/12/28'
+updateTime: '2023/02/25'
 ---
 
 ## 前言及介绍
 2019年年初，写了篇[「VuePress 折腾记」](/ARCHIVE/vuepress-play-around)，一晃快4年过去。
 
-这次更新博客，选用了同为尤大出品的 [VitePress](https://vitepress.vuejs.org/)，如果使用过 [VuePress](https://vuepress.vuejs.org/)，你不会对这个工具感到陌生，并会惊讶地发现，核心功能和使用习惯十分相似。
+这次更新博客，选用了同为尤大出品的 [VitePress](https://vitepress.vuejs.org/)。如果使用过 [VuePress](https://vuepress.vuejs.org/)，你不会对这个工具感到陌生，并会惊讶地发现，核心功能和使用习惯十分相似。
 
 ## 官方文档
 
@@ -14,12 +14,12 @@ updateTime: '2022/12/28'
 
 官方特别解释了下（[Motivation](https://vitepress.vuejs.org/guide/what-is-vitepress.html#motivation)），为什么有 `VuePress` 又搞了个 `VitePress`：
 
-> 我们是爱 VuePress@v1 的，可webpack它慢啊。
+翻译一下就是：**我们是爱 VuePress@v1 的，可webpack它慢啊。**
 
 
 [官方帮助文档](https://vitepress.vuejs.org/guide/getting-started)，一如既往地贴心，几乎是在手把手地教了。所以文档有说明的，这里就不再赘述，会直接援引。
 
-截止本文完成，`VitePress` 最新版本为 `1.0.0-alpha.33`。
+截止本文完成，`VitePress` 最新版本为 `1.0.0-alpha.40`。
 
 ## 自定义主题
 虽然没有了插件机制，但我觉得自定义的自由度还是极高的（换言之，就是要好多个性化的地方需要手动编码的意思）。详见 [Theme Introduction](https://vitepress.vuejs.org/guide/theme-introduction)。
@@ -54,4 +54,4 @@ Gitee 这边的免费服务就没那么好用了。要自动发布？有个“�
 
 参见：
 
-[Github Issues 应用实现博客评论](/CODES/vitepress-github-issues.html)
+[Github 应用实现博客评论](/CODES/vitepress-github-issues.html)
