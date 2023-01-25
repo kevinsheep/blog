@@ -5,10 +5,10 @@ import matter from 'gray-matter';
  * 顶部导航（一级）
  */
 export const COLS = [
-    { text: 'CODES', link: '/CODES/' },
-    { text: 'ESSAY', link: '/ESSAY/' },
-    { text: 'ABOUT', link: '/ABOUT/' },
-    { text: 'ARCHIVE', link: '/ARCHIVE/' },
+    { text: '折腾', link: '/CODES/' },
+    { text: '杂谈', link: '/ESSAY/' },
+    { text: '关于', link: '/ABOUT/' },
+    { text: '归档', link: '/ARCHIVE/' },
 ];
 
 /**
@@ -34,13 +34,19 @@ export const getSidebar = (): Object => {
                         const filename = file.replace(/\.md$/, '');
                         const filepath = `${link}${filename}`;
                         const { data = {} } = matter.read(path) || {};
+                        console.log({ ...data, text });
                         return {
                             ...data,
                             text: data.title || filename,
                             link: filepath,
                         };
                     })
-                    .filter(({ text, link }) => link.indexOf(INDEX_FILE) === -1 && text.indexOf(IGNORE_TEXT) === -1),
+                    .filter(({ text, link }) => link.indexOf(INDEX_FILE) === -1 && text.indexOf(IGNORE_TEXT) === -1)
+                    .sort((a, b) => {
+                        const av = a['updateTime'] ? new Date(a['updateTime']).valueOf() : 0;
+                        const bv = b['updateTime'] ? new Date(b['updateTime']).valueOf() : 0;
+                        return bv - av;
+                    }),
             },
         ];
     });

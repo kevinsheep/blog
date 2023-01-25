@@ -12,7 +12,7 @@ export default {
     },
     themeConfig: {
         logo: '/assets/img/logo.png',
-        nav: [{ text: 'HOME', link: '/' }, ...COLS],
+        nav: [{ text: '首页', link: '/' }, ...COLS],
         socialLinks: [
             { icon: 'github', link: 'https://github.com/kevinsheep/' },
             {

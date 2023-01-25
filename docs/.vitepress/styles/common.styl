@@ -3,12 +3,6 @@
   --vp-c-brand-dark: #00a0e8;
 }
 
-.no-sidebar {
-  .VPNavBarTitle {
-    display: none;
-  }
-}
-
 .VPNavBarTitle {
   .title {
     align-items: flex-end;
@@ -55,10 +49,15 @@
 
   .custom-block p, blockquote p {
     text-indent: 0;
+    line-height: 1.8;
   }
 
   .custom-block code {
     background-color: var(--vp-custom-block-tip-bg);
+  }
+
+  .custom-block.info {
+    font-size: 16px;
   }
 }
 
