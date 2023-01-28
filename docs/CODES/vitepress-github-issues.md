@@ -1,13 +1,13 @@
 ---
-title: Github 应用实现博客评论
+title: GitHub 应用实现博客评论
 updateTime: '2023/01/24'
 ---
 
-以下内容系基于 VitePress + Github Issues，实现 Github Pages 静态博客的文章评论。本文或许是你能搜索到的，此应用场景下最详细的指引（当然，有可能是我没用力搜索）。
+以下内容系基于 VitePress + GitHub Issues，实现 GitHub Pages 静态博客的文章评论。本文或许是你能搜索到的，此应用场景下最详细的指引（当然，有可能是我没用力搜索）。
 
 如果你使用的是 Gitee，可参考本文的关联文章「基于 Gitee 实现博客评论」。
 ## 创建应用
-首先，到 GitHub 开发设置中，创建应用。本博客评论使用的是 Github Apps。
+首先，到 GitHub 开发设置中，创建应用。本博客评论使用的是 GitHub Apps。
 
 其中，常规选项卡，可获取到 `client_id` 和 `client_secret`，调用授权接口时会用到；权限和事件，可设置授权范围，注意勾选 Issues 读写权限，然后 Metadata 也会自动选上。
 
@@ -53,9 +53,9 @@ const link_uri = `https://github.com/login/oauth/authorize?client_id=${client_id
 
 还好现在前端用 NodeJS 什么的搞个简单的后端应用也不是什么难事。
 
-关键是，首先得有个服务器。然而问题又来了，用 Github Pages 做博客，不就是为了白嫖免费资源，不用自己折腾服务器的么？主要是服务器也不便宜，为了放一个访问量并不高的技术博客挺浪费的。😏
+关键是，首先得有个服务器。然而问题又来了，用 GitHub Pages 做博客，不就是为了白嫖免费资源，不用自己折腾服务器的么？主要是服务器也不便宜，为了放一个访问量并不高的技术博客挺浪费的。😏
 
-网上介绍 Github Apps 的，似乎详细写这部分的也不多。
+网上介绍 GitHub Apps 的，似乎详细写这部分的也不多。
 
 言归正传，说说我自己的方案。
 
@@ -153,7 +153,7 @@ export const getAccessToken = async (code: string) => {
 ## 登录中转页
 前文关于[用户授权并获取授权码](#用户授权并获取授权码)的说明中，提到的中转页，其作用有二：
 
-1. 减少 Github 开发设置中，回调地址的配置数量，指向具体的文章页；
+1. 减少 GitHub 开发设置中，回调地址的配置数量，指向具体的文章页；
 2. 衔接获取授权码及 token 的过程。
 
 主要代码如下：

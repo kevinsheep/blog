@@ -29,9 +29,9 @@ updateTime: '2023/02/25'
 ## 发布设置
 一般文档，写到构建完成就该差不多了。可 `VitePress` 相当认真地，写了在好几种平台上的部署方案。详见 [Deploying](https://vitepress.vuejs.org/guide/deploying)。
 
-本博客同时发布到 Github 与 Gitee，有对比就伤害，差距太大了。
+本博客同时发布到 GitHub 与 Gitee，有对比就伤害，差距太大了。
 
-Github 你只需要配置好 GitHub Actions，每次 git push 后就可以自动发布。当然，前提是你已本地测试完善没有构建错误，也没有文章死链等。
+GitHub 你只需要配置好 GitHub Actions，每次 git push 后就可以自动发布。当然，前提是你已本地测试完善没有构建错误，也没有文章死链等。
 
 Gitee 这边的免费服务就没那么好用了。要自动发布？有个“流水线”不知道好不好用，反正收费。自定义域名？收费。每次发布的过程中，Gitee Pages 还会有中国特色的“内容审查”，发布时会提示查出问题，可只告诉你是哪页内容，而不告诉你有什么问题。谁知道那些落后的关键词匹配法，会包括哪些敏感词？
 
@@ -45,7 +45,7 @@ Gitee 这边的免费服务就没那么好用了。要自动发布？有个“�
 
 同样地，这样的模块也是不想每次都手动整理的。
 
-参见：[VitePress 自动内容推荐](/CODES/vitepress-recommendation.html)
+参见：[VitePress 首页内容推荐](/CODES/vitepress-recommendation.html)
 
 ## 评论系统
 作为一个静态博客，博客本身是无法实现评论互动的。既然博客的内容存放在代码仓库中，并使用他们提供的 **Pages 功能，评论自然也可以使用代码 issues 来进行互动。
@@ -54,4 +54,6 @@ Gitee 这边的免费服务就没那么好用了。要自动发布？有个“�
 
 参见：
 
-[Github 应用实现博客评论](/CODES/vitepress-github-issues.html)
+[GitHub 应用实现博客评论](/CODES/vitepress-github-issues.html)
+
+[Gitee 应用实现博客评论](/CODES/vitepress-gitee-issues.html)

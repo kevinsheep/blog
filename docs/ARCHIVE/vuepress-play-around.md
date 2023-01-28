@@ -5,14 +5,14 @@ updateTime: 2019/03/03
 
 ## 前言及介绍
 VuePress 是一款静态网站生成器，自带一套蛮耐看的网站主题，响应式适应不同尺寸的浏览设备。
-支持 Markdown；由于是基于 Vue 开发，天生支持各种好用的 Vue 特性；一行命令即可自动生成静态网站，并且能结合脚本自动发布到 Github Pages。
+支持 Markdown；由于是基于 Vue 开发，天生支持各种好用的 Vue 特性；一行命令即可自动生成静态网站，并且能结合脚本自动发布到 GitHub Pages。
 作者开发这个工具的初衷，是为了“[爽爽地写文档](https://weibo.com/1761511274/Gc2gCAjHW)”。也就是说这个天生适合写技术文档。
 我关注到时，本来是想找一个博客管理平台/工具的。vuepress对博客的支持并不完善，很多东西需要自己处理。但对于静态化管理的个人博客，这个是不错的解决方案了。
 
 我入坑时已是 1.x 版。大概了解了下，就把新版博客迁移到 VuePress 上。
 
 下文内容，假定你已经：
-1. 注册好自己的域名，有自己的 Github Pages 并作好相关配置
+1. 注册好自己的域名，有自己的 GitHub Pages 并作好相关配置
 2. 已阅读了官方文档或能自己查阅对应的内容
 3. 了解 webpack 的基本配置或能自己查阅对应的内容
 4. 熟悉 Javascript 和 CSS 知识，包括 ES6、ES7、CSS3，了解 CSS 预处理框架 stylus 或能自己查阅对应的内容
@@ -123,7 +123,7 @@ const release = async () => {
   //先 build 一下新内容
   await execa('vuepress', ['build', 'docs'], { stdio: 'inherit' })
 
-  //由于 build 时所有内容被清空了，Github Pages 相关的域名设置也被清空，于是得每次生成一下
+  //由于 build 时所有内容被清空了，GitHub Pages 相关的域名设置也被清空，于是得每次生成一下
   await execa.shell('echo ceil.top > ../docs/CNAME');
 
   //使用 inquirer，每次发布新 docs 还是写一下备注吧，否则每次都一样……
@@ -358,7 +358,7 @@ module.exports = {
 
 ## 评论系统
 曹操兵败，在马上大笑三声，尚且需要个人陪笑呢！博客怎么能没有个与访客交互的地方？
-静态网站的评论最好是依附一些已有的资源。几番比较后选定了 [Gitalk](https://gitalk.github.io/)，基于 Github issue。
+静态网站的评论最好是依附一些已有的资源。几番比较后选定了 [Gitalk](https://gitalk.github.io/)，基于 GitHub issue。
 下面简单说说一些使用的要点。
 
 首先还是要仔细看看[官方文档](https://github.com/gitalk/gitalk)；

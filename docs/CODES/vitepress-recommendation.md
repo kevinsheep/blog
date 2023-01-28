@@ -1,5 +1,5 @@
 ---
-title: VitePress 自动内容推荐
+title: VitePress 首页内容推荐
 updateTime: '2022/12/28'
 ---
 
