@@ -34,7 +34,6 @@ export const getSidebar = (): Object => {
                         const filename = file.replace(/\.md$/, '');
                         const filepath = `${link}${filename}`;
                         const { data = {} } = matter.read(path) || {};
-                        console.log({ ...data, text });
                         return {
                             ...data,
                             text: data.title || filename,
