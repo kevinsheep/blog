@@ -1,5 +1,0 @@
----
-title: Dependabot
-client_id: ${{secrets.COMMENT_CLIENT_ID}}
----
-
