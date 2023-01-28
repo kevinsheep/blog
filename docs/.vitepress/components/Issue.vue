@@ -158,11 +158,11 @@ watch(isLogin, (isLogin) => {
     <div class="wrapper-comments">
         <div class="title">
             评论一番
-            <span>基于 Github Issues</span>
+            <span>基于 GitHub Issues</span>
         </div>
 
         <div class="no-login" v-if="!isLogin">
-            <ClientOnly> 请 <a :href="link_get_code()">登录你的 Github 账号</a> 后发表评论 </ClientOnly>
+            <ClientOnly> 请 <a :href="link_get_code()">登录你的 GitHub 账号</a> 后发表评论 </ClientOnly>
         </div>
 
         <template v-else-if="ci">
@@ -200,7 +200,7 @@ watch(isLogin, (isLogin) => {
         <span class="btn-add" @click="toComment" v-if="isLogin">发表</span>
 
         <div class="to-gitee" v-if="isLogin && ci && ci.html_url">
-            或者到 <a :href="ci.html_url">Github</a> 表扬作者
+            或者到 <a :href="ci.html_url">GitHub</a> 表扬作者
         </div>
     </div>
 </template>
