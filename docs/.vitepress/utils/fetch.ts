@@ -4,8 +4,7 @@ import { notify } from './index';
 const OWNER = 'kevinsheep';
 const REPO = 'blog';
 
-// const client_id = 'Iv1.c81fcafbda51d6d6';
-const client_id = '${{secrets.COMMENT_CLIENT_ID}}';
+const client_id = 'Iv1.c81fcafbda51d6d6';
 
 const remoteHost = 'https://github.com/';
 const baseURL = 'https://api.github.com/';
