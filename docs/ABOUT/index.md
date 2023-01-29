@@ -20,10 +20,7 @@ If you give up that right, EVERYTHING you say CAN and WILL BE recorded and quote
 
 > 多年来的博客更新，还保留了些记录和截图在 [这里](/ABOUT/history)
 
-<style lang="stylus">
-.VPNavBarTitle {
-    display: none;
-}
+<style lang="stylus" scoped>
 .vp-doc img[alt="LOGO"] {
     transform: translate(15px, 16px);
     border-width: 0;

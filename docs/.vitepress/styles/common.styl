@@ -4,6 +4,8 @@
 }
 
 .VPNavBarTitle {
+  display: none;
+
   .title {
     align-items: flex-end;
     filter: hue-rotate(0deg);
@@ -12,6 +14,12 @@
     &:hover {
       filter: hue-rotate(270deg);
     }
+  }
+}
+
+.VPNavBar.has-sidebar {
+  .VPNavBarTitle {
+    display: block;
   }
 }
 
