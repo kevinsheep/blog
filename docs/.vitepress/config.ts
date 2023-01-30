@@ -28,4 +28,12 @@ export default {
             copyright: 'Copyright © 2010-present, KEVINSHEEP.',
         },
     },
+    head: [
+        [
+            'script',
+            {
+                src: 'https://hm.baidu.com/hm.js?ff7110a78443140968558cad1f050297',
+            },
+        ],
+    ],
 };
