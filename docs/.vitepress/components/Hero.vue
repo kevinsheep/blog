@@ -3,6 +3,7 @@ import { useData, useRouter } from 'vitepress';
 
 const { theme } = useData();
 const router = useRouter();
+const indexBlacklist = ['/ARCHIVE/', '/ABOUT/'];
 
 // 生成扁平列表
 const { sidebar } = theme.value;
@@ -21,7 +22,7 @@ Object.keys(sidebar).forEach((dir) => {
 // 过滤列表数据
 const LIST_AMOUNT = 15;
 const recList = list
-    .filter((item) => item.updateTime)
+    .filter((item) => item.updateTime && !indexBlacklist.includes(item.parentLink))
     .sort((a, b) => {
         const av = new Date(a.updateTime).getTime();
         const bv = new Date(b.updateTime).getTime();
