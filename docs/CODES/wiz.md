@@ -33,14 +33,14 @@ podman run --name wiz --restart=always -it -d -v ~/wizdata:/wiz/storage -v /etc/
 
 以上执行成功后，就能通过服务器IP访问到自己的笔记服务前后台了。
 
-如果重启过服务器，可以执行 `docker start wiz` 手动启动笔记服务。
+如果重启过服务器，可以执行 `podman start wiz` 手动启动笔记服务。
 
 如果官方发布了新镜像，想更新自己的服务的话，也很方便：
 
 ```bash
-docker stop wiz
-docker rm wiz
-docker pull wiznote/wizserver:latest
+podman stop wiz
+podman rm wiz
+podman pull wiznote/wizserver:latest
 ```
 
 然后重新在服务器上执行上面用过的部署的命令即可。
