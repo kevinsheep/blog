@@ -1,10 +1,10 @@
 ---
-title: ChartGPT
+title: 试玩人工智能
 updateTime: 2023/02/07
 ---
 
 ## Intro
-ChartGPT，一个由[OpenAI](https://platform.openai.com/)开发的人工智能聊天机器人程序。大概是从2022年底，国内当时还在各种疫情封控呢，就开始有小伙伴玩得不亦乐乎了。
+ChatGPT[OpenAI](https://platform.openai.com/)开发的人工智能聊天机器人程序。大概是从2022年底，国内当时还在各种疫情封控呢，就开始有小伙伴玩得不亦乐乎了。
 
 最近热度越来越高。
 
@@ -24,3 +24,13 @@ ChartGPT，一个由[OpenAI](https://platform.openai.com/)开发的人工智能�
 另外，邮箱验证最好使用Gmail、MSN之类的外国邮箱，以免收不到验证邮件。
 
 以上没有问题的话，到[官网注册页面](https://chat.openai.com/auth/login)一步步来即可，注册本身是不用什么教程了。
+
+## 折腾一下人工智能
+先试一下官网提供的例子。不得不说，比小娜、某度、精灵、小爱确实聪明不少的。但多次测试也会发现一些答非所问，或者使劲绕圈可就是没有准确的答案的对话。或许，能找到这些不足，是作为人类最后的倔强吧。😈
+
+这玩意儿对大陆地区注册不友好，可是使用中文提问时，居然深谙我们的审查机制。
+
+![折腾人工智能](../public/assets/docs/ChatCPT.png)
+
+## 上手试试
+现在好些平台为了降低网友们的体验门槛（主要是为了拉流量），也纷纷接入了 ChatGPT。我这也接了一个来玩玩：[openai-playground](/CODES/openai-playground.md)

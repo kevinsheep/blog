@@ -25,12 +25,15 @@ const reset = () => (chat.value = DEFAULT_CHAT);
 <style scoped>
 textarea {
     width: 100%;
-    height: calc(100vh - 580px);
+    height: calc(100vh - 600px);
+    min-height: 300px;
     padding: 18px;
     margin-top: 10px;
     border: 1px solid var(--vp-c-divider);
     border-radius: 8px;
     font-size: 14px;
+    background-color: var(--vp-c-bg);
+    color: var(--vp-c-text-1);
 }
 textarea:focus {
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
@@ -38,6 +41,7 @@ textarea:focus {
 .toolbar {
     text-align: right;
     padding-top: 5px;
+    margin-bottom: -50px;
 }
 .letters {
     float: left;
@@ -60,5 +64,8 @@ button {
 button.send {
     color: var(--vp-c-text-inverse-1);
     background-color: var(--vp-c-brand);
+}
+.VPDocFooter {
+    margin-top: 20px;
 }
 </style>
