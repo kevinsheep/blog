@@ -3,9 +3,12 @@ import { ref } from 'vue';
 import { generateChat, DEFAULT_CHAT } from '../utils/openai.ts';
 
 const chat = ref(DEFAULT_CHAT);
+const loading = ref(false);
 
 const send = async () => {
+    loading.value = true;
     chat.value = await generateChat(chat.value);
+    loading.value = false;
 };
 
 const input = ({ target }) => (chat.value = target.value);
@@ -14,7 +17,10 @@ const reset = () => (chat.value = DEFAULT_CHAT);
 </script>
 
 <template>
-    <textarea :value="chat" @input="input" placeholder="基于 ChatGPT API 的聊天程序" />
+    <div class="wrapper">
+        <textarea :value="chat" @input="input" placeholder="基于 ChatGPT API 的聊天程序" />
+        <div v-if="loading" class="loading spin"></div>
+    </div>
     <div class="toolbar">
         <span class="letters">{{ chat.length || 0 }}</span>
         <button @click="send" class="send">Send</button>
@@ -23,6 +29,40 @@ const reset = () => (chat.value = DEFAULT_CHAT);
 </template>
 
 <style scoped>
+/* prettier-ignore */
+.loading {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -8px;
+    margin-top: -8px;
+    width: 3px;
+    height: 3px;
+    border-radius: 100%; /* 圆角 */
+    box-shadow: 
+    0 -10px 0 1px #00a0e8, /* 上, 1px 扩展 */ 
+    0 10px #00a0e8, /* 下 */ 
+    -10px 0 #00a0e8, /* 左 */
+    10px 0 #00a0e8, /* 右 */ 
+    -7px -7px 0 0.5px #00a0e8, /* 左上, 0.5px扩展 */
+    7px -7px 0 1.5px #00a0e8, /* 右上, 1.5px扩展 */
+    7px 7px #00a0e8,/* 右下 */
+    -7px 7px #00a0e8; /* 左下 */
+}
+.spin {
+    animation: spin 1s steps(8) infinite;
+}
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+.wrapper {
+    position: relative;
+}
 textarea {
     width: 100%;
     height: calc(100vh - 600px);
