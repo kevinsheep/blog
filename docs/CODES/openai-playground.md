@@ -1,5 +1,5 @@
 ---
-title: ChartGPT Playground
+title: ChatGPT Playground
 layout: docs
 updateTime: 2023/02/11
 ---
