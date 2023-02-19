@@ -35,6 +35,7 @@ export default {
             canvas.height = height;
 
             this.ctx = canvas.getContext('2d');
+            this.ctx.clearRect(0, 0, width, height);
 
             if (this.globalCompositeOperation) {
                 this.ctx.globalCompositeOperation = this.globalCompositeOperation;
@@ -82,42 +83,28 @@ export default {
             }
             this.ctx.closePath();
         },
-        resize() {
-            const canvas = this.$refs.canvasRef;
-            const width = window.innerWidth;
-            const height = window.innerHeight;
-            canvas.width = width;
-            canvas.height = height;
+        reDraw() {
+            this.initCanvas();
 
-            if (this.globalCompositeOperation) {
-                this.ctx.globalCompositeOperation = this.globalCompositeOperation;
-            }
-            for (let i = 0; i < 50; i++) {
+            const width = window.innerWidth;
+            const density = width > 640 ? 50 : 15;
+
+            for (let i = 0; i < density; i++) {
                 this.drawArc();
             }
-            for (let i = 0; i < 50; i++) {
+            for (let i = 0; i < density; i++) {
                 this.drawRect();
             }
         },
     },
     mounted() {
-        this.initCanvas();
+        this.reDraw();
 
-        const width = window.innerWidth;
-        const density = width > 640 ? 50 : 15;
-
-        for (let i = 0; i < density; i++) {
-            this.drawArc();
-        }
-        for (let i = 0; i < density; i++) {
-            this.drawRect();
-        }
-
-        this.resize = this.resize.bind(this);
-        window.addEventListener('resize', this.resize);
+        this.reDraw = this.reDraw.bind(this);
+        window.addEventListener('resize', this.reDraw);
     },
     beforeDestory() {
-        window.removeEventListener('resize', this.resize);
+        window.removeEventListener('resize', this.reDraw);
     },
 };
 </script>
