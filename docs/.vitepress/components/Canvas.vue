@@ -103,10 +103,13 @@ export default {
     mounted() {
         this.initCanvas();
 
-        for (let i = 0; i < 50; i++) {
+        const width = window.innerWidth;
+        const density = width > 640 ? 50 : 15;
+
+        for (let i = 0; i < density; i++) {
             this.drawArc();
         }
-        for (let i = 0; i < 50; i++) {
+        for (let i = 0; i < density; i++) {
             this.drawRect();
         }
 
