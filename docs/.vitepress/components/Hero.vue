@@ -1,5 +1,6 @@
 <script setup>
 import { useData, useRouter } from 'vitepress';
+import Canvas from './Canvas.vue';
 
 const { theme } = useData();
 const router = useRouter();
@@ -32,6 +33,8 @@ const recList = list
 </script>
 
 <template>
+    <Canvas />
+
     <div class="index-wrapper">
         <header class="hero">
             <img src="/assets/img/avatar.png" />
@@ -52,6 +55,7 @@ const recList = list
 .index-wrapper {
   max-width: 960px;
   margin: 0 auto;
+  z-index: 100;
 
   header {
     text-align: center;
@@ -77,9 +81,21 @@ const recList = list
 
     li {
       list-style: none;
-      color: #aaa;
+      color: var(--vp-c-text-1);
       cursor: pointer;
       line-height: 1.7;
+
+      &:hover {
+        color: var(--vp-c-brand);
+      }
+
+      &:first-child, &:nth-child(2), , &:nth-child(3) {
+        color: var(--vp-c-sponsor);
+
+        .date {
+          color: var(--vp-c-sponsor);
+        }
+      }
 
       &:hover {
         color: var(--vp-c-brand);
@@ -88,7 +104,7 @@ const recList = list
       .date {
         font-size: 10px;
         line-height: 1;
-        color: var(--vp-c-gray-light-2);
+        color: var(--vp-c-text-2);
         margin-left: 5px;
         vertical-align: text-top;
       }
