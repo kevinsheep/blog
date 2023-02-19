@@ -1,1 +1,0 @@
-import{_ as e,o as t,c as a}from"./app.aed2495c.js";const l=JSON.parse('{"title":"首页","description":"","frontmatter":{"layout":"home","title":"首页"},"headers":[],"relativePath":"index.md","lastUpdated":1676800601000}'),o={name:"index.md"};function n(r,s,c,d,i,p){return t(),a("div")}const m=e(o,[["render",n]]);export{l as __pageData,m as default};
