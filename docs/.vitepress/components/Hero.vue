@@ -49,9 +49,9 @@ const recList = list
                 <span class="date">{{ item.updateTime }}</span>
                 <span class="dir">{{ item.parentText }} / </span>
                 <span class="tit">{{ item.text || '' }}</span>
-                <template v-if="item.tags && item.tags.length">
-                    <span class="tag" v-for="tag in item.tags" :key="tag">{{ tag }}</span>
-                </template>
+                <span class="tags-wrapper" v-if="item.tags && item.tags.length">
+                    <i class="tag" v-for="tag in item.tags" :key="tag">{{ tag }}</i>
+                </span>
             </li>
         </ol>
     </div>
@@ -116,6 +116,13 @@ const recList = list
         display: inline-block;
         border-radius: 4px;
         margin-left: 5px;
+        font-style: normal;
+      }
+      @media screen and (max-width : 400px)  {
+        .tags-wrapper {
+          display: block;
+          padding-left: 75px;
+        }
       }
 
       .date {
