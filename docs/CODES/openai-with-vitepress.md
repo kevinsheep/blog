@@ -21,6 +21,7 @@ updateTime: 2023/02/16
 
 ## 挂到后端服务
 以 eggjs 为例。服务部署过程从略。
+
 安装好 eggjs 后，再安装一下 `openapi`：
 
 ```nodejs
