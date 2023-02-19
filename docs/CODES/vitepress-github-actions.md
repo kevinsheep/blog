@@ -1,6 +1,7 @@
 ---
 title: 自动部署博客
 updateTime: '2023/01/28'
+tags: CD
 ---
 
 一般文档，写到构建完成就该差不多了。可 `VitePress` 相当认真地，写了在好几种平台上的部署方案。详见 [Deploying](https://vitepress.vuejs.org/guide/deploying)。

@@ -45,11 +45,11 @@ export default {
             const width = window.innerWidth;
             const height = window.innerHeight;
             const emptyX = width > 400 ? 50 : 0;
-            const emptyY1 = height > 550 ? 200 : 0;
-            const emptyY2 = height > 640 ? 120 : 0;
+            const emptyYFront = height > 550 ? 300 : 50;
+            const emptyYRear = height > 640 ? 120 : 0;
             const r = getRandomInt(10, 25);
             const x = getRandomInt(emptyX, width - r * 2 - emptyX);
-            const y = getRandomInt(emptyY1, height - r * 2 - emptyY2);
+            const y = getRandomInt(emptyYFront, height - r * 2 - emptyYRear);
             const red = getRandomInt(0, 255);
             const green = getRandomInt(0, 255);
             const blue = getRandomInt(0, 255);
@@ -83,7 +83,7 @@ export default {
             }
             this.ctx.closePath();
         },
-        reDraw() {
+        resize() {
             this.initCanvas();
 
             const width = window.innerWidth;
@@ -98,13 +98,13 @@ export default {
         },
     },
     mounted() {
-        this.reDraw();
+        this.resize();
 
-        this.reDraw = this.reDraw.bind(this);
-        window.addEventListener('resize', this.reDraw);
+        this.resize = this.resize.bind(this);
+        window.addEventListener('resize', this.resize);
     },
     beforeDestory() {
-        window.removeEventListener('resize', this.reDraw);
+        window.removeEventListener('resize', this.resize);
     },
 };
 </script>

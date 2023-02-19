@@ -1,6 +1,7 @@
 ---
 title: VitePress 自动内容导航
 updateTime: '2022/12/28'
+tags: FE
 ---
 
 先定义好用于构造导航的方法并暴露：

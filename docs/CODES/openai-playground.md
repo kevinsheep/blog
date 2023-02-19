@@ -2,6 +2,7 @@
 title: ChatGPT Playground
 layout: docs
 updateTime: 2023/02/11
+tags: AI|FE|BE
 ---
 
 <script setup>

@@ -1,6 +1,7 @@
 ---
 title: 为知笔记私人部署
 updateTime: 2023/02/05
+tags: Docker
 ---
 
 ## Intro

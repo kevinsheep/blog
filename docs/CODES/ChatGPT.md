@@ -1,6 +1,7 @@
 ---
 title: 试玩人工智能
 updateTime: 2023/02/07
+tags: AI|ESSAY
 ---
 
 ## Intro

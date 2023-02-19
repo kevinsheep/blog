@@ -1,6 +1,7 @@
 ---
 title: VitePress 更新日期显示组件
 updateTime: '2022/12/28'
+tags: FE
 ---
 
 实际上，官方自带了 [lastUpdated](https://vitepress.vuejs.org/config/frontmatter-configs#lastupdated) 的显示。但应用到博客上时，发现与自己需求有点出入，便又另外做了一个。
