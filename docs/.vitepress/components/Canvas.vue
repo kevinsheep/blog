@@ -43,9 +43,12 @@ export default {
         generateParams() {
             const width = window.innerWidth;
             const height = window.innerHeight;
+            const emptyX = width > 400 ? 50 : 0;
+            const emptyY1 = height > 550 ? 200 : 0;
+            const emptyY2 = height > 640 ? 120 : 0;
             const r = getRandomInt(10, 25);
-            const x = getRandomInt(50, width - r * 2 - 50);
-            const y = getRandomInt(400, height - r * 2 - 120);
+            const x = getRandomInt(emptyX, width - r * 2 - emptyX);
+            const y = getRandomInt(emptyY1, height - r * 2 - emptyY2);
             const red = getRandomInt(0, 255);
             const green = getRandomInt(0, 255);
             const blue = getRandomInt(0, 255);
@@ -89,7 +92,12 @@ export default {
             if (this.globalCompositeOperation) {
                 this.ctx.globalCompositeOperation = this.globalCompositeOperation;
             }
-            this.$emit('canvas-resize', { width, height });
+            for (let i = 0; i < 50; i++) {
+                this.drawArc();
+            }
+            for (let i = 0; i < 50; i++) {
+                this.drawRect();
+            }
         },
     },
     mounted() {
@@ -117,7 +125,7 @@ export default {
     height: 100%;
     display: block;
     background: transparent;
-    position: absolute;
+    position: fixed;
     left: 0;
     top: 0;
     z-index: -1;
