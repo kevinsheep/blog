@@ -53,7 +53,7 @@ export default {
             const red = getRandomInt(0, 255);
             const green = getRandomInt(0, 255);
             const blue = getRandomInt(0, 255);
-            const opacity = Math.random() * 0.1 + 0.05;
+            const opacity = Math.random() * 0.05 + 0.05;
             const color = `rgba(${red}, ${green}, ${blue}, ${opacity})`;
             const isStroke = Math.random() > 0.5;
             return { x, y, r, color, isStroke };

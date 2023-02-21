@@ -21,8 +21,6 @@ Object.keys(sidebar).forEach((dir) => {
     );
 });
 
-console.log(list);
-
 // 过滤列表数据
 const LIST_AMOUNT = 16;
 const recList = list
@@ -90,22 +88,6 @@ const recList = list
       color: var(--vp-c-text-1);
       cursor: pointer;
       line-height: 1.7;
-
-      &:first-child, &:nth-child(2), , &:nth-child(3) {
-        color: var(--vp-c-sponsor);
-
-        .date {
-          color: var(--vp-c-sponsor);
-        }
-      }
-      &:hover {
-        color: var(--vp-c-brand);
-
-        .date {
-          color: var(--vp-c-brand);
-        }
-      }
-
       .tag {
         font-size: 10px;
         line-height: 15px;
@@ -126,13 +108,34 @@ const recList = list
       }
 
       .date {
+        display: inline-block;
+        width: 80px;
         font-size: 10px;
         line-height: 1;
         color: var(--vp-c-text-2);
-        margin-right: 8px;
         font-family: var(--vp-font-family-mono);
         vertical-align: text-bottom;
       }
+
+      &:first-child, &:nth-child(2), , &:nth-child(3) {
+        color: var(--vp-c-sponsor);
+
+        .date {
+          color: var(--vp-c-sponsor);
+        }
+      }
+      &:hover {
+        color: var(--vp-c-brand);
+
+        .date {
+          color: var(--vp-c-brand);
+        }
+        .tag {
+          background-color: var(--vp-c-brand);
+        }
+      }
+
+
     }
   }
 }

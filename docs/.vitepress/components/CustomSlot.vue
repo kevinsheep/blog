@@ -2,6 +2,7 @@
 import DefaultTheme from 'vitepress/theme';
 import Hero from './Hero.vue';
 import LastUpdated from './LastUpdated.vue';
+import Tags from './Tags.vue';
 import Issue from './Issue.vue';
 
 const { Layout } = DefaultTheme;
@@ -14,7 +15,10 @@ const { Layout } = DefaultTheme;
         </template>
 
         <template #doc-before>
-            <LastUpdated />
+            <div class="doc-before-wrapper">
+                <Tags />
+                <LastUpdated />
+            </div>
         </template>
 
         <template #doc-after>
