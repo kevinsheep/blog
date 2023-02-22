@@ -16,7 +16,7 @@ VitePress 官方文档连[使用 GitHub Actions 部署的方法](https://vitepre
 
 官方文档的 yml 配置是基于 `yarn` 打包的，这里分享一下我基于 `pnmp` 打包的配置文件：
 
-```yml
+```yaml
 # Simple workflow for deploying static content to GitHub Pages
 name: Deploy static content to Pages
 

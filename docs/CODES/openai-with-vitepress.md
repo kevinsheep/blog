@@ -25,7 +25,7 @@ tags: AI|FE|BE
 
 安装好 eggjs 后，再安装一下 `openapi`：
 
-```nodejs
+```bash
 npm install openapi
 ```
 
