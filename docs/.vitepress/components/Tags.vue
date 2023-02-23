@@ -10,7 +10,7 @@ const tagArray = computed(() => {
 </script>
 
 <template>
-    <div class="my-tags">
+    <div class="my-tags" v-if="tagArray.length && tagArray[0]">
         Tags: <span v-for="tag in tagArray" :key="tag">{{ tag }}</span>
     </div>
 </template>
