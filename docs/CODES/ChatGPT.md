@@ -5,9 +5,11 @@ tags: AI|ESSAY
 ---
 
 ## Intro
-ChatGPT[OpenAI](https://platform.openai.com/)开发的人工智能聊天机器人程序。大概是从2022年底，国内当时还在各种疫情封控呢，就开始有小伙伴玩得不亦乐乎了。
+最近AI热度越来越高。据说元宇宙、区块链已被人遗忘在角落了。
 
-最近热度越来越高。
+有不少人担心AI会失控、奴役人类；也有人觉得AI不可能取代人类的思想。想起来，我在[2017年总结](/ESSAY/summary-of-2017.html)时，就在想AI与人类能力的关系。6年后回首，技术进步得比较想象中快多了，可是观点仍然不变。
+
+ChatGPT是[OpenAI](https://platform.openai.com/)开发的人工智能聊天机器人程序。大概是从2022年底，国内当时还在各种疫情封控呢，就开始有小伙伴玩得不亦乐乎了。
 
 据说ChatGPT于2022年11月发布后，OpenAI估值已涨至290亿美元。上线两个月后，用户数量达到1亿。
 
@@ -31,7 +33,7 @@ ChatGPT[OpenAI](https://platform.openai.com/)开发的人工智能聊天机器�
 
 这玩意儿对大陆地区注册不友好，可是使用中文提问时，居然深谙我们的审查机制。
 
-![折腾人工智能](../public/assets/docs/ChatCPT.png)
+![折腾人工智能](/assets/docs/ChatCPT.png)
 
 ## 上手试试
 现在好些平台为了降低网友们的体验门槛（主要是为了拉流量），也纷纷接入了 ChatGPT。我这也接了一个来玩玩：[openai-playground](/CODES/openai-playground.md)
