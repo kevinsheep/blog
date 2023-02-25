@@ -11,6 +11,19 @@ const tagArray = computed(() => {
 
 <template>
     <div class="my-tags" v-if="tagArray.length && tagArray[0]">
-        Tags: <span v-for="tag in tagArray" :key="tag">{{ tag }}</span>
+        Tags: <a :href="`/tags.html?tag=${tag}`" v-for="tag in tagArray" :key="tag">{{ tag }}</a>
     </div>
 </template>
+
+<style scoped lang="stylus">
+.my-tags {
+    flex: 1;
+    font-size: 14px;
+    color: var(--vp-c-text-3);
+
+    a {
+        color: var(--vp-c-sponsor);
+        font-weight: bolder;
+    }
+}
+</style>

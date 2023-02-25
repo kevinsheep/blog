@@ -204,6 +204,10 @@
   color: var(--vp-c-text-3);
 }
 
+#app, #app>div {
+  min-height: 100vh;
+}
+
 #app footer {
   border-top-width: 0;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
@@ -216,14 +220,4 @@
 .doc-before-wrapper {
   display: flex;
   flex-direction: row;
-}
-
-.my-tags {
-  flex: 1;
-  font-size: 14px;
-  color: var(--vp-c-text-3);
-
-  span {
-    margin-right: 6px;
-  }
 }

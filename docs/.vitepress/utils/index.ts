@@ -7,6 +7,7 @@ export const getUrlParam = (key: string) => {
     return param ? decodeURIComponent(param) : null;
 };
 
+// 兼容alert的通知
 export const notify = (body: string) => {
     const title = '提个醒：';
     const icon = '/assets/img/avatar-head.png';
@@ -21,4 +22,21 @@ export const notify = (body: string) => {
             }
         });
     }
+};
+
+// 基于theme.sidebar生成扁平列表
+export const getFlatList = (sidebar: object) => {
+    const list = [];
+    Object.keys(sidebar).forEach((dir) => {
+        const onlyChild = sidebar[dir][0]; // ASSERT 有且仅有一个子栏目
+        onlyChild.items.forEach((item) =>
+            list.push({
+                ...item,
+                parentLink: dir,
+                parentText: onlyChild.text,
+                tags: item.tags && item.tags.split('|'),
+            })
+        );
+    });
+    return list;
 };
