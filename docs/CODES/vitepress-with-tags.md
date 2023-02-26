@@ -27,13 +27,14 @@ Object.keys(sidebar).forEach((dir) => {
             ...item,
             parentLink: dir,
             parentText: onlyChild.text,
-            tags: item.tags && item.tags.split('|'), // [!code  ++]
+            tags: item.tags && item.tags.split('|'), // [!code ++]
         })
     );
 });
 ```
+你也可以把上面操作，封装成专门的方法，以便同时被首页列表及 Tag 列表调用。
 
-然后，就可以在 `<template>` 的列表中使用了。
+然后，就可以在 `<template>` 中使用 `list` 了。
 
 ## 内容页显示
 在内容页中，可以直接使用 `$frontmatter.tags` 显示。但这样有两个不足：
@@ -66,3 +67,78 @@ const tagArray = computed(() => {
 组件引入后，放置在 `<template #doc-before />` 内即可。
 
 样式定义从略。
+
+## Tag 相关文章页
+新建一个空白、无布局页面，用于实现专门的功能：
+```vue
+<!-- /docs/tags.md -->
+---
+layout: false
+title: TAGS
+---
+
+<script setup>
+import TagList from '.vitepress/components/TagList.vue'
+</script>
+
+<Suspense >
+    <TagList />
+</Suspense>
+```
+
+`TagList` 为异步组件，故上面引用需要 `Suspense` 包裹，组件基于 `theme.sidebar` 生成基础数据：关联文章的列表。其中 `getFlatList` 方法参考[VitePress首页内容推荐](/CODES/vitepress-recommendation.html)
+```vue
+<script setup>
+// ～/docs/.vitepress/components/TagList.vue
+import { useData } from 'vitepress';
+import { getUrlParam, getFlatList } from '../utils';
+import { onBeforeMount } from 'vue';
+import List from './List.vue';
+
+const { theme } = useData();
+// 生成扁平列表
+const { sidebar, footer } = theme.value;
+const list = getFlatList(sidebar);
+
+let tag = '';
+let relList;
+
+onBeforeMount(async () => {
+    tag = getUrlParam('tag'); // 从地址参数获取到当前tag
+    if (tag) {
+        // 对全站文章作筛选
+        relList = list.filter((l) => l.tags && l.tags.includes(tag));
+    }
+});
+</script>
+
+<template>
+    <div class="tag-page">
+        <nav>
+            <span>TAG: {{ tag }}</span>
+            <a class="VPLink" href="/">首页</a>
+        </nav>
+        <div class="list-wrapper">
+            <List :list="relList" />
+        </div>
+    </div>
+</template>
+```
+
+`style` 详细定义从略。
+
+## 加上链接
+让标签带上链接，跳转到关联内容列表页地址`/tags.html?tag=${tag}`：
+
+```vue{6}
+<template>
+    <ol>
+        <li v-for="(item, index) in list" :key="index">
+            <a class="tit" :href="item.link">{{ item.text || '' }}</a>
+            <span class="tags-wrapper" v-if="item.tags && item.tags.length">
+                <a class="tag" :href="`/tags.html?tag=${tag}`" v-for="tag in item.tags" :key="tag">{{ tag }}</a> 
+            </span>
+        </li>
+    </ol>
+</template>
+```
