@@ -24,6 +24,11 @@ const tagArray = computed(() => {
     a {
         color: var(--vp-c-sponsor);
         font-weight: bolder;
+        margin-left: 8px;
+
+        &:hover {
+            color: var(--vp-c-brand);
+        }
     }
 }
 </style>
