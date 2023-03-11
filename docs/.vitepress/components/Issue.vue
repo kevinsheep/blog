@@ -92,8 +92,9 @@ onMounted(async () => {
 });
 
 const isLogin = computed(() => {
+    const hasIssue = ci.value && (ci.value.body || ci.value.c_list.length);
     const hasToken = access_token.value && JSON.stringify(toRaw(access_token.value)) !== '{}';
-    return hasToken && !apiError.value;
+    return hasIssue || (hasToken && !apiError.value);
 });
 
 // 监听页面变动，加载评论列表
