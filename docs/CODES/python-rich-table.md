@@ -42,14 +42,14 @@ from rich.console import Console
 from rich.table import Table
 
 cell = Table(show_header = False, show_lines=True)
-cell.add_row("子表标题一", "子表标题二")
-cell.add_row("如果你想，还可以继续嵌套")
+cell.add_row("Title of Sub Table", "Title Two")
+cell.add_row("You can add more,\nif you want")
 
 subTable = Table(show_header = False)
-subTable.add_row("左边栏", cell, "右边栏")
+subTable.add_row("Left\nColumn", cell, "Right\nColumn")
 
 table = Table()
-table.add_column("表格标题")
+table.add_column("Title of Table")
 table.add_row(subTable)
 
 console = Console()
