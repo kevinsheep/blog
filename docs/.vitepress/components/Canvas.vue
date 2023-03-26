@@ -87,7 +87,7 @@ export default {
             this.initCanvas();
 
             const width = window.innerWidth;
-            const density = width > 640 ? 50 : 15;
+            const density = width > 640 ? 30 : 15; // 图形数量
 
             for (let i = 0; i < density; i++) {
                 this.drawArc();

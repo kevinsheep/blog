@@ -14,7 +14,7 @@ tags: AI|FE|BE
 我也尝试在博客中引入一下，效果如：[openai-playground](/CODES/openai-playground.html)
 
 ## 准备工作
-1. 如果注册和试用ChatGPT，[另文介绍](/CODES/ChatGPT.html)。
+1. 如果注册和试用ChatGPT，[另文介绍](/EXPERIENCE/ChatGPT.html)。
 
 2. 注册好后，拿到属于自己的[API keys](https://platform.openai.com/account/api-keys)
 
