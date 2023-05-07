@@ -1,7 +1,7 @@
 ---
-title: 试玩人工智能
+title: 试玩人工智能ChatGPT
 updateTime: 2023/02/07
-tags: AI|ESSAY
+tags: OpenAI|ChatGPT
 ---
 
 ## Intro
