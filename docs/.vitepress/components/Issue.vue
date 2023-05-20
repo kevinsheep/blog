@@ -91,10 +91,11 @@ onMounted(async () => {
     access_token.value = getLS(TOKEN_KEY);
 });
 
+const hasIssue = computed(() => ci.value && (ci.value.body || ci.value.c_list.length));
+
 const isLogin = computed(() => {
-    const hasIssue = ci.value && (ci.value.body || ci.value.c_list.length);
     const hasToken = access_token.value && JSON.stringify(toRaw(access_token.value)) !== '{}';
-    return hasIssue || (hasToken && !apiError.value);
+    return hasToken && !apiError.value;
 });
 
 // 监听页面变动，加载评论列表
@@ -166,7 +167,7 @@ watch(isLogin, (isLogin) => {
             <ClientOnly> 请 <a :href="link_get_code()">登录你的 GitHub 账号</a> 后发表评论 </ClientOnly>
         </div>
 
-        <template v-else-if="ci">
+        <template v-if="hasIssue">
             <div class="cell" v-if="ci.body">
                 <div class="meta">
                     <a class="avatar" :href="ci.user.html_url"><img :src="ci.user.avatar_url" :alt="ci.user.name" /></a>
@@ -200,8 +201,6 @@ watch(isLogin, (isLogin) => {
 
         <span class="btn-add" @click="toComment" v-if="isLogin">发表</span>
 
-        <div class="to-gitee" v-if="isLogin && ci && ci.html_url">
-            或者到 <a :href="ci.html_url">GitHub</a> 表扬作者
-        </div>
+        <div v-if="hasIssue" class="to-gitee">&gt; <a :href="ci.html_url">到 GitHub Issues 表扬作者</a></div>
     </div>
 </template>
