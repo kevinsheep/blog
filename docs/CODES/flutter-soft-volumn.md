@@ -128,7 +128,7 @@ class _MyAppState extends State<MyApp> {
 
 实现效果：
 
-![soft_volumn.jpg](../public/assets/docs/soft_volumn.jpg)
+![soft_volumn.jpg](/assets/docs/soft_volumn.jpg)
 
 代码中引用到的库：[volume_controller](https://pub.dev/packages/volume_controller)
 
