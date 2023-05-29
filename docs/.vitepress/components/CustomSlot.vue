@@ -1,5 +1,6 @@
 <script setup>
 import DefaultTheme from 'vitepress/theme';
+import LayoutTop from './LayoutTop.vue';
 import Hero from './Hero.vue';
 import LastUpdated from './LastUpdated.vue';
 import Tags from './Tags.vue';
@@ -10,6 +11,10 @@ const { Layout } = DefaultTheme;
 
 <template>
     <Layout>
+        <!-- <template #layout-top>
+            <LayoutTop />
+        </template> -->
+
         <template #home-hero-after>
             <Hero />
         </template>

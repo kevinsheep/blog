@@ -44,9 +44,9 @@ export default {
         generateParams() {
             const width = window.innerWidth;
             const height = window.innerHeight;
-            const emptyX = width > 400 ? 50 : 0;
-            const emptyYFront = height > 550 ? 300 : 50;
-            const emptyYRear = height > 640 ? 120 : 0;
+            const emptyX = width > 400 ? 50 : 0; // 左右空白宽度
+            const emptyYFront = height > 550 ? 500 : 50; // 上空白位置
+            const emptyYRear = height > 640 ? 120 : 0; // 下空白位置
             const r = getRandomInt(10, 25);
             const x = getRandomInt(emptyX, width - r * 2 - emptyX);
             const y = getRandomInt(emptyYFront, height - r * 2 - emptyYRear);
@@ -87,7 +87,7 @@ export default {
             this.initCanvas();
 
             const width = window.innerWidth;
-            const density = width > 640 ? 30 : 15; // 图形数量
+            const density = width > 640 ? 20 : 15; // 图形数量
 
             for (let i = 0; i < density; i++) {
                 this.drawArc();

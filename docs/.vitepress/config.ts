@@ -28,6 +28,9 @@ export default {
             message: 'Released under the MIT License.',
             copyright: 'Copyright © 2010-present, KEVINSHEEP.',
         },
+        search: {
+            provider: 'local',
+        },
     },
     head: [
         [
