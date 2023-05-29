@@ -13,7 +13,7 @@
     "devDependencies": {
         "@types/node": "^18.6.3",
         "stylus": "^0.58.1",
-        "vitepress": "1.0.0-alpha.75",
+        "vitepress": "1.0.0-beta.1",
         "vue": "^3.2.37"
     },
     "dependencies": {
