@@ -1,6 +1,7 @@
 :root {
   --vp-c-brand: #00a0e8;
   --vp-c-brand-dark: #00a0e8;
+  // --vp-layout-top-height: 80px;
 }
 
 .VPNavBarTitle {
@@ -17,9 +18,11 @@
   }
 }
 
-.VPNavBar.has-sidebar {
-  .VPNavBarTitle {
-    display: block;
+.VPNavBar {
+  &.has-sidebar {
+    .VPNavBarTitle {
+      display: block;
+    }
   }
 }
 

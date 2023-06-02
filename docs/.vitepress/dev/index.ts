@@ -16,10 +16,10 @@ export const COLS = [
 /**
  * ! 各分类只对应单一文件夹，暂未考虑多级目录、混合目录的情况
  * @description 根据 `COLS` 生成侧边导航（二级）
- * @returns {Object} sidebar
+ * @returns { SidebarObject } sidebar
  */
-export const getSidebar = (): Object => {
-    const list = {};
+export const getSidebar = () => {
+    const list: SidebarObject = {};
     const IGNORE_TEXT = '[TODO]';
     const INDEX_FILE = 'index';
 
@@ -35,10 +35,10 @@ export const getSidebar = (): Object => {
                         const path = `${dir}${file}`;
                         const filename = file.replace(/\.md$/, '');
                         const filepath = `${link}${filename}`;
-                        const { data = {} } = matter.read(path) || {};
+                        const { data } = (matter.read(path) || {}) as Formatters;
                         return {
                             ...data,
-                            text: data.title || filename,
+                            text: data?.title ?? filename,
                             link: filepath,
                         };
                     })
@@ -50,6 +50,32 @@ export const getSidebar = (): Object => {
                     }),
             },
         ];
+    });
+
+    return list;
+};
+
+/**
+ * @description 生成banner列表，将所有带banner的内容筛选出来
+ */
+export const getBanners = () => {
+    const list: BannerType[] = [];
+
+    COLS.forEach(async ({ link, text }) => {
+        const dir = `./docs${link}`;
+        const files = (await readdir(dir)) || [];
+        files.forEach((file) => {
+            const path = `${dir}${file}`;
+            const filename = file.replace(/\.md$/, '');
+            const filepath = `${link}${filename}`;
+            const { data } = (matter.read(path) || {}) as Formatters;
+            if (data?.banner) {
+                list.push({
+                    ...data,
+                    link: data.link ?? filepath,
+                });
+            }
+        });
     });
 
     return list;

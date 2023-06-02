@@ -1,4 +1,4 @@
-import { getSidebar, COLS } from './dev';
+import { getSidebar, getBanners, COLS } from './dev';
 import { gitee } from './base-img';
 
 export default {
@@ -31,6 +31,7 @@ export default {
         search: {
             provider: 'local',
         },
+        banner: getBanners(),
     },
     head: [
         [

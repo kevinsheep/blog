@@ -1,5 +1,7 @@
 ---
 title: 一支红杏
+banner: /assets/banner/yizhihongxing.jpg
+link: https://order.yizhihongxing.org/aff.php?aff=4353
 ---
 
 ## Intro

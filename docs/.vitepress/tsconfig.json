@@ -4,8 +4,5 @@
         "esModuleInterop": true,
         "allowJs": true
     },
-    "vueCompilerOptions": {
-        "experimentalDisableTemplateSupport": true
-    },
-    "include": ["*/**/*.ts", "*/**/*.vue"]
+    "include": ["*/**/*.ts", "*/**/*.vue", "**/*.d.ts"]
 }
