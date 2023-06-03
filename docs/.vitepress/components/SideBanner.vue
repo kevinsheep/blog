@@ -12,7 +12,7 @@ watch(
     () => {
         const index = Math.floor(Math.random() * banner.length);
         r.value = banner[index];
-        console.log(r.value);
+        // console.log(r.value);
     },
     { immediate: true }
 );
