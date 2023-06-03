@@ -1,5 +1,6 @@
 ---
 title: 一支红杏
+updateTime: 2023/05/29
 banner: /assets/banner/yizhihongxing.jpg
 link: https://order.yizhihongxing.org/aff.php?aff=4353
 ---
@@ -8,7 +9,7 @@ link: https://order.yizhihongxing.org/aff.php?aff=4353
 
 亲自用过的科学上网代理推荐。
 
-不能说最稳定，懂的都懂，但性价比绝对高。Trojan Lite，￥99.00/年，1000 Mbps带宽/100 G 月流量，全球多线路，支持流媒体，5台设备数量限制。用了好几年，也就某些特殊的日子不太稳定。
+不能说最稳定，特殊的日子很多代理会失效，懂的都懂，但这个一支红杏性价比很高。￥99.00/年，1000 Mbps带宽/100 G 月流量，全球多线路，支持流媒体，5台设备数量限制。用了好几年，也就某些特殊的日子不太稳定。
 
 ## How to
 

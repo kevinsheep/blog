@@ -1,5 +1,6 @@
 ---
 title: PikPak 云盘
+updateTime: 2023/06/03
 banner: /assets/banner/pikpak.jpg
 link: https://mypikpak.com/drive/activity/invited?invitation-code=39773158
 ---

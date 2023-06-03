@@ -1,6 +1,6 @@
 ---
 title: VitePress Banner组件
-updateTime: '2023/06/03'
+updateTime: 2023/06/02
 tags: FE|Banner|广告
 ---
 
@@ -41,8 +41,7 @@ import matter from 'gray-matter';
 // COLS 为指定可能需要展示 banner 的目录
 export const COLS = [
     { text: '好物推荐', link: '/GOODS/' },
-    { text: '体验', link: '/EXPERIENCE/' },
-    { text: '折腾', link: '/CODES/' },
+    // ...
 ];
 
 export const getBanners = () => {
