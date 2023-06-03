@@ -72,6 +72,7 @@ export const getBanners = () => {
             if (data?.banner) {
                 list.push({
                     ...data,
+                    nav: text,
                     link: data.link ?? filepath,
                 });
             }

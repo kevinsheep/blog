@@ -19,13 +19,31 @@ watch(
 </script>
 
 <template>
-    <a :href="r.link" target="_blank">
-        <img :src="r.banner" :alt="r.title" class="banner" />
+    <a :href="r.link" target="_blank" class="banner">
+        <img :src="r.banner" :alt="r.title" />
+        <span>{{ r.nav || '广而告之' }}</span>
     </a>
 </template>
 
 <style lang="stylus">
 .banner {
+    display: block;
     width: 100%;
+    position: relative;
+
+    span {
+        position: absolute;
+        top: 0;
+        right: 0;
+        color: #fff;
+        font-size: 10px;
+        padding: 0px 3px;
+        line-height: 18px;
+        background-color: rgba(0, 0, 0, 0.2);
+    }
+
+    img {
+        width: 100%;
+    }
 }
 </style>

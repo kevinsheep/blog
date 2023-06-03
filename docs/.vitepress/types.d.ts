@@ -13,6 +13,7 @@ type SidebarObject = Record<
 type BannerType = {
     banner?: string;
     link?: string;
+    nav?: string;
 };
 
 type Formatters = {
