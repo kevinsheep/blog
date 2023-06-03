@@ -21,6 +21,10 @@ updateTime: '2023/01/31'
 
 截止本文完成，`VitePress` 最新版本为 `1.0.0-alpha.40`。
 
+::: tip
+现在已经是 `1.0.0-beta.1` 了
+:::
+
 ## 自定义主题
 虽然没有了插件机制，但我觉得自定义的自由度还是极高的（换言之，就是要好多个性化的地方需要手动编码的意思）。详见 [Theme Introduction](https://vitepress.vuejs.org/guide/theme-introduction)。
 
@@ -32,19 +36,24 @@ updateTime: '2023/01/31'
 ## 内容导航 
 从 `VuePress` 到 `VitePress`，都没有一个官方的导航链接构造工具。这是我没有想到的。那就自己来吧。
 
-参见：[VitePress 自动内容导航](/CODES/vitepress-navigation.html)
+参见 [VitePress 自动内容导航](/CODES/vitepress-navigation.html)
 
 ## 首页推荐列表
 个人博客毕竟不需要像某个开源库一样，在首页放一堆吸引人来使用和加入的广告语及特性介绍。所以要么就直接不要首页，要的话放一个推荐、最新文章列表就好了。
 
 同样地，这样的模块也是不想每次都手动整理的。
 
-参见：[VitePress 首页内容推荐](/CODES/vitepress-recommendation.html)
+参见 [VitePress 首页内容推荐](/CODES/vitepress-recommendation.html)
 
 ## Tags
 除了栏目划分外，博客还需要Tags来突出读者可能关心的内容，并进一步归类。
 
-参见[给VitePress博文加上标签](/CODES/vitepress-with-tags.html)
+参见 [给VitePress博文加上标签](/CODES/vitepress-with-tags.html)
+
+## Banner 组件
+博客内容带图片推荐，自定义广告位，包括样式、位置、内容，还要清爽、美观、不扰民……
+
+参见 [VitePress Banner组件](/CODES/vitepress-banner.html)
 
 ## 评论系统
 作为一个静态博客，博客本身是无法实现评论互动的。既然博客的内容存放在代码仓库中，并使用他们提供的 **Pages 功能，评论自然也可以使用代码 issues 来进行互动。

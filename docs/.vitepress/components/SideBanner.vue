@@ -21,7 +21,7 @@ watch(
 <template>
     <a :href="r.link" target="_blank" class="banner">
         <img :src="r.banner" :alt="r.title" />
-        <span>{{ r.nav || '广而告之' }}</span>
+        <span>{{ r.nav ?? '广而告之' }}</span>
     </a>
 </template>
 

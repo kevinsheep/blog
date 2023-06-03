@@ -11,7 +11,9 @@ tags: FE
 
 VitePress 是支持格式化地自定义一些文章的信息的，可以利用起来，存放标签信息。
 
+:::tip
 以下内容，是基于 VitePress 的 [Frontmatter](https://vitepress.vuejs.org/guide/frontmatter#frontmatter) 功能，以及自定义组件实现。关于自定义组件，也可以参考[VitePress深度折腾](/CODES/vitepress-play-around.html)系列介绍。
+:::
 
 ## 首页显示
 首先参考[VitePress首页内容推荐](/CODES/vitepress-recommendation.html)，生成首页推荐列表。在生成列表数据时映射 `tags` 数据并格式化处理。
