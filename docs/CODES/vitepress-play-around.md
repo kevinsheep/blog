@@ -31,7 +31,7 @@ updateTime: '2023/01/31'
 这里举一个小例子：[VitePress 自定义更新日期显示](/CODES/vitepress-last-updated.html)。
 
 ## 发布设置
-另文介绍：[自动部署博客](/CODES/vitepress-last-updated.html)
+另文介绍：[自动部署博客](/CODES/vitepress-github-actions.html)
 
 ## 内容导航 
 从 `VuePress` 到 `VitePress`，都没有一个官方的导航链接构造工具。这是我没有想到的。那就自己来吧。
