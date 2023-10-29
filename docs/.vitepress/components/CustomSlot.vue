@@ -4,6 +4,7 @@ import SideBanner from './SideBanner.vue';
 import Hero from './Hero.vue';
 import LastUpdated from './LastUpdated.vue';
 import Tags from './Tags.vue';
+import TopNotice from './TopNotice.vue';
 import Issue from './Issue.vue';
 
 const { Layout } = DefaultTheme;
@@ -32,6 +33,10 @@ const { Layout } = DefaultTheme;
                     <Issue />
                 </Suspense>
             </ClientOnly>
+        </template>
+
+        <template #layout-top>
+            <TopNotice />
         </template>
     </Layout>
 </template>

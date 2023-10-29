@@ -40,3 +40,17 @@ export const getFlatList = (sidebar: object) => {
     });
     return list;
 };
+
+// LocalStorage
+export const getLS = (key: string, defaultData: string = '{}') => {
+    const LS = JSON.parse(window.localStorage.getItem(key) ?? defaultData);
+    return LS;
+};
+
+export const setLS = (key: string, data: object | string) => {
+    window.localStorage.setItem(key, JSON.stringify(data));
+};
+
+export const removeLS = (key: string) => {
+    window.localStorage.removeItem(key);
+};

@@ -2,17 +2,8 @@
 import { useData } from 'vitepress';
 import { ref, watch, onMounted, computed, nextTick, toRaw } from 'vue';
 import { notify } from '../utils';
-import {
-    link_get_code,
-    getIssue,
-    getComments,
-    addComment,
-    addIssue,
-    setLS,
-    getLS,
-    TOKEN_KEY,
-    REDIRECT_KEY,
-} from '../utils/fetch.ts';
+import { link_get_code, getIssue, getComments, addComment, addIssue, TOKEN_KEY, REDIRECT_KEY } from '../utils/fetch.ts';
+import { setLS, getLS } from '../utils/index.ts';
 import dayjs from 'dayjs';
 import 'dayjs/locale/zh-cn';
 import relativeTime from 'dayjs/plugin/relativeTime';

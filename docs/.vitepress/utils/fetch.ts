@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { notify } from './index';
+import { notify, removeLS, setLS, getLS } from './index';
 
 const OWNER = 'kevinsheep';
 const REPO = 'blog';
@@ -17,19 +17,6 @@ const axiosService = axios.create({ baseURL });
 
 export const REDIRECT_KEY = 'REDIRECT_PAGE';
 export const TOKEN_KEY = 'TOKEN_DATA';
-
-export const getLS = (key: string, defaultData: string = '{}') => {
-    const LS = JSON.parse(window.localStorage.getItem(key) || defaultData);
-    return LS;
-};
-
-export const setLS = (key: string, data: object | string) => {
-    window.localStorage.setItem(key, JSON.stringify(data));
-};
-
-export const removeLS = (key: string) => {
-    window.localStorage.removeItem(key);
-};
 
 // 三方认证页面
 export const link_get_code = () => {
