@@ -1,7 +1,7 @@
 ---
 title: VitePress 首页内容推荐
 updateTime: '2022/12/28'
-tags: FE
+tags: 前端
 ---
 
 基本的原理，是提取 `useData` 中的导航数据，将原来带级别的导航改成扁平列表。根据 `updateTime` 来排序并提取指定条数。

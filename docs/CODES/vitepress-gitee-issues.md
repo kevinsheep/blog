@@ -1,7 +1,7 @@
 ---
 title: Gitee 应用实现博客评论
 updateTime: '2023/01/25'
-tags: FE
+tags: 前端
 ---
 
 以下内容系基于 VitePress + Gitee Issues，实现 Gitee Pages 静态博客的文章评论。

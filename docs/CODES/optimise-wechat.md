@@ -1,7 +1,7 @@
 ---
 title: 微信小程序性能优化
 updateTime: 2023/05/21
-tags: FE|wechat
+tags: 前端|wechat
 ---
 
 ## 前言

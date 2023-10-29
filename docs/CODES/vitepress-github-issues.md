@@ -1,7 +1,7 @@
 ---
 title: GitHub 应用实现博客评论
 updateTime: '2023/01/24'
-tags: FE|BE
+tags: 前端|后端
 ---
 
 以下内容系基于 VitePress + GitHub Issues，实现 GitHub Pages 静态博客的文章评论。本文或许是你能搜索到的，此应用场景下最详细的指引（当然，有可能是我没用力搜索）。

@@ -68,11 +68,11 @@ export const getBanners = () => {
             const path = `${dir}${file}`;
             const filename = file.replace(/\.md$/, '');
             const filepath = `${link}${filename}`;
-            const { data } = (matter.read(path) || {}) as Formatters;
+            const { data, bannerNote } = (matter.read(path) || {}) as Formatters;
             if (data?.banner) {
                 list.push({
                     ...data,
-                    nav: text,
+                    nav: bannerNote ?? text,
                     link: data.link ?? filepath,
                 });
             }

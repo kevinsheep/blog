@@ -1,7 +1,7 @@
 ---
 title: VitePress Banner组件
 updateTime: 2023/06/02
-tags: FE|Banner|广告
+tags: 前端|Banner|广告
 ---
 
 ## Intro

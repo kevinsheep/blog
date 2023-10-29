@@ -1,7 +1,7 @@
 ---
 title: 给VitePress博文加上标签
 updateTime: '2023/02/21'
-tags: FE
+tags: 前端
 ---
 
 ## Intro

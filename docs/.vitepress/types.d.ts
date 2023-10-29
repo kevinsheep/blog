@@ -12,6 +12,7 @@ type SidebarObject = Record<
 
 type BannerType = {
     banner?: string;
+    bannerNote?: string;
     link?: string;
     nav?: string;
 };

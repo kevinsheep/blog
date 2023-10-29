@@ -1,7 +1,7 @@
 ---
 title: JavaScript 代码优化
 updateTime: 2019/01/25
-tags: FE
+tags: 前端
 ---
 
 ## 前言

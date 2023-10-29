@@ -1,7 +1,7 @@
 ---
 title: 把人工智能嵌入到VitePress
 updateTime: 2023/02/16
-tags: AI|FE|BE
+tags: AI|前端|后端
 ---
 
 ## Intro
