@@ -4,7 +4,7 @@ sidebar: false
 lastUpdated: false
 ---
 
-![LOGO](/assets/img/logo.png)
+![LOGO](/logo.svg)
 
 ::: tip NOTICE
 You are visiting my BLOG for so and so reason.
