@@ -10,7 +10,6 @@ const r = ref({});
 watch(
     page,
     () => {
-        console.log(banner);
         const index = Math.floor(Math.random() * banner.length);
         r.value = banner[index];
         // console.log(r.value);
