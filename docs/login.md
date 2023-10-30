@@ -7,7 +7,8 @@ title: 登录页
 import { useRouter } from 'vitepress';
 import { onBeforeMount } from 'vue';
 import { getUrlParam } from '.vitepress/utils';
-import { getAccessToken, REDIRECT_KEY, getLS } from '.vitepress/utils/fetch.ts';
+import { getAccessToken, REDIRECT_KEY } from '.vitepress/utils/fetch.ts';
+import { getLS } from '.vitepress/utils/index.ts';
 
 const router = useRouter();
 
