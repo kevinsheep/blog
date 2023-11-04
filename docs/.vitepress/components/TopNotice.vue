@@ -43,6 +43,9 @@ const setNoticeRead = () => {
     height: 36px;
     line-height: 36px;
     font-size: 14px;
+    width 100%;
+    position fixed
+    z-index 999
 
     p {
         margin-left: 32px;
@@ -56,10 +59,11 @@ const setNoticeRead = () => {
         cursor: pointer;
         color: var(--vp-c-brand-1);
         user-select: none;
+        margin-right: 16px;
     }
 
     .notice-wrapper {
-        width: calc(var(--vp-layout-max-width) - 64px);
+        max-width: calc(var(--vp-layout-max-width) - 64px);
         margin: auto;
         display: flex;
         flex-direction: row;
