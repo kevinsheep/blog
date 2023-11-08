@@ -1,7 +1,7 @@
 ---
 title: ChatGPT Playground
-layout: docs
-updateTime: 2023/02/11
+layout: doc
+# updateTime: 2023/02/11
 tags: AI|前端|后端
 ---
 

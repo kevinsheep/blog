@@ -8,7 +8,8 @@ const getNoticeRead = () => {
     if (res === true) {
         return true;
     }
-    document.querySelector(':root').style.setProperty('--vp-layout-top-height', '36px');
+    const noticeHeight = `${document.querySelector('.notice-wrapper')?.offsetHeight || 48}px`;
+    document.querySelector(':root').style.setProperty('--vp-layout-top-height', noticeHeight);
     return false;
 };
 
@@ -27,7 +28,7 @@ const setNoticeRead = () => {
         <div class="notice-wrapper">
             <p>
                 如果开启了代理访问本站，请确保您的代理正常工作，否则可能出现异常跳转，详情可<a
-                    href="https://github.com/kevinsheep/blog/issues/62"
+                    href="https://github.com/kevinsheep/blog/issues/62#issuecomment-1518431191"
                     target="_blank"
                     >点击这里了解</a
                 >。
@@ -40,12 +41,12 @@ const setNoticeRead = () => {
 <style scoped lang="stylus">
 .top-notice {
     background-color: #fcfcf3;
-    height: 36px;
-    line-height: 36px;
+    line-height: 24px;
+    padding: 6px 0;
     font-size: 14px;
-    width 100%;
-    position fixed
-    z-index 999
+    width: 100%;
+    position: fixed
+    z-index: 999
 
     p {
         margin-left: 32px;
