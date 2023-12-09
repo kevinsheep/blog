@@ -12,7 +12,7 @@ tags: CD
 
 你只需要配置好 GitHub Actions，每次 Git Push 后，坐等几分钟就看到自己的博客自动更新了，当然，前提是你已本地测试完善没有构建错误，也没有文章死链等。
 
-VitePress 官方文档连[使用 GitHub Actions 部署的方法](https://vitepress.vuejs.org/guide/deploying)都有教，可谓相当贴心了。
+VitePress 官方文档连[使用 GitHub Actions 部署的方法](https://vitepress.vuejs.org/guide/deploy)都有教，可谓相当贴心了。
 
 官方文档的 yml 配置是基于 `yarn` 打包的，这里分享一下我基于 `pnmp` 打包的配置文件：
 

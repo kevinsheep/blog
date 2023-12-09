@@ -8,7 +8,7 @@ const getNoticeRead = () => {
     if (res === true) {
         return true;
     }
-    const noticeHeight = `${document.querySelector('.notice-wrapper')?.offsetHeight || 48}px`;
+    const noticeHeight = `${document.querySelector('.notice-wrapper')?.offsetHeight || 36}px`;
     document.querySelector(':root').style.setProperty('--vp-layout-top-height', noticeHeight);
     return false;
 };
