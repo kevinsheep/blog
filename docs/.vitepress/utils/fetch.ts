@@ -11,7 +11,7 @@ const baseURL = 'https://api.github.com/';
 
 const redirect_uri = `${__REDIRECT_URI__}/login.html`; // 登录中转页
 
-const eggHost = 'https://api.ceil.top:8000';
+const eggHost = 'https://api.ceil.top';
 
 const axiosService = axios.create({ baseURL });
 
