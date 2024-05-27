@@ -29,6 +29,8 @@ export default {
     methods: {
         initCanvas() {
             const canvas = this.$refs.canvasRef;
+            if (!canvas) return;
+
             const width = window.innerWidth;
             const height = window.innerHeight;
             canvas.width = width;
