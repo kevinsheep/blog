@@ -27,6 +27,7 @@ const toggleMenu = () => {
     line-height 28px
     text-align center
     border-radius 15px
+    font-family monospace
     color var(--vp-button-brand-text)
     background-color var(--vp-c-brand)
     box-shadow 0 0 10px rgba(0, 0, 0, 0.3)
