@@ -236,3 +236,56 @@
   display: flex;
   flex-direction: row;
 }
+
+#app.collasped {
+  .VPNav {
+    .VPNavBar {
+      .VPNavBarTitle {
+        .title {
+          padding-left: 0;
+          padding-right: 0;
+          border-bottom: 0;
+        }
+      }
+
+      .divider {
+        padding-left: 0;
+      }
+    }
+  }
+
+  .VPSidebar {
+    transform: translateX(-100%);
+
+    &.open {
+      transform: translateX(0);
+      z-index: 60;
+    }
+  }
+
+  .VPLocalNav {
+    left: 0;
+    padding-left: 0;
+    width: 100%;
+
+    .menu {
+      display: flex;
+    }
+  }
+
+  .VPContent {
+    padding-left: 0;
+
+    .VPDoc {
+      width: 100%;
+
+      .content-container {
+        max-width: unset;
+      }
+    }
+  }
+
+  .VPBackdrop {
+    z-index: 50;
+  }
+}

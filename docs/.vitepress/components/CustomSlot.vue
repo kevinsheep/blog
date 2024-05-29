@@ -5,6 +5,7 @@ import Hero from './Hero.vue';
 import LastUpdated from './LastUpdated.vue';
 import Tags from './Tags.vue';
 import TopNotice from './TopNotice.vue';
+import CollapseMenu from './CollapseMenu.vue';
 import Issue from './Issue.vue';
 
 const { Layout } = DefaultTheme;
@@ -24,6 +25,7 @@ const { Layout } = DefaultTheme;
             <div class="doc-before-wrapper">
                 <Tags />
                 <LastUpdated />
+                <CollapseMenu />
             </div>
         </template>
 
