@@ -18,24 +18,25 @@ const toggleMenu = () => {
 .toggle-btn {
     position absolute
     z-index 80
-    left -47px
+    left -50px
     display inline-block
     font-weight bolder
+    font-size 21px
     cursor pointer
-    width 30px
-    height 30px
-    line-height 28px
+    width 32px
+    height 32px
+    line-height 32px
     text-align center
-    border-radius 15px
+    border-radius 16px
     font-family monospace
     color var(--vp-button-brand-text)
     background-color var(--vp-c-brand)
     box-shadow 0 0 10px rgba(0, 0, 0, 0.3)
-    transition left 0.25s
+    transition left 0.6s
 }
 .collasped {
     .toggle-btn {
-        left -40px
+        left -35px
     }
 }
 </style>
