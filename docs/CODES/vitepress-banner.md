@@ -33,7 +33,7 @@ link: https://order.yizhihongxing.org/aff.php?aff=4353
 
 写一个编译时方法，将有带 banner 内容的文章筛选出来，将基础数据生成一个列表：
 
-```typescript{28}
+```typescript
 // ～/.vitepress/dev/index.ts
 import { readdir } from 'fs/promises';
 import matter from 'gray-matter';
