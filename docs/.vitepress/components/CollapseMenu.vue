@@ -36,7 +36,12 @@ const toggleMenu = () => {
 }
 .collasped {
     .toggle-btn {
-        left -35px
+        left -28px
+    }
+}
+@media (max-width: 960px) {
+    .toggle-btn {
+        display none
     }
 }
 </style>
