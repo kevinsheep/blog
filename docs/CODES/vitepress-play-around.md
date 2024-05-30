@@ -55,6 +55,11 @@ updateTime: '2023/01/31'
 
 参见 [VitePress Banner组件](/CODES/vitepress-banner.html)
 
+## 折叠边栏组件
+手动展开和折叠左侧导航栏的交互方案。
+
+参见 [VitePress 折叠边栏组件](/CODES/vitepress-sidebar-collapse.html)
+
 ## 评论系统
 作为一个静态博客，博客本身是无法实现评论互动的。既然博客的内容存放在代码仓库中，并使用他们提供的 **Pages 功能，评论自然也可以使用代码 issues 来进行互动。
 
