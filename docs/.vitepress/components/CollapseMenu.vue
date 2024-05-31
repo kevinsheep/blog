@@ -16,9 +16,11 @@ const toggleMenu = () => {
 
 <style scoped lang="stylus">
 .toggle-btn {
-    position absolute
+    position fixed
     z-index 80
-    left -50px
+    top 250px
+    left 50%
+    margin-left -465px
     display inline-block
     font-weight bolder
     font-size 21px
@@ -32,11 +34,18 @@ const toggleMenu = () => {
     color var(--vp-button-brand-text)
     background-color var(--vp-c-brand)
     box-shadow 0 0 10px rgba(0, 0, 0, 0.3)
-    transition left 0.6s
+    transition all 0.5s
 }
 .collasped {
     .toggle-btn {
-        left -28px
+        left -5px
+        margin-left 0
+    }
+}
+@media (max-width: 1440px) {
+    .toggle-btn {
+        left 260px
+        margin-left 0
     }
 }
 @media (max-width: 960px) {
