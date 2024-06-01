@@ -3,13 +3,19 @@ import { getLS, setLS } from '../utils/index.ts';
 import { ref } from 'vue';
 
 const LS_KEY = 'NoticeRead';
+const setLayoutTop = () => {
+    const noticeHeight = `${document.querySelector('.top-notice')?.offsetHeight || 36}px`;
+    document.querySelector(':root').style.setProperty('--vp-layout-top-height', noticeHeight);
+};
 const getNoticeRead = () => {
     const res = getLS(LS_KEY);
     if (res === true) {
         return true;
     }
-    const noticeHeight = `${document.querySelector('.notice-wrapper')?.offsetHeight || 36}px`;
-    document.querySelector(':root').style.setProperty('--vp-layout-top-height', noticeHeight);
+    // 如果未读，则需要根据.top-notice高度，设置内容偏移
+    setLayoutTop();
+
+    window.addEventListener('resize', setLayoutTop);
     return false;
 };
 
@@ -17,7 +23,11 @@ const isNoticeRead = ref(getNoticeRead());
 
 const setNoticeRead = () => {
     isNoticeRead.value = true;
+
+    // 取消内容偏移
     document.querySelector(':root').style.setProperty('--vp-layout-top-height', '0');
+
+    window.removeEventListener('resize', setLayoutTop);
 
     setLS(LS_KEY, true);
 };
