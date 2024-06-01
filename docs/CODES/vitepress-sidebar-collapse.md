@@ -23,6 +23,8 @@ tags: 前端
 #app.collasped {
   .VPNav {
     .VPNavBar {
+      background-color: var(--vp-nav-bg-color);
+
       .VPNavBarTitle {
         .title {
           padding-left: 0;
