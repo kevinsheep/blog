@@ -16,12 +16,12 @@ export default {
         nav: [{ text: '首页', link: '/' }, ...COLS],
         socialLinks: [
             { icon: 'github', link: 'https://github.com/kevinsheep/' },
-            {
-                icon: {
-                    svg: gitee,
-                },
-                link: 'https://kevinsheep.gitee.io/blog',
-            },
+            // {
+            //     icon: {
+            //         svg: gitee,
+            //     },
+            //     link: 'https://kevinsheep.gitee.io/blog',
+            // },
         ],
         sidebar: getSidebar(),
         footer: {
