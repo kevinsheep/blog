@@ -237,6 +237,12 @@
   flex-direction: row;
 }
 
+#app {
+  .VPSidebar {
+    padding-bottom: 20px;
+  }
+}
+
 #app.collasped {
   .VPNav {
     .VPNavBar {
@@ -296,16 +302,22 @@
 
 /* 自定义整个滚动条 */
 ::-webkit-scrollbar {
-  width: 6px; /* 设置滚动条的宽度 */
+  width: 5px; /* 设置滚动条的宽度 */
 }
 
 /* 自定义滚动条的滑块（thumb） */
 ::-webkit-scrollbar-thumb {
-  background-color: #ddd;
-  border-radius: 6px;
+  background-color: #f0f0f0;
+  border-radius: 5px;
 }
 
 /* 当滑块悬停或活动时自定义滚动条的滑块 */
 ::-webkit-scrollbar-thumb:hover {
-  background-color: #aaa;
+  background-color: #ddd;
+}
+
+#VPSidebarNav:hover {
+  ::-webkit-scrollbar-thumb {
+    background-color: #ddd;
+  }
 }
