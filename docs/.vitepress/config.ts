@@ -39,6 +39,11 @@ export default {
             {
                 src: 'https://hm.baidu.com/hm.js?ff7110a78443140968558cad1f050297',
             },
+            'meta',
+            {
+                name: 'baidu-site-verification',
+                content: 'codeva-1ZlyLGCh2Z',
+            },
         ],
     ],
     sitemap: {
