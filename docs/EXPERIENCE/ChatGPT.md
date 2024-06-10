@@ -36,4 +36,8 @@ ChatGPT是[OpenAI](https://platform.openai.com/)开发的人工智能聊天机�
 ![折腾人工智能](/assets/docs/ChatCPT.png)
 
 ## 上手试试
-现在好些平台为了降低网友们的体验门槛（主要是为了拉流量），也纷纷接入了 ChatGPT。我这也接了一个来玩玩：[openai-playground](/CODES/openai-playground.md)
+现在好些平台为了降低网友们的体验门槛（主要是为了拉流量），也纷纷接入了 ChatGPT。我这也接了一个来玩玩：[openai-playground](/ARCHIVE/openai-playground.md)
+
+:::tip
+GPT API 已变更，暂未更新playground
+:::
