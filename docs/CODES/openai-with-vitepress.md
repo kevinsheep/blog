@@ -11,7 +11,7 @@ tags: AI|前端|后端
 
 最近连微软也要把ChatGPT加入到搜索引擎中了，New Bing什么的。这样的关注量，利益驱动，或许真的能大大加快人工智能的发展吧！
 
-我也尝试在博客中引入一下，效果如：[openai-playground](/CODES/openai-playground.html)
+我也尝试在博客中引入一下，效果如：[openai-playground](/ARCHIVE/openai-playground.html)
 
 ## 准备工作
 1. 如果注册和试用ChatGPT，[另文介绍](/EXPERIENCE/ChatGPT.html)。
