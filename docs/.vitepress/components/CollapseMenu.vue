@@ -40,11 +40,12 @@ const toggleMenu = () => {
         box-shadow 0 0 10px rgba(0, 0, 0, 0.3)
         transition all 0.5s
     }
-    .collasped {
-        .toggle-btn {
-            left -5px
-            margin-left 0
-        }
+}
+
+.collasped {
+    .toggle-btn {
+        left -5px
+        margin-left 0
     }
 }
 
