@@ -100,7 +100,7 @@ function json2csv(obj: WechatMiniprogram.IAnyObject, withTh = true) {
     result.push(values.join(','));
   }
 
-  return result.join('\r\n'); // 将结果数组转换为CSV字符串
+  return result.join('\r\n');
 }
 ```
 
@@ -156,7 +156,7 @@ Error: MiniProgramError
 \{"errMsg":"shareFileMessage:fail can only be invoked by user TAP gesture."\}
 :::
 
-我大脑死循环了好一会：点按钮时马上就保存文件？可是这时文件都还没生成啊？
+我大脑死循环了好一会：点按钮时马上就保存文件？可是这时文件都还没生成啊？🙃
 
 进入页面即自动生成文件？浪费计算资源，不太科学。
 
