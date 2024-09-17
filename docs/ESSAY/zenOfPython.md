@@ -1,6 +1,6 @@
 ---
 updateTime: 2024/09/17
-title: 三国演义观后
+title: The Zen of Python
 ---
 
 Python交互式环境中，输入下面的代码
