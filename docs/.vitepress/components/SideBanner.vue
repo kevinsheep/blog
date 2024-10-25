@@ -19,6 +19,9 @@ watch(
 </script>
 
 <template>
+    <a href="https://u.jd.com/MOoHRuB" target="_blank" class="banner">
+        <img src="/assets/banner/jd.jpg" alt="京东数码" />
+    </a>
     <a :href="r.link" target="_blank" class="banner">
         <img :src="r.banner" :alt="r.title" />
         <span>{{ r.nav ?? '广而告之' }}</span>
@@ -30,6 +33,7 @@ watch(
     display: block;
     width: 100%;
     position: relative;
+    margin-top: 15px;
 
     span {
         position: absolute;
