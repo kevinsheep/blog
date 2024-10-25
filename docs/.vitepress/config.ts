@@ -47,6 +47,6 @@ export default {
         ],
     ],
     sitemap: {
-        hostname: 'https://ceil.top',
+        hostname: 'https://www.ceil.top',
     },
 };
