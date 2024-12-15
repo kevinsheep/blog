@@ -26,7 +26,8 @@ export default {
         sidebar: getSidebar(),
         footer: {
             message: 'Released under the MIT License.',
-            copyright: 'Copyright © 2010-present, KEVINSHEEP.',
+            copyright:
+                'Copyright © 2010-present, KEVINSHEEP. <a href="http://beian.miit.gov.cn/">粤ICP备2023053325号-1</a>',
         },
         search: {
             provider: 'local',
