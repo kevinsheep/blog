@@ -149,15 +149,15 @@ watch(isLogin, (isLogin) => {
 
 <template>
     <div class="wrapper-comments">
-        <div class="title">
+        <!-- <div class="title">
             评论一番
             <span>基于 GitHub Issues</span>
-        </div>
+        </div>-->
 
-        <div class="no-login" v-if="!isLogin">
+        <!-- <div class="no-login" v-if="!isLogin">
             <ClientOnly> 请 <a :href="link_get_code()">登录你的 GitHub 账号</a> 后发表评论 </ClientOnly>
-        </div>
-
+        </div> -->
+        <!-- 
         <template v-if="hasIssue">
             <div class="cell" v-if="ci.body">
                 <div class="meta">
@@ -190,7 +190,7 @@ watch(isLogin, (isLogin) => {
 
         <div id="vditor" v-if="isLogin"></div>
 
-        <span class="btn-add" @click="toComment" v-if="isLogin">发表</span>
+        <span class="btn-add" @click="toComment" v-if="isLogin">发表</span> -->
 
         <div v-if="hasIssue" class="to-gitee">&gt; <a :href="ci.html_url">到 GitHub Issues 表扬作者</a></div>
     </div>
