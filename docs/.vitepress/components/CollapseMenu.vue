@@ -48,16 +48,22 @@ const toggleMenu = () => {
         margin-left 0
     }
 }
-
-@media (max-width: 1440px) {
-    .toggle-btn {
-        left 260px
-        margin-left 0
+@media (max-width: 800px) {
+    .has-sidebar .toggle-btn {
+        margin-left -265px
     }
 }
+
 @media (max-width: 960px) {
-    .toggle-btn {
+    .has-sidebar .toggle-btn {
         display none
+    }
+}
+
+@media (max-width: 1440px) {
+    .has-sidebar .toggle-btn {
+        left 260px
+        margin-left 0
     }
 }
 </style>
