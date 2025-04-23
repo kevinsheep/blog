@@ -1,6 +1,6 @@
 ---
 title: 笔记工具 Obsidian
-updateTime: 2025/03/25
+updateTime: 2025/04/23
 tags: 笔记|Markdown
 ---
 
@@ -44,28 +44,91 @@ tags: 笔记|Markdown
 
 ![Remotely Save](/assets/docs/obsidian01.png)
 
-程序员方案：如果你非常喜欢使用 Git，可以直接使用就手的工具，将数据同步到**全球大型同性交友平台**，或者自己的代码仓库服务上。当然，在 Obsidian 上同样有第三方插件工具支持。
+#### 程序员方案
+如果你非常喜欢使用 Git，可以直接使用就手的工具，将数据同步到**全球大型同性交友平台**，或者自己的代码仓库服务上。当然，在 Obsidian 上同样有第三方插件工具支持。
 
-推荐方案：找一个最便宜的对象存储 OSS 服务。比如阿里云的 OSS，可以先白嫖 20GB 三个月；使用满意了再购买 40GB 的标准资源包，9 元/年，一下子开通五年也就一两顿快餐的钱。
+#### 推荐方案
+找一个最便宜的对象存储 OSS 服务。比如阿里云的 OSS，可以先白嫖 20GB 三个月；使用满意了再购买 40GB 的标准资源包，9 元/年，一下子开通五年也就一两顿快餐的钱。
 
-我自己的方案：刚好有一个丐版服务器，以前部署过一个 [AList 私有网盘](/EXPERIENCE/AList)；在服务器上新开一个专门的 WebDAV 服务，就可以把笔记数据同步到私有网盘服务上。
+#### 我自己的方案
+刚好有一个丐版服务器，以前部署过一个 [AList 私有网盘](/EXPERIENCE/AList)；在服务器上新开一个专门的 WebDAV 服务，就可以把笔记数据同步到私有网盘服务上。
 
 AList 私有网盘，还支持将接入外部网盘，各种各样的网盘，再转为 WebDAV 服务。总之，我连 9 元/年也省了。🙃
 
-## 在线预览方案
+## 进一步改进的数据方案
+以上方案，都极度依赖一个社区插件 Remotely Save。
 
-Obsidian 有官方的在线发布的付费服务的。
+它给带来非常大的便利，仅仅是简单的几步设置，即可实现 N 种白嫖方案。而且这个热门的插件有着100多万的下载量，质量有保证。
 
-由于我使用 AList 实现数据存储，可以直接利用 AList 的在线页面查看笔记文档，又省一笔。
+但毕竟是第三方的。
+
+果然，不稳定的情况终于出现了。有次一整天无法同步，让我发现它居然还要先访问某个云端接口，才能继续同步，而好死不死，那个接口 500 报错，后面的操作就阻塞了。
+
+我懒得深究原因，也不想等待了。被人绑定的感觉很不好。
+
+根据 Obsidian 的数据存储方式，实际上我只要设法在同端同步好仓库文件夹即可。
+
+几经对比，我选用了一个命令行同步工具：[rclone](https://rclone.org)
+
+根据平台下载好，建立配置文件：
+
+```bash
+rclone config # rclone 目录，记得将路径添加到系统环境变量中，便于调用
+rclone config paths # 查询路径
+# Windows 下配置文件默认路径 ~~\<用户名>\AppData\Roaming\rclone\rclone.conf
+```
+
+根据命令行提示，很容易就能完成配置。然后查看一下 WebDAV 的文件，看是否成功：
+
+```bash
+rclone ls remote:/  # 列出存储内容  
+rclone lsd remote:/ # 仅显示目录
+rclone tree remote:/ # 显示树形结构
+```
+
+支持增量同步，是我抛弃五花八门的图形工具，而选用这个看起来有点点麻烦的命令行工具的重要原因。
+
+同步过程，非常快速。
+
+```bash
+rclone sync /local/path remote:path --progress  # 本地 → WebDAV
+rclone sync remote:path /local/path --dry-run   # WebDAV → 本地，模拟执行
+```
+
+当我以为已经接近完美时，又发现了可以直接**将 WebDAV 挂载为本地文件夹**这个功能！
+
+这样一来，根本就不需要每次手动同步，或者配置定时任务了。
+
+```bash
+# 挂载
+rclone mount remote:/ /d/Obsidian/cache/ --vfs-cache-mode full --links
+```
+
+然后，我将 Obsidian 的数据仓库目录，直接设置为这个挂载的目录 `/d/Obsidian/cache/`。
+
+使用起来就和本地文件夹一样。实际上 Obsidian 的数据存储在 WebDAV 上，修改完就实时同步好了。
+
+::: tip
+
+如果是在 Windows 环境，挂载前需要先下载 [winfsp](https://github.com/winfsp/winfsp/releases) 安装好
+
+:::
+
+
+## 在线预览和分享
+
+Obsidian 提供官方的在线发布的付费服务。
+
+我基于 AList 实现数据存储，可以直接利用 AList 的在线页面查看笔记，又省一笔。🙃
 
 在线查看，要考虑到查看权限问题。整个网盘目录，自然是只有自己可以查看。可以在 AList 上，将文档存储的其中一个目录，设置为游客可浏览的目录，把需要发布的文件拖进这个目录，就可以让所有人都可以查看了。
 
-效果如下：
+效果如下： [AList 在线文档](https://note.ceil.top:80/Publish/%E6%AC%A2%E8%BF%8E.md)
 
-[AList 在线文档](https://note.ceil.top:80/Publish/%E6%AC%A2%E8%BF%8E.md)
+当然，你也可以结合一些同样是基于 markdown 的静态网站工具，比如本站使用的 Vitepress，复用发布目录的文件，实现在线发布工作。
 
-当然，你也可以结合一些同样是基于 markdown 的静态网站工具，比如本站使用的 Vitepress，复用发布目录的文件，实现在线发布工作，可以参考[这篇文章](https://ceil.top/CODES/vitepress-play-around.html)。
+可以参考[这篇文章](https://ceil.top/CODES/vitepress-play-around.html)。
 
 ## 备份和还原
-由于 Obsidian 在 PC 上的数据仓库，实际上就是 markdown 文件库。数据备份就是备份自己电脑上的文件，太简便，不必细说了。
+Obsidian 在 PC 上的数据仓库，实际上就是 markdown 文件库。数据备份就是备份自己电脑上的文件，太简便，不必细说了。
 
