@@ -42,7 +42,7 @@ const toggleMenu = () => {
     }
 }
 
-.collasped {
+#app.collasped {
     .toggle-btn {
         left -5px
         margin-left 0
