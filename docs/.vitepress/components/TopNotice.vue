@@ -31,6 +31,11 @@ const setNoticeRead = () => {
 
     setLS(LS_KEY, true);
 };
+
+// 如果用户在10秒内没有关闭通知，则自动关闭
+setTimeout(() => {
+    setNoticeRead();
+}, 10000);
 </script>
 
 <template>
