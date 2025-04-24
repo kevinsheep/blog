@@ -6,7 +6,12 @@ tags: 前端
 
 基本的原理，是提取 `useData` 中的导航数据，将原来带级别的导航改成扁平列表。根据 `updateTime` 来排序并提取指定条数。
 
-需要显示在首页的，必须在博文头部显示地定义格式化数据 `updateTime`，
+导航数据的构造，在另一篇文章有举例说明：[VitePress 自动内容导航](/CODES/vitepress-navigation)。
+
+::: warning 注意
+需要显示在这个推荐列表中的，必须在博文头部显示地定义格式化数据 `updateTime`
+:::
+
 ```vue
 // template#home-hero-after
 
