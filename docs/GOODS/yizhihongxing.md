@@ -3,6 +3,7 @@ title: 一支红杏
 updateTime: 2023/05/29
 banner: /assets/banner/yizhihongxing.jpg
 link: https://order.yizhihongxing.org/aff.php?aff=4353
+tags: VPN|科学上网|代理
 ---
 
 ## Intro

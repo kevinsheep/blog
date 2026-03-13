@@ -3,6 +3,7 @@ title: PikPak 云盘
 updateTime: 2023/06/03
 banner: /assets/banner/pikpak.jpg
 link: https://mypikpak.com/drive/activity/invited?invitation-code=39773158
+tags: 云盘|下载|科学上网|代理
 ---
 
 ## Preface
